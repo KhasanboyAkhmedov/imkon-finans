@@ -1,0 +1,18 @@
+{   
+    "Navbar":{
+        "home": "Бош",
+        "news": "Янгиликлар",
+        "services": "Хизматлар",
+        "about": "Биз Хакимизда",
+        "investors": "Инвестоларга",
+        "contact": "Алока ракамлари"
+    },
+    "Index": {
+        "title": "Салом "
+    },
+    "Home": {
+        "h1": "Front-End Developer",
+        "p": "Танишиш",
+        "button": "Кориш"
+    }
+}
