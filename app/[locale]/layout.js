@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import Navbar from './components/navbar'
 import Sidebar from './components/sidebar'
 import { NextIntlProvider } from 'next-intl';
+import Navbarlinks from './components/navbarlinks'
 const inter = Inter({ subsets: ['latin'] })
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -28,7 +29,9 @@ export default function RootLayout({
     <html lang={locale} >
       <body className={inter.className}>
           {/* <Header /> */}
-          <Navbar/>
+          <Navbar>
+            <Navbarlinks/>
+          </Navbar>
           {children}
       </body>
     </html>

@@ -8,7 +8,7 @@ import Logo from '@/public/logo.png'
 import Togglelanguage from './togglelanguage'
 
 
-const Navbar = () => {
+const Navbar = ({children}) => {
     const pathname = usePathname();
     const router = useRouter();
     const [menuOpen, setMenuOpen] = useState(false)
@@ -28,13 +28,14 @@ const Navbar = () => {
                     />
                     
             </Link>
-            <nav className=" hidden md:flex items-center text-base lg:text-lg justify-between">
+            {/* <nav className=" hidden md:flex items-center text-base lg:text-lg justify-between">
                 <Link href={'/'} className='mr-5 uppercase hover:border-b-2 hover:border-red-900 hover:text-red-900 '>Bosh</Link>
                 <Link href={'/vacancies'}className='mr-5 uppercase hover:border-b-2 hover:border-red-900 hover:text-red-900 '>Xizmatlar</Link>
                 <Link href={'/about-us'} className='mr-5 uppercase hover:border-b-2 hover:border-red-900 hover:text-red-900 '>Biz haqimizda</Link>
                 <Link href={'/'} className='mr-5 uppercase hover:border-b-2 hover:border-red-900 hover:text-red-900 '>Investorlarga</Link>
                 <Link href={'/'} className='mr-5 uppercase hover:border-b-2 hover:border-red-900 hover:text-red-900 '>Aloqa Raqamlari</Link>
-            </nav>
+            </nav> */}
+            {children}
             <Togglelanguage/>
             <div onClick={handleNav} className='md:hidden cursor-pointer p-2 items-center justify-end border rounded-lg'>
                     {menuOpen ? <AiOutlineClose size={25}/> : <AiOutlineMenu  size={25}/> }
