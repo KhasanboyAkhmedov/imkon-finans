@@ -1,14 +1,16 @@
 
-import { Inter } from 'next/font/google'
+import { Inter, Open_Sans } from 'next/font/google'
 import './globals.css'
 import { notFound } from 'next/navigation'
-import { Header } from '@/components/ui/header'
-
+import Navbar from './components/navbar'
+import Sidebar from './components/sidebar'
+import { NextIntlProvider } from 'next-intl';
 const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Frontend Developer',
-  description: 'Desenvolvedor Web Frontend em Recife - Pernambuco',
+  title: 'Imkon Finans',
+  description: 'Mikrokredit tashkiloti',
 }
 
 const locales = ['en', 'ru', 'uz', 'uzk'];
@@ -25,7 +27,8 @@ export default function RootLayout({
   return (
     <html lang={locale} >
       <body className={inter.className}>
-          <Header />
+          {/* <Header /> */}
+          <Navbar/>
           {children}
       </body>
     </html>

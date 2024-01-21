@@ -1,5 +1,13 @@
 {
+    "Navbar": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About us",
+        "investors": "For Investors",
+        "contact": "Contacts"
+    },
     "Home": {
+        "consultation": "ООО «IMKON FINANS MIKROKREDIT TASHKILOTI» fast credits",
         "h1": "Front-End Developer",
         "p": "Creating high-performance websites with a focus on user experience",
         "button": "See skills"
