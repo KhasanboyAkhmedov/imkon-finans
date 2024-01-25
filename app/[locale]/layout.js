@@ -2,10 +2,10 @@
 import { Inter, Open_Sans } from 'next/font/google'
 import './globals.css'
 import { notFound } from 'next/navigation'
-import Navbar from './components/navbar'
-import Sidebar from './components/sidebar'
-import { NextIntlProvider } from 'next-intl';
-import Navbarlinks from './components/navbarlinks'
+import Navbar from '../[locale]/components/navbar'
+import Sidebar from '../[locale]/components/sidebar'
+import Navbarlinks from '../[locale]/components/navbarlinks'
+
 const inter = Inter({ subsets: ['latin'] })
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -27,11 +27,12 @@ export default function RootLayout({
 
   return (
     <html lang={locale} >
-      <body className={inter.className}>
+      <body className={openSans.className}>
           {/* <Header /> */}
           <Navbar>
             <Navbarlinks/>
           </Navbar>
+          <Sidebar/>
           {children}
       </body>
     </html>

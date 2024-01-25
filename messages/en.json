@@ -1,15 +1,26 @@
 {
     "Navbar": {
         "home": "Home",
+        "news": "News",
         "services": "Services",
         "about": "About us",
         "investors": "For Investors",
         "contact": "Contacts"
     },
+    "Sidebar":{
+        "microcredit": "Microcredit",
+        "microloan": "Microloan",
+        "microleasing": "Microleasing",
+        "factoring": "Factoring"
+    },
     "Home": {
-        "consultation": "ООО «IMKON FINANS MIKROKREDIT TASHKILOTI» fast credits",
-        "h1": "Front-End Developer",
-        "p": "Creating high-performance websites with a focus on user experience",
-        "button": "See skills"
+        "products": "Our products ans services",
+        "consultation": "ООО «IMKON FINANS MIKROKREDIT TASHKILOTI» quick loans at low interest rates, registration within 10 minutes",
+        "testomonial": "Customer reviews",
+        "testmonials": {
+            "first": "I left a request, literally an hour later the guys called and explained and gave me the conditions! Quickly, clearly, efficiently!",
+            "second": "Well done guys, they work very harmoniously and efficiently! I arrived in the morning with documents, after lunch the money was already credited!",
+            "third": "I'm very pleased with the service. Everything was done efficiently and quickly!"
+        }
     }
 }
