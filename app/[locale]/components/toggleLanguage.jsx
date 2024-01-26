@@ -2,7 +2,10 @@
 import React, { useState } from 'react'
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem} from "@nextui-org/react";
 import { usePathname, useRouter } from "@/navigation"
+import {Select, SelectItem} from "@nextui-org/react";
 import { Languages } from 'lucide-react';
+
+
 const Togglelanguage = () => {
     const pathname = usePathname();
     const router = useRouter();
