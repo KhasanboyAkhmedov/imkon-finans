@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 const Sidebar = () => {
   const navt= useTranslations("Sidebar")
   return (
-    <div className='fixed hidden md:flex flex-col w-[15%] items-center top-0 left-0 tracking-wider h-screen bg-[#840E1C]'>
+    <div className='fixed hidden md:flex flex-col w-[15%] items-center top-0 left-0 tracking-wider h-screen bg-[#db1380]'>
       <Link href={"/"}>
               <Image
                   src={LogoWhite}

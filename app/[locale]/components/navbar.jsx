@@ -44,7 +44,7 @@ const Navbar = ({children}) => {
 
             {/* Mobile Navbar */}
         <div className={
-            menuOpen ? 'fixed left-0 mt-[58px] top-0 w-[100%] md:hidden h-screen bg-[#840E1C] p-5 ease-in-out duration-500'
+            menuOpen ? 'fixed left-0 mt-[58px] top-0 w-[100%] md:hidden h-screen bg-[#db1380] p-5 ease-in-out duration-500'
             : 'fixed mt-[58px] left-[-100%] top-0 ease-out duration-500'
         }>
             {/* <nav className="flex flex-col py-4">
