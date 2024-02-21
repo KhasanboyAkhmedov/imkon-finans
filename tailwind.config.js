@@ -11,7 +11,12 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'product1': "url('../../public/product1.jpg')"
+        "sayohat": "url('../../public/sayohat.jpg')",
+        "ishonch": "url('../../public/ishonch.jpg')",
+        "madad": "url('../../public/madad.jpg')",
+        "omad": "url('../../public/omad.jpg')",
+        "talim": "url('../../public/talim.jpg')",
+        "tezpul": "url('../../public/tezpul.jpg')"
       }
      },
   },

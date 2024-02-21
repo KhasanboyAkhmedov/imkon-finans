@@ -5,11 +5,10 @@ import Logo from '@/public/logo.png'
 import LogoWhite from '@/public/logo-white biz fin.png'   
 import { useTranslations } from 'next-intl'
 
-
 const Sidebar = () => {
   const navt= useTranslations("Sidebar")
   return (
-    <div className='fixed hidden md:flex flex-col w-[15%] items-center top-0 left-0 tracking-wider h-screen bg-[#db1380]'>
+    <header className=' fixed hidden md:flex flex-col w-[15%] items-center top-0 left-0 tracking-wider min-h-screen  bg-[#840E1C] '>
       <Link href={"/"}>
               <Image
                   src={LogoWhite}
@@ -33,7 +32,19 @@ const Sidebar = () => {
         <p className='cursor-pointer'>+998 78 298-12-35</p>
         <p className='cursor-pointer'>+998 74 228-32-12</p>
       </div>
-    </div>
+      <div className='flex flex-col py-6 justify-center text-center text-white text-lg'>
+        <p className='cursor-pointer'>+998 78 298-12-35</p>
+        <p className='cursor-pointer'>+998 74 228-32-12</p>
+      </div>
+      <div className='flex flex-col py-6 justify-center text-center text-white text-lg'>
+        <p className='cursor-pointer'>+998 78 298-12-35</p>
+        <p className='cursor-pointer'>+998 74 228-32-12</p>
+      </div>
+      <div className='flex flex-col py-6 justify-center text-center text-white text-lg'>
+        <p className='cursor-pointer'>+998 78 298-12-35</p>
+        <p className='cursor-pointer'>+998 74 228-32-12</p>
+      </div>
+    </header>
   )
 }
 

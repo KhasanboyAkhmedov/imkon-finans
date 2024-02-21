@@ -1,4 +1,4 @@
-
+import localFont from 'next/font/local'
 import { Inter, Open_Sans } from 'next/font/google'
 import './globals.css'
 import { notFound } from 'next/navigation'
@@ -7,9 +7,12 @@ import Sidebar from '../[locale]/components/sidebar'
 import Navbarlinks from '../[locale]/components/navbarlinks'
 import Homelink from './components/homelink'
 
+
 const inter = Inter({ subsets: ['latin'] })
 const openSans = Open_Sans({ subsets: ['latin'] })
-
+const myFont = localFont({
+  src: '../fonts/Gothic.ttf'
+})
 export const metadata = {
   title: 'Imkon Finans',
   description: 'Mikrokredit tashkiloti',
@@ -28,7 +31,7 @@ export default function RootLayout({
 
   return (
     <html lang={locale} >
-      <body className={openSans.className}>
+      <body className={myFont.className}>
           {/* <Header /> */}
           
           <Navbar>

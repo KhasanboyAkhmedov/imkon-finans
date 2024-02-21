@@ -1,10 +1,4 @@
 import React from 'react'
-import first from '@/public/product1.jpg'
-import second from '@/public/product2.jpg'
-import third from '@/public/product3.jpg'
-import fourth from '@/public/product4.jpg'
-import fivth from '@/public/product5.jpg'
-import six from '@/public/product6.jpg'
 
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -13,7 +7,7 @@ import { useTranslations } from 'next-intl'
 const Ourroducts = () => {
     const t = useTranslations("Home")
   return (
-    <div className="flex flex-col justify-center pt-[70px] mt-10 lg:mt-20">
+    <div className="flex flex-col justify-center  ">
         <h3 className="uppercase text-center text-3xl md:text-5xl">{t('products')}</h3>
         <div className="flex flex-row flex-wrap justify-around mt-10 ">
             {/* <div className='rounded-lg w-full h-[200px] md:w-[180px] md:h-[180px]' >

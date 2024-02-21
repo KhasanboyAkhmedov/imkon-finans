@@ -13,8 +13,40 @@
         "microleasing": "Mikrolizing",
         "factoring": "Faktoring"
     },
-    "Index": {
-        "title": "Salom"
+    "Carousel": {
+        "sayohat": {
+            "condition": "Dam olish uchun kredit",
+            "amount": "12 000 000 so'mgacha",
+            "more": "Batafsil..."
+        },
+        "ishonch": {
+            "condition": "Onlayn garovsiz kredit",
+            "amount": "1 200 000 so'mgacha",
+            "more": "Batafsil..."
+        },
+        "Madad": {
+            "condition": "Jismoniy shaxslarga Biznesni rivojlantirish uchun",
+            "amount": "50 000 000 so'mgacha",
+            "more": "Batafsil..."
+        },
+        "Omad": {
+            "condition1": "Qarz oluvchi tomonidan avtomobil narxining 40 foizini to‘lash",
+            "condition2": "sharti bilan ikkilamchi bozordan avtomobil sotib olish uchun kredit",
+            "condition3": "",
+            "amount": "50 000 000 so'mgacha",
+            "more": "Batafsil..."
+        } ,
+        "Talim": {
+            "condition1": "Qarz oluvchi shartnoma summasining 30 foizini o‘zi to‘lashi",
+            "condition2": "sharti bilan shartnoma asosida o‘qish uchun kredit",
+            "amount": "20 000 000 so'mgacha",
+            "more": "Batafsil..."
+        },
+        "Tezpul": {
+            "condition1": "Kreditomat orqali olingan garovsiz kredit",
+            "amount": "5 000 000 so'mgacha",
+            "more": "Batafsil..."
+        }     
     },
     "Home": {
         "products": "Bizning mahsulotlarimiz va xizmatlarimiz",

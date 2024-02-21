@@ -13,6 +13,41 @@
         "microleasing": "Microleasing",
         "factoring": "Factoring"
     },
+    "Carousel": {
+        "sayohat": {
+            "condition": "Vocation Loan",
+            "amount": "Up to 12 000 000 sums",
+            "more": "Read more..."
+        },
+        "ishonch": {
+            "condition": "Online unsecured credit",
+            "amount": "Up to 1 200 000 sums",
+            "more": "Read more..."
+        },
+        "Madad": {
+            "condition": "For individuals to develop business",
+            "amount": "Up to 50 000 000 sums",
+            "more": "Read more..."
+        },
+        "Omad": {
+            "condition1": "A credit for the purchase of a car from the used vehicles",
+            "condition2": "market providing that the Borrower pays 40% of the cost of the car.",
+            "condition3": "",
+            "amount": "Up to 50 000 000 sums",
+            "more": "Read more..."
+        } ,
+        "Talim": {
+            "condition1": "A student loan for those who are trained on a contractual basis,",
+            "condition2": "providing that the borrower pays 30% of the contract amount himself/herself",
+            "amount": "Up to 20 000 000 sums",
+            "more": "Read more..."
+        },
+        "Tezpul": {
+            "condition1": "Unsecured credit obtained through a loan machine",
+            "amount": "Up to 5 000 000 sums",
+            "more": "Read more..."
+        }     
+    },
     "Home": {
         "products": "Our products ans services",
         "consultation": "ООО «IMKON FINANS MIKROKREDIT TASHKILOTI» quick loans at low interest rates, registration within 10 minutes",
