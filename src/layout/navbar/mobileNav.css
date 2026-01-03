@@ -1,0 +1,38 @@
+.mobile_header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.logo {
+    width: 140px;
+}
+.burger {
+    width: 32px;
+}
+@media (min-width: 540px) {
+    .logo {
+        width: 170px;
+    }
+
+    .burger {
+        width: 34px;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        width: 180px;
+        height: 30px;
+    }
+    .burger {
+        width: 38px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .mobile_header {
+        display: none;
+    }
+}

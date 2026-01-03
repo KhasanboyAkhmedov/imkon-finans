@@ -1,0 +1,132 @@
+.form-container {
+    width: 100%;
+    background-color: #ff3b3b;
+    padding: 30px 10px;
+}
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+}
+
+.form-input {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    color: #231F20;
+}
+
+.form-input::placeholder {
+    color: #666;
+}
+
+.form-button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #ffffff;
+    color: #ff3b3b;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    text-transform: uppercase;
+}
+
+.form-button:hover {
+    opacity: 0.9;
+}
+
+@media (min-width: 540px) {
+    .form-title {
+        font-size: 16px;
+    }
+
+    .form-input {
+        padding: 12px 20px;
+    }
+
+    .form-button {
+        padding: 12px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-form {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .form-container {
+        padding: 30px;
+    }
+
+    .form-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .form-title {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .contact-form {
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        max-width: fit-content;
+    }
+
+    .form-input {
+        min-width: 300px;
+        padding: 12px 20px;
+    }
+
+    .form-button {
+        min-width: 200px;
+        padding: 12px 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .form-wrapper {
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .form-title {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .form-input {
+        min-width: 350px;
+    }
+
+    .form-button {
+        min-width: 200px;
+    }
+}

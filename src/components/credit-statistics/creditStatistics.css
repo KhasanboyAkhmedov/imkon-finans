@@ -1,0 +1,151 @@
+.stats-container {
+  text-align: center;
+  margin: 80px auto;
+}
+
+.stats-header {
+  margin-bottom: 15px;
+}
+
+.stats-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #3F3E42;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.stats-heading .highlight {
+    font-size: 22px;
+    font-weight: 600;
+    color: #FF3E41;
+}
+
+.stats-description {
+  color: #2D2D2D;
+  font-size: 15px;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+  line-height: 1.3;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1);
+}
+
+.stat-amount {
+  font-size: 24px;
+  font-weight: 800;
+  color: #231F20;
+}
+
+.stat-unit {
+  font-size: 14px;
+  color: #231F20;
+  margin-bottom: 10px;
+}
+
+.stat-category {
+  font-size: 14px;
+  font-weight: 600;
+  color: #231F20;
+  line-height: 1.3;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+    .stats-heading {
+        font-size: 18px;
+    }
+
+    .stats-heading .highlight {
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .stats-description {
+        font-size: 16px;
+        max-width: fit-content;
+    }
+}
+
+@media (min-width: 540px) {
+    .stat-amount {
+        font-size: 26px;
+    }
+
+    .stat-unit {
+        font-size: 16px;
+    }
+
+    .stat-category {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 767px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-heading {
+        font-size: 22px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .stats-heading .highlight {
+        font-size: 28px;
+    }
+    
+    .stats-description {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .stat-icon {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (min-width: 1200px) {
+    .stat-amount {
+        font-size: 28px;
+    }
+
+    .stat-unit {
+        font-size: 18px;
+    }
+
+    .stat-category {
+        font-size: 18px;
+    }
+}

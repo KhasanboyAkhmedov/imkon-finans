@@ -1,0 +1,225 @@
+.footer {
+	padding-top: 40px;
+	padding-bottom: 38px;
+    background: rgba(255, 255, 255, 1);
+}
+
+.footer__top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer__top-logo {
+    width: 140px;
+}
+
+.footer__top-info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    gap: 2px;
+}
+
+.footer__top-info-link {
+    height: 30px;
+	width: 30px;
+	background-color: #ff3e411a;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	border-radius: 12px;
+	cursor: pointer;
+	transition: all 0.4s ease;
+}
+.footer__top-info-link:hover {
+	background-color: rgb(244, 148, 148);
+}
+.footer__top-info-link-a-icon {
+    width: 16px;
+	height: 16px;
+    display: flex;
+}
+
+.footer-line {
+    width: 100%;
+    margin: 18px 0 24px;
+    border: none;
+    padding: 0;
+    background-color: #E4E6E8;
+    height: 1px;
+}
+
+.contact-data-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 24px;
+	color: #35383f;
+	position: relative;
+	display: inline-block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.title::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: red;
+	transition: width 0.3s ease;
+}
+
+.title:hover {
+	color: red;
+}
+
+.title:hover::after {
+	width: 100%;
+}
+
+.contact-datas {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 20px;
+}
+.contact-data {
+	color: #35383f;
+	transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.with-map {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    img {
+        width: 220px;
+    }
+}
+.contact-data:hover {
+    color: #ff3e41;
+}
+
+.footer-navigation-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer-line-2 {
+    width: 100%;
+    margin: 24px 0;
+    border: none;
+    padding: 0;
+    background-color: #E4E6E8;
+    height: 1px;
+}
+.footer__bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__bottom-text-rights {
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.footer__bottom-text {
+    font-weight: 500;
+    font-size: 12px;
+}
+@media (min-width: 480px) {
+    .footer__top-logo {
+        width: 180px;
+        height: 32px;
+    }
+    .footer__top-info-link-a-icon {
+        display: flex;
+        width: 20px;
+        height: 20px;
+    }
+    .footer__top-info-link {
+        height: 36px;
+        width: 36px;
+        background-color: #ff3e411a;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+    .contact-data-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .footer-navigation {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+    
+}
+
+@media (min-width: 576px) {
+    .footer__top-logo {
+        width: 190px;
+        height: 34px;
+    }
+    .contact-data-wrapper {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 18px;
+    }
+    .contact-datas-with-map {
+        width: 33%;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer__top-info {
+        gap: 14px;
+    }
+    .footer__bottom{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+    .footer__bottom-text-rights {
+        margin: 0;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .footer__top-logo {
+        width: 190px;
+        height: 34px;
+    }
+    .with-map {
+        img {
+            width: 240px;
+        }
+    }
+    .footer-navigation {
+        justify-content: space-between;
+    }
+}
+

@@ -1,0 +1,14 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.05" d="M64 2.78711L116.314 63.3516L56.9603 116.733L4.64665 56.1682L64 2.78711Z" fill="#FF3E41"/>
+<path d="M42.3652 74.334H79.0319" stroke="#FF3E41" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44.1074 74.3327L44.1991 52.2776C44.1991 51.1593 44.7308 50.0961 45.6108 49.3994L58.4441 39.4077C59.7641 38.381 61.6158 38.381 62.9541 39.4077L75.7874 49.381C76.6858 50.0777 77.1991 51.141 77.1991 52.2776V74.3327" stroke="#FF3E41" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M62.5319 65.166H58.8652C57.3436 65.166 56.1152 66.3943 56.1152 67.916V74.3327H65.2819V67.916C65.2819 66.3943 64.0536 65.166 62.5319 65.166Z" stroke="#FF3E41" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M56.1152 59.2077H52.4486C51.4402 59.2077 50.6152 58.3827 50.6152 57.3743V54.6243C50.6152 53.616 51.4402 52.791 52.4486 52.791H56.1152C57.1236 52.791 57.9486 53.616 57.9486 54.6243V57.3743C57.9486 58.3827 57.1236 59.2077 56.1152 59.2077Z" stroke="#FF3E41" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M68.9492 59.2077H65.2826C64.2742 59.2077 63.4492 58.3827 63.4492 57.3743V54.6243C63.4492 53.616 64.2742 52.791 65.2826 52.791H68.9492C69.9576 52.791 70.7826 53.616 70.7826 54.6243V57.3743C70.7826 58.3827 69.9576 59.2077 68.9492 59.2077Z" stroke="#FF3E41" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M73.5318 46.834L73.4768 41.334H65.4102" stroke="#FF3E41" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path opacity="0.3" d="M117.381 63.8306L56.246 118.814L2.36174 56.4308L63.4963 1.44778L117.381 63.8306Z" stroke="#FF3E41" stroke-width="0.3"/>
+<ellipse opacity="0.3" cx="63.334" cy="2.04081" rx="2" ry="2.04081" fill="#FF3E41"/>
+<ellipse opacity="0.3" cx="56.3997" cy="118.64" rx="1.33333" ry="1.36054" fill="#FF3E41"/>
+<ellipse opacity="0.3" cx="2" cy="56.4627" rx="2" ry="2.04081" fill="#FF3E41"/>
+<ellipse opacity="0.3" cx="118" cy="63.2635" rx="2" ry="2.04081" fill="#FF3E41"/>
+</svg>
