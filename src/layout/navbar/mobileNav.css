@@ -5,20 +5,20 @@
   justify-content: space-between;
   padding: 10px 20px;
 }
+
 .logo {
-    width: 140px;
+    width: 160px;
 }
+
 .burger {
-    width: 32px;
+    width: 34px;
 }
+
 @media (min-width: 540px) {
     .logo {
         width: 170px;
     }
 
-    .burger {
-        width: 34px;
-    }
 }
 
 @media (min-width: 768px) {

@@ -24,17 +24,17 @@
       buttonText: "Batafsil",
       image: people,
     },
-    // {
-    //   id: 2,
-    //   title: "QULAY VA ISHONCHLI INVESTITSIYALAR2",
-    //   subtitle: "в фирменных сервисных центрах sdafjals;dfkja",
-    //   features: [
-    //     "Сервисные центры в Москве, Санкт-Петербурге и Краснодаре",
-    //     "Гарантия 14 дней на ремонт",
-    //   ],
-    //   buttonText: "Batafsil",
-    //   image:  people, 
-    // },
+    {
+      id: 2,
+      title: "QULAY VA ISHONCHLI INVESTITSIYALAR2",
+      subtitle: "в фирменных сервисных центрах sdafjals;dfkja",
+      features: [
+        "Сервисные центры в Москве, Санкт-Петербурге и Краснодаре",
+        "Гарантия 14 дней на ремонт",
+      ],
+      buttonText: "Batafsil",
+      image:  people, 
+    },
   ];
 
   const NavButton = ({ 
