@@ -72,7 +72,7 @@
     }
 
     .currency-label {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .currency-separator {
@@ -95,4 +95,10 @@
         gap: 22px;
     }
 
+}
+
+@media (min-width: 992px) {
+    .currency-label {
+        font-size: 18px;
+    }
 }

@@ -24,15 +24,14 @@
 
 /* Typography */
 .hero-text h1 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   margin-bottom: 4px;
   text-transform: uppercase;
-  font-family: 'Nunito Sans', sans-serif;
 }
 
 .subtitle {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.9;
 }
 
@@ -49,14 +48,15 @@
   align-items: center;
   gap: 12px;
   p {
-    font-size: 12px;
+    font-size: 13px;
     color: #fff;
+    margin: 0;
   }
 }
 
 .icon-shield {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
 }
 
 /* Button */
@@ -72,7 +72,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s;
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .cta-icon {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* Image */
@@ -102,7 +102,6 @@
   object-fit: contain;
 }
 
-/* Controls */
 .carousel-controls {
   position: absolute;
   top: 10px;
@@ -132,7 +131,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
   background: #fff;
   border: 1px solid white;
   color: #E4E6E8;
@@ -159,23 +157,17 @@
   .hero-text h1 {
     font-size: 24px;
   }
-  .subtitle {
-    font-size: 14px;
-    opacity: 0.9;
-  }
+
   .feature-item {
     p {
       font-size: 14px;
     }
   }
-  .icon-shield {
-    width: 36px;
-    height: 36px;
-  }
+
   .cta-button {
-    font-size: 12px;
     padding: 10px 35px;
   }
+
   .hero-image {
     width: 260px;
   }

@@ -2,6 +2,7 @@ import './faqLayout.css';
 import { redDots } from '../../assets';
 import { formatDate } from '../../commons';
 import CurrencyList from './currencyList';
+import FAQAccordion from './faq-accordion';
 
 const FAQLayout = () => {
     const formattedDate = formatDate();
@@ -27,6 +28,8 @@ const FAQLayout = () => {
               Our Fintech banking service revolutionizes the way you manage your money, 
               offering seamless, secure, and smart solutions for all your financial needs.
             </p>
+
+            <FAQAccordion/>
           </div>
           <div className='currency'>
             <div className='section-name'>

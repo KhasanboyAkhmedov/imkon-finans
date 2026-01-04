@@ -34,16 +34,23 @@
 }
 
 .content-container {
-  position: relative;
-  z-index: 100; 
-  max-width: 760px;
-  margin: 40px 15px;
-  background: white;
-  border-radius: 24px;
-  padding: 24px 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 100; 
+    max-width: 760px;
+    margin: 40px 15px;
+    background: white;
+    border-radius: 24px;
+    padding: 24px 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    min-height: 200px;
 }
+
+.faq {
+    margin-bottom: 32px;
+}
+
 .section-name {
     display: inline-flex;
     align-items: center;
@@ -62,20 +69,21 @@
 
 .section-name__title {
     font-size: 20px;
+    font-weight: 700;
     color: #231F20;
 }
 
 .section-name__description {
-    font-size: 16px;
+    font-size: 15px;
     color: #0A1519B2;
-    line-height: 1.6;
+    line-height: 1.4;
     margin: 12px 0px;
 }
 
 
 @media (min-width: 480px) {
     .section-name {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -99,14 +107,77 @@
         top: 20px;
         right: 0;
     }
-    .section-name {
-        font-size: 18px;
-    }
 }
 
 @media (min-width: 768px) {
     .content-container {
+        flex-direction: row;
         max-width: 1200px;
-        padding: 32px 28px;
+        padding: 32px 22px;
+        gap: 14px;
+    }
+    .faq {
+        margin-bottom: 0;
+    }
+    .currency {
+        max-width: max-content;
+    }
+}
+
+@media (min-width: 1024px) {
+    .content-container {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1100px;
+        padding: 32px 22px;
+        gap: 40px;
+    }
+    .faq {
+        margin-bottom: 0;
+    }
+    .currency {
+        max-width: 420px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .content-container {
+        margin: 40px auto;
+    }
+
+    .layout-wrapper {
+        margin: 60px 0;
+    }
+
+    .dots-left {
+        top: 20px;
+        left: 20px;
+    }
+
+    .dots-right {
+        transform: rotate(180deg);
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .content-container {
+        max-width: 1200px;
+    }
+    .section-name {
+        font-size: 18px;
+    }
+
+    .section-name span {
+        margin-right: 8px;
+    }
+
+    .section-name__title {
+        font-size: 24px;
+    }
+
+    .section-name__description {
+        font-size: 16px;
     }
 }

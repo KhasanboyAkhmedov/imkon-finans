@@ -1,107 +1,3 @@
-// import React, { useEffect, useState } from 'react';
-// import './currencyList.css';
-// import { EUROPE, RUSSIA, USA } from '../../assets/flags';
-// import SkeletonRow from './skeleton-row';
-
-// interface CurrencyData {
-//   Ccy: string;
-//   Rate: string;
-//   Diff: string;
-//   Code: string;
-// }
-
-
-// const CurrencyList: React.FC = () => {
-//     const [rates, setRates] = useState<CurrencyData[]>([]);
-//     const [loading, setLoading] = useState(true);
-
-//     const targetCurrencies = ['USD', 'EUR', 'RUB'];
-
-//     const fetchRates = async () => {
-//         try {
-//             const response = await fetch('https://cbu.uz/uz/arkhiv-kursov-valyut/json/');
-//             const data = await response.json();
-            
-//             const filtered = data.filter((item: CurrencyData) => 
-//                 targetCurrencies.includes(item.Ccy)
-//             );
-            
-//             setRates(filtered);
-//             setLoading(false);
-//         } catch (error) {
-//             console.error("Failed to fetch currency data:", error);
-//             setLoading(false);
-//         }
-//     };
-
-//     useEffect(() => {
-//         fetchRates();
-//     }, []);
-
-   
-//     const flagMap: Record<string, string> = {
-//         USD: USA,
-//         EUR: EUROPE,
-//         RUB: RUSSIA,
-//     };
-
-//   return (
-//     <div className="currency-container">
-//         {loading ? 
-//             <>
-//                 <SkeletonRow />
-//                 <SkeletonRow />
-//                 <SkeletonRow />
-//             </> : (
-//                 rates.map((item) => {
-//                     const isIncreased = parseFloat(item.Diff) >= 0;
-                    
-//                     return (
-//                     <div key={item.Ccy} className="currency-row">
-//                         <div className="currency-main">
-//                             <img src={flagMap[item.Ccy]}
-//                                 alt={item.Ccy}
-//                                 className="flag-img"
-//                             />
-//                             <span className="currency-label">1 {item.Ccy}</span>
-//                             <span className="currency-separator">=</span>
-//                             <span className="currency-value">{item.Rate}</span>
-//                         </div>
-                        
-//                         <div className={`trend-box ${isIncreased ? 'trend-up' : 'trend-down'}`}>
-//                         <svg 
-//                             viewBox="0 0 24 24" 
-//                             fill="none" 
-//                             stroke="currentColor" 
-//                             strokeWidth="2.5" 
-//                             strokeLinecap="round" 
-//                             strokeLinejoin="round"
-//                         >
-//                             {isIncreased ? (
-//                                 <>
-//                                     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-//                                     <polyline points="16 7 22 7 22 13" />
-//                                 </>
-//                             ) : (
-//                                 <>
-//                                     <polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />
-//                                     <polyline points="16 17 22 17 22 11" />
-//                                 </>
-//                             )}
-//                         </svg>
-//                         </div>
-//                     </div>
-//                     );
-//                 })
-//             )
-//     }
-      
-//     </div>
-//   );
-// };
-
-// export default CurrencyList;
-
 import React, { useEffect, useState } from 'react';
 import { EUROPE, RUSSIA, USA } from '../../assets/flags';
 import SkeletonRow from './skeleton-row';
@@ -112,8 +8,6 @@ interface CurrencyData {
   Rate: string;
   Diff: string;
 }
-
-
 
 const CurrencyList: React.FC = () => {
   const [rates, setRates] = useState<CurrencyData[]>([]);
@@ -136,6 +30,7 @@ const CurrencyList: React.FC = () => {
     };
 
     fetchRates();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
