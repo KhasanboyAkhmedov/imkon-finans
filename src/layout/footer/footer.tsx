@@ -72,7 +72,7 @@ const Footer = () => {
                 <hr className='footer-line-2'/>
                 <div className="footer__bottom">
                     <p className="footer__bottom-text-rights">
-                        © 2025 Imkon Finans. All rights reserved.
+                        © {new Date().getFullYear()} Imkon Finans. All rights reserved.
                     </p>
                     <p className="footer__bottom-text">
                         Barcha hujjatlar — asl nusxalardan. Foydalanishda saytga havola ko'rsatilishi lozim.

@@ -13,6 +13,9 @@ function App() {
           {/* Credits route */}
           <Route path="/credits" element={<div>all credits</div>} />
           <Route path="/credits/:creditname" element={<div>Mahsulot tafsilotlari sahifasi</div>} />
+
+          
+          <Route path="*" element={<div>Not found</div>} />
         </Routes>
       </Layout>
     </Router>
