@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react';
 import { Carousel } from 'antd';
 import './partnersCarousel.css';
+import type { CarouselRef } from 'antd/es/carousel';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import { partners } from './partnersData';
 
 const PartnersCarousel = () => {
-    const slider = useRef(null);
+    const slider = useRef<CarouselRef>(null);
     const [activeBtn, setActiveBtn] = useState<'prev' | 'next' | null>('next');
 
     const handleBeforeChange = (from: number, to: number) => {
