@@ -3,7 +3,7 @@ import type { NavMenu } from "../../types/navbar.types";
 export const navMenu: NavMenu[] = [
     {
         title: 'Jamiyat haqida',
-        href: './about-us',
+        // href: './about-us',
         variant: 'filled',
         items: [
             { label: "Jamiyat tarixi", href: "./2-page/jamiyat_2_page.html" },
@@ -19,7 +19,7 @@ export const navMenu: NavMenu[] = [
     },
     {
         title: 'Xizmatlar',
-        href: './services',
+        // href: './services',
         variant: 'stock',
         items: [
             {

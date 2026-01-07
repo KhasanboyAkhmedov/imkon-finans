@@ -50,6 +50,7 @@
   font-size: 14px;
   color: #57585F;
   line-height: 1.4;
+  margin-bottom: 0;
 }
 
 @media (min-width: 540px) {

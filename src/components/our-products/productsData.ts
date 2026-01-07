@@ -27,7 +27,7 @@ export const products: Product[] = [
   {
     id: 3,
     title: "Garovsiz Kredit",
-    description: "1 mln so'mdan 15 mln so'mgacha, garovsiz va kafolatsiz 1 mln so'mdan 15 mln so'mgacha, garovsiz va kafolatsiz",
+    description: "Garovsiz va sug'urtasiz 1 mln so'mdan 10 mln so'mgacha, 3oydan 36oygacha muddatda",
     icon: bank,
     path: "/credits/unsecured",
   },
