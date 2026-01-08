@@ -13,8 +13,9 @@ import bank from './bank.svg';
 import doubleCheks from './double-checks.svg';
 import redDots from './red-dots.svg';
 import savings from './savings.svg';
+import briefcase from './briefcase.svg';
 
 export { shield, groupOfPeople, people, group, documentIcon, 
     infoIcon, hat, agro, business, trust, groupSolid, bank, 
-    doubleCheks, redDots, savings
+    doubleCheks, redDots, savings, briefcase
 };

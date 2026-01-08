@@ -1,0 +1,48 @@
+.mgmt-info-section {
+    background-color: #f7f9fc;
+}
+
+.mgmt-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f9fc;
+    padding: 20px ;
+    margin-bottom: 50px;
+    gap: 20px;
+}
+
+.mgmt-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mgmt-info-description {
+    font-size: 14px;
+    color: #575455;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.mgmt-icon-box {
+    background-color: #FF3E41;
+    color: white;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (min-width: 768px) {
+    .mgmt-icon-box {
+        min-width: 34px;
+        height: 34px;
+    }
+    .mgmt-info-description {
+        font-size: 16px;
+    }
+}

@@ -29,10 +29,10 @@ export const pageSections: FooterSection[] = [
   {
     title: 'JAMIYAT HAQIDA',
     links: [
-      { label: 'Jamiyat tarixi', url: '#' },
-      { label: 'Kuzatuv kengashi', url: '#' },
-      { label: 'Boshqaruv organi', url: '#' },
-      { label: 'Jamiyat faoliyati va maqsadlari', url: '#' },
+      { label: "Jamiyat tarixi", url: "./history" },
+      { label: "Kuzatuv kengashi", url: "./council" },
+      { label: "Boshqaruv organi", url: "./management" },
+      { label: "Jamiyat faoliyati va maqsadlari", url: "./mission-and-vision" },
       { label: 'Jamiyat tashkiliy tuzilmasi', url: '#' },
       { label: "Ish o'rinlari", url: '#' },
       { label: "Qabul qilish kunlari", url: '#' },

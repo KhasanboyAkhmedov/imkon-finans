@@ -1,0 +1,171 @@
+.mgmt-container {
+    margin: 40px auto;
+    background: #fff;
+}
+
+.mgmt-main-title {
+    color: #FF3E41;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 30px 20px;
+    margin-bottom: 0;
+}
+
+.mgmt-carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.mgmt-static-navigation {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+}
+
+.mgmt-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #F5F5F5;
+    color: #D1D1D1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.mgmt-nav-btn.active, .mgmt-nav-btn:hover {
+    background-color: #FF3E41;
+    color: white;
+}
+
+/* SLIDE CONTENT */
+.mgmt-slide-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 10px; 
+    border-radius: 12px;
+}
+
+.mgmt-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #231F20;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.mgmt-quote-box {
+    border-left: 2px solid #FF3E41;
+    padding-left: 10px;
+}
+
+.mgmt-quote {
+    font-size: 14px;
+    color: #575455;
+    line-height: 1.4;
+}
+
+.mgmt-quote-footer {
+    margin-top: 15px;
+}
+
+.mgmt-red-quote-icon {
+    color: #FF3E41;
+    font-size: 24px;
+}
+
+.mgmt-placeholder-img {
+    background-color: #EFEFEF;
+    width: 100%;
+    aspect-ratio: 1.5 / 1;
+    border-radius: 12px;
+}
+.mgmt-carousel-wrapper {
+    padding-top: 40px;
+}
+
+.mgmt-static-navigation {
+    top: 0;
+    right: 20px;
+    bottom: auto;
+    left: auto;
+}
+
+.mgmt-image-content {
+    order: -1;
+}
+
+@media (min-width: 768px) {
+  .mgmt-carousel-wrapper {
+      padding-top: 0;
+  }
+
+  .mgmt-static-navigation {
+    bottom: 20px;
+    left: 20px;
+    top: auto;
+    right: auto;
+  }
+
+  .mgmt-slide-grid {
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+
+  .mgmt-text-content {
+    flex: 1.2;
+    text-align: left;
+  }
+
+  .mgmt-image-content {
+    flex: 1;
+  }
+
+  .mgmt-name {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mgmt-main-title {
+    color: #FF3E41;
+    font-size: 28px;
+    font-weight: 700;
+    padding: 30px 20px;
+    margin-bottom: 0;
+  }
+  .mgmt-nav-btn {
+    width: 46px;
+    height: 46px;
+  }
+  .mgmt-name {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mgmt-main-title {
+    color: #FF3E41;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 30px 20px;
+    margin-bottom: 0;
+  }
+  .mgmt-quote {
+    font-size: 16px;
+    color: #575455;
+    line-height: 1.4;
+  }
+  .mgmt-static-navigation {
+    bottom: 40px;
+    left: 40px;
+  }
+} 
+

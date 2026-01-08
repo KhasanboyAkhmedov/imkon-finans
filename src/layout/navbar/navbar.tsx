@@ -13,9 +13,6 @@ const Navbar = () => {
                 <div className="container site-header__container">
                     <div className="site-header__top">
                         <img src={logoWithText} alt="logo" width="170" height="30" />
-                        {/* <div>
-                            <button className="download">Yuklab olish</button>
-                        </div> */}
                         <input className="header_inp" type="text" placeholder="Qidiruv" />
                         <img className="menu_top" src="./images/header/menu.svg" alt="menu"/>
                         <div className="media">
