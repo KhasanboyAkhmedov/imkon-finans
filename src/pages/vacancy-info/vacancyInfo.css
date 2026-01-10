@@ -1,0 +1,153 @@
+.vacancy-info-section {
+    margin: 40px auto;
+    background: #fff;
+    min-height: 60vh;
+    padding: 30px 0;
+}
+
+.info-header {
+    margin-bottom: 40px;
+}
+
+.info-title {
+    color: #FF3E41;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.info-badge-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FDF5F5;
+    padding: 6px 16px;
+    border-radius: 50px;
+    color: #FF3E41;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.info-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+
+.block-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #231F20;
+}
+
+.description-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #57585F;
+    margin-bottom: 30px;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+}
+
+.req-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #57585F;
+}
+
+.req-icon {
+    color: #FF3E41;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.benefits-grid {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+.benefit-card {
+    background: #fff;
+    border: 1px solid #E4E6E8;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 4px #18191C1A;
+
+}
+
+.benefit-card:hover {
+    border-color: #FF3E41;
+    transform: translateY(-5px);
+}
+
+.benefit-icon-box {
+    color: #FF3E41;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.benefit-text {
+    color: #57585F;
+}
+
+@media (max-width: 768px) {
+    .description-text {
+        font-size: 16px;
+    }
+
+    .req-item {
+        font-size: 16px;
+    }
+
+    .info-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .benefits-grid {
+        display: flex; 
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 992px) {
+    .info-layout {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 30px;
+    }
+    .benefit-card {
+        padding: 16px 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .info-layout {
+        gap: 60px;
+    }
+}

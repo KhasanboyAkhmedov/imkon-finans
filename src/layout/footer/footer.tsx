@@ -61,7 +61,7 @@ const Footer = () => {
                         <div className='contact-datas' key={section.title}>
                             <h4 className='title'>{section.title}</h4>
                             {section.links.map((link) => (
-                                <a key={link.id} href={link.url} target="_blank" rel="noopener noreferrer" className="contact-data">
+                                <a key={link.id} href={link.url} className="contact-data">
                                     {link.label}
                                 </a>
                             ))}

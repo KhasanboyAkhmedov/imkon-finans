@@ -10,11 +10,11 @@ export const navMenu: NavMenu[] = [
             { label: "Kuzatuv kengashi", href: "./council" },
             { label: "Boshqaruv organi", href: "./management" },
             { label: "Jamiyat faoliyati va maqsadlari", href: "./mission-and-vision" },
-            { label: "Jamiyat tashkiliy tuzilmasi", href: "./6-page/jamiyat_tuzilmasi_page_6.html" },
-            { label: "Ish o'rinlari", href: "./7-page/vakansiya_page_7.html" },
-            { label: "Qabul qilish kunlari", href: "./8-page/qabul_kunlari_page8.html" },
-            { label: "Xamkorlar", href: "./9-page/xamkorlar_page_9.html" },
-            { label: "Aloqalar", href: "./10-page/aloqa_page10.html" },
+            { label: "Jamiyat tashkiliy tuzilmasi", href: "./organizational-structure" },
+            { label: "Ish o'rinlari", href: "./vacancies" },
+            { label: "Qabul qilish kunlari", href: "./reception-days" },
+            { label: "Xamkorlar", href: "./partners" },
+            { label: "Aloqalar", href: "./contacts" },
         ]
     },
     {

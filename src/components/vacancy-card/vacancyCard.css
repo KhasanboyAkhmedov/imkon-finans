@@ -1,0 +1,115 @@
+:root {
+  --primary-red: #FF3E41;
+  --bg-gray: #F7F7F7;
+  --text-main: #231F20;
+  --text-muted: #767F8C;
+  --border-color: #E4E5E8;
+}
+
+.vacancy-card { 
+    height: 100%;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.vacancy-header {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 16px;
+}
+
+.vacancy-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-gray);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.main-icon { 
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.title-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.vacancy-title { 
+    font-size: 18px; 
+    font-weight: 700; 
+    margin: 0; 
+    color: var(--text-main);
+}
+
+.vacancy-badge {
+  background: #fff5f5;
+  color: #ff9a9b;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.location-row {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  color: var(--text-muted);
+}
+
+.pin-icon {
+    font-size: 18px;
+}
+
+.location-text { 
+    font-size: 13px; 
+    line-height: 1.4;
+}
+
+.vacancy-button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 50px;
+    border: none;
+    background: var(--bg-gray);
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    margin-top: auto;
+}
+
+.vacancy-card:hover {
+  box-shadow: 0 12px 30px rgba(255, 77, 79, 0.1);
+  transform: translateY(-4px);
+}
+
+.vacancy-card:hover .vacancy-icon-wrapper {
+  background: #fff1f1;
+}
+
+.vacancy-card:hover .main-icon {
+  color: var(--primary-red);
+}
+
+.vacancy-card:hover .vacancy-button {
+  background: var(--primary-red);
+  color: #fff;
+}
