@@ -9,6 +9,7 @@ import MissionAndVision from './pages/mission-and-vision/mission-and-vision'
 import Vacancies from './pages/vacancies/vacancies'
 import VacancyInfo from './pages/vacancy-info/vacancyInfo'
 import ScrollToTop from './components/scroll-to-top/scrollToTop'
+import Partners from './pages/partners/partners'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/mission-and-vision" element={<MissionAndVision />} />
           <Route path="/vacancies" element={<Vacancies />} />
           <Route path="/vacancies/:id" element={<VacancyInfo />} />
+          <Route path="/partners" element={<Partners />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<div>all credits</div>} />

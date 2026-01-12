@@ -62,7 +62,7 @@ const Management = ({ title, infoData, members }: ManagementProps) => {
                         dots={false}
                         infinite={true}
                         autoplay={true}
-                        autoplaySpeed={5000}
+                        autoplaySpeed={2500}
                         beforeChange={handleBeforeChange}
                         speed={800}
                     >
