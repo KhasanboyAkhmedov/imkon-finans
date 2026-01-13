@@ -1,0 +1,39 @@
+:root {
+  --primary-red: #FF3E41;
+  --bg-gray: ##F4EAEC;
+  --text-dark: #231F20;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --active-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+.contacts-section {
+    margin: 40px auto;
+}
+
+
+.top-section {
+  display: grid;
+  gap: 20px;
+}
+
+.section-title {
+    color: #FF3E41;
+    font-size: 28px;
+    font-weight: 700;
+    padding: 30px 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 768px) {
+  .top-section {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+}

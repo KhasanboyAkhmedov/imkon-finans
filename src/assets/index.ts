@@ -14,8 +14,9 @@ import doubleCheks from './double-checks.svg';
 import redDots from './red-dots.svg';
 import savings from './savings.svg';
 import briefcase from './briefcase.svg';
+import questionCall from './question-call.svg';
 
 export { shield, groupOfPeople, people, group, documentIcon, 
     infoIcon, hat, agro, business, trust, groupSolid, bank, 
-    doubleCheks, redDots, savings, briefcase
+    doubleCheks, redDots, savings, briefcase, questionCall
 };

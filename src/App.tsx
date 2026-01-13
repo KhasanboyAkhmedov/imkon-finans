@@ -10,6 +10,7 @@ import Vacancies from './pages/vacancies/vacancies'
 import VacancyInfo from './pages/vacancy-info/vacancyInfo'
 import ScrollToTop from './components/scroll-to-top/scrollToTop'
 import Partners from './pages/partners/partners'
+import Contacts from './pages/contacts/contacts'
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
           <Route path="/vacancies" element={<Vacancies />} />
           <Route path="/vacancies/:id" element={<VacancyInfo />} />
           <Route path="/partners" element={<Partners />} />
+
+          <Route path="/contacts" element={<Contacts />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<div>all credits</div>} />

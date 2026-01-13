@@ -4,7 +4,7 @@
     min-height: 60vh;
 }
 
-.section-title {
+.partners-section-title {
     color: #FF3E41;
     font-size: 28px;
     font-weight: 700;
@@ -66,13 +66,9 @@
 }
 
 @media (min-width: 1024px) {
-    .section-title {
+    .partners-section-title {
         font-size: 32px;
     }
-    /* .partner-wrapper {
-        aspect-ratio: 1.2 / 1;
-        max-width: 20px;
-    } */
 }
 
 .custom-pagination {
