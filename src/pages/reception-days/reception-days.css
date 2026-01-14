@@ -1,0 +1,54 @@
+.reception-days-section {
+    margin: 40px auto;
+    background: #fff;
+    min-height: 60vh;
+    padding-bottom: 30px;
+}
+
+.section-title {
+    color: #FF3E41;
+    font-size: 28px;
+    font-weight: 700;
+    padding: 30px 0;
+    margin-bottom: 0;
+}
+
+.working-days-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: #231F20;
+}
+
+.working-definition{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.working-days {
+    font-size: 16px;
+    color: #57585F;
+}
+
+.working-hours {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.clock-icon {
+    fill: #FF3E41;
+    font-size: 18px;
+}
+
+.working-hour {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.receivers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+

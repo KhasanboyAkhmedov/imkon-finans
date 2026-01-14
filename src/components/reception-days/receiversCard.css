@@ -1,0 +1,43 @@
+.receiver-position {
+  font-size: 18px;
+  color: #231F20;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.receiver-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 14px 14px;
+  box-shadow: 0px 0px 6px 0px #18191C1A;
+
+}
+
+.receiver-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #292D32;
+}
+
+.receiver-day {
+  color: #57585F;
+  margin-bottom: 16px;
+}
+
+.receiver-time-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.receiver-clock-icon {
+  color: #ef4444;
+  font-size: 16px;
+}
+
+.receiver-time {
+  font-size: 16px;
+  font-weight: 700;
+  color: #292D32;
+}
