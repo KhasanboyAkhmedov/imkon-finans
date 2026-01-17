@@ -43,9 +43,9 @@ export const pageSections: FooterSection[] = [
   {
     title: 'XIZMATLAR',
     links: [
-      { label: 'Mikromoliyaviy xizmatlar', url: '#' },
-      { label: 'Mikrokredit va mikroqarzlar', url: '#' },
-      { label: 'Agentlik xizmati', url: '#' },
+      { label: 'Mikromoliyaviy xizmatlar', url: '/our-services' },
+      { label: 'Mikrokredit va mikroqarzlar', url: '/our-services' },
+      { label: 'Agentlik xizmati', url: '/our-services' },
     ],
   },
   {

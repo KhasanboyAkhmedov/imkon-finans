@@ -12,6 +12,7 @@ import ScrollToTop from './components/scroll-to-top/scrollToTop'
 import Partners from './pages/partners/partners'
 import Contacts from './pages/contacts/contacts'
 import ReceptionDays from './pages/reception-days/reception-days'
+import OurServices from './pages/our-services/our-services'
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/reception-days" element={<ReceptionDays />} />
           <Route path="/contacts" element={<Contacts />} />
+
+          <Route path="/our-services" element={<OurServices />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<div>all credits</div>} />

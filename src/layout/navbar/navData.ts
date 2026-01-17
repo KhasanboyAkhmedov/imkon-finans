@@ -22,18 +22,9 @@ export const navMenu: NavMenu[] = [
         // href: './services',
         variant: 'stock',
         items: [
-            {
-                label: 'Mikromoliyaviy xizmatlar',
-                href: './11-page_select_2/xizmlatlar_page11.html',
-            },
-            {
-                label: 'Mikrokredit va mikroqarzlar',
-                href: '../loyixa1-qismi/12-page_select_2/xizmlatlar_page12.html',
-            },
-            {
-                label: 'Agentlik xizmati',
-                href: './13-page_select_3/xizmlatlar_page13.html',
-            },
+            { label: "Mikromoliyaviy xizmatlar", href: "/our-services" },
+            { label: "Mikrokredit va mikroqarzlar", href: "/our-services" },
+            { label: "Agentlik xizmati", href: "/our-services" },
         ],
     },
     {
