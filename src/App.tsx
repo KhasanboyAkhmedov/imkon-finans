@@ -13,6 +13,7 @@ import Partners from './pages/partners/partners'
 import Contacts from './pages/contacts/contacts'
 import ReceptionDays from './pages/reception-days/reception-days'
 import OurServices from './pages/our-services/our-services'
+import AllCredits from './pages/all-credits/all-credits'
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
           <Route path="/our-services" element={<OurServices />} />
 
           {/* Credits route */}
-          <Route path="/credits" element={<div>all credits</div>} />
+          <Route path="/credits" element={<AllCredits />} />
           <Route path="/credits/:creditname" element={<div>Mahsulot tafsilotlari sahifasi</div>} />
 
           

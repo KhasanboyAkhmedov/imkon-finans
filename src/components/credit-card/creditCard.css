@@ -1,0 +1,111 @@
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px #801a251a;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 24px #ff3e4133;
+}
+
+.product-card-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.product-card-iconWrapper {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 15px #ff3e4133;
+}
+
+.product-card-icon {
+  width: 24px;
+  height: 24px;
+  color: #ff4d4d;
+}
+
+.product-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #231f20;
+  margin: 0;
+}
+
+.product-card-description {
+  font-size: 14px;
+  color: #57585f;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+.product-card-button {
+  width: fit-content;
+  padding: 10px 20px;
+  border: none;
+  background-color: #f7f7f7;
+  color: #313131;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: auto;
+  transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+}
+
+/* Hover effect for the button when the WHOLE card is hovered */
+.product-card:hover .product-card-button {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.product-card-bgIcon {
+  position: absolute;
+  width: 100px; /* Fixed from 'size' */
+  height: 100px;
+  bottom: -15px;
+  right: -15px;
+  opacity: 0.08;
+  pointer-events: none;
+  transform: rotate(15deg);
+  color: #ff4d4d;
+}
+
+
+/* --- Responsive scaling --- */
+@media (min-width: 768px) {
+  .product-card-bgIcon {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-card-description {
+    font-size: 16px;
+  }
+  .product-card-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .product-card-bgIcon {
+    width: 130px;
+    height: 130px;
+  }
+}
