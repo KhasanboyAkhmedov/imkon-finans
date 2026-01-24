@@ -14,6 +14,7 @@ import Contacts from './pages/contacts/contacts'
 import ReceptionDays from './pages/reception-days/reception-days'
 import OurServices from './pages/our-services/our-services'
 import AllCredits from './pages/all-credits/all-credits'
+import CreditDetail from './pages/credit-details/credit-details'
 
 function App() {
 
@@ -36,7 +37,7 @@ function App() {
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />
-          <Route path="/credits/:creditname" element={<div>Mahsulot tafsilotlari sahifasi</div>} />
+          <Route path="/credits/:creditName" element={<CreditDetail />} />
 
           
           <Route path="*" element={<NotFound/>} />

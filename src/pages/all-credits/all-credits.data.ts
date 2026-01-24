@@ -53,7 +53,7 @@ export const credits: Credit[] = [
   {
     id: "group",
     title: "Imkon Guruh",
-    description: "3-7 kishilik guruhlar uchun kredit. 1 mln so'mdan 10 mln so'mgacha, 3oydan 36oygacha muddatda. Guruh kafilligi asosida",
+    description: "3 tadan 7 tagacha a'zodan iborat guruhlar uchun garovsiz, o'zaro kafillik asosidagi kredit. 1 mln so'mdan 10 mln so'mgacha, 3oydan 36oygacha muddatda. Guruh kafilligi asosida",
     icon: HiMiniUserGroup,
     path: "/credits/group",
   },

@@ -1,0 +1,250 @@
+.credit-detail-section {
+  padding: 40px 0;
+}
+
+/* --- Header Styles --- */
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.detail-icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: #ff4d4d;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.detail-main-icon {
+  color: #fff;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.detail-page-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #231f20;
+  margin: 0;
+}
+
+/* --- Layout Grid --- */
+.detail-main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* --- Tabs --- */
+.detail-tabs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.detail-tab-item {
+  padding: 16px 25px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  text-align: left;
+  background-color: #FF73751A;
+  color: #FF3E41;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.detail-tab-item.active {
+  background-color: #FF3E41;
+  color: #fff;
+  box-shadow: 0 8px 20px #FF73751A;
+}
+
+/* --- Display Card --- */
+.detail-display-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; 
+    overflow: hidden;
+    min-height: 250px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0px 3px 4px 4px #801A251A;
+}
+
+
+.display-card-header {
+  font-size: 15px;
+  font-weight: 600;
+  color: #57585F;
+  line-height: 1.2;
+}
+
+/* --- Range and Text Body --- */
+.display-range-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.range-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.range-num {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.range-label {
+  font-size: 16px;
+  color: #939393;
+}
+
+.range-arrow-icon {
+  font-size: 18px;
+  color: #231f20;
+}
+
+.display-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #231f20;
+  line-height: 1.4;
+}
+
+.display-text.bold-large {
+  font-size: 22px;
+  color: #231f20;
+}
+
+.display-footer-info {
+  font-size: 14px;
+  color: #9A9EA6;
+  margin-bottom: 0;
+}
+
+/* --- Watermark --- */
+.detail-watermark {
+  position: absolute;
+  bottom: -12px; 
+  right: -10px;
+  font-size: 120px;
+  color: #ff4d4d;
+  opacity: 0.06;
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+@media (min-width: 480px) {
+  .range-num {
+    font-size: 24px;
+    font-weight: 800;
+  }
+}
+
+@media (min-width: 768px) {
+    .detail-main-layout {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .detail-tabs-list {
+        width: 40%;
+    }
+
+    .detail-display-card {
+        flex: 1;
+        background: #fff;
+        border-radius: 12px;
+        min-height: auto;
+        max-height: 300px;
+        padding: 20px 24px;
+        position: relative;
+        overflow: hidden;
+    }
+    .range-num {
+        font-size: 28px;
+        font-weight: 900;
+        color: #231f20;
+        display: block;
+    }
+
+    .detail-watermark {
+        bottom: -40px;
+        right: -30px;
+        font-size: 200px;
+        transform: rotate(-30deg);
+    }
+}
+
+@media (min-width: 992px) {
+  .detail-header {
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .detail-icon-box {
+    width: 44px;
+    height: 44px;
+  }
+
+  .detail-main-icon {
+    font-size: 28px;
+  }
+
+  .detail-page-title {
+    font-size: 28px;
+  }
+
+  .detail-tabs-list {
+    gap: 8px;
+  }
+
+  .detail-tab-item {
+    padding: 20px 25px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  .display-card-header {
+    font-size: 16px;
+  }
+
+  .display-text.bold-large {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+    .detail-tabs-list {
+      gap: 10px;
+    }
+
+    .detail-tab-item {
+      font-size: 18px;
+    }
+    .display-card-header {
+      font-size: 17px;
+    }
+    .display-text {
+      font-size: 20px;
+    }
+
+    .display-text.bold-large {
+      font-size: 24px;
+    }
+}
