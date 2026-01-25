@@ -21,10 +21,13 @@ const CreditDetail: React.FC = () => {
       <div className="container">
         
         <div className="detail-header">
-          <div className="detail-icon-box">
-            <Icon className="detail-main-icon" />
+          <div className='detail-heading'>
+            <div className="detail-icon-box">
+              <Icon className="detail-main-icon" />
+            </div>
+            <h1 className="detail-page-title">{data.title}</h1>
           </div>
-          <h1 className="detail-page-title">{data.title}</h1>
+          <button className='application-button'>Ariza Qoldirish <HiOutlineArrowRight className='application-button-icon' /></button>
         </div>
 
         <div className="detail-main-layout">
@@ -70,6 +73,10 @@ const CreditDetail: React.FC = () => {
           </div>
           
         </div>
+
+        <button className='application-button mobile-only'>
+          Ariza qoldirish <HiOutlineArrowRight className='application-button-icon' />
+        </button>
       </div>
     </section>
   );
