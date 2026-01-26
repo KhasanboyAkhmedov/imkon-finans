@@ -42,16 +42,12 @@ export const navMenu: NavMenu[] = [
                 url: '/re-purchased-shares',
             },
             {
-                label: 'Emissiya risolasi',
-                url: '/emission-prospectus',
+                label: 'Emissiya',
+                url: '/emission',
             },
             {
                 label: 'Muxim faktlar',
                 url: '/important-facts',
-            },
-            {
-                label: 'Taqdimotlari',
-                url: '/presentations',
             },
         ],
     },

@@ -19,6 +19,7 @@ import OrganizationStructure from './pages/organizational-structure/organization
 import BusinessPlans from './pages/business-plans/business-plans'
 import Dividends from './pages/dividends/dividends'
 import RePurchasedShares from './pages/re-purchased-shares/re-purchased-shares'
+import Emission from './pages/emission/emission'
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
           <Route path="/business-plans" element={<BusinessPlans />} />
           <Route path="/dividends" element={<Dividends />} />
           <Route path="/re-purchased-shares" element={<RePurchasedShares />} />
+          <Route path="/emission" element={<Emission />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />
