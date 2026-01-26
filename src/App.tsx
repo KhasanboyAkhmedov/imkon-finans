@@ -15,6 +15,7 @@ import ReceptionDays from './pages/reception-days/reception-days'
 import OurServices from './pages/our-services/our-services'
 import AllCredits from './pages/all-credits/all-credits'
 import CreditDetail from './pages/credit-details/credit-details'
+import OrganizationStructure from './pages/organizational-structure/organization-structure'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/management" element={<ManagementBody />} />
           <Route path="/council" element={<SupervisoryBoard />} />
           <Route path="/mission-and-vision" element={<MissionAndVision />} />
+          <Route path="/organizational-structure" element={<OrganizationStructure />} />
           <Route path="/vacancies" element={<Vacancies />} />
           <Route path="/vacancies/:id" element={<VacancyInfo />} />
           <Route path="/partners" element={<Partners />} />

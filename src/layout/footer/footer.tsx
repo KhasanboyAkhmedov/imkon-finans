@@ -1,7 +1,8 @@
 import './footer.css';
 import logoWithText from '/logo-with-text.svg';
 import { email, map, phone } from '../../assets/footer';
-import { pageSections, socialLinks, usefulResources } from './footer.data';
+import { socialLinks, usefulResources } from './footer.data';
+import { navMenu } from '../navbar/navData';
 
 const Footer = () => {
 
@@ -57,11 +58,11 @@ const Footer = () => {
                 </div>
                 <h2 className='footer-navigation-title'>Sahifalar ro'yxati</h2>
                 <div className="footer-navigation">
-                    {pageSections.map((section) => (
+                    {navMenu.map((section) => (
                         <div className='contact-datas' key={section.title}>
                             <h4 className='title'>{section.title}</h4>
-                            {section.links.map((link) => (
-                                <a key={link.id} href={link.url} className="contact-data">
+                            {section.items.map((link, index) => (
+                                <a key={index+1} href={link.href} className="contact-data">
                                     {link.label}
                                 </a>
                             ))}

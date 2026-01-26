@@ -1,14 +1,7 @@
-import { FaEnvelope, FaFacebookF, FaLocationDot, FaPhoneVolume } from 'react-icons/fa6';
+import { FaEnvelope, FaLocationDot, FaPhoneVolume } from 'react-icons/fa6';
 import './contactCard.css';
-import { FaLinkedinIn, FaTelegram } from 'react-icons/fa';
-import { PiInstagramLogoFill } from 'react-icons/pi';
+import SocialLinks from '../social-links/social-links';
 
-const socialLinks = [
-  {id: 1, url: 'https://www.facebook.com/', icon: <FaFacebookF />, alt: 'facebook' },
-  {id: 2, url: 'https://www.linkedin.com/', icon: <FaLinkedinIn />, alt: 'linkedin' },
-  {id: 3, url: 'https://www.instagram.com/', icon: <PiInstagramLogoFill />, alt: 'instagram' },
-  {id: 4, url: 'https://x.com/', icon: <FaTelegram />, alt: 'telegram' },
-];
 
 const ContactCard = () => {
   return (
@@ -36,15 +29,7 @@ const ContactCard = () => {
                 </div>
             </div>
         </div>
-        <div className='socials'>
-            {socialLinks.map((social) => (
-                <div key={social.id} className="social-wrapper">
-                    <a className="social-link-a" target="_blank" rel="noopener noreferrer" href={social.url}>
-                        {social.icon}
-                    </a>
-                </div>
-            ))}
-        </div>
+        <SocialLinks />
     </div>
   );
 };

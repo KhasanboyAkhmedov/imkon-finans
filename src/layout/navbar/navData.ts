@@ -3,120 +3,117 @@ import type { NavMenu } from "../../types/navbar.types";
 export const navMenu: NavMenu[] = [
     {
         title: 'Jamiyat haqida',
-        // href: './about-us',
         variant: 'filled',
         items: [
-            { label: "Jamiyat tarixi", href: "/history" },
-            { label: "Kuzatuv kengashi", href: "/council" },
-            { label: "Boshqaruv organi", href: "/management" },
-            { label: "Jamiyat faoliyati va maqsadlari", href: "/mission-and-vision" },
-            { label: "Jamiyat tashkiliy tuzilmasi", href: "/organizational-structure" },
-            { label: "Ish o'rinlari", href: "/vacancies" },
-            { label: "Qabul qilish kunlari", href: "/reception-days" },
-            { label: "Xamkorlar", href: "/partners" },
-            { label: "Aloqalar", href: "/contacts" },
+            { label: "Jamiyat tarixi", url: "/history" },
+            { label: "Kuzatuv kengashi", url: "/council" },
+            { label: "Boshqaruv organi", url: "/management" },
+            { label: "Jamiyat tashkiliy tuzilmasi", url: "/organizational-structure" },
+            { label: "Ish o'rinlari", url: "/vacancies" },
+            { label: "Qabul qilish kunlari", url: "/reception-days" },
+            { label: "Xamkorlar", url: "/partners" },
+            { label: "Aloqalar", url: "/contacts" },
         ]
     },
     {
         title: 'Xizmatlar',
-        // href: './services',
         variant: 'stock',
         items: [
-            { label: "Mikromoliyaviy xizmatlar", href: "/our-services" },
-            { label: "Mikrokredit va mikroqarzlar", href: "/our-services" },
-            { label: "Agentlik xizmati", href: "/our-services" },
+            { label: "Mikromoliyaviy xizmatlar", url: "/our-services" },
+            { label: "Mikrokredit va mikroqarzlar", url: "/our-services" },
+            { label: "Agentlik xizmati", url: "/our-services" },
         ],
     },
     {
         title: 'Aksiyadorlar',
-        href: '/',
+        url: '/',
         variant: 'stock',
         items: [
             {
-                label: 'Biznes rejalari',
-                href: '/business-plans',
+                label: 'Biznes rejalar',
+                url: '/business-plans',
             },
             {
                 label: 'Dividendlar',
-                href: '/dividends',
+                url: '/dividends',
             },
             {
                 label: 'Qayta sotib olingan aksiyalar',
-                href: '/re-purchased-shares',
+                url: '/re-purchased-shares',
             },
             {
                 label: 'Emissiya risolasi',
-                href: '/emission-prospectus',
+                url: '/emission-prospectus',
             },
             {
                 label: 'Muxim faktlar',
-                href: '/important-facts',
+                url: '/important-facts',
             },
             {
                 label: 'Taqdimotlari',
-                href: '/presentations',
+                url: '/presentations',
             },
         ],
     },
     {
         title: 'Korporativ Boshqaruv',
-        href: '/coorporate-governance',
+        url: '/coorporate-governance',
         variant: 'stock',
         items: [
             {
                 label: 'Guvohnoma',
-                href: '/certificate',
+                url: '/certificate',
             },
             {
                 label: 'Jamiyat nizomi',
-                href: '/dividends',
+                url: '/dividends',
             },
             {
                 label: 'Sertifikatlar',
-                href: '/certificates',
+                url: '/certificates',
             },
             {
                 label: 'Rivojlanish strategiyasi',
-                href: '/',
+                url: '/',
             },
             {
                 label: 'Affillangan shaxslar',
-                href: '/affiliated-individuals',
+                url: '/affiliated-individuals',
             },
             {
                 label: 'Korporativ boshqaruv kodeksi',
-                href: '/corporate-governance-code',
+                url: '/corporate-governance-code',
             },
             {
                 label: 'Jamiyat qoidalari',
-                href: '/company-rules',
+                url: '/company-rules',
             },
             {
-                label: 'Audit xisobotlari',
-                href: '/audit-reports',
+                label: 'Hisobotlari',
+                url: '/audit-reports',
             },
         ],
     },
     {
         title: 'Matbuot Markazi',
-        href: '/media-center',
+        url: '/media-center',
         variant: 'stock',
         items: [
             {
                 label: 'Yangiliklar va elonlar',
-                href: '/news-and-announcements',
+                url: '/news-and-announcements',
             },
             {
                 label: 'Tadbirlar',
-                href: '/events',
+                url: '/events',
             },
             {
                 label: 'Foto qollanma',
-                href: '/photo-gallery',
+                url: '/photo-gallery',
             },
             {
                 label: 'Video',
-                href: '/video',
+                url: '/video',
             }
         ],
     },

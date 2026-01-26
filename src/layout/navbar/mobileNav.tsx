@@ -44,7 +44,7 @@ const MobileNav = () => {
                             <ul className="mobile_submenu_list">
                                 {menuItem.items.map((item, subIndex) => (
                                     <li key={subIndex}>
-                                        <a href={item.href} onClick={() => setOpen(false)}>
+                                        <a href={item.url} onClick={() => setOpen(false)}>
                                             {item.label}
                                         </a>
                                     </li>

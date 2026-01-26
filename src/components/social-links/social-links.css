@@ -1,0 +1,36 @@
+:root {
+  --primary-red: #FF3E41;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-wrapper {
+  background: #ff3e411a;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+.social-link-a svg {
+  width: 24px;
+  height: 24px;
+  fill: #FF3E41;
+  display: block;
+  transition: fill 0.3s ease;
+}
+
+.social-wrapper:hover {
+  background: var(--primary-red);
+}
+
+.social-wrapper:hover .social-link-a svg {
+  fill: white;
+}
