@@ -1,7 +1,8 @@
 import React from 'react';
-import { FaFilePdf, FaDownload } from 'react-icons/fa6';
+import { FaFilePdf } from 'react-icons/fa6';
 import type { BusinessFile } from './file-card.type';
 import './file-card.css';
+import { LuDownload } from 'react-icons/lu';
 
 interface FileCardProps {
   data: BusinessFile;
@@ -25,7 +26,7 @@ const FileCard: React.FC<FileCardProps> = ({ data }) => {
                 {data.type}, {data.size}
             </p>
             <div className="download-icon-wrapper">
-                <FaDownload className="download-icon" />
+                <LuDownload className="download-icon" />
             </div>
         </div>
     </div>

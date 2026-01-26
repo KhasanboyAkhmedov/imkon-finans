@@ -16,6 +16,7 @@ import OurServices from './pages/our-services/our-services'
 import AllCredits from './pages/all-credits/all-credits'
 import CreditDetail from './pages/credit-details/credit-details'
 import OrganizationStructure from './pages/organizational-structure/organization-structure'
+import BusinessPlans from './pages/business-plans/business-plans'
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/contacts" element={<Contacts />} />
 
           <Route path="/our-services" element={<OurServices />} />
+          <Route path="/business-plans" element={<BusinessPlans />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />

@@ -31,7 +31,7 @@
 
 .file-icon {
   color: #9A9A9A;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .file-info {
@@ -47,6 +47,8 @@
   font-weight: 700;
   color: #231F20;
   margin-bottom: 4px;
+  inline-size: 100%;
+  overflow-wrap: break-word;
 }
 
 .file-meta {
