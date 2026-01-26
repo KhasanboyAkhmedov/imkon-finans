@@ -18,6 +18,7 @@ import CreditDetail from './pages/credit-details/credit-details'
 import OrganizationStructure from './pages/organizational-structure/organization-structure'
 import BusinessPlans from './pages/business-plans/business-plans'
 import Dividends from './pages/dividends/dividends'
+import RePurchasedShares from './pages/re-purchased-shares/re-purchased-shares'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/our-services" element={<OurServices />} />
           <Route path="/business-plans" element={<BusinessPlans />} />
           <Route path="/dividends" element={<Dividends />} />
+          <Route path="/re-purchased-shares" element={<RePurchasedShares />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />

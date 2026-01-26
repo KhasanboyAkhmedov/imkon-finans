@@ -7,7 +7,7 @@
 
 .section-title {
     color: #FF3E41;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     padding: 30px 0;
     margin-bottom: 0;
@@ -52,3 +52,8 @@
   margin: 30px 0;
 }
 
+@media (min-width: 540px) {
+    .section-title {
+        font-size: 28px;
+    }
+}

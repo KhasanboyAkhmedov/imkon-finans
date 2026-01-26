@@ -1,0 +1,63 @@
+.re-purchased-shares-section {
+    margin: 40px 0;
+    background: #fff;
+    min-height: 60vh;
+}
+
+.custom-empty-state {
+    padding: 10px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-icon-wrapper {
+    font-size: 36px;
+    color: #FF3E41;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
+.empty-title {
+    color: #231F20;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.empty-description {
+    color: #8c9196;
+    font-size: 15px;
+    margin: 0;
+}
+
+@media (min-width: 480px) {
+    .custom-empty-state {
+        padding: 20px 0;
+    }
+    
+    .empty-icon-wrapper {
+        font-size: 48px;
+        color: #FF3E41;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .empty-title {
+        color: #231F20;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    .empty-description {
+        color: #8c9196;
+        font-size: 16px;
+        margin: 0;
+    }
+}
