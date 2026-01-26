@@ -1,0 +1,76 @@
+.dividend-table-container {
+    padding: 20px 0 40px;
+}
+
+.table-main-title {
+    color: #231F20;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.custom-dividend-table .ant-table {
+    background: transparent !important;
+}
+
+.custom-dividend-table .ant-table-thead > tr > th {
+    background: transparent !important;
+    color: #8c8c8c;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #f0f0f0 !important;
+    text-transform: uppercase;
+    padding: 16px 8px;
+}
+
+.custom-dividend-table .ant-table-tbody > tr > td {
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 20px 8px;
+    color: #231F20;
+    font-size: 14px;
+}
+
+.custom-dividend-table .col-year {
+    font-weight: 700;
+}
+
+.custom-dividend-table .ant-table-tbody > tr:hover > td {
+    background-color: rgba(255, 62, 65, 0.03) !important;
+}
+
+.custom-dividend-table .ant-table-container {
+    border: none !important;
+}
+
+.custom-dividend-table .ant-table-content {
+    border: none !important;
+}
+
+.custom-dividend-table .ant-table-body::-webkit-scrollbar,
+.custom-dividend-table .ant-table-content::-webkit-scrollbar {
+    display: none;
+}
+.custom-dividend-table .ant-table-body,
+.custom-dividend-table .ant-table-content {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (min-width: 768px) {
+    .table-main-title {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .custom-dividend-table .ant-table-thead > tr > th {
+        font-size: 14px;
+    }
+
+    .custom-dividend-table .ant-table-tbody > tr > td {
+        border-bottom: 1px solid #f0f0f0 !important;
+        padding: 20px 8px;
+        color: #231F20;
+        font-size: 16px;
+    }
+}

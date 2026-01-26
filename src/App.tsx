@@ -17,6 +17,7 @@ import AllCredits from './pages/all-credits/all-credits'
 import CreditDetail from './pages/credit-details/credit-details'
 import OrganizationStructure from './pages/organizational-structure/organization-structure'
 import BusinessPlans from './pages/business-plans/business-plans'
+import Dividends from './pages/dividends/dividends'
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
 
           <Route path="/our-services" element={<OurServices />} />
           <Route path="/business-plans" element={<BusinessPlans />} />
+          <Route path="/dividends" element={<Dividends />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />
