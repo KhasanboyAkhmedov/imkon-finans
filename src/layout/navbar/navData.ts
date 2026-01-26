@@ -46,7 +46,7 @@ export const navMenu: NavMenu[] = [
                 url: '/emission',
             },
             {
-                label: 'Muxim faktlar',
+                label: 'Muhim faktlar',
                 url: '/important-facts',
             },
         ],
