@@ -11,7 +11,7 @@ interface NavDropdownProps {
 const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, variant = "stock" }) => {
   return (
     <li className={`nav-dropdown nav-dropdown--${variant}`}>
-      <a className="nav-dropdown__link" href={menuItem.href}>
+      <a className="nav-dropdown__link">
         {menuItem.title}
       </a>
 
@@ -24,7 +24,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, variant = "stock" }
       <ul className={`nav-dropdown__menu nav-dropdown__menu--${variant}`}>
         {menuItem.items.map((item, index) => (
           <li key={index}>
-            <a href={item.href}>{item.label}</a>
+            <a href={item.url}>{item.label}</a>
           </li>
         ))}
       </ul>
