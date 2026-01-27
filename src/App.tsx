@@ -25,6 +25,9 @@ import Certificates from './pages/certificates/certificates'
 import AffiliatedIndividuals from './pages/affiliated-individuals/affiliated-individuals'
 import CorporateCharter from './pages/corporate-charter/corporate-charter'
 import DevelopmentStrategy from './pages/development-strategy/development-strategy'
+import Reports from './pages/reports/reports'
+import CorporateGovernanceCode from './pages/corporate-governance-code/corporate-governance-code'
+import CorporateRegulations from './pages/corporate-regulations/corporate-regulations'
 
 function App() {
 
@@ -44,18 +47,24 @@ function App() {
           <Route path="/reception-days" element={<ReceptionDays />} />
           <Route path="/contacts" element={<Contacts />} />
 
+          {/* Services */}
           <Route path="/our-services" element={<OurServices />} />
+
+          {/* Investors */}
           <Route path="/business-plans" element={<BusinessPlans />} />
           <Route path="/dividends" element={<Dividends />} />
           <Route path="/re-purchased-shares" element={<RePurchasedShares />} />
           <Route path="/emission" element={<Emission />} />
           <Route path="/important-facts" element={<ImportantFacts />} />
+          <Route path="/reports" element={<Reports />} />
 
           {/* Coorporate Governance */}
           <Route path="/corporate-charter" element={<CorporateCharter />} />
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/affiliated-individuals" element={<AffiliatedIndividuals />} />
           <Route path="/development-strategy" element={<DevelopmentStrategy />} />
+          <Route path="/corporate-governance-code" element={<CorporateGovernanceCode />} />
+          <Route path="/corporate-regulations" element={<CorporateRegulations />} />
     
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />

@@ -46,6 +46,10 @@ export const navMenu: NavMenu[] = [
                 url: '/emission',
             },
             {
+                label: 'Hisobotlar',
+                url: '/reports',
+            },
+            {
                 label: 'Muhim faktlar',
                 url: '/important-facts',
             },
@@ -78,11 +82,7 @@ export const navMenu: NavMenu[] = [
             },
             {
                 label: 'Jamiyat qoidalari',
-                url: '/company-rules',
-            },
-            {
-                label: 'Hisobotlari',
-                url: '/audit-reports',
+                url: '/corporate-regulations',
             },
         ],
     },
