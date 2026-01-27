@@ -21,6 +21,8 @@ import Dividends from './pages/dividends/dividends'
 import RePurchasedShares from './pages/re-purchased-shares/re-purchased-shares'
 import Emission from './pages/emission/emission'
 import ImportantFacts from './pages/important-facts/important-facts'
+import Certificates from './pages/certificates/certificates'
+import AffiliatedIndividuals from './pages/affiliated-individuals/affiliated-individuals'
 
 function App() {
 
@@ -46,6 +48,11 @@ function App() {
           <Route path="/re-purchased-shares" element={<RePurchasedShares />} />
           <Route path="/emission" element={<Emission />} />
           <Route path="/important-facts" element={<ImportantFacts />} />
+
+          {/* Coorporate Governance */}
+          <Route path="/certificates" element={<Certificates />} />
+          <Route path="/affiliated-individuals" element={<AffiliatedIndividuals />} />
+
     
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />
