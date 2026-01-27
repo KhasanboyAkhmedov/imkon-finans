@@ -23,6 +23,8 @@ import Emission from './pages/emission/emission'
 import ImportantFacts from './pages/important-facts/important-facts'
 import Certificates from './pages/certificates/certificates'
 import AffiliatedIndividuals from './pages/affiliated-individuals/affiliated-individuals'
+import CorporateCharter from './pages/corporate-charter/corporate-charter'
+import DevelopmentStrategy from './pages/development-strategy/development-strategy'
 
 function App() {
 
@@ -50,9 +52,10 @@ function App() {
           <Route path="/important-facts" element={<ImportantFacts />} />
 
           {/* Coorporate Governance */}
+          <Route path="/corporate-charter" element={<CorporateCharter />} />
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/affiliated-individuals" element={<AffiliatedIndividuals />} />
-
+          <Route path="/development-strategy" element={<DevelopmentStrategy />} />
     
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />

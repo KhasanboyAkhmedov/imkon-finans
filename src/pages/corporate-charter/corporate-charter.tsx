@@ -1,15 +1,15 @@
 import FileCardList from '../../components/file-card-list/file-card-list'
 import FileCard from '../../components/file-card/file-card'
-import { CertificatesData } from './certificates.data'
+import { CorporateCharterData } from './corporate-charter.data'
 
-const Certificates = () => {
+const CorporateCharter = () => {
   return (
     <FileCardList
-        title={`Litsenziya va sertifikatlar`}
-        dataSource={CertificatesData}
+        title={`Jamiyat nizomi`}
+        dataSource={CorporateCharterData}
         renderItem={(item) => <FileCard data={item} />}
     />
   )
 }
 
-export default Certificates
+export default CorporateCharter

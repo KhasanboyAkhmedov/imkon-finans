@@ -57,12 +57,8 @@ export const navMenu: NavMenu[] = [
         variant: 'stock',
         items: [
             {
-                label: 'Guvohnoma',
-                url: '/certificate',
-            },
-            {
                 label: 'Jamiyat nizomi',
-                url: '/dividends',
+                url: '/corporate-charter',
             },
             {
                 label: 'Sertifikatlar',
@@ -70,7 +66,7 @@ export const navMenu: NavMenu[] = [
             },
             {
                 label: 'Rivojlanish strategiyasi',
-                url: '/',
+                url: '/development-strategy',
             },
             {
                 label: 'Affillangan shaxslar',
