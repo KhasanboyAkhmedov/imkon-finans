@@ -28,6 +28,8 @@ import DevelopmentStrategy from './pages/development-strategy/development-strate
 import Reports from './pages/reports/reports'
 import CorporateGovernanceCode from './pages/corporate-governance-code/corporate-governance-code'
 import CorporateRegulations from './pages/corporate-regulations/corporate-regulations'
+import News from './pages/news/news'
+import NewsDetail from './pages/news-detail/news-detail'
 
 function App() {
 
@@ -65,7 +67,11 @@ function App() {
           <Route path="/development-strategy" element={<DevelopmentStrategy />} />
           <Route path="/corporate-governance-code" element={<CorporateGovernanceCode />} />
           <Route path="/corporate-regulations" element={<CorporateRegulations />} />
-    
+
+          {/* Press */}
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<NewsDetail />} />
+
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />
           <Route path="/credits/:creditName" element={<CreditDetail />} />

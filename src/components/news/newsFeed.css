@@ -130,7 +130,6 @@
         flex: 1;
     }
     .news-card__description {
-        font-size: 16px;
         line-height: 1.4;
         color: #231F20;
         font-weight: 400;
@@ -203,10 +202,8 @@
     }
 
     .news-card__description {
-        font-size: 12px;
-        line-height: 1.4;
+        font-size: 15px;
         margin: 15px 0;
-        flex-grow: 1;
     }
 
     .news-card__button {
@@ -234,9 +231,6 @@
     .news-header__list-icon {
         width: 20px;
         height: 20px;
-    }
-    .news-card__description {
-        font-size: 14px;
     }
 
     .news-card__button-text {

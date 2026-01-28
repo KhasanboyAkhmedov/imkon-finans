@@ -93,7 +93,7 @@ export const navMenu: NavMenu[] = [
         items: [
             {
                 label: 'Yangiliklar va elonlar',
-                url: '/news-and-announcements',
+                url: '/news',
             },
             {
                 label: 'Tadbirlar',

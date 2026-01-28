@@ -1,5 +1,7 @@
 import type { BusinessFile } from "../../components/file-card/file-card.type";
 import documentFile from '/docs/business-plans/lecture.pdf';
+import MBReestri from '/docs/certificates/MB reestri 01.08.2022.pdf';
+import licence from '/docs/certificates/guvohnoma.pdf';
 
 export const CertificatesData: BusinessFile[] = [
     {
@@ -7,8 +9,8 @@ export const CertificatesData: BusinessFile[] = [
       name: `«Imkon Finans» AJ guvohnomasi`,
       size: '412 Kb',
       type: 'PDF',
-      fileUrl: documentFile,
-      createdAt: new Date('2022-12-20'),
+      fileUrl: licence,
+      createdAt: new Date('2011-09-09'),
     },
     {
       id: '2',
@@ -20,10 +22,10 @@ export const CertificatesData: BusinessFile[] = [
     },
     {
       id: '3',
-      name: '«Imkon Finans» AJ biznes-rejasi 2025 yil',
+      name: `«Imkon Finans» aksiyadorlik jamiyatiga o'zgartirilgani haqidagi Markaziy bank reestri 01.08.2022`,
       size: '412 Kb',
       type: 'PDF',
-      fileUrl: documentFile,
-      createdAt: new Date('2024-01-20'),
+      fileUrl: MBReestri,
+      createdAt: new Date('2022-08-01'),
     },
 ]
