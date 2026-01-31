@@ -30,13 +30,13 @@ const Navbar = () => {
                                     onChange={(val) => console.log("Lang:", val)}
                                 >
                                     <Select.Option value="uz">
-                                        <span className="flag_item">🇺🇿 O'zbekcha</span>
+                                        <span className="flag_item">O'zbekcha</span>
                                     </Select.Option>
                                     <Select.Option value="ru">
-                                        <span className="flag_item">🇷🇺 Русский</span>
+                                        <span className="flag_item">Русский</span>
                                     </Select.Option>
                                     <Select.Option value="en">
-                                        <span className="flag_item">🇺🇸 English</span>
+                                        <span className="flag_item">English</span>
                                     </Select.Option>
                                 </Select>
                             </div>
