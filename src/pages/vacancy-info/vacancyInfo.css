@@ -11,7 +11,7 @@
 
 .info-title {
     color: #FF3E41;
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -24,7 +24,7 @@
     padding: 6px 16px;
     border-radius: 50px;
     color: #FF3E41;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));
     font-weight: 500;
 }
 
@@ -36,7 +36,7 @@
 
 
 .block-title {
-    font-size: 24px;
+    font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));
     font-weight: 700;
     margin-bottom: 20px;
     color: #231F20;

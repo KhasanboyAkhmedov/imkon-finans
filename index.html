@@ -11,6 +11,18 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx">
+      (function() {
+      const grayscale = localStorage.getItem('site-grayscale');
+      const fontMod = localStorage.getItem('site-font-modifier');
+      
+      if (grayscale === 'true') {
+        document.body.classList.add('grayscale-mode');
+      }
+      if (fontMod) {
+        document.documentElement.style.setProperty('--user-font-modifier', fontMod + 'px');
+      }
+    })();
+    </script>
   </body>
 </html>

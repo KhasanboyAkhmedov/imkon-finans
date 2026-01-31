@@ -1,9 +1,12 @@
 import './navbar.css';
 import logoWithText from '/logo-with-text.svg';
-import { glass, globus, location, phone} from '../../assets/header';
 import NavDropdown from './NavDropdown';
 import { navMenu } from './navData';
 import MobileNav from './mobileNav';
+import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
+import { GrLocation } from 'react-icons/gr';
+import { Select } from 'antd';
+import { FiPhone } from 'react-icons/fi';
 
 const Navbar = () => {
 
@@ -17,32 +20,35 @@ const Navbar = () => {
                         <img className="menu_top" src="./images/header/menu.svg" alt="menu"/>
                         <div className="media">
                             <div className="site-header__top-info">
-                                <img className="site-header__top-info-glass"
-                                    src={glass}
-                                    alt="site-header-top-glass" />
-                                <img className="site-header__top-info-location"
-                                    src={location}
-                                    alt="location" />
-                                <div className="site-header__top-info-translate">
-                                    <img className="site-header__top-info-translate-img"
-                                        src={globus} alt="Globus" />
-                                    <select name="languages" id="languages">
-                                        <option value="uzb">Uzbek</option>
-                                        <option value="eng">English</option>
-                                        <option value="rus">Russia</option>
-                                    </select>
-                                </div>
+                                <AppearanceSettings />
+                                <GrLocation className='site-header__top-info-location-icon' />
+                                <Select
+                                    defaultValue="uz"
+                                    variant="borderless"
+                                    className="lang_select"
+                                    popupClassName="lang_dropdown"
+                                    onChange={(val) => console.log("Lang:", val)}
+                                >
+                                    <Select.Option value="uz">
+                                        <span className="flag_item">🇺🇿 O'zbekcha</span>
+                                    </Select.Option>
+                                    <Select.Option value="ru">
+                                        <span className="flag_item">🇷🇺 Русский</span>
+                                    </Select.Option>
+                                    <Select.Option value="en">
+                                        <span className="flag_item">🇺🇸 English</span>
+                                    </Select.Option>
+                                </Select>
                             </div>
-                            <div className="site-header-top-right">
+                            <a href='tel:+998742283212' className="site-header-top-right">
                                 <div className="site-header-top-right-call">
-                                    <img className="site-header-top-right-img"
-                                        src={phone} alt="phone" />
+                                    <FiPhone className="site-header-top-right-phone-icon" />
                                 </div>
                                 <div className="site-header-top-right-contact">
                                     <p className="site-header-top-right-contact-text">Biz bilan bog‘laning</p>
                                     <h2 className="site-header-top-right-contact-title">+998 74 228-32-12</h2>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <hr className='line'/>

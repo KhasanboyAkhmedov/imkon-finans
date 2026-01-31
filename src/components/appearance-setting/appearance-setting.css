@@ -1,0 +1,116 @@
+.accessibility-popover .ant-popover-inner {
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.settings-container {
+  width: 240px;
+  padding: 14px;
+  border-radius: 28px;
+}
+
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.settings-section {
+  margin-bottom: 10px;
+}
+
+.close-icon {
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+}
+
+.ant-radio-wrapper {
+  font-size: 18px !important;
+  color: #4a4a4a !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #FF3E41 !important;
+  background-color: #FF3E41 !important;
+}
+
+/* Slider */
+.section-label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px;
+}
+
+.ant-slider { flex: 1; margin: 0; }
+
+.ant-slider-track { background-color: #FF3E41 !important; }
+
+.ant-slider-handle::after {
+  background-color: #FF3E41 !important;
+  box-shadow: 0 0 0 2px #FF3E41 !important;
+}
+
+
+.a-small { font-size: 12px; color: #999; }
+.a-large { font-size: 20px; color: #7f8c8d; font-weight: bold; }
+
+/* Reset Button */
+.reset-btn {
+  margin-top: 20px;
+  height: 45px;
+  background-color: #edf2f7 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  color: #231F20 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.reset-btn:hover { background-color: #e2e8f0 !important; }
+
+/* Grayscale Mode Global */
+body.grayscale-mode {
+  filter: grayscale(100%) !important;
+}
+
+.glass-icon {
+  font-size: 24px;
+  cursor: pointer;
+  flex-shrink: 0 !important;
+}
+
+.glass-icon:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.accessibility-popover {
+  padding-top: 10px;
+}
+
+.ant-popover-container {
+  border-radius: 28px !important;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12) !important;
+}
+
+@media (min-width: 1200px) {
+  .glass-icon {
+    font-size: 26px;
+    cursor: pointer;
+  }
+}

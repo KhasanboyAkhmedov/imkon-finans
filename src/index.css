@@ -1,4 +1,16 @@
 :root { color-scheme: light; }
+:root {
+  --user-font-modifier: 0px;
+  --scale-factor: 1;
+}
+
+@media (min-width: 768px) {
+  :root { --scale-factor: 1.05; }
+}
+
+@media (min-width: 1200px) {
+  :root { --scale-factor: 1.1; }
+}
 
 * {
 	margin: 0;
