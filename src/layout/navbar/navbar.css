@@ -54,6 +54,15 @@
 	gap: 36px;
 }
 
+.site-header__top-info-location-link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+
 .site-header__top-info-location-icon {
 	font-size: 22px;
 	cursor: pointer;
@@ -67,6 +76,15 @@
 
 .lang_select {
 	display: inline-flex;
+}
+
+.lang_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.lang_icon {
+    font-size: 26px;
 }
 
 .media {

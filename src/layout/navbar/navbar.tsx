@@ -4,7 +4,7 @@ import NavDropdown from './NavDropdown';
 import { navMenu } from './navData';
 import MobileNav from './mobileNav';
 import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
-import { GrLocation } from 'react-icons/gr';
+import { GrLanguage, GrLocation } from 'react-icons/gr';
 import { Select } from 'antd';
 import { FiPhone } from 'react-icons/fi';
 
@@ -21,24 +21,35 @@ const Navbar = () => {
                         <div className="media">
                             <div className="site-header__top-info">
                                 <AppearanceSettings />
-                                <GrLocation className='site-header__top-info-location-icon' />
-                                <Select
-                                    defaultValue="uz"
-                                    variant="borderless"
-                                    className="lang_select"
-                                    popupClassName="lang_dropdown"
-                                    onChange={(val) => console.log("Lang:", val)}
+                                <a 
+                                    href="https://yandex.uz/maps/org/196915386086/?ll=72.354256%2C40.765394&z=16.28" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="site-header__top-info-location-link"
                                 >
-                                    <Select.Option value="uz">
-                                        <span className="flag_item">O'zbekcha</span>
-                                    </Select.Option>
-                                    <Select.Option value="ru">
-                                        <span className="flag_item">Русский</span>
-                                    </Select.Option>
-                                    <Select.Option value="en">
-                                        <span className="flag_item">English</span>
-                                    </Select.Option>
-                                </Select>
+                                    <GrLocation className='site-header__top-info-location-icon' />
+                                </a>
+                                {/* <GrLocation className='site-header__top-info-location-icon' /> */}
+                                <div className="lang_wrapper">
+                                    <GrLanguage className="lang_icon" />
+                                    <Select
+                                        defaultValue="uz"
+                                        variant="borderless"
+                                        className="lang_select"
+                                        popupClassName="lang_dropdown"
+                                        onChange={(val) => console.log("Lang:", val)}
+                                    >
+                                        <Select.Option value="uz">
+                                            <span className="flag_item">O'zb</span>
+                                        </Select.Option>
+                                        <Select.Option value="ru">
+                                            <span className="flag_item">Русс</span>
+                                        </Select.Option>
+                                        <Select.Option value="en">
+                                            <span className="flag_item">Eng</span>
+                                        </Select.Option>
+                                    </Select>
+                                </div>
                             </div>
                             <a href='tel:+998742283212' className="site-header-top-right">
                                 <div className="site-header-top-right-call">
