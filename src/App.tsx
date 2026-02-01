@@ -31,6 +31,7 @@ import CorporateRegulations from './pages/corporate-regulations/corporate-regula
 import News from './pages/news/news'
 import NewsDetail from './pages/news-detail/news-detail'
 import Events from './pages/events/events'
+import History from './pages/history/history'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/history" element={<History />} />
           <Route path="/management" element={<ManagementBody />} />
           <Route path="/council" element={<SupervisoryBoard />} />
           <Route path="/mission-and-vision" element={<MissionAndVision />} />

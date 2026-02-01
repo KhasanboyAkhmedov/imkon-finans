@@ -45,7 +45,7 @@ const InfoCardList = <T extends { id: string | number }>({
             className: 'custom-pagination',
           }}
           renderItem={(item, index) => (
-            <List.Item className="info-list-item-wrapper">
+            <List.Item>
               {renderItem(item, index)}
             </List.Item>
           )}
