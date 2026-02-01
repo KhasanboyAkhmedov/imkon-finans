@@ -30,6 +30,7 @@ import CorporateGovernanceCode from './pages/corporate-governance-code/corporate
 import CorporateRegulations from './pages/corporate-regulations/corporate-regulations'
 import News from './pages/news/news'
 import NewsDetail from './pages/news-detail/news-detail'
+import Events from './pages/events/events'
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
           {/* Press */}
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/events" element={<Events />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />

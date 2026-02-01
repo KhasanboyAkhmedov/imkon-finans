@@ -1,25 +1,3 @@
-// import { CreditCard } from '../../components/credit-card/creditCard';
-// import './all-credits.css';
-// import { credits } from './all-credits.data';
-
-// const AllCredits = () => {
-//   return (
-//     <section className="all-credits-section">
-//         <div className='container'>
-//             <h2 className="section-title">Barcha kreditlar</h2>
-//             <div className="grid">
-//                 {credits.map((item) => (
-//                     <CreditCard key={item.id} item={item} />
-//                 ))}
-//             </div>
-//         </div>
-        
-//     </section>
-//   )
-// }
-
-// export default AllCredits
-
 import React from 'react';
 import { List, Grid } from 'antd';
 import { CreditCard } from '../../components/credit-card/creditCard';

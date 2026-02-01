@@ -100,10 +100,6 @@ export const navMenu: NavMenu[] = [
                 url: '/events',
             },
             {
-                label: 'Foto qollanma',
-                url: '/photo-gallery',
-            },
-            {
                 label: 'Video',
                 url: '/video',
             }

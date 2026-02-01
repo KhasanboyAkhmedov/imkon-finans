@@ -1,0 +1,12 @@
+.info-section {
+  margin: 40px 0;
+  background-color: #ffffff;
+}
+
+.page-description {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #42526B;
+  white-space: pre-line;
+  margin-bottom: 40px;
+}
