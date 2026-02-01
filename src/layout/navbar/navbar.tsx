@@ -29,7 +29,6 @@ const Navbar = () => {
                                 >
                                     <GrLocation className='site-header__top-info-location-icon' />
                                 </a>
-                                {/* <GrLocation className='site-header__top-info-location-icon' /> */}
                                 <div className="lang_wrapper">
                                     <GrLanguage className="lang_icon" />
                                     <Select
@@ -43,7 +42,7 @@ const Navbar = () => {
                                             <span className="flag_item">O'zb</span>
                                         </Select.Option>
                                         <Select.Option value="ru">
-                                            <span className="flag_item">Русс</span>
+                                            <span className="flag_item">Рус</span>
                                         </Select.Option>
                                         <Select.Option value="en">
                                             <span className="flag_item">Eng</span>

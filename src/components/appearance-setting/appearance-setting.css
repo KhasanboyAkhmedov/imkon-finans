@@ -99,6 +99,10 @@ body.grayscale-mode {
   opacity: 0.8;
 }
 
+.glass-icon path {
+	stroke-width: 28;
+}
+
 .accessibility-popover {
   padding-top: 10px;
 }

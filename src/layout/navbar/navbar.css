@@ -69,9 +69,18 @@
 	flex-shrink: 0 !important;
 }
 
+
 .site-header__top-info-location-icon:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
+	transform: scale(1.05);
+	opacity: 0.8;
+}
+
+.site-header__top-info-location-icon path,
+.site-header__top-info-location-icon circle,
+.lang_icon path,
+.lang_icon circle,
+.lang_icon polyline {
+	stroke-width: 1.5px !important;
 }
 
 .lang_select {
