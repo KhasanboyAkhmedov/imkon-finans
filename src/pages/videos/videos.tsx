@@ -5,7 +5,7 @@ import { InfoCard } from '../../components/info-card/info-card'
 const Videos = () => {
   return (
     <InfoCardList 
-        title="Tadbirlar"
+        title="Videolar"
         pageDescription="“IMKON FINANS” mikromoliya tashkiloti aksiyadorlik jamiyati o‘n yildan buyon kichik va o‘rta biznes hamda xususiy tadbirkorlikni rivojlantirishga, shuningdek, O‘zbekiston Respublikasida tobora kengayib borayotgan mikromoliya bozorining rivojlanishiga o‘z hissasini qo‘shib kelmoqda."
         dataSource={VideosData}
         renderItem={(item, index) => 
