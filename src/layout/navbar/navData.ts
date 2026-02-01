@@ -100,8 +100,8 @@ export const navMenu: NavMenu[] = [
                 url: '/events',
             },
             {
-                label: 'Video',
-                url: '/video',
+                label: 'Videolar',
+                url: '/videos',
             }
         ],
     },

@@ -32,6 +32,7 @@ import News from './pages/news/news'
 import NewsDetail from './pages/news-detail/news-detail'
 import Events from './pages/events/events'
 import History from './pages/history/history'
+import Videos from './pages/videos/videos'
 
 function App() {
 
@@ -75,6 +76,7 @@ function App() {
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/videos" element={<Videos />} />
 
           {/* Credits route */}
           <Route path="/credits" element={<AllCredits />} />

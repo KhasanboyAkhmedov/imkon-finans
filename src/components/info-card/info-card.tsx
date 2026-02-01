@@ -1,7 +1,7 @@
 import React from 'react';
 import './info-card.css';
 import type { InfoCardProps } from './info-card.types';
-import { formatDate } from '../../commons';
+import { formatDate, getEmbedUrl } from '../../commons';
 // import { HiOutlineArrowRight } from 'react-icons/hi';
 
 export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, isClickable = false }) => {
@@ -20,7 +20,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, is
       <div className={`info-media-container ${mediaClass}`}>
         {item.videoUrl ? (
           <iframe
-            src={item.videoUrl}
+            src={getEmbedUrl(item.videoUrl)}
             title={item.title}
             allowFullScreen
             className="info-media-element"
