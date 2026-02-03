@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Grid } from 'antd';
 import { CreditCard } from '../../components/credit-card/creditCard';
-import { credits } from './all-credits.data';
+import { allCreditsData } from './all-credits.data';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import './all-credits.css';
 
@@ -45,7 +45,7 @@ const AllCredits = () => {
                         itemRender: itemRender,
                         className: 'custom-pagination',
                     }}
-                    dataSource={credits}
+                    dataSource={allCreditsData}
                     renderItem={(item) => (
                         <List.Item className="equal-height-item">
                             <CreditCard item={item} />

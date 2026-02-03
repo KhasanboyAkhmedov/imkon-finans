@@ -14,7 +14,7 @@ export interface Credit {
     path: string;
 }
 
-export const credits: Credit[] = [
+export const allCreditsData: Credit[] = [
   {
     id: "trust",
     title: "Ishonch Kredit",

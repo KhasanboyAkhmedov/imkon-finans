@@ -1,14 +1,16 @@
 import React from 'react';
 import './ourProducts.css';
-import { products } from './productsData';
 import { HiOutlineArrowRight } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
+import { CreditCard } from '../credit-card/creditCard';
+import { allCreditsData } from '../../pages/all-credits/all-credits.data';
 
 export const OurProducts: React.FC = () => {
     const navigate = useNavigate();
-    if (!products || products.length === 0) {
-        return <div>No products found. Check productsData.ts</div>;
+    if (!allCreditsData || allCreditsData.length === 0) {
+        return <div>No products found.</div>;
     }
+    
     return (
         <section className="our-products container">
             <div className="our-products-header-wrapper">
@@ -19,20 +21,8 @@ export const OurProducts: React.FC = () => {
             </div>
 
             <div className="grid">
-                {products.map((item) => (
-                <div key={item.id} className="product-card" onClick={() => navigate(item.path)}>
-                    <div className='product-card-title-wrapper'>
-                        <div className={`product-card-iconWrapper`}>
-                            <img src={item.icon} className='product-card-icon' alt='icon' />
-                        </div>
-                        <h3 className="product-card-title">{item.title}</h3>
-                    </div>
-                    <p className="product-card-description">{item.description}</p>
-                    <button className={`product-card-button`}>
-                        Xizmatni ko'rish
-                    </button>
-                    <img src={item.icon} className='product-card-bgIcon' alt='icon' />
-                </div>
+                {allCreditsData.slice(0, 6).map((item) => (
+                    <CreditCard item={item} />
                 ))}
             </div>
         </section>
