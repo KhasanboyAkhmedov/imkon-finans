@@ -5,6 +5,7 @@ import logoWithText from '/logo-with-text.svg';
 import { navMenu } from './navData';
 import './mobileNav.css';
 import { FaBars } from 'react-icons/fa6';
+import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ const MobileNav = () => {
         <div className="mobile_header_container">
             <div className="mobile_header_bar">
                 <img src={logoWithText} className="logo" alt="logo" />
-                
+                <AppearanceSettings />
                 <div className="burger_button" onClick={toggleDrawer}>
                     {open ? (
                         <CloseOutlined className="close_icon" />

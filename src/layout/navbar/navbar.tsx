@@ -7,15 +7,32 @@ import AppearanceSettings from '../../components/appearance-setting/appearance-s
 import { GrLanguage, GrLocation } from 'react-icons/gr';
 import { Select } from 'antd';
 import { FiPhone } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
+    const [isSticky, setIsSticky] = useState(false);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 250) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     return (
-        <div className="nav_wrapper_bg">
+        <div className={`nav_wrapper_bg ${isSticky ? 'is-sticky' : ''}`}>
             <header className="site-header">
                 <div className="container site-header__container">
                     <div className="site-header__top">
-                        <img src={logoWithText} alt="logo" width="170" height="30" />
+                        <Link to="/" style={{ display: 'inline-block' }}>
+                            <img src={logoWithText} alt="logo" width="170" height="30" />
+                        </Link>
                         <input className="header_inp" type="text" placeholder="Qidiruv" />
                         <img className="menu_top" src="./images/header/menu.svg" alt="menu"/>
                         <div className="media">

@@ -47,7 +47,7 @@ const AppearanceSettings = () => {
         <div className="slider-wrapper">
           <span className="a-small">A</span>
           <Slider 
-            min={-4} max={4} 
+            min={-3} max={3} 
             value={fontModifier} 
             onChange={setFontModifier}
             tooltip={{ open: false }}

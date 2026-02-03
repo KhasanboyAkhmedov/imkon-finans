@@ -1,9 +1,13 @@
 .mobile_header_container {
     position: sticky;
     top: 0;
-    z-index: 2001;
+    z-index: 1001;
     background: #fff;
     width: 100%;
+}
+
+.logo {
+    width: 160px;
 }
 
 .mobile_header_bar {
@@ -104,7 +108,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 15px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 500;
 }
 

@@ -258,7 +258,7 @@
     height: 40px;
   }
   .cta-button {
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     padding: 12px 40px;
   }
   .cta-icon {
@@ -303,13 +303,6 @@
   .icon-shield {
     width: 40px;
     height: 40px;
-  }
-  .cta-button {
-    font-size: 14px;
-    padding: 12px 40px;
-  }
-  .cta-icon {
-    font-size: 18px;
   }
 }
 

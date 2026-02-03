@@ -201,14 +201,14 @@
     }
 
     .news-card__date {
-        font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
+        font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
         padding: 10px 12px;
         border-radius: 10px;
         background: #FF3E410A;
     }
 
     .news-card__description {
-        font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
+        font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
         margin: 15px 0;
     }
 

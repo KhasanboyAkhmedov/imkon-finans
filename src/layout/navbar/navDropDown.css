@@ -8,7 +8,7 @@
 }
 
 .nav-dropdown__link {
-  font-size: 16px;
+  font-size: calc((13px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 500;
   color: #5d6c7b;
   text-decoration: none;
@@ -54,7 +54,7 @@
 }
 
 .nav-dropdown--filled {
-  padding: 16px 24px;
+  padding: 15px 20px;
   border-radius: 18px;
   background: #ff3e41;
   border: 1px solid #ff3e41;
@@ -89,4 +89,10 @@
 .nav-dropdown__menu--filled {
   top: 58px;
   left: -5px;
+}
+
+@media (min-width: 1280px) {
+  .nav-dropdown__link {
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
+  }
 }

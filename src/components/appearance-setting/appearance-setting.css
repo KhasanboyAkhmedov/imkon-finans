@@ -13,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 10px;
@@ -30,7 +30,7 @@
 }
 
 .ant-radio-wrapper {
-  font-size: 18px !important;
+  font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier)) !important;
   color: #4a4a4a !important;
 }
 
@@ -41,7 +41,7 @@
 
 /* Slider */
 .section-label {
-  font-size: 18px;
+  font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -63,8 +63,8 @@
 }
 
 
-.a-small { font-size: 12px; color: #999; }
-.a-large { font-size: 20px; color: #7f8c8d; font-weight: bold; }
+.a-small { font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));; color: #999; }
+.a-large { font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));; color: #7f8c8d; font-weight: bold; }
 
 /* Reset Button */
 .reset-btn {
@@ -79,6 +79,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
 }
 
 .reset-btn:hover { background-color: #e2e8f0 !important; }
