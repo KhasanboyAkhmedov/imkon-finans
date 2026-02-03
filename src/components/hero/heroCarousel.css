@@ -24,14 +24,14 @@
 
 /* Typography */
 .hero-text h1 {
-  font-size: 22px;
+  font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 500;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   opacity: 0.9;
 }
 
@@ -48,7 +48,7 @@
   align-items: center;
   gap: 12px;
   p {
-    font-size: 13px;
+    font-size: calc((13px * var(--scale-factor)) + var(--user-font-modifier));;
     color: #fff;
     margin: 0;
   }
@@ -72,7 +72,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s;
-  font-size: 12px;
+  font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
   text-transform: uppercase;
 }
 
@@ -155,12 +155,12 @@
 
 @media (min-width: 540px) {
   .hero-text h1 {
-    font-size: 24px;
+    font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;
   }
 
   .feature-item {
     p {
-      font-size: 14px;
+      font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     }
   }
 
@@ -198,7 +198,7 @@
   }
 
   .hero-text h1 {
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     line-height: 1.2;
   }
 
@@ -240,7 +240,7 @@
   }
 
   .hero-text h1 {
-    font-size: 34px;
+    font-size: calc((32px * var(--scale-factor)) + var(--user-font-modifier));;
     line-height: 1.2;
   }
   .hero-image-wrapper {
@@ -278,18 +278,18 @@
     padding-bottom: 60px;
   }
   .hero-text h1 {
-    font-size: 42px;
+    font-size: calc((40px * var(--scale-factor)) + var(--user-font-modifier));;
     line-height: 1.2;
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     opacity: 0.9;
   }
 
   .feature-item {
     p {
-      font-size: 16px;
+      font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     }
   }
 
