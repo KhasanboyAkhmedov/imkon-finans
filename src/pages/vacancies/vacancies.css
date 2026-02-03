@@ -12,12 +12,6 @@
     margin-bottom: 0;
 }
 
-/* @media (min-width: 1024px) {
-    .section-title {
-        font-size: 28px;
-    }
-} */
-
 @media (min-width: 1024px) {
     .section-title {
         font-size: calc((32px * var(--scale-factor)) + var(--user-font-modifier));

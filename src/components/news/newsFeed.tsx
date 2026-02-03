@@ -6,8 +6,8 @@ import NewsCard from './newsCard';
 
 export const NewsFeed: React.FC = () => {
   return (
-    <section className="news-container container">
-        <div className="news-wrapper">
+    <section className="news-container">
+        <div className="news-wrapper container">
             <div className="news-header">
                 <p className="news-header__title">
                     Eng muhim e'lonlar va jamiyatdagi yangiliklardan xabardor bo'ling.

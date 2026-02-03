@@ -18,7 +18,7 @@
 
 .section-title {
     color: #FF3E41;
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     padding: 30px 0;
     margin-bottom: 0;
@@ -26,7 +26,7 @@
 
 @media (min-width: 1024px) {
     .section-title {
-        font-size: 32px;
+        font-size: calc((32px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
 
