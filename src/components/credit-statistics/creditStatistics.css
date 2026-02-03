@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     color: #3F3E42;
     font-weight: 600;
     line-height: 1.3;
@@ -19,14 +19,14 @@
 }
 
 .stats-heading .highlight {
-    font-size: 22px;
+    font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 600;
     color: #FF3E41;
 }
 
 .stats-description {
   color: #2D2D2D;
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   max-width: 600px;
   margin: 0 auto 50px auto;
   line-height: 1.3;
@@ -52,19 +52,19 @@
 }
 
 .stat-amount {
-  font-size: 24px;
+  font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 800;
   color: #231F20;
 }
 
 .stat-unit {
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #231F20;
   margin-bottom: 10px;
 }
 
 .stat-category {
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 600;
   color: #231F20;
   line-height: 1.3;
@@ -74,30 +74,30 @@
 
 @media (min-width: 480px) {
     .stats-heading {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .stats-heading .highlight {
-        font-size: 24px;
+        font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));
         font-weight: 700;
     }
     .stats-description {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
         max-width: fit-content;
     }
 }
 
 @media (min-width: 540px) {
     .stat-amount {
-        font-size: 26px;
+        font-size: calc((26px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .stat-unit {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .stat-category {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
 
@@ -107,7 +107,7 @@
     }
     
     .stats-heading {
-        font-size: 22px;
+        font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -115,11 +115,11 @@
     }
 
     .stats-heading .highlight {
-        font-size: 28px;
+        font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     }
     
     .stats-description {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
 
@@ -138,14 +138,14 @@
 
 @media (min-width: 1200px) {
     .stat-amount {
-        font-size: 28px;
+        font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .stat-unit {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .stat-category {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
