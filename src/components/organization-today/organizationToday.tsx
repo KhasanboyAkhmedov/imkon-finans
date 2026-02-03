@@ -13,10 +13,6 @@ const MKT_DATA = [
 ];
 
 const OrganizationToday: React.FC = () => {
-  const handleOpenFolder = (url: string) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <section className="mkt-section">
       <h2 className="mkt-title">MKT bugun</h2>
@@ -25,7 +21,6 @@ const OrganizationToday: React.FC = () => {
           <div 
             key={item.id} 
             className="mkt-card" 
-            onClick={() => handleOpenFolder(item.fileUrl)}
           >
             <div className="mkt-icon-wrapper">
               {item.isInfo ? (

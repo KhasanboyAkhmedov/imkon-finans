@@ -6,7 +6,7 @@
 }
 
 .mkt-title {
-  font-size: 24px;
+  font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   margin-bottom: 20px;
   color: #231F20;
@@ -47,7 +47,7 @@
 }
 
 .mkt-card-text {
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #57585F;
   line-height: 1.4;
   margin-bottom: 0;
@@ -64,7 +64,7 @@
     }
 
     .mkt-card-text {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
         color: #57585F;
         line-height: 1.4;
     }
