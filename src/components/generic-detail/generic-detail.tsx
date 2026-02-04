@@ -9,8 +9,6 @@ interface GenericDetailProps<T> {
   dataFetcher: (id: string) => T | undefined;
   renderMedia?: (item: T) => ReactNode;
 }
-
-// Define a base type that all detail items should follow
 export interface BaseDetailItem {
   id: string;
   title: string;
