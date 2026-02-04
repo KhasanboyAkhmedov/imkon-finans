@@ -25,7 +25,7 @@
 
 .currency-label {
   font-weight: 700;
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #0A1519;
 }
 
@@ -36,7 +36,7 @@
 
 .currency-value {
   font-weight: 700;
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #0A1519;
 }
 
@@ -72,7 +72,7 @@
     }
 
     .currency-label {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .currency-separator {
@@ -80,7 +80,7 @@
     }
 
     .currency-value {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .trend-box svg {
@@ -99,6 +99,6 @@
 
 @media (min-width: 992px) {
     .currency-label {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }

@@ -12,7 +12,7 @@
 
 .form-title {
     color: #ffffff;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 600;
     margin-bottom: 25px;
     text-align: center;
@@ -31,7 +31,7 @@
     padding: 10px 20px;
     border-radius: 50px;
     border: none;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     outline: none;
     color: #231F20;
 }
@@ -47,7 +47,7 @@
     background-color: #ffffff;
     color: #ff3b3b;
     font-weight: 700;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     cursor: pointer;
     transition: opacity 0.2s ease;
     text-transform: uppercase;
@@ -59,7 +59,7 @@
 
 @media (min-width: 540px) {
     .form-title {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .form-input {
@@ -88,7 +88,7 @@
     }
     
     .form-title {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
         margin: 0;
     }
 
@@ -118,7 +118,7 @@
         margin: 0 auto;
     }
     .form-title {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
         margin: 0;
     }
 

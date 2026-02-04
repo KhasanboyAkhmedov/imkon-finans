@@ -58,7 +58,7 @@
     padding: 6px 10px;
     border-radius: 20px;
     color: #FF3E41;
-    font-size: 15px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 600;
     margin-bottom: 16px;
 }
@@ -68,13 +68,13 @@
 }
 
 .section-name__title {
-    font-size: 20px;
+    font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     color: #231F20;
 }
 
 .section-name__description {
-    font-size: 15px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
     color: #0A1519B2;
     line-height: 1.4;
     margin: 12px 0px;
@@ -83,7 +83,7 @@
 
 @media (min-width: 480px) {
     .section-name {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
 
@@ -166,7 +166,7 @@
         max-width: 1200px;
     }
     .section-name {
-        font-size: 18px;
+        font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .section-name span {
@@ -174,10 +174,10 @@
     }
 
     .section-name__title {
-        font-size: 24px;
+        font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .section-name__description {
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
