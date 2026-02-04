@@ -20,12 +20,12 @@
 }
 
 .working-definition{
-    font-size: 20px;
+    font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
 }
 
 .working-days {
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     color: #57585F;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .working-hour {
-    font-size: 16px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
 }
 

@@ -50,7 +50,7 @@
 }
 
 .vacancy-title { 
-    font-size: 18px; 
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));; 
     font-weight: 700; 
     margin: 0; 
     color: var(--text-main);
@@ -59,7 +59,7 @@
 .vacancy-badge {
   background: #fff5f5;
   color: #ff9a9b;
-  font-size: 12px;
+  font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
   padding: 4px 12px;
   border-radius: 20px;
   white-space: nowrap;
@@ -77,7 +77,7 @@
 }
 
 .location-text { 
-    font-size: 13px; 
+    font-size: calc((13px * var(--scale-factor)) + var(--user-font-modifier));; 
     line-height: 1.4;
 }
 
@@ -86,9 +86,9 @@
     padding: 8px;
     border-radius: 50px;
     border: none;
-    background: var(--bg-gray);
+    background: #F7F7F7;
     color: var(--text-main);
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;

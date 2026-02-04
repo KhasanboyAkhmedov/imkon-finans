@@ -51,8 +51,8 @@ function App() {
           <Route path="/organizational-structure" element={<OrganizationStructure />} />
           <Route path="/vacancies" element={<Vacancies />} />
           <Route path="/vacancies/:id" element={<VacancyInfo />} />
-          <Route path="/partners" element={<Partners />} />
           <Route path="/reception-days" element={<ReceptionDays />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/contacts" element={<Contacts />} />
 
           {/* Services */}

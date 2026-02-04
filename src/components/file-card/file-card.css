@@ -43,7 +43,7 @@
 .file-name {
   margin: 0;
   flex-grow: 1;
-  font-size: 16px;
+  font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   color: #231F20;
   margin-bottom: 4px;
@@ -53,7 +53,7 @@
 
 .file-meta {
   margin: 0;
-  font-size: 14px;
+  font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #767F8C;
 }
 

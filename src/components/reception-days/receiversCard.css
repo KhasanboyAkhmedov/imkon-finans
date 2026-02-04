@@ -1,5 +1,5 @@
 .receiver-position {
-  font-size: 18px;
+  font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #231F20;
   margin-bottom: 12px;
   font-weight: 700;
@@ -14,13 +14,14 @@
 }
 
 .receiver-name {
-  font-size: 18px;
+  font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   margin: 0 0 8px 0;
   color: #292D32;
 }
 
 .receiver-day {
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #57585F;
   margin-bottom: 16px;
 }
@@ -37,7 +38,7 @@
 }
 
 .receiver-time {
-  font-size: 16px;
+  font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   color: #292D32;
 }

@@ -25,7 +25,7 @@
 
 .input-group label {
   font-weight: 700;
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #231F20;
 }
 
@@ -35,7 +35,7 @@
   border: none;
   border-radius: 10px;
   padding: 14px;
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   outline: none;
   transition: 0.3s;
 }
@@ -51,7 +51,7 @@
     border: none;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     cursor: not-allowed;
     background-color: #f2f2f2;
     color: #555;

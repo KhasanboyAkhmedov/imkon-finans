@@ -6,7 +6,7 @@
 
 .partners-section-title {
     color: #FF3E41;
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     padding: 30px 0 10px 0;
     margin-bottom: 0;
@@ -15,7 +15,7 @@
 
 .section-description {
     text-align: center;
-    font-size: 15px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
     margin-bottom: 20px;
 }
 
@@ -47,7 +47,7 @@
 @media (min-width: 480px) {
     .section-description {
         text-align: center;
-        font-size: 16px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
         margin-bottom: 40px;
     }
 }
@@ -67,7 +67,7 @@
 
 @media (min-width: 1024px) {
     .partners-section-title {
-        font-size: 32px;
+        font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
 

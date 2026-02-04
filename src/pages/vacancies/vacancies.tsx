@@ -1,21 +1,3 @@
-// import VacancyCard from '../../components/vacancy-card/vacancyCard';
-// import './vacancies.css';
-// import { VacancyData } from './vacancies.data';
-
-// const Vacancies = () => {
-//   return (
-//     <section className='vacancies-section'>
-//         <div className='container vacancy-container'>
-//             {VacancyData.map((job) => (
-//                 <VacancyCard key={job.id} data={job} />
-//             ))}
-//         </div>
-//     </section>
-//   )
-// }
-
-// export default Vacancies
-
 import { List, Grid } from 'antd';
 import VacancyCard from '../../components/vacancy-card/vacancyCard';
 import { VacancyData } from './vacancies.data';
