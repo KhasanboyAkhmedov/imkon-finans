@@ -44,12 +44,12 @@
   background: #F5F7F9;
   border-radius: 8px;
   margin-bottom: 12px;
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #42526B;
 }
 
 .info-title {
-  font-size: 22px;
+  font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   color: #231F20;
   line-height: 1.4;
@@ -62,7 +62,7 @@
 }
 
 .info-description {
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   line-height: 1.6;
   color: #42526B;
   white-space: pre-line;
@@ -83,7 +83,7 @@
   background-color: #FF3E41;
   width: 180px;
   color: #fff;
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 600;
   text-transform: uppercase;
   padding: 8px 30px;
@@ -131,7 +131,7 @@
   }
 
   .info-title {
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
   }
 }
 

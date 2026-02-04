@@ -5,7 +5,7 @@
 
 .mgmt-main-title {
     color: #FF3E41;
-    font-size: 22px;
+    font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     padding: 30px 20px;
     margin-bottom: 0;
@@ -35,7 +35,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    font-size: 20px;
+    font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;
 }
 
 .mgmt-nav-btn.active, .mgmt-nav-btn:hover {
@@ -53,7 +53,7 @@
 }
 
 .mgmt-name {
-    font-size: 22px;
+    font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 800;
     color: #231F20;
     margin-bottom: 20px;
@@ -66,7 +66,7 @@
 }
 
 .mgmt-quote {
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     color: #575455;
     line-height: 1.4;
 }
@@ -129,14 +129,14 @@
   }
 
   .mgmt-name {
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
   }
 }
 
 @media (min-width: 1024px) {
   .mgmt-main-title {
     color: #FF3E41;
-    font-size: 28px;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     padding: 30px 20px;
     margin-bottom: 0;
@@ -146,20 +146,20 @@
     height: 46px;
   }
   .mgmt-name {
-    font-size: 32px;
+    font-size: calc((32px * var(--scale-factor)) + var(--user-font-modifier));;
   }
 }
 
 @media (min-width: 1200px) {
   .mgmt-main-title {
     color: #FF3E41;
-    font-size: 32px;
+    font-size: calc((32px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     padding: 30px 20px;
     margin-bottom: 0;
   }
   .mgmt-quote {
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     color: #575455;
     line-height: 1.4;
   }

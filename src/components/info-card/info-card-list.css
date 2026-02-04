@@ -4,7 +4,7 @@
 }
 
 .page-description {
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   line-height: 1.4;
   color: #42526B;
   white-space: pre-line;
