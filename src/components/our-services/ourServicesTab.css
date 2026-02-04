@@ -17,7 +17,7 @@
   border: none;
   background: transparent;
   padding: 14px 16px;
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 500;
   color: #231F20;
   cursor: pointer;
@@ -46,7 +46,7 @@
 }
 
 .services-title {
-  font-size: 18px;
+  font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   margin-bottom: 20px;
   color: #231F20;
@@ -67,7 +67,7 @@
 }
 
 .service-list-text {
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #35383F;
   line-height: 1.5;
 }
@@ -78,7 +78,7 @@
   align-items: center;
   gap: 12px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   text-align: left;
 }
 
@@ -109,7 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -150,7 +150,7 @@
 }
 
 .alert-text {
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   color: #0A1519B2;
   line-height: 1.5;
 }
@@ -180,7 +180,7 @@
     width: auto;
     text-align: center;
     padding: 18px 16px;
-    font-size: 16px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   }
 
   .services-content-card {
@@ -189,7 +189,7 @@
   }
 
   .services-title {
-    font-size: 20px;
+    font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     margin-bottom: 24px;
   }
 
@@ -203,12 +203,12 @@
   }
 
   .service-list-text {
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     line-height: 1.6;
   }
 
   .service-accordion-header {
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
   }
 
   .accordion-number {
@@ -218,7 +218,7 @@
   }
 
   .our-services-custom-collapse  p {
-    font-size: 15px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   }
   
   .ant-collapse-ghost > .ant-collapse-item > .ant-collapse-header {
@@ -241,11 +241,11 @@
   }
 
   .alert-text {
-    font-size: 16px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
   }
   
   .service-text-content {
-    font-size: 16px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
     line-height: 1.8;
   }
 }
