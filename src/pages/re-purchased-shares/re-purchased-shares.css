@@ -23,14 +23,14 @@
     
 .empty-title {
     color: #231F20;
-    font-size: 18px;
+    font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 600;
     margin-bottom: 8px;
 }
 
 .empty-description {
     color: #8c9196;
-    font-size: 15px;
+    font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;
     margin: 0;
 }
 
@@ -50,14 +50,14 @@
     
     .empty-title {
         color: #231F20;
-        font-size: 22px;
+        font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;
         font-weight: 600;
         margin-bottom: 8px;
     }
     
     .empty-description {
         color: #8c9196;
-        font-size: 16px;
+        font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
         margin: 0;
     }
 }

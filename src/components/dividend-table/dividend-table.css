@@ -4,7 +4,7 @@
 
 .table-main-title {
     color: #231F20;
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 600;
     margin-bottom: 24px;
 }
@@ -16,7 +16,7 @@
 .custom-dividend-table .ant-table-thead > tr > th {
     background: transparent !important;
     color: #8c8c8c;
-    font-size: 12px;
+    font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
     border-bottom: 1px solid #f0f0f0 !important;
     text-transform: uppercase;
@@ -27,7 +27,7 @@
     border-bottom: 1px solid #f0f0f0 !important;
     padding: 20px 8px;
     color: #231F20;
-    font-size: 14px;
+    font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
 }
 
 .custom-dividend-table .col-year {
@@ -58,19 +58,19 @@
 
 @media (min-width: 768px) {
     .table-main-title {
-        font-size: 18px;
+        font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
 
 @media (min-width: 1200px) {
     .custom-dividend-table .ant-table-thead > tr > th {
-        font-size: 14px;
+        font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 
     .custom-dividend-table .ant-table-tbody > tr > td {
         border-bottom: 1px solid #f0f0f0 !important;
         padding: 20px 8px;
         color: #231F20;
-        font-size: 16px;
+        font-size: calc((13px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
