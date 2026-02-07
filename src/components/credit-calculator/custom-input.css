@@ -1,0 +1,54 @@
+.custom-field-wrapper {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-input-container {
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  transition: border-color 0.2s;
+}
+
+.custom-input-container .ant-form-item-label {
+  padding: 0 !important;
+  margin-bottom: -6px; 
+}
+
+.custom-input-container .ant-form-item-label > label {
+  font-size: 14px;
+  color: #8c8c8c;
+  height: auto;
+}
+
+.custom-inner-input.ant-input {
+  height: 24px !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 5px  !important;
+  font-size: 16px;
+  color: #262626;
+  background: transparent;
+}
+
+.custom-input-container .ant-form-item {
+  margin-bottom: 0 !important;
+}
+
+.custom-input-container .ant-form-item-explain {
+  display: none !important;
+}
+
+.outside-error-message {
+  color: #ff4d4f;
+  font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+.custom-field-wrapper.has-error .custom-input-container {
+  border-color: #ff4d4f;
+}

@@ -1,3 +1,4 @@
+import LoanComponent from '../components/credit-calculator/loanComponent'
 import CreditStatistics from '../components/credit-statistics/creditStatistics'
 import HeroCarousel from '../components/hero/heroCarousel'
 import { NewsFeed } from '../components/news/newsFeed'
@@ -8,6 +9,7 @@ const Home = () => {
   return (
     <>
       <HeroCarousel />
+      <LoanComponent />
       <OrganizationToday />
       <OurProducts />
       <CreditStatistics />

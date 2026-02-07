@@ -1,0 +1,52 @@
+.phone-input-wrapper {
+  max-width: 400px;
+}
+
+.custom-input-container {
+  background: #ffffff;
+  padding: 6px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+.custom-input-container .ant-form-item-label {
+  padding: 0 !important; 
+  margin-bottom: -4px;
+}
+
+.custom-input-container .ant-form-item-label > label {
+  font-size: calc((13px * var(--scale-factor)) + var(--user-font-modifier));
+  color: #595959;
+  height: auto;
+}
+
+.custom-phone-input.ant-input {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0;
+    font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));
+    color: #262626;
+    background: transparent;
+}
+
+.custom-input-container .ant-form-item-explain,
+.custom-input-container .ant-form-item-extra {
+  display: none !important;
+}
+
+.custom-input-container .ant-form-item {
+  margin-bottom: 0 !important;
+}
+
+.outside-error-message {
+  color: #ff4d4f;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+.phone-input-wrapper:has(.outside-error-message) .custom-input-container {
+  border-color: #ff4d4f;
+}
