@@ -6,16 +6,27 @@ import { navMenu } from './navData';
 import './mobileNav.css';
 import { FaBars } from 'react-icons/fa6';
 import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
+import { Link } from 'react-router-dom';
+import LoanModal from '../../components/credit-calculator/loan-modal';
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState('application');
 
     const toggleDrawer = () => setOpen(!open);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = (tabKey: string) => {
+        setActiveTab(tabKey);
+        setIsModalOpen(true);
+    };
 
     return (
         <div className="mobile_header_container">
             <div className="mobile_header_bar">
-                <img src={logoWithText} className="logo" alt="logo" />
+                <Link to="/" style={{ display: 'inline-block' }}>
+                    <img src={logoWithText} className="logo" alt="logo" />
+                </Link>
                 <AppearanceSettings />
                 <div className="burger_button" onClick={toggleDrawer}>
                     {open ? (
@@ -75,10 +86,17 @@ const MobileNav = () => {
                     </Select>
                 </div>
                 <div className="drawer_footer_actions">
-                    <button className="btn_apply">Ariza yuborish</button>
-                    <button className="btn_calc">Kredit kalkulyatori</button>
+                    <button onClick={() => showModal('application')} className="btn_apply">Ariza yuborish</button>
+                    <button onClick={() => showModal('credit-calculator')} className="btn_calc">Kredit kalkulyatori</button>
                 </div>
+                
             </Drawer>
+            <LoanModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+            />
         </div>
     );
 }

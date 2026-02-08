@@ -9,9 +9,17 @@ import { Select } from 'antd';
 import { FiPhone } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import LoanModal from '../../components/credit-calculator/loan-modal';
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState('application');
+
+    const showModal = (tabKey: string) => {
+        setActiveTab(tabKey);
+        setIsModalOpen(true);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -90,17 +98,23 @@ const Navbar = () => {
                             ))}
                         </ul>
                         <div className="site-header__bottom-button-group">
-                            <button className="site-header__bottom-button-group-apply">
-                                <a href="#kredit_arizasi">Ariza yuborish</a>
+                            <button onClick={() => showModal('application')} className="site-header__bottom-button-group-apply">
+                                Ariza yuborish
                             </button>
-                            <button className="site-header__bottom-button-group-creditcalc">
-                                <a href="#kredit_arizasi">Kredit kalkulyatori</a>
+                            <button onClick={() => showModal('credit-calculator')} className="site-header__bottom-button-group-creditcalc">
+                                Kredit kalkulyatori
                             </button>
                         </div>
                     </div>
                 </div>
                 <MobileNav  />
             </header>
+            <LoanModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+            />
         </div>
     );
 };
