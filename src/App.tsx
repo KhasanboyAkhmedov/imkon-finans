@@ -35,6 +35,7 @@ import History from './pages/history/history'
 import Videos from './pages/videos/videos'
 import VideosDetail from './pages/video-detail/video-detail'
 import EventsDetail from './pages/events-detail/events-detail'
+import ShareCapital from './pages/share-capital/share-capital'
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
           {/* Investors */}
           <Route path="/business-plans" element={<BusinessPlans />} />
           <Route path="/dividends" element={<Dividends />} />
+          <Route path="/share-capital" element={<ShareCapital />} />
           <Route path="/re-purchased-shares" element={<RePurchasedShares />} />
           <Route path="/emission" element={<Emission />} />
           <Route path="/important-facts" element={<ImportantFacts />} />

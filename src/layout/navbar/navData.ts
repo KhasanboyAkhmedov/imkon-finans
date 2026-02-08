@@ -38,6 +38,10 @@ export const navMenu: NavMenu[] = [
                 url: '/dividends',
             },
             {
+                label: 'Ustav fondi',
+                url: '/share-capital',
+            },
+            {
                 label: 'Qayta sotib olingan aksiyalar',
                 url: '/re-purchased-shares',
             },
