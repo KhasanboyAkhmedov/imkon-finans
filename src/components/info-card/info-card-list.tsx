@@ -1,9 +1,7 @@
 import React from 'react';
-import { List, Grid } from 'antd';
+import { List } from 'antd';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import './info-card-list.css';
-
-const { useBreakpoint } = Grid;
 
 interface InfoCardListProps<T> {
   title: string;
@@ -11,17 +9,23 @@ interface InfoCardListProps<T> {
   dataSource: T[];
   renderItem: (item: T, index: number) => React.ReactNode;
   pageSize?: number;
+  total?: number;
+  loading?: boolean;
+  current?: number;
+  onPageChange?: (page: number, pageSize: number) => void;
 }
 
-const InfoCardList = <T extends { id: string | number }>({ 
+const InfoCardList = <T extends { _id: string }>({ 
   title, 
   pageDescription,
   dataSource, 
   renderItem,
-  pageSize 
+  pageSize = 3,
+  total,
+  loading,
+  current,
+  onPageChange 
 }: InfoCardListProps<T>) => {
-  const screens = useBreakpoint();
-  const defaultPageSize = screens.md ? 3 : 3;
 
   const itemRender = (_: unknown, type: string, originalElement: React.ReactNode) => {
     if (type === 'prev') return <HiOutlineArrowLeft className="pagi-arrow-wrapper" />;
@@ -36,9 +40,12 @@ const InfoCardList = <T extends { id: string | number }>({
         <p className='page-description'>{pageDescription}</p>
 
         <List
-          dataSource={dataSource}
+          dataSource={loading ? Array(3).fill({}) : dataSource}
           pagination={{
-            pageSize: pageSize || defaultPageSize,
+            current: current,
+            total: total,
+            pageSize: pageSize,
+            onChange: onPageChange,
             itemRender: itemRender,
             position: 'bottom',
             align: 'center',

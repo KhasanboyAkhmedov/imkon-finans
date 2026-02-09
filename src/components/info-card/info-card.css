@@ -24,9 +24,29 @@
   object-fit: cover;
   display: block;
   border: none;
-  transition: transform 0.5s ease;
+  transition: opacity 0.6s ease-in-out, filter 0.6s ease-in-out;
   animation: fadeIn 0.5s ease-in-out;
   cursor: pointer;
+}
+
+.media-skeleton {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 @keyframes fadeIn {
@@ -104,6 +124,11 @@
   font-size: 15px;
 }
 
+.opacity-0 { opacity: 0; }
+.opacity-100 { opacity: 1; }
+.blur-lg { filter: blur(20px); }
+.transition-all { transition-property: all; }
+
 @media (min-width: 768px) {
   .info-card-wrapper {
     margin-bottom: 50px;
@@ -111,6 +136,11 @@
 
   .info-media-container {
     width: 45%;
+    max-height: 400px;
+  }
+
+  .media-skeleton {
+    min-width: 45%;
     max-height: 400px;
   }
 

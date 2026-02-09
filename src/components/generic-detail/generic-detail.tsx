@@ -4,20 +4,15 @@ import { FaAngleLeft } from 'react-icons/fa6';
 import { Empty } from 'antd';
 import { formatDate } from '../../commons';
 import './generic-detail.css';
+import type { InfoCardItem } from '../info-card/info-card.types';
 
 interface GenericDetailProps<T> {
-  dataFetcher: (id: string) => T | undefined;
+  resource: string;
   renderMedia?: (item: T) => ReactNode;
 }
-export interface BaseDetailItem {
-  id: string;
-  title: string;
-  description: string;
-  createdAt?: Date;
-}
 
-export const GenericDetail = <T extends BaseDetailItem>({ 
-  dataFetcher, 
+export const GenericDetail = <T extends InfoCardItem>({ 
+  resource,
   renderMedia 
 }: GenericDetailProps<T>) => {
   const { id } = useParams<{ id: string }>();
@@ -26,15 +21,30 @@ export const GenericDetail = <T extends BaseDetailItem>({
   const [item, setItem] = useState<T | null>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (id) {
-        const found = dataFetcher(id);
-        setItem(found || null);
+    const fetchData = async () => {
+      if (!id) return;
+      
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/${resource}/one/${id}`
+        );
+        
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const result = await response.json();
+        
+        setItem(result.data || result); 
+      } catch (error) {
+        console.error("Fetch error:", error);
+        setItem(null);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
-    }, 600);
-    return () => clearTimeout(timer);
-  }, [id, dataFetcher]);
+    };
+
+    fetchData();
+  }, [id, resource]);
 
   const handleBack = () => navigate(-1);
 

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './info-card.css';
 import type { InfoCardProps } from './info-card.types';
 import { formatDate, getEmbedUrl } from '../../commons';
 // import { HiOutlineArrowRight } from 'react-icons/hi';
 
 export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, isClickable = false }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const isEven = index % 2 === 0;
   const hasMedia = !!(item.imageUrl || item.videoUrl);
   
@@ -18,16 +19,22 @@ export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, is
     
     return (
       <div className={`info-media-container ${mediaClass}`}>
+        {!isLoaded && <div className="media-skeleton" />}
         {item.videoUrl ? (
           <iframe
             src={getEmbedUrl(item.videoUrl)}
             title={item.title}
             allowFullScreen
-            className="info-media-element"
+            onLoad={() => setIsLoaded(true)}
+            className={`info-media-element ${isLoaded ? 'opacity-100' : 'opacity-0 blur-xl'}`}
             loading="lazy"
           />
         ) : (
-          <img src={item.imageUrl} alt={item.title} className="info-media-element" loading="lazy" decoding="async"/>
+          <img
+            src={item.imageUrl}
+            alt={item.title} 
+            onLoad={() => setIsLoaded(true)}
+            className={`info-media-element ${isLoaded ? 'opacity-100' : 'opacity-0 blur-xl'}`} loading="lazy" decoding="async"/>
         )}
       </div>
     );

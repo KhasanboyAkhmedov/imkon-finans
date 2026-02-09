@@ -1,11 +1,10 @@
 import { GenericDetail } from '../../components/generic-detail/generic-detail'
 import { getEmbedUrl } from '../../commons'
-import { EventsData } from '../events/events.data'
 
 const EventsDetail = () => {
   return (
     <GenericDetail
-        dataFetcher={(id) => EventsData.find(v => v.id === id)}
+        resource='event'
         renderMedia={(item) => (
             item.videoUrl ? (
                 <iframe src={getEmbedUrl(item.videoUrl)} title={item.title} allowFullScreen className="detail-media-element"/>

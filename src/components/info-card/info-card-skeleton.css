@@ -1,0 +1,32 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 8px;
+  display: block;
+}
+
+.skeleton-date-badge {
+  width: 120px;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.skeleton-title-line {
+  height: 32px;
+  margin-bottom: 16px;
+}
+
+.skeleton-desc-line {
+  height: 16px;
+  margin-bottom: 10px;
+}
+
+.skeleton-desc-line.short {
+  width: 50%;
+}

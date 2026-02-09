@@ -1,17 +1,20 @@
 export interface InfoCardItem {
-  id: string;    
+  _id: string;    
   title: string;
   description: string;
   imageUrl?: string; 
   videoUrl?: string;
+  dropboxPath?: string;
   link?: string;
   isFloating?: boolean;
-  createdAt?: Date; 
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface InfoCardProps {
   item: InfoCardItem;
   index: number;
   isClickable?: boolean;
+  isFloating?: boolean;
   navigateUrl?: string;
 }

@@ -60,11 +60,11 @@ const NewsDetail: React.FC = () => {
             <div className="skeleton skeleton-text last"></div>
           </div>
         ) : (
-          <>
+          <div>
             <div className="date-badge">{formatDate(item?.createdAt)}</div>
             <h1 className="news-title">{item?.title}</h1>
             <p className="news-description">{item?.description}</p>
-          </>
+          </div>
         )}
       </div>
     </div>
