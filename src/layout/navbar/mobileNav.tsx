@@ -8,6 +8,7 @@ import { FaBars } from 'react-icons/fa6';
 import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
 import { Link } from 'react-router-dom';
 import LoanModal from '../../components/credit-calculator/loan-modal';
+import SearchInput from '../../components/search-input/search-input';
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
@@ -27,7 +28,11 @@ const MobileNav = () => {
                 <Link to="/" style={{ display: 'inline-block' }}>
                     <img src={logoWithText} className="logo" alt="logo" />
                 </Link>
-                <AppearanceSettings />
+                
+                <div className='action-wrapper'>
+                    <SearchInput />
+                    <AppearanceSettings />
+                </div>
                 <div className="burger_button" onClick={toggleDrawer}>
                     {open ? (
                         <CloseOutlined className="close_icon" />

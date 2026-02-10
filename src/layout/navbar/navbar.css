@@ -50,18 +50,6 @@
 }
 
 
-.site-header__top input[type='text'] {
-	flex: 1;
-	max-width: 480px;
-	height: 44px;
-	border: 1px solid #e4e6e8;
-	border-radius: 14px;
-	padding: 0 13px;
-	font-size: calc((12px * var(--scale-factor)) + var(--user-font-modifier));;
-	outline: none;
-	color: #c4c4c4;
-	margin: 0 20px;
-}
 .menu_top{
 	display: none;
 }
@@ -252,4 +240,3 @@
 .site-header__bottom-btn:hover .dropdown_wrapper {
     display: block;
 }
-

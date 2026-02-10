@@ -10,6 +10,7 @@ import { FiPhone } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import LoanModal from '../../components/credit-calculator/loan-modal';
+import SearchInput from '../../components/search-input/search-input';
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -23,16 +24,12 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 250) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
+            setIsSticky(window.scrollY > 250);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
     return (
         <div className={`nav_wrapper_bg ${isSticky ? 'is-sticky' : ''}`}>
             <header className="site-header">
@@ -41,37 +38,28 @@ const Navbar = () => {
                         <Link to="/" style={{ display: 'inline-block' }}>
                             <img src={logoWithText} alt="logo" width="170" height="30" />
                         </Link>
-                        <input className="header_inp" type="text" placeholder="Qidiruv" />
+
+                        <SearchInput />
+
                         <img className="menu_top" src="./images/header/menu.svg" alt="menu"/>
+                        
                         <div className="media">
                             <div className="site-header__top-info">
                                 <AppearanceSettings />
                                 <a 
-                                    href="https://yandex.uz/maps/org/196915386086/?ll=72.354256%2C40.765394&z=16.28" 
+                                    href="https://yandex.uz/maps/..." 
                                     target="_blank" 
-                                    rel="noopener noreferrer"
+                                    rel="noopener noreferrer" 
                                     className="site-header__top-info-location-link"
                                 >
                                     <GrLocation className='site-header__top-info-location-icon' />
                                 </a>
                                 <div className="lang_wrapper">
                                     <GrLanguage className="lang_icon" />
-                                    <Select
-                                        defaultValue="uz"
-                                        variant="borderless"
-                                        className="lang_select"
-                                        popupClassName="lang_dropdown"
-                                        onChange={(val) => console.log("Lang:", val)}
-                                    >
-                                        <Select.Option value="uz">
-                                            <span className="flag_item">O'zb</span>
-                                        </Select.Option>
-                                        <Select.Option value="ru">
-                                            <span className="flag_item">Рус</span>
-                                        </Select.Option>
-                                        <Select.Option value="en">
-                                            <span className="flag_item">Eng</span>
-                                        </Select.Option>
+                                    <Select defaultValue="uz" variant="borderless" className="lang_select">
+                                        <Select.Option value="uz"><span className="flag_item">O'zb</span></Select.Option>
+                                        <Select.Option value="ru"><span className="flag_item">Рус</span></Select.Option>
+                                        <Select.Option value="en"><span className="flag_item">Eng</span></Select.Option>
                                     </Select>
                                 </div>
                             </div>
@@ -90,30 +78,22 @@ const Navbar = () => {
                     <div className="site-header__bottom">
                         <ul className="site-header__bottom-list">
                             {navMenu.map((menu, index) => (
-                                <NavDropdown
-                                    key={index}
-                                    menuItem={menu}
-                                    variant={menu.variant ?? "stock"}
-                                />
+                                <NavDropdown key={index} menuItem={menu} variant={menu.variant ?? "stock"} />
                             ))}
                         </ul>
                         <div className="site-header__bottom-button-group">
-                            <button onClick={() => showModal('application')} className="site-header__bottom-button-group-apply">
-                                Ariza yuborish
-                            </button>
-                            <button onClick={() => showModal('credit-calculator')} className="site-header__bottom-button-group-creditcalc">
-                                Kredit kalkulyatori
-                            </button>
+                            <button onClick={() => showModal('application')} className="site-header__bottom-button-group-apply">Ariza yuborish</button>
+                            <button onClick={() => showModal('credit-calculator')} className="site-header__bottom-button-group-creditcalc">Kredit kalkulyatori</button>
                         </div>
                     </div>
                 </div>
-                <MobileNav  />
+                <MobileNav />
             </header>
             <LoanModal 
                 isOpen={isModalOpen} 
                 onClose={() => setIsModalOpen(false)} 
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
+                activeTab={activeTab} 
+                setActiveTab={setActiveTab} 
             />
         </div>
     );
