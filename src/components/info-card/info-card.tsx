@@ -4,12 +4,12 @@ import type { InfoCardProps } from './info-card.types';
 import { formatDate, getEmbedUrl } from '../../commons';
 // import { HiOutlineArrowRight } from 'react-icons/hi';
 
-export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, isClickable = false }) => {
+export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, showDate = true, isClickable = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const isEven = index % 2 === 0;
   const hasMedia = !!(item.imageUrl || item.videoUrl);
   
-  const formattedDate = item.createdAt 
+  const formattedDate = item.createdAt && showDate
     ? formatDate(item.createdAt) 
     : null;
 
@@ -45,7 +45,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, is
       {renderMedia()}
       
       <div className="info-text-content">
-        {formattedDate && <span className="info-date-badge">{formattedDate}</span>}
+        {formattedDate && showDate && <span className="info-date-badge">{formattedDate}</span>}
         
         <h2 className="info-title">{item.title}</h2>
         

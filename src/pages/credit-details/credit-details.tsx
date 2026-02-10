@@ -3,10 +3,18 @@ import { useParams, Navigate } from 'react-router-dom';
 import { HiOutlineArrowRight } from 'react-icons/hi';
 import './credit-details.css';
 import { credits } from './credit-details.data';
+import LoanModal from '../../components/credit-calculator/loan-modal';
 
 const CreditDetail: React.FC = () => {
   const { creditName } = useParams<{ creditName: string }>();
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModalTab, setActiveModalTab] = useState('application');
+
+  const showModal = (tabKey: string) => {
+      setActiveModalTab(tabKey);
+      setIsModalOpen(true);
+  };
+
   const data = credits.find((c) => c.id === creditName);
 
   const [activeTabId, setActiveTabId] = useState<string | undefined>(data?.details[0]?.id);
@@ -27,7 +35,7 @@ const CreditDetail: React.FC = () => {
             </div>
             <h1 className="detail-page-title">{data.title}</h1>
           </div>
-          <button className='application-button'>Ariza Qoldirish <HiOutlineArrowRight className='application-button-icon' /></button>
+          <button className='application-button' onClick={() => showModal('application')}>Ariza Qoldirish <HiOutlineArrowRight className='application-button-icon' /></button>
         </div>
 
         <div className="detail-main-layout">
@@ -74,10 +82,16 @@ const CreditDetail: React.FC = () => {
           
         </div>
 
-        <button className='application-button mobile-only'>
+        <button className='application-button mobile-only' onClick={() => showModal('application')}>
           Ariza qoldirish <HiOutlineArrowRight className='application-button-icon' />
         </button>
       </div>
+        <LoanModal 
+            isOpen={isModalOpen} 
+            onClose={() => setIsModalOpen(false)} 
+            activeTab={activeModalTab} 
+            setActiveTab={setActiveModalTab} 
+        />
     </section>
   );
 };

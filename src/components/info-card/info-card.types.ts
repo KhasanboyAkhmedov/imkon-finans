@@ -16,5 +16,6 @@ export interface InfoCardProps {
   index: number;
   isClickable?: boolean;
   isFloating?: boolean;
+  showDate?: boolean;
   navigateUrl?: string;
 }

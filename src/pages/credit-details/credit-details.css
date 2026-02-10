@@ -280,9 +280,8 @@
     .detail-tabs-list {
       gap: 10px;
     }
-
     .detail-tab-item {
-      font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;;
+      font-size: calc((17px * var(--scale-factor)) + var(--user-font-modifier));;;
     }
     .display-card-header {
       font-size: calc((17px * var(--scale-factor)) + var(--user-font-modifier));;;

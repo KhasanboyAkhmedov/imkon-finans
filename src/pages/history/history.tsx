@@ -45,7 +45,7 @@ const History = () => {
           ) : (
             data.map((item, index) => (
               <div key={item._id} className="info-list-item-wrapper">
-                <InfoCard index={index} item={item} />
+                <InfoCard showDate={false} isFloating index={index} item={item} />
               </div>
             ))
           )}
