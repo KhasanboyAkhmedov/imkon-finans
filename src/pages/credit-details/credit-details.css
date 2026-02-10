@@ -2,7 +2,6 @@
   padding: 40px 0;
 }
 
-/* --- Header Styles --- */
 .detail-heading {
   display: flex;
   align-items: center;
@@ -28,20 +27,18 @@
 }
 
 .detail-page-title {
-  font-size: 24px;
+  font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;;
   font-weight: 800;
   color: #231f20;
   margin: 0;
 }
 
-/* --- Layout Grid --- */
 .detail-main-layout {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* --- Tabs --- */
 .detail-tabs-list {
     display: flex;
     flex-direction: column;
@@ -57,7 +54,7 @@
   text-align: left;
   background-color: #FF73751A;
   color: #FF3E41;
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -69,7 +66,6 @@
   box-shadow: 0 8px 20px #FF73751A;
 }
 
-/* --- Display Card --- */
 .detail-display-card {
     display: flex;
     flex-direction: column;
@@ -85,13 +81,12 @@
 
 
 .display-card-header {
-  font-size: 15px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;;
   font-weight: 600;
   color: #57585F;
   line-height: 1.2;
 }
 
-/* --- Range and Text Body --- */
 .display-range-wrapper {
   display: flex;
   align-items: center;
@@ -105,12 +100,12 @@
     margin-bottom: 20px;
 }
 .range-num {
-    font-size: 20px;
+    font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;;
     font-weight: 700;
 }
 
 .range-label {
-  font-size: 16px;
+  font-size: calc((15px * var(--scale-factor)) + var(--user-font-modifier));;;
   color: #939393;
 }
 
@@ -120,24 +115,23 @@
 }
 
 .display-text {
-  font-size: 18px;
+  font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;;
   font-weight: 600;
   color: #231f20;
   line-height: 1.4;
 }
 
 .display-text.bold-large {
-  font-size: 22px;
+  font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;;
   color: #231f20;
 }
 
 .display-footer-info {
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;;
   color: #9A9EA6;
   margin-bottom: 0;
 }
 
-/* --- Watermark --- */
 .detail-watermark {
   position: absolute;
   bottom: -12px; 
@@ -157,7 +151,7 @@
   margin-top: 20px;
   background-color: #FF3E41;
   color: #ffffff;
-  font-size: 14px;
+  font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;;
   font-weight: 600;
   line-height: 20px;
   text-transform: uppercase;
@@ -186,7 +180,7 @@
 
 @media (min-width: 480px) {
   .range-num {
-    font-size: 24px;
+    font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;;
     font-weight: 800;
   }
 }
@@ -201,7 +195,7 @@
       width: auto;
       margin-top: 0;
       padding: 10px 30px;
-      font-size: 14px;
+      font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;;
     }
 
     .detail-header {
@@ -230,7 +224,7 @@
         overflow: hidden;
     }
     .range-num {
-        font-size: 28px;
+        font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;;
         font-weight: 900;
         color: #231f20;
         display: block;
@@ -260,7 +254,7 @@
   }
 
   .detail-page-title {
-    font-size: 28px;
+    font-size: calc((26px * var(--scale-factor)) + var(--user-font-modifier));;;
   }
 
   .detail-tabs-list {
@@ -270,15 +264,15 @@
   .detail-tab-item {
     padding: 20px 25px;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;;
   }
 
   .display-card-header {
-    font-size: 16px;
+    font-size: calc((16px * var(--scale-factor)) + var(--user-font-modifier));;;
   }
 
   .display-text.bold-large {
-    font-size: 22px;
+    font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;;
   }
 }
 
@@ -288,16 +282,16 @@
     }
 
     .detail-tab-item {
-      font-size: 18px;
+      font-size: calc((18px * var(--scale-factor)) + var(--user-font-modifier));;;
     }
     .display-card-header {
-      font-size: 17px;
+      font-size: calc((17px * var(--scale-factor)) + var(--user-font-modifier));;;
     }
     .display-text {
-      font-size: 20px;
+      font-size: calc((20px * var(--scale-factor)) + var(--user-font-modifier));;;
     }
 
     .display-text.bold-large {
-      font-size: 24px;
+      font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;;
     }
 }
