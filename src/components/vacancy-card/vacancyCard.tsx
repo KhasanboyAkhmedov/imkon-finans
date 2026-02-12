@@ -12,7 +12,7 @@ const VacancyCard: React.FC<Props> = ({ data }) => {
     const navigate = useNavigate();
 
     const handleNavigation = () => {
-        navigate(`/vacancies/${data.id}`);
+        navigate(`/vacancies/${data._id}`);
     };
     return (
         <div className="vacancy-card">
@@ -22,7 +22,7 @@ const VacancyCard: React.FC<Props> = ({ data }) => {
                 </div>
                 <div className="title-row">
                     <h3 className="vacancy-title">{data.title}</h3>
-                    <span className="vacancy-badge">{data.type}</span>
+                    <span className="vacancy-badge">{data.hours}</span>
                 </div>
             </div>
             <div className="location-row">

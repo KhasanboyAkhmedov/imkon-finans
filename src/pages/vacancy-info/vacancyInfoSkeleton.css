@@ -1,0 +1,63 @@
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #f8f8f8 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.info-title-skeleton {
+  height: 40px;
+  width: 60%;
+  margin-bottom: 15px;
+}
+
+.info-badge-skeleton {
+  height: 32px;
+  width: 120px;
+  border-radius: 50px;
+}
+
+.block-title-skeleton {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.text-line {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.text-line-short {
+  height: 16px;
+  width: 40%;
+}
+
+.req-item-skeleton {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.icon-skeleton {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.skeleton-benefit {
+  border: 1px solid #eee !important;
+  pointer-events: none;
+}

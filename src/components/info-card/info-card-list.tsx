@@ -2,6 +2,7 @@ import React from 'react';
 import { List } from 'antd';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import './info-card-list.css';
+import type { ListGridType } from 'antd/es/list';
 
 interface InfoCardListProps<T> {
   title: string;
@@ -13,6 +14,7 @@ interface InfoCardListProps<T> {
   loading?: boolean;
   current?: number;
   onPageChange?: (page: number, pageSize: number) => void;
+  grid?: ListGridType;
 }
 
 const InfoCardList = <T extends { _id: string }>({ 
@@ -24,7 +26,8 @@ const InfoCardList = <T extends { _id: string }>({
   total,
   loading,
   current,
-  onPageChange 
+  onPageChange,
+  grid
 }: InfoCardListProps<T>) => {
 
   const itemRender = (_: unknown, type: string, originalElement: React.ReactNode) => {
@@ -37,9 +40,10 @@ const InfoCardList = <T extends { _id: string }>({
     <section className="info-section">
       <div className="container">
         <h2 className="section-title">{title}</h2>
-        <p className='page-description'>{pageDescription}</p>
+        {pageDescription && <p className='page-description'>{pageDescription}</p>}
 
         <List
+          grid={grid}
           dataSource={loading ? Array(3).fill({}) : dataSource}
           pagination={{
             current: current,

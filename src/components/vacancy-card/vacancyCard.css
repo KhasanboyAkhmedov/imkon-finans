@@ -1,6 +1,5 @@
 :root {
   --primary-red: #FF3E41;
-  --bg-gray: #F7F7F7;
   --text-main: #231F20;
   --text-muted: #767F8C;
   --border-color: #E4E5E8;
@@ -29,7 +28,7 @@
 .vacancy-icon-wrapper {
   width: 48px;
   height: 48px;
-  background: var(--bg-gray);
+  background: #F7F7F7;
   border-radius: 12px;
   display: flex;
   align-items: center;

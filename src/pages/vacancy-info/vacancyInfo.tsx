@@ -1,16 +1,39 @@
 import { useParams } from 'react-router-dom';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import './vacancyInfo.css';
-import { VacancyData, type Vacancy } from '../vacancies/vacancies.data';
-import type { FC } from 'react';
+import { type Vacancy } from '../vacancies/vacancies.data';
+import { type FC, useEffect, useState } from 'react';
 import { BiCheckDouble } from 'react-icons/bi';
+import VacancyInfoSkeleton from './vacanvyInfoSkeleton';
 
 const VacancyInfo: FC = () => {
   const { id } = useParams<{ id: string }>();
-  
-  const data: Vacancy | undefined = VacancyData.find(
-    (item) => item.id === Number(id)
-  );
+  const [data, setData] = useState<Vacancy | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchVacancy = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/jobs/one/${id}`);
+        const result = await response.json();
+        
+        setData(result);
+      } catch (error) {
+        console.error("Failed to fetch vacancy details:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchVacancy();
+    }
+  }, [id]);
+
+  if (loading) {
+    return <VacancyInfoSkeleton />;
+  }
 
   if (!data) {
     return (
@@ -27,7 +50,7 @@ const VacancyInfo: FC = () => {
           <h1 className="info-title">{data.title}</h1>
           <div className="info-badge-wrapper">
             <span className="info-badge-dot">●</span>
-            <span className="info-badge-text">{data.type}</span>
+            <span className="info-badge-text">{data.hours}</span>
           </div>
         </div>
 
@@ -41,7 +64,7 @@ const VacancyInfo: FC = () => {
             <div className="content-block">
               <h3 className="block-title">Talablar</h3>
               <ul className="requirements-list">
-                {data.requirements.map((req, index) => (
+                {data.requirements?.map((req, index) => (
                   <li key={index} className="req-item">
                     <BiCheckDouble className="req-icon" />
                     <span>{req}</span>
@@ -53,10 +76,10 @@ const VacancyInfo: FC = () => {
 
           <aside className="info-sidebar">
             <div className="benefits-grid">
-              {data.benefits.map((benefit, index) => (
+              {data.benefits?.map((benefit, index) => (
                 <div key={index} className="benefit-card">
-                    <HiOutlineBadgeCheck className="benefit-icon-box" />
-                    <span className="benefit-text">{benefit}</span>
+                  <HiOutlineBadgeCheck className="benefit-icon-box" />
+                  <span className="benefit-text">{benefit}</span>
                 </div>
               ))}
             </div>
