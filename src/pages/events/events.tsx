@@ -15,7 +15,7 @@ const Events = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/event/all?page=${page}&pageSize=${3}`
+        `${import.meta.env.VITE_API_URL}/events/all?page=${page}&pageSize=${3}`
       );
       const result = await response.json();
       

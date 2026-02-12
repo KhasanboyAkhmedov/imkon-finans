@@ -57,7 +57,7 @@ const ApplicationForm: React.FC = () => {
     };
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/application`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/applications`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
