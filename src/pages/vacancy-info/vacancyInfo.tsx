@@ -1,15 +1,18 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import './vacancyInfo.css';
 import { type Vacancy } from '../vacancies/vacancies.data';
 import { type FC, useEffect, useState } from 'react';
 import { BiCheckDouble } from 'react-icons/bi';
 import VacancyInfoSkeleton from './vacanvyInfoSkeleton';
+import { Empty } from 'antd';
+import { FaAngleLeft } from 'react-icons/fa6';
 
 const VacancyInfo: FC = () => {
   const { id } = useParams<{ id: string }>();
   const [data, setData] = useState<Vacancy | null>(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchVacancy = async () => {
@@ -34,12 +37,26 @@ const VacancyInfo: FC = () => {
   if (loading) {
     return <VacancyInfoSkeleton />;
   }
+  const handleBack = () => navigate(-1);
 
   if (!data) {
     return (
-      <div className="container" style={{ padding: '100px 0', textAlign: 'center' }}>
-        <h2>Vakansiya topilmadi</h2>
-      </div>
+      <section className='detail-container'>
+        <div className="container">
+            <div onClick={handleBack} className="go-back-button">
+                <FaAngleLeft className='back-icon'/> 
+                <p className='back-text'>Orqaga</p>
+            </div>
+
+            <div className="error-message">
+                <Empty description={false} className='empty-box' />
+                <p className='error-text'>Ma'lumot topilmadi.</p>
+                <button onClick={handleBack} className="back-button">
+                    Ortga qaytish
+                </button>
+            </div>
+        </div>
+      </section>
     );
   }
 

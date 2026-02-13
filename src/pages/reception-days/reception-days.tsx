@@ -1,31 +1,86 @@
 import { FaRegClock } from 'react-icons/fa6'
 import './reception-days.css';
-import { receiversData } from './receivers.data';
+import { type Receiver } from './receivers.data';
 import ReceiversCard from '../../components/reception-days/receiversCard';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import ReceiversCardSkeleton from '../../components/reception-days/receiversCardSkeleton';
+import { Empty } from 'antd';
+import { useNavigate } from 'react-router-dom';
+
+const API_BASE_URL = import.meta.env.VITE_API_URL;
+const SKELETON_COUNT = 3;
 
 const ReceptionDays = () => {
-  return (
-    <section className='reception-days-section'>
-            <div className='container'>
-                <h2 className="section-title">Qabul qilish kunlari</h2>
-                <div className='working-days-wrapper'>
-                    <h1 className='working-definition'>Ish tavsifi</h1>
-                    <p className='working-days'>Dushanda-Shanba</p>
-                    <div className='working-hours'>
-                        <FaRegClock className='clock-icon' />
-                        <p className='working-hour'>8:00 - 18:00</p>
+    const [data, setData] = useState<Receiver[]>([]);
+    const [loading, setLoading] = useState(true); 
+    const navigate = useNavigate();
+
+    const skeletons = useMemo(() => Array.from({ length: SKELETON_COUNT }), []);
+
+    const fetchEvents = useCallback(async () => {
+        if (data.length === 0) setLoading(true);
+        
+        try {
+            const response = await fetch(`${API_BASE_URL}/receptions/all`);
+            if (!response.ok) throw new Error('Network response was not ok');
+            
+            const result = await response.json();
+            setData(result.data || []);
+        } catch (error) {
+            console.error("Failed to fetch events:", error);
+        } finally {
+            setLoading(false);
+        }
+    }, [data.length]);
+
+    useEffect(() => {
+        fetchEvents();
+    }, [fetchEvents]);
+
+    const handleBack = () => navigate(-1);
+
+    const renderContent = () => {
+        if (loading) {
+            return skeletons.map((_, index) => (
+                <ReceiversCardSkeleton key={`skeleton-${index}`} />
+            ));
+        }
+
+        if (data.length === 0) {
+        return (
+            <div className="error-message">
+                <Empty description={false} className="empty-box" />
+                <p className="error-text">Ma'lumot topilmadi.</p>
+                <button onClick={handleBack} className="back-button">
+                    Ortga qaytish
+                </button>
+            </div>
+        );
+        }
+
+        return data.map((receiver) => (
+            <ReceiversCard key={receiver._id || receiver.name} data={receiver} />
+        ));
+    };
+
+    return (
+        <section className='reception-days-section'>
+                <div className='container'>
+                    <h2 className="section-title">Qabul qilish kunlari</h2>
+                    <div className='working-days-wrapper'>
+                        <h1 className='working-definition'>Ish tavsifi</h1>
+                        <p className='working-days'>Dushanda-Shanba</p>
+                        <div className='working-hours'>
+                            <FaRegClock className='clock-icon' />
+                            <p className='working-hour'>8:00 - 18:00</p>
+                        </div>
+                    </div>
+                    <div className='receivers'> 
+                        {renderContent()}
                     </div>
                 </div>
-
-                <div className='receivers'>
-                    {receiversData.map((receiver, index) => (
-                        <ReceiversCard key={index} data={receiver} />
-                    ))}
-                </div>
-
-            </div>
-    </section>
-  )
+        </section>
+    )
 }
 
 export default ReceptionDays

@@ -57,3 +57,13 @@
         font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));;
     }
 }
+
+.error-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    grid-column: 1 / -1;
+}
