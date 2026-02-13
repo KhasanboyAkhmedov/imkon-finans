@@ -4,7 +4,7 @@ import { getEmbedUrl } from '../../commons'
 const EventsDetail = () => {
   return (
     <GenericDetail
-        resource='event'
+        resource='events'
         renderMedia={(item) => (
             item.videoUrl ? (
                 <iframe src={getEmbedUrl(item.videoUrl)} title={item.title} allowFullScreen className="detail-media-element"/>

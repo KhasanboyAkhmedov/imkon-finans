@@ -4,7 +4,7 @@ import { GenericDetail } from "../../components/generic-detail/generic-detail"
 const VideosDetail = () => {
   return (
     <GenericDetail
-        resource='videoPost'
+        resource='videoPosts'
         renderMedia={(item) => (
             item.videoUrl ? (
                 <iframe src={getEmbedUrl(item.videoUrl)} title={item.title} allowFullScreen className="detail-media-element" />
