@@ -1,24 +1,64 @@
 import { Grid, List } from "antd";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
-import { partners } from "../../components/partners-carousel/partnersData";
+import { useEffect, useState, useMemo } from "react";
 import './partners.css';
 
 const { useBreakpoint } = Grid;
 
+interface PartnerItem {
+    _id: string;
+    imageUrl: string;
+}
+
 const Partners = () => {
     const screens = useBreakpoint();
-    const dynamicPageSize = screens.xl ? 8 : (screens.md ? 8 : 4);
+    const dynamicPageSize = (screens.md || screens.xl) ? 8 : 4;
+    
+    const [partners, setPartners] = useState<PartnerItem[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [total, setTotal] = useState<number>(0);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({});
 
-    const itemRender = (_: unknown, type: "prev" | "page" | "next" | "jump-prev" | "jump-next", originalElement: React.ReactNode) => {
-        if (type === 'prev') {
-            return <HiOutlineArrowLeft  className="pagi-arrow-wrapper" /> ;
+    const fetchPartners = async (page: number) => {
+        setLoading(true);
+        setLoadedImages({}); 
+        try {
+            const response = await fetch(
+                `${import.meta.env.VITE_API_URL}/partners/all?page=${page}&pageSize=${dynamicPageSize}`
+            );
+            const result = await response.json();
+            if (result.data) {
+                setPartners(result.data);
+                setTotal(result.totalCount);
+            }
+        } catch (error) {
+            console.error("Fetch error:", error);
+        } finally {
+            setLoading(false);
         }
-        if (type === 'next') {
-            return <HiOutlineArrowRight  className="pagi-arrow-wrapper" />;
+    };
+
+    useEffect(() => {
+        fetchPartners(currentPage);
+    }, [currentPage, dynamicPageSize]);
+
+    const displayData = useMemo(() => {
+        if (loading) {
+            return Array.from({ length: dynamicPageSize }).map((_, i) => ({
+                _id: `skeleton-${i}`,
+                imageUrl: ''
+            }));
         }
+        return partners;
+    }, [loading, partners, dynamicPageSize]);
+
+    const itemRender = (_: unknown, type: string, originalElement: React.ReactNode) => {
+        if (type === 'prev') return <HiOutlineArrowLeft className="pagi-arrow-wrapper" />;
+        if (type === 'next') return <HiOutlineArrowRight className="pagi-arrow-wrapper" />;
         return originalElement;
     };
-    
+
     return (
         <section className='partners-section'>
             <div className='container'>
@@ -39,25 +79,41 @@ const Partners = () => {
                         xxl: 4,
                     }}
                     pagination={{
+                        current: currentPage,
                         pageSize: dynamicPageSize,
+                        total: total,
+                        onChange: (page) => setCurrentPage(page),
                         responsive: true,
                         position: 'bottom',
                         align: 'center',
                         itemRender: itemRender,
                         className: 'custom-pagination',
                     }}
-                    dataSource={partners}
-                    renderItem={(item) => (
-                        <List.Item>
-                            <div className='partner-wrapper' key={item.id}>
-                                <img className='partner-image' src={item.logo} alt={item.name} />
-                            </div>
-                        </List.Item>
-                    )}
+                    dataSource={displayData}
+                    renderItem={(item) => {
+                        const isCurrentlyLoading = loading || !loadedImages[item._id];
+
+                        return (
+                            <List.Item>
+                                <div className='partner-wrapper'>
+                                    {isCurrentlyLoading && <div className="partners-skeleton" />}
+                                    
+                                    {!loading && item.imageUrl && (
+                                        <img 
+                                            className={`partner-image ${loadedImages ? 'opacity-100' : 'opacity-0'}`} 
+                                            onLoad={() => setLoadedImages(prev => ({ ...prev, [item._id]: true }))}
+                                            src={item.imageUrl}
+                                            alt="Partner Logo" 
+                                        />
+                                    )}
+                                </div>
+                            </List.Item>
+                        );
+                    }}
                 />
             </div>
         </section>
-    )
+    );
 }
 
-export default Partners
+export default Partners;
