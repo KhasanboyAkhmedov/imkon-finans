@@ -99,7 +99,7 @@ const PartnersCarousel = () => {
 
                     return (
                         <div className='partner-slider' key={partner._id}>
-                            <div className='partner-wrapper' style={{ position: 'relative' }}>
+                            <div className='partner-wrapper'>
                                 {showSkeleton && (
                                     <div className="partners-skeleton-overlay"/>
                                 )}
@@ -110,11 +110,7 @@ const PartnersCarousel = () => {
                                         src={partner.imageUrl} 
                                         alt="Partner"
                                         onLoad={() => setLoadedImages(prev => ({ ...prev, [partner._id]: true }))}
-                                        style={{ 
-                                            transition: 'opacity 0.4s ease-in-out',
-                                            display: isImgLoaded ? 'block' : 'none' 
-                                        }}
-                                    />
+                                      />
                                 )}
                             </div>
                         </div>

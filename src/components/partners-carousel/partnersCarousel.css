@@ -49,9 +49,11 @@
 .partner-slider {
     padding: 5px 15px;
     outline: none;
+    display: flex !important;
 }
 
 .partner-wrapper {
+    position: relative;
     background-color: #fff;
     aspect-ratio: 1.2 / 1;
     margin: 0 auto;
