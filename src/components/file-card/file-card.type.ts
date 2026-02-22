@@ -1,8 +1,8 @@
 export interface BusinessFile {
-  id: string;
+  _id: string;
   name: string;
   size: string;
   fileUrl: string;
   type: 'PDF' | 'DOCX' | 'XLSX';
-  createdAt: Date;
+  createdAt: string;
 }

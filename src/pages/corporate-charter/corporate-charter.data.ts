@@ -3,11 +3,11 @@ import documentFile from '/docs/business-plans/lecture.pdf';
 
 export const CorporateCharterData: BusinessFile[] = [
     {
-      id: '1',
+      _id: '1',
       name: `Jamiyat nizomi`,
       size: '412 Kb',
       type: 'PDF',
       fileUrl: documentFile,
-      createdAt: new Date('2025-12-20'),
+      createdAt: "2026-02-14T09:52:12.659Z",
     },
 ]

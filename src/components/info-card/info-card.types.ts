@@ -4,7 +4,6 @@ export interface InfoCardItem {
   description: string;
   imageUrl?: string; 
   videoUrl?: string;
-  dropboxPath?: string;
   link?: string;
   isFloating?: boolean;
   createdAt?: string;

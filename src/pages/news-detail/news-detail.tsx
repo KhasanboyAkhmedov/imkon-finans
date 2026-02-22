@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { NewsDetailData, type NewsDetailType } from './news-detail.data';
+import { type NewsDetailType } from './news-detail.data';
 import './news-detail.css';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { Empty } from 'antd';
@@ -10,16 +10,32 @@ const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(true);
   const [item, setItem] = useState<NewsDetailType | null | undefined>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const foundItem = NewsDetailData.find((news) => news.id === id);
-      setItem(foundItem);
-      setLoading(false);
-    }, 800);
+    const fetchNewsDetail = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/news/one/${id}`);
+        const result = await response.json();
 
-    return () => clearTimeout(timer);
+        if (!response.ok || result.message === "Not found.") {
+          setItem(null);
+        } else {
+          setItem(result);
+        }
+      } catch (error) {
+        console.error("Fetch error:", error);
+        setItem(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchNewsDetail();
+    }
   }, [id]);
 
   if (!loading && !item) {
@@ -60,11 +76,30 @@ const NewsDetail: React.FC = () => {
             <div className="skeleton skeleton-text last"></div>
           </div>
         ) : (
-          <div>
-            <div className="date-badge">{formatDate(item?.createdAt)}</div>
-            <h1 className="news-title">{item?.title}</h1>
-            <p className="news-description">{item?.description}</p>
-          </div>
+          <article className="detail-article">
+              <div className="date-badge">{formatDate(item?.createdAt)}</div>
+              <h1 className="detail-main-title">{item?.title}</h1>
+              
+              <div className="detail-content-flow clearfix">
+                  <div className="detail-media-aside">
+                    {!isLoaded && <div className="media-skeleton" />}
+                    {item?.imageUrl && (
+                      <img 
+                        src={item?.imageUrl} 
+                        alt={item?.title}
+                        className={`detail-media-element ${isLoaded ? 'opacity-100' : 'opacity-0 blur-xl'}`}
+                        onLoad={() => setIsLoaded(true)}
+                        onError={() => setIsLoaded(false)}
+                        loading="lazy" decoding="async"
+                      />
+                    )}
+                  </div>
+                  
+                  <div className="detail-text-body">
+                      {item?.description}
+                  </div>
+              </div>
+          </article>
         )}
       </div>
     </div>

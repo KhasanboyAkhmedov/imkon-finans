@@ -1,33 +1,46 @@
-import { Grid, List } from "antd";
+import { Empty, List } from "antd";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { useMemo, useState } from "react";
 import './file-card-list.css';
-
-const { useBreakpoint } = Grid;
+import { useNavigate } from "react-router-dom";
 
 interface BaseItem {
-    id: string | number;
-    createdAt: Date | string;
+    _id: string;
+    createdAt: string;
 }
 
 interface FileCardListProps<T extends BaseItem> {
     title: string;
     dataSource: T[];
+    loading?: boolean;
+    total?: number;
+    current?: number;
+    pageSize?: number;
+    onPageChange?: (page: number, pageSize: number) => void;
     renderItem: (item: T) => React.ReactNode;
+    renderSkeleton?: () => React.ReactNode;
     allLabel?: string; 
 }
 
 const FileCardList = <T extends BaseItem>({ 
     title, 
     dataSource, 
-    renderItem, 
-    allLabel = "Barchasi" 
+    loading = false,
+    total,
+    current,
+    pageSize = 4,
+    onPageChange,
+    renderItem,
+    renderSkeleton,
+    allLabel = "Barchasi",
 }: FileCardListProps<T>) => {
-    const screens = useBreakpoint();
-    const dynamicPageSize = screens.xl ? 8 : (screens.md ? 6 : 4);
+    const navigate = useNavigate();
     const [selectedYear, setSelectedYear] = useState<string>('all');
 
     const filterOptions = useMemo(() => {
+        if (!dataSource || dataSource.length === 0) {
+            return { years: [], counts: {}, total: 0 };
+        }
         const counts: Record<string, number> = {};
         dataSource.forEach(item => {
             const year = new Date(item.createdAt).getFullYear().toString();
@@ -43,7 +56,7 @@ const FileCardList = <T extends BaseItem>({
             new Date(item.createdAt).getFullYear().toString() === selectedYear
         );
     }, [selectedYear, dataSource]);
-
+    
     const itemRender = (_: unknown, type: "prev" | "page" | "next" | "jump-prev" | "jump-next", originalElement: React.ReactNode) => {
         if (type === 'prev') return <HiOutlineArrowLeft className="pagi-arrow-wrapper" />;
         if (type === 'next') return <HiOutlineArrowRight className="pagi-arrow-wrapper" />;
@@ -54,44 +67,66 @@ const FileCardList = <T extends BaseItem>({
         <section className='unique-section'>
             <div className='container'>
                 <h2 className="section-title">{title}</h2>
-                
-                <div className="filter-tabs-container">
-                    <div 
-                        className={`filter-tab ${selectedYear === 'all' ? 'active' : ''}`}
-                        onClick={() => setSelectedYear('all')}
-                    >
-                        {allLabel} <span className="count-badge">{filterOptions.total}</span>
+                {!loading && (!dataSource || dataSource.length === 0) && (
+                    <div className="error-message" style={{ textAlign: 'center', padding: '40px 0' }}>
+                        <Empty description={false} className='empty-box' />
+                        <p className='error-text'>Ma'lumot topilmadi.</p>
+                        <button onClick={() => navigate('/')} className="back-button">
+                            Ortga qaytish
+                        </button>
                     </div>
-
-                    {filterOptions.years.map(year => (
+                    )
+                }
+                {(loading || (dataSource && dataSource.length > 0)) && (
+                    <div className="filter-tabs-container">
                         <div 
-                            key={year}
-                            className={`filter-tab ${selectedYear === year ? 'active' : ''}`}
-                            onClick={() => setSelectedYear(year)}
+                            className={`filter-tab ${selectedYear === 'all' ? 'active' : ''}`}
+                            onClick={() => setSelectedYear('all')}
                         >
-                            {year} <span className="count-badge">{filterOptions.counts[year]}</span>
+                            {allLabel} <span className="count-badge">{filterOptions.total}</span>
                         </div>
-                    ))}
-                </div>
+
+                        {filterOptions.years.map(year => (
+                            <div 
+                                key={year}
+                                className={`filter-tab ${selectedYear === year ? 'active' : ''}`}
+                                onClick={() => setSelectedYear(year)}
+                            >
+                                {year} <span className="count-badge">{filterOptions.counts[year]}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 <List
                     key={selectedYear}
                     grid={{ gutter: 10, xs: 1, sm: 2, md: 3, lg: 4, xl: 4, xxl: 4 }}
-                    pagination={{
-                        pageSize: dynamicPageSize,
+                    pagination={ loading || (!dataSource || dataSource.length === 0) ? false :{
+                        current: current,
+                        total: total,
+                        pageSize: pageSize,
+                        onChange: onPageChange,
                         responsive: true,
                         position: 'bottom',
                         align: 'center',
                         itemRender: itemRender,
                         className: 'custom-pagination',
                     }}
-                    dataSource={filteredData}
+                    locale={{ emptyText: <></> }}
+                    dataSource={loading 
+                        ? Array.from({ length: pageSize }) 
+                        : filteredData
+                    }
                     renderItem={(item, index) => (
                         <List.Item
+                            key={loading ? `skeleton-${index}` : (item as T)._id}
                             className="animate-item-up" 
                             style={{ animationDelay: `${0.1 + index * 0.05}s` }}
                         >
-                            {renderItem(item)}
+                            {loading && renderSkeleton 
+                                ? renderSkeleton() 
+                                : renderItem(item as T)
+                            }
                         </List.Item>
                     )}
                 />
