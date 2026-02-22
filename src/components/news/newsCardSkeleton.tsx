@@ -1,5 +1,5 @@
 import './newsFeed.css'; 
-import './NewsCardSkeleton.css'; 
+import './newsCardSkeleton.css'; 
 
 const NewsCardSkeleton = () => {
   return (
