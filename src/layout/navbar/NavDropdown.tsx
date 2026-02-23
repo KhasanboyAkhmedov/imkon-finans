@@ -23,10 +23,11 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, variant = "stock" }
   return (
     <li className="nav-dropdown-item">
       <Dropdown
-        menu={{ items }}
+        menu={{ items , 
+          className: "custom-nav-dropdown"
+        }}
         placement="bottomLeft"
         trigger={['hover']}
-        classNames="custom-nav-dropdown"
       >
         <div className={`nav-dropdown-trigger nav-dropdown--${variant}`}>
           <span className="nav-dropdown__link">

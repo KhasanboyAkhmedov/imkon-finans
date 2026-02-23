@@ -31,6 +31,7 @@ const Videos = () => {
     useEffect(() => {
       fetchEvents(currentPage);
     }, [currentPage]);
+    
     return (
       <InfoCardList 
           title="Videolar"

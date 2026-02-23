@@ -5,6 +5,7 @@ import { Empty } from 'antd';
 import { formatDate } from '../../commons';
 import './generic-detail.css';
 import type { InfoCardItem } from '../info-card/info-card.types';
+import { useLanguage } from '../../hooks/useLanguage';
 
 interface GenericDetailProps<T> {
   resource: string;
@@ -19,6 +20,8 @@ export const GenericDetail = <T extends InfoCardItem>({
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState<T | null>(null);
+  const { lang } = useLanguage();
+  const content = item ? item[lang] : null;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -87,13 +90,13 @@ export const GenericDetail = <T extends InfoCardItem>({
             ) : (
                 <article className="detail-article">
                     <div className="date-badge">{formatDate(item?.createdAt)}</div>
-                    <h1 className="detail-main-title">{item?.title}</h1>
+                    <h1 className="detail-main-title">{content?.title}</h1>
                     
                     <div className="detail-content-flow clearfix">
                         {renderMedia && <div className="detail-media-aside">{renderMedia(item!)}</div>}
                         
                         <div className="detail-text-body">
-                            {item?.description}
+                            {content?.description}
                         </div>
                     </div>
                 </article>

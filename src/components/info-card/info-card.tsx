@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import './info-card.css';
 import type { InfoCardProps } from './info-card.types';
 import { formatDate, getEmbedUrl } from '../../commons';
+import { useLanguage } from '../../hooks/useLanguage';
 // import { HiOutlineArrowRight } from 'react-icons/hi';
 
 export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, showDate = true, isClickable = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { lang } = useLanguage();
+  const content = item[lang];
   const isEven = index % 2 === 0;
   const hasMedia = !!(item.imageUrl || item.videoUrl);
   
@@ -47,10 +50,10 @@ export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, sh
       <div className="info-text-content">
         {formattedDate && showDate && <span className="info-date-badge">{formattedDate}</span>}
         
-        <h2 className="info-title">{item.title}</h2>
+        <h2 className="info-title">{content.title}</h2>
         
         <p className="info-description">
-          {item.description}
+          {content.description}
         </p>
         
         {/* {isClickable && (

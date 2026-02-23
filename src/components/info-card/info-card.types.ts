@@ -1,5 +1,10 @@
+import type { MultilingualContent } from "../news/newsData";
+
 export interface InfoCardItem {
   _id: string;    
+  uzb: MultilingualContent;
+  rus: MultilingualContent;
+  eng: MultilingualContent;
   title: string;
   description: string;
   imageUrl?: string; 
