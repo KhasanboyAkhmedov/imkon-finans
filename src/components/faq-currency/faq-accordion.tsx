@@ -41,7 +41,7 @@ const FAQAccordion: React.FC = () => {
         accordion
         activeKey={activeKey}
         onChange={onChange}
-        expandIconPosition="end"
+        expandIconPlacement="end"
         ghost
         expandIcon={({ isActive }) => (
           <span className={`custom-chevron ${isActive ? 'up' : 'down'}`} />

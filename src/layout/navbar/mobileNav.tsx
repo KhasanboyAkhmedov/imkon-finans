@@ -9,6 +9,7 @@ import AppearanceSettings from '../../components/appearance-setting/appearance-s
 import { Link } from 'react-router-dom';
 import LoanModal from '../../components/credit-calculator/loan-modal';
 import SearchInput from '../../components/search-input/search-input';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
@@ -16,6 +17,7 @@ const MobileNav = () => {
 
     const toggleDrawer = () => setOpen(!open);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const { lang, setLang } = useLanguage();
 
     const showModal = (tabKey: string) => {
         setActiveTab(tabKey);
@@ -47,7 +49,7 @@ const MobileNav = () => {
                 closable={false}
                 onClose={() => setOpen(false)}
                 open={open}
-                height="auto"
+                size={'large'}
                 className="mobile_dropdown_drawer"
                 style={{ marginTop: '70px' }} 
             >
@@ -73,21 +75,16 @@ const MobileNav = () => {
                 
                 <div className="language_switcher_container">
                     <Select
-                        defaultValue="uz"
+                        defaultValue="uzb"
                         variant="borderless"
                         className="lang_select"
                         popupClassName="lang_dropdown"
-                        onChange={(val) => console.log("Lang:", val)}
+                        value={lang}
+                        onChange={(val) => setLang(val as 'uzb' | 'rus' | 'eng')}
                     >
-                        <Select.Option value="uz">
-                            <span className="flag_item">🇺🇿 O'zbekcha</span>
-                        </Select.Option>
-                        <Select.Option value="ru">
-                            <span className="flag_item">🇷🇺 Русский</span>
-                        </Select.Option>
-                        <Select.Option value="en">
-                            <span className="flag_item">🇺🇸 English</span>
-                        </Select.Option>
+                        <Select.Option value="uzb"><span className="flag_item">🇺🇿 O'zbekcha</span></Select.Option>
+                        <Select.Option value="rus"><span className="flag_item">🇷🇺 Русский</span></Select.Option>
+                        <Select.Option value="eng"><span className="flag_item">🇺🇸 English</span></Select.Option>
                     </Select>
                 </div>
                 <div className="drawer_footer_actions">

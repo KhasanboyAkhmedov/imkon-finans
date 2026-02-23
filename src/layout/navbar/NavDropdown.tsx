@@ -26,7 +26,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ menuItem, variant = "stock" }
         menu={{ items }}
         placement="bottomLeft"
         trigger={['hover']}
-        overlayClassName="custom-nav-dropdown"
+        classNames="custom-nav-dropdown"
       >
         <div className={`nav-dropdown-trigger nav-dropdown--${variant}`}>
           <span className="nav-dropdown__link">

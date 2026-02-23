@@ -11,11 +11,13 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import LoanModal from '../../components/credit-calculator/loan-modal';
 import SearchInput from '../../components/search-input/search-input';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('application');
+    const { lang, setLang } = useLanguage();
 
     const showModal = (tabKey: string) => {
         setActiveTab(tabKey);
@@ -56,10 +58,12 @@ const Navbar = () => {
                                 </a>
                                 <div className="lang_wrapper">
                                     <GrLanguage className="lang_icon" />
-                                    <Select defaultValue="uz" variant="borderless" className="lang_select">
-                                        <Select.Option value="uz"><span className="flag_item">O'zb</span></Select.Option>
-                                        <Select.Option value="ru"><span className="flag_item">Рус</span></Select.Option>
-                                        <Select.Option value="en"><span className="flag_item">Eng</span></Select.Option>
+                                    <Select defaultValue="uzb" variant="borderless" className="lang_select" value={lang}
+                                        onChange={(val) => setLang(val as 'uzb' | 'rus' | 'eng')}
+                                    >
+                                        <Select.Option value="uzb"><span className="flag_item">O'zb</span></Select.Option>
+                                        <Select.Option value="rus"><span className="flag_item">Рус</span></Select.Option>
+                                        <Select.Option value="eng"><span className="flag_item">Eng</span></Select.Option>
                                     </Select>
                                 </div>
                             </div>

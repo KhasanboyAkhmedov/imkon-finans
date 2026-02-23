@@ -22,7 +22,7 @@ const LoanModal = ({ isOpen, onClose, activeTab, setActiveTab }: LoanModalProps)
             onCancel={onClose}
             footer={null}
             width="90%"
-            destroyOnClose
+            destroyOnHidden
         >
             <Tabs
                 activeKey={activeTab}

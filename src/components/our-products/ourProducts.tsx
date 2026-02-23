@@ -22,7 +22,7 @@ export const OurProducts: React.FC = () => {
 
             <div className="grid">
                 {allCreditsData.slice(0, 6).map((item) => (
-                    <CreditCard item={item} />
+                    <CreditCard item={item} key={item.id} />
                 ))}
             </div>
         </section>

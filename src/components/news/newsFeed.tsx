@@ -12,10 +12,10 @@ export const NewsFeed: React.FC = () => {
     useEffect(() => {
     const fetchNews = async () => {
         try {
-        const response = await fetch(`https://imkon-finans-backend.vercel.app/api/news/all?page=1&pageSize=10`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/news/all?page=1&pageSize=4`);
         const result = await response.json();
         
-        setNews(result.data);
+        setNews(result.data || []);
         } catch (error) {
             console.error("Error fetching news:", error);
         } finally {

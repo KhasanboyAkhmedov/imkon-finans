@@ -56,6 +56,7 @@ const FileCardList = <T extends BaseItem>({
             new Date(item.createdAt).getFullYear().toString() === selectedYear
         );
     }, [selectedYear, dataSource]);
+
     
     const itemRender = (_: unknown, type: "prev" | "page" | "next" | "jump-prev" | "jump-next", originalElement: React.ReactNode) => {
         if (type === 'prev') return <HiOutlineArrowLeft className="pagi-arrow-wrapper" />;
@@ -114,7 +115,7 @@ const FileCardList = <T extends BaseItem>({
                     }}
                     locale={{ emptyText: <></> }}
                     dataSource={loading 
-                        ? Array.from({ length: pageSize }) 
+                        ? Array.from({ length: pageSize }).map((_, i) => ({ _id: `skeleton-${i}` } as T))
                         : filteredData
                     }
                     renderItem={(item, index) => (

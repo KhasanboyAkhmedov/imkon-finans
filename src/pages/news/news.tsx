@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import FileCardList from "../../components/file-card-list/file-card-list"
 import NewsCard from "../../components/news/newsCard"
-import type { NewsItem } from "../../components/news/newsData";
 import NewsCardSkeleton from "../../components/news/newsCardSkeleton";
 import { Grid } from "antd";
+import type { NewsItem } from "../../components/news/newsData";
 
 const { useBreakpoint } = Grid;
 
@@ -50,7 +50,7 @@ const News = () => {
         pageSize={dynamicPageSize}
         onPageChange={(page) => setCurrentPage(page)}
         renderSkeleton={() => <NewsCardSkeleton />}
-        renderItem={(item) => <NewsCard item={item} key={item._id}/>}
+        renderItem={(item) => <NewsCard item={item}/>}
     />
   )
 }

@@ -113,7 +113,7 @@ const SearchInput = () => {
     return (
         <div className="header_search_container">
             <Dropdown
-                dropdownRender={() => (
+                popupRender={() => (
                     <div className="search_dropdown_box">
                         {renderResultsList()}
                     </div>
