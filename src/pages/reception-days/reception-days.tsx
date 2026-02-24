@@ -59,7 +59,7 @@ const ReceptionDays = () => {
         }
 
         return data.map((receiver) => (
-            <ReceiversCard key={receiver._id || receiver.name} data={receiver} />
+            <ReceiversCard key={receiver._id} data={receiver} />
         ));
     };
 
