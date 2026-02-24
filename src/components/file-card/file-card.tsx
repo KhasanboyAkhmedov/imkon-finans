@@ -1,14 +1,31 @@
 import React from 'react';
 import { FaFilePdf } from 'react-icons/fa6';
-import type { BusinessFile } from './file-card.type';
 import './file-card.css';
 import { LuDownload } from 'react-icons/lu';
+import { useLanguage } from '../../hooks/useLanguage';
 
-interface FileCardProps {
-  data: BusinessFile;
+interface FileLanguageContent {
+  name: string;
+  _id: string;
 }
 
+interface RawFileItem {
+  _id: string;
+  uzb: FileLanguageContent;
+  rus: FileLanguageContent;
+  eng: FileLanguageContent;
+  size: string;
+  fileType: string;
+  fileUrl: string;
+  type: string;
+}
+interface FileCardProps {
+  data: RawFileItem;
+}
 const FileCard: React.FC<FileCardProps> = ({ data }) => {
+  const { lang } = useLanguage();
+  const content = data[lang as keyof Pick<RawFileItem, 'uzb' | 'rus' | 'eng'>] || data.uzb;
+
   const handleOpenLink = () => {
     window.open(data.fileUrl, '_blank', 'noopener,noreferrer');
   };
@@ -19,11 +36,11 @@ const FileCard: React.FC<FileCardProps> = ({ data }) => {
             <FaFilePdf className="file-icon" />
         </div>
         
-        <h3 className="file-name">{data.name}</h3>
+        <h3 className="file-name">{content?.name}</h3>
         
         <div className='file-info'>
             <p className="file-meta">
-                {data.type}, {data.size}
+                {data.fileType}, {data.size}
             </p>
             <div className="download-icon-wrapper">
                 <LuDownload className="download-icon" />

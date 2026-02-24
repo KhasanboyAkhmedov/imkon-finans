@@ -5,13 +5,16 @@ import './news-detail.css';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { Empty } from 'antd';
 import { formatDate } from '../../commons';
+import { useLanguage } from '../../hooks/useLanguage';
+import type { TLanguage } from '../../types/language.types';
 
 const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [isLoaded, setIsLoaded] = useState(true);
-  const [item, setItem] = useState<NewsDetailType | null | undefined>(null);
+  const [item, setItem] = useState<NewsDetailType | null>(null);
+  const { lang } = useLanguage() as { lang: TLanguage };
 
   useEffect(() => {
     const fetchNewsDetail = async () => {
@@ -57,6 +60,8 @@ const NewsDetail: React.FC = () => {
       </div>
     );
   }
+  
+  const content = item ? (item[lang] || item.uzb) : null;
 
   return (
     <div className="news-container">
@@ -78,7 +83,7 @@ const NewsDetail: React.FC = () => {
         ) : (
           <article className="detail-article">
               <div className="date-badge">{formatDate(item?.createdAt)}</div>
-              <h1 className="detail-main-title">{item?.title}</h1>
+              <h1 className="detail-main-title">{content?.title}</h1>
               
               <div className="detail-content-flow clearfix">
                   <div className="detail-media-aside">
@@ -96,7 +101,7 @@ const NewsDetail: React.FC = () => {
                   </div>
                   
                   <div className="detail-text-body">
-                      {item?.description}
+                      {content?.description}
                   </div>
               </div>
           </article>

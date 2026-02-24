@@ -14,17 +14,22 @@ const News = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [total, setTotal] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  
+  const [fileStats, setFileStats] = useState({ years: [], counts: {}, total: 0 });
+  const [selectedYear, setSelectedYear] = useState<string>('all');
+
   const fetchNews = async (page: number, pageSize: number) => {
     setLoading(true);
     try {
+      const yearQuery = selectedYear !== 'all' ? `&year=${selectedYear}` : '';
+
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/news/all?page=${page}&pageSize=${pageSize}`
+        `${import.meta.env.VITE_API_URL}/news/all?page=${page}&pageSize=${pageSize}&${yearQuery}`
       );
       const result = await response.json();
       
       setNews(result.data || []);
       setTotal(result.totalCount || 0);
+      setFileStats(result.fileStats || { years: [], counts: {}, total: 0 });
     } catch (error) {
       console.error("Error fetching news:", error);
     } finally {
@@ -32,6 +37,11 @@ const News = () => {
     }
   };
   
+  const handleYearChange = (year: string) => {
+    setSelectedYear(year);
+    setCurrentPage(1);
+  };
+
   useEffect(() => {
     setCurrentPage(1);
   }, [dynamicPageSize]);
@@ -48,6 +58,9 @@ const News = () => {
         total={total}
         current={currentPage}
         pageSize={dynamicPageSize}
+        fileStats={fileStats}
+        selectedYear={selectedYear}
+        onYearChange={handleYearChange}
         onPageChange={(page) => setCurrentPage(page)}
         renderSkeleton={() => <NewsCardSkeleton />}
         renderItem={(item) => <NewsCard item={item}/>}

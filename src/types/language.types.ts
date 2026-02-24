@@ -1,0 +1,1 @@
+export type TLanguage = 'uzb' | 'rus' | 'eng';

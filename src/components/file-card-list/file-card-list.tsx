@@ -1,12 +1,17 @@
 import { Empty, List } from "antd";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
-import { useMemo, useState } from "react";
-import './file-card-list.css';
 import { useNavigate } from "react-router-dom";
+import './file-card-list.css';
 
 interface BaseItem {
     _id: string;
     createdAt: string;
+}
+
+interface FileStats {
+    years: string[];
+    counts: Record<string, number>;
+    total: number;
 }
 
 interface FileCardListProps<T extends BaseItem> {
@@ -20,6 +25,9 @@ interface FileCardListProps<T extends BaseItem> {
     renderItem: (item: T) => React.ReactNode;
     renderSkeleton?: () => React.ReactNode;
     allLabel?: string; 
+    fileStats?: FileStats;
+    selectedYear?: string;
+    onYearChange?: (year: string) => void;
 }
 
 const FileCardList = <T extends BaseItem>({ 
@@ -33,30 +41,11 @@ const FileCardList = <T extends BaseItem>({
     renderItem,
     renderSkeleton,
     allLabel = "Barchasi",
+    fileStats,
+    selectedYear, 
+    onYearChange,
 }: FileCardListProps<T>) => {
     const navigate = useNavigate();
-    const [selectedYear, setSelectedYear] = useState<string>('all');
-
-    const filterOptions = useMemo(() => {
-        if (!dataSource || dataSource.length === 0) {
-            return { years: [], counts: {}, total: 0 };
-        }
-        const counts: Record<string, number> = {};
-        dataSource.forEach(item => {
-            const year = new Date(item.createdAt).getFullYear().toString();
-            counts[year] = (counts[year] || 0) + 1;
-        });
-        const years = Object.keys(counts).sort((a, b) => Number(b) - Number(a));
-        return { years, counts, total: dataSource.length };
-    }, [dataSource]);
-
-    const filteredData = useMemo(() => {
-        if (selectedYear === 'all') return dataSource;
-        return dataSource.filter(item => 
-            new Date(item.createdAt).getFullYear().toString() === selectedYear
-        );
-    }, [selectedYear, dataSource]);
-
     
     const itemRender = (_: unknown, type: "prev" | "page" | "next" | "jump-prev" | "jump-next", originalElement: React.ReactNode) => {
         if (type === 'prev') return <HiOutlineArrowLeft className="pagi-arrow-wrapper" />;
@@ -78,22 +67,22 @@ const FileCardList = <T extends BaseItem>({
                     </div>
                     )
                 }
-                {(loading || (dataSource && dataSource.length > 0)) && (
+                {(loading || (fileStats && fileStats.total > 0)) && (
                     <div className="filter-tabs-container">
                         <div 
                             className={`filter-tab ${selectedYear === 'all' ? 'active' : ''}`}
-                            onClick={() => setSelectedYear('all')}
+                            onClick={() => onYearChange?.('all')}
                         >
-                            {allLabel} <span className="count-badge">{filterOptions.total}</span>
+                            {allLabel} <span className="count-badge">{fileStats?.total || 0}</span>
                         </div>
 
-                        {filterOptions.years.map(year => (
+                        {fileStats?.years.map(year => (
                             <div 
                                 key={year}
                                 className={`filter-tab ${selectedYear === year ? 'active' : ''}`}
-                                onClick={() => setSelectedYear(year)}
+                                onClick={() => onYearChange?.(year)}
                             >
-                                {year} <span className="count-badge">{filterOptions.counts[year]}</span>
+                                {year} <span className="count-badge">{fileStats.counts[year]}</span>
                             </div>
                         ))}
                     </div>
@@ -115,8 +104,8 @@ const FileCardList = <T extends BaseItem>({
                     }}
                     locale={{ emptyText: <></> }}
                     dataSource={loading 
-                        ? Array.from({ length: pageSize }).map((_, i) => ({ _id: `skeleton-${i}` } as T))
-                        : filteredData
+                        ? Array.from({ length: 4 }).map((_, i) => ({ _id: `skeleton-${i}` } as T))
+                        : dataSource
                     }
                     renderItem={(item, index) => (
                         <List.Item
