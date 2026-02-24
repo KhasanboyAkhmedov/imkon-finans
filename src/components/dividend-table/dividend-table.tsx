@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import './dividend-table.css';
+import { useLanguage } from '../../hooks/useLanguage';
+
+interface LanguageContent {
+  year: string;
+  ordinary_shares_dividend: string;
+  preferred_shares_dividend: string;
+  total_dividend_amount: string;
+  unpaid_dividend: string;
+}
+
+interface RawDividendItem {
+  _id: string;
+  uzb: LanguageContent;
+  rus: LanguageContent;
+  eng: LanguageContent;
+}
+
+interface DividendTableProps {
+  rawData: RawDividendItem[];
+  loading: boolean;
+}
 
 interface DividendData {
   key: string;
@@ -12,7 +33,24 @@ interface DividendData {
   unpaid: string;
 }
 
-const DividendTable: React.FC = () => {
+const DividendTable: React.FC<DividendTableProps> = ({ rawData, loading }) => {
+  const { lang } = useLanguage();
+
+  const dataSource = useMemo(() => {
+    return rawData.map((item) => {
+      const content = item[lang as keyof Omit<RawDividendItem, '_id'>] || item.uzb;
+      
+      return {
+        key: item._id,
+        year: content.year,
+        ordinary: content.ordinary_shares_dividend,
+        privileged: content.preferred_shares_dividend,
+        totalSum: content.total_dividend_amount,
+        unpaid: content.unpaid_dividend || '0',
+      };
+    });
+  }, [rawData, lang]);
+
   const columns: ColumnsType<DividendData> = [
     {
       title: 'Yil',
@@ -34,7 +72,7 @@ const DividendTable: React.FC = () => {
       width: '20%',
     },
     {
-      title: "Jami dividend to'lovi summasi (mln. so'n hisobida)",
+      title: "Jami dividend to'lovi summasi (mln. so'm hisobida)",
       dataIndex: 'totalSum',
       key: 'totalSum',
       width: '20%',
@@ -47,21 +85,12 @@ const DividendTable: React.FC = () => {
     },
   ];
 
-  const data: DividendData[] = [
-    { key: '1', year: '2025 yil', ordinary: '0% | 0 so‘m', privileged: '30% | 1.5 so‘m', totalSum: '6060.825', unpaid: '0' },
-    { key: '2', year: '2024 yil', ordinary: '0% | 0 so‘m', privileged: '30% | 1.5 so‘m', totalSum: '1010.14', unpaid: '0' },
-    { key: '3', year: '2023 yil', ordinary: '0% | 0 so‘m', privileged: '30% | 1.5 so‘m', totalSum: '1010.14', unpaid: '0' },
-    { key: '4', year: '2022 yil', ordinary: '0% | 0 so‘m', privileged: '30% | 1.5 so‘m', totalSum: '1010.14', unpaid: '0' },
-  ];
-
   return (
     <div className="dividend-table-container">
-      <h3 className="table-main-title">
-        Bir dona aksiya nominal qiymatiga nisbatan hisoblangan dividendlar
-      </h3>
       <Table 
         columns={columns} 
-        dataSource={data} 
+        dataSource={dataSource} 
+        loading={loading}
         pagination={false} 
         className="custom-dividend-table"
         scroll={{ x: 800 }}
