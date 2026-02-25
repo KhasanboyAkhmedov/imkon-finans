@@ -5,12 +5,21 @@ import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import { FaQuoteLeft } from 'react-icons/fa';
 import './management.css';
 import ManagementInfo from './managementInfo';
+import { useLanguage } from '../../hooks/useLanguage';
+
+export interface ManagementMemberContent {
+    name: string;
+    description: string;
+    _id: string;
+}
 
 export interface ManagementMember {
-  id: number;
-  name: string;
-  quote: string;
-  image: string;
+  _id: number;
+  uzb: ManagementMemberContent;
+  rus: ManagementMemberContent;
+  eng: ManagementMemberContent;
+  imageUrl: string;
+  type: string;
 }
 
 export interface InfoItem {
@@ -21,14 +30,48 @@ export interface InfoItem {
 interface ManagementProps {
   title: string;
   infoData: InfoItem[];
-  members?: ManagementMember[];
+  members: ManagementMember[];
+  loading?: boolean;
 }
 
-const Management = ({ title, infoData, members }: ManagementProps) => {
+const ManagementImage = ({ src, alt }: { src: string; alt: string }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    return (
+        <div className="mgmt-image-container">
+            {!isLoaded && <div className="mgmt-image-skeleton" />}
+            <img
+                src={src}
+                alt={alt}
+                className={`mgmt-photo ${isLoaded ? 'loaded' : 'loading'}`}
+                onLoad={() => setIsLoaded(true)}
+            />
+        </div>
+    );
+};
+
+const ManagementSkeleton = () => (
+    <div className="mgmt-slide-grid skeleton-active">
+        <div className="mgmt-text-content">
+            <div className="skeleton-line title" />
+            <div className="skeleton-quote-box">
+                <div className="skeleton-line text" />
+                <div className="skeleton-line text short" />
+            </div>
+        </div>
+        <div className="mgmt-image-content">
+            <div className="mgmt-image-container">
+                <div className="mgmt-image-skeleton" />
+            </div>
+        </div>
+    </div>
+);
+
+const Management = ({ title, infoData, members, loading }: ManagementProps) => {
     const slider = useRef<CarouselRef>(null);
+    const { lang } = useLanguage();
     const [activeBtn, setActiveBtn] = useState<'prev' | 'next' | null>(null);
-    const hasMembers = members && members.length > 0;
-    
+
     const handleBeforeChange = (from: number, to: number) => {
         const direction = to > from ? 'next' : 'prev';
         setActiveBtn(direction);
@@ -38,58 +81,63 @@ const Management = ({ title, infoData, members }: ManagementProps) => {
     return (
         <div className="mgmt-container">
             <h2 className="mgmt-main-title container">{title}</h2>
-
             <ManagementInfo infoData={infoData} />
-            {hasMembers && (
-                <div className="mgmt-carousel-wrapper container">
-                    <div className="mgmt-static-navigation">
-                    <button 
-                        onClick={() => slider.current?.prev()}
-                        className={`mgmt-nav-btn ${activeBtn === 'prev' ? 'active' : ''}`}
-                    >
-                        <HiOutlineArrowLeft />
-                    </button>
-                    <button 
-                        onClick={() => slider.current?.next()}
-                        className={`mgmt-nav-btn ${activeBtn === 'next' ? 'active' : ''}`}
-                    >
-                        <HiOutlineArrowRight />
-                    </button>
-                    </div>
-
-                    <Carousel
-                        ref={slider}
-                        dots={false}
-                        infinite={true}
-                        autoplay={true}
-                        autoplaySpeed={2500}
-                        beforeChange={handleBeforeChange}
-                        speed={800}
-                    >
-                    {members.map((member) => (
-                        <div key={member.id}>
-                            <div className="mgmt-slide-grid">
-                                <div className="mgmt-text-content">
-                                <h3 className="mgmt-name">{member.name}</h3>
-                                <div className="mgmt-quote-box">
-                                    <p className="mgmt-quote">"{member.quote}"</p>
-                                    <div className="mgmt-quote-footer">
-                                    <FaQuoteLeft className="mgmt-red-quote-icon" />
-                                    </div>
-                                </div>
-                                </div>
-                                
-                                <div className="mgmt-image-content">
-                                    <div className="mgmt-placeholder-img">
-                                        {/* <img src={member.image} alt={member.name} style={{width: '100%', borderRadius: '12px'}} /> */}
-                                    </div>
-                                </div>
-                            </div>
+            
+            <div className="mgmt-carousel-wrapper container">
+                {loading ? (
+                    <ManagementSkeleton />
+                ) : members.length > 0 ? (
+                    <>
+                        <div className="mgmt-static-navigation">
+                            <button 
+                                onClick={() => slider.current?.prev()}
+                                className={`mgmt-nav-btn ${activeBtn === 'prev' ? 'active' : ''}`}
+                            >
+                                <HiOutlineArrowLeft />
+                            </button>
+                            <button 
+                                onClick={() => slider.current?.next()}
+                                className={`mgmt-nav-btn ${activeBtn === 'next' ? 'active' : ''}`}
+                            >
+                                <HiOutlineArrowRight />
+                            </button>
                         </div>
-                    ))}
-                    </Carousel>
-                </div>
-            )}
+
+                        <Carousel
+                            key={members.length}
+                            ref={slider}
+                            dots={false}
+                            infinite={members.length > 2}
+                            autoplay={members.length > 2}
+                            autoplaySpeed={3000}
+                            beforeChange={handleBeforeChange}
+                            speed={800}
+                        >
+                            {members.map((member) => {
+                                const content = member[lang as keyof Pick<ManagementMember, 'uzb'|'rus'|'eng'>] || member.uzb;
+                                return (
+                                    <div key={member._id}>
+                                        <div className="mgmt-slide-grid">
+                                            <div className="mgmt-text-content">
+                                                <h3 className="mgmt-name">{content.name}</h3>
+                                                <div className="mgmt-quote-box">
+                                                    <p className="mgmt-quote">"{content.description}"</p>
+                                                    <div className="mgmt-quote-footer">
+                                                        <FaQuoteLeft className="mgmt-red-quote-icon" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="mgmt-image-content">
+                                                <ManagementImage src={member.imageUrl} alt={content.name} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </Carousel>
+                    </>
+                ) : null}
+            </div>
         </div>
     );
 };
