@@ -42,6 +42,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  align-items: stretch;
 }
 
 /* News Card Styling */
@@ -51,10 +52,12 @@
   padding: 16px 14px;
   box-shadow: 0 2px 10px #801A251A;
   display: flex;
+  height: 100%;
   flex-direction: column;
   border: 1px solid #FFF6F9;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   cursor: pointer;
+  /* flex: 1 0 auto; */
 }
 
 .news-card:hover {
@@ -131,6 +134,9 @@
 }
 
 @media (min-width: 540px) {
+    .news-card {
+        min-height: 220px;
+    }
     .news-grid {
         grid-template-columns: repeat(2, 1fr);
         flex: 1;
@@ -187,6 +193,7 @@
         background: #fff;
         border-radius: 12px;
         padding: 16px 14px;
+        min-height: 210px;
     }
     .news-grid {
         flex: 1;
