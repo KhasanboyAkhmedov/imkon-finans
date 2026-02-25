@@ -1,28 +1,41 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './creditCard.css';
-import type { Credit } from '../../pages/all-credits/all-credits.data';
+import type { Credit, SupportedLocale } from '../our-products/productsData';
+import { useLanguage } from '../../hooks/useLanguage';
+import { DynamicIcon } from '../../commons/dynamic-icon';
 
-export const CreditCard: React.FC<{ item: Credit }> = ({ item }) => {
+interface CreditCardProps {
+  item: Credit;
+  locale?: SupportedLocale;
+}
+
+export const CreditCard: React.FC<CreditCardProps> = ({ item }) => {
     const navigate = useNavigate();
+    const {lang} = useLanguage();
     
-    const Icon = item.icon;
-
     return (
-        <div className="product-card" onClick={() => navigate(`/credits/${item.id}`)}>
-            <div className='product-card-title-wrapper'>
+        <div className="product-card" onClick={() => navigate(`/credits/${item._id}`)}>
+            <div className="product-card-title-wrapper">
                 <div className="product-card-iconWrapper">
-                    <Icon className="product-card-icon" />
+                    <DynamicIcon 
+                        lib={item.icon.lib} 
+                        name={item.icon.name} 
+                        className="product-card-icon" 
+                    />
                 </div>
-                <h3 className="product-card-title">{item.title}</h3>
+                <h3 className="product-card-title">{item.title[lang]}</h3>
             </div>
-            
-            <p className="product-card-description">{item.description}</p>
-            
-            <button className="product-card-button">
+
+            <p className="product-card-description">{item.description[lang]}</p>
+
+            <button className="product-card-button" >
                 Xizmatni ko'rish
             </button>
-            <Icon className="product-card-bgIcon" />
+            <DynamicIcon 
+                    lib={item.icon.lib} 
+                    name={item.icon.name} 
+                    className="product-card-bgIcon" 
+                />
         </div>
     );
 };

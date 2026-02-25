@@ -47,15 +47,15 @@ const ReceptionDays = () => {
         }
 
         if (data.length === 0) {
-        return (
-            <div className="error-message">
-                <Empty description={false} className="empty-box" />
-                <p className="error-text">Ma'lumot topilmadi.</p>
-                <button onClick={handleBack} className="back-button">
-                    Ortga qaytish
-                </button>
-            </div>
-        );
+            return (
+                <div className="error-message">
+                    <Empty description={false} className="empty-box" />
+                    <p className="error-text">Ma'lumot topilmadi.</p>
+                    <button onClick={handleBack} className="back-button">
+                        Ortga qaytish
+                    </button>
+                </div>
+            );
         }
 
         return data.map((receiver) => (
@@ -65,20 +65,20 @@ const ReceptionDays = () => {
 
     return (
         <section className='reception-days-section'>
-                <div className='container'>
-                    <h2 className="section-title">Qabul qilish kunlari</h2>
-                    <div className='working-days-wrapper'>
-                        <h1 className='working-definition'>Ish tavsifi</h1>
-                        <p className='working-days'>Dushanda-Shanba</p>
-                        <div className='working-hours'>
-                            <FaRegClock className='clock-icon' />
-                            <p className='working-hour'>8:00 - 18:00</p>
-                        </div>
-                    </div>
-                    <div className='receivers'> 
-                        {renderContent()}
+            <div className='container'>
+                <h2 className="section-title">Qabul qilish kunlari</h2>
+                <div className='working-days-wrapper'>
+                    <h1 className='working-definition'>Ish tavsifi</h1>
+                    <p className='working-days'>Dushanda-Shanba</p>
+                    <div className='working-hours'>
+                        <FaRegClock className='clock-icon' />
+                        <p className='working-hour'>8:00 - 18:00</p>
                     </div>
                 </div>
+                <div className='receivers'> 
+                    {renderContent()}
+                </div>
+            </div>
         </section>
     )
 }
