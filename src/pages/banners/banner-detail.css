@@ -1,0 +1,77 @@
+.banner-info-section {
+    margin: 40px auto;
+    background: #fff;
+    min-height: 60vh;
+    padding: 30px 0;
+}
+
+.info-header {
+    margin-bottom: 40px;
+}
+
+.info-title {
+    color: #FF3E41;
+    font-size: calc((28px * var(--scale-factor)) + var(--user-font-modifier));
+    font-weight: 700;
+}
+
+.info-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.block-title {
+    font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #231F20;
+}
+
+.description-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #57585F;
+}
+
+.info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.benefits-grid {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+.benefit-card {
+    background: #fff;
+    border: 1px solid #E4E6E8;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 2px 4px #18191C1A;
+}
+
+.benefit-icon-box {
+    color: #FF3E41;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.benefit-text {
+    color: #57585F;
+    font-size: 14px;
+}
+
+/* Desktop Grid Layout */
+@media (min-width: 992px) {
+    .info-layout {
+        grid-template-columns: 1.4fr 1fr;
+        gap: 60px;
+    }
+}

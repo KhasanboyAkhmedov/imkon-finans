@@ -5,7 +5,6 @@ import Home from './pages/home'
 import NotFound from './pages/not-found/not-found'
 import ManagementBody from './pages/management-body/management-body'
 import SupervisoryBoard from './pages/supervisory-board/supervisory-board'
-import MissionAndVision from './pages/mission-and-vision/mission-and-vision'
 import Vacancies from './pages/vacancies/vacancies'
 import VacancyInfo from './pages/vacancy-info/vacancyInfo'
 import ScrollToTop from './components/scroll-to-top/scrollToTop'
@@ -36,6 +35,7 @@ import Videos from './pages/videos/videos'
 import VideosDetail from './pages/video-detail/video-detail'
 import EventsDetail from './pages/events-detail/events-detail'
 import ShareCapital from './pages/share-capital/share-capital'
+import BannerDetail from './pages/banners/banner-detail'
 
 function App() {
 
@@ -48,7 +48,6 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/management" element={<ManagementBody />} />
           <Route path="/council" element={<SupervisoryBoard />} />
-          <Route path="/mission-and-vision" element={<MissionAndVision />} />
           <Route path="/organizational-structure" element={<OrganizationStructure />} />
           <Route path="/vacancies" element={<Vacancies />} />
           <Route path="/vacancies/:id" element={<VacancyInfo />} />
@@ -88,6 +87,7 @@ function App() {
           <Route path="/credits" element={<AllCredits />} />
           <Route path="/credits/:creditName" element={<CreditDetail />} />
 
+          <Route path="/banners/:id" element={<BannerDetail />} />
           
           <Route path="*" element={<NotFound/>} />
         </Routes>

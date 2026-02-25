@@ -16,7 +16,7 @@ export const useFiles = (fileType: string) => {
   const fetchFiles = useCallback(async (page: number, year: string) => {
     setLoading(true);
     try {
-      const yearQuery = year !== 'all' ? `&year=${year}` : '';
+      const yearQuery = year !== 'all' ? `&yearQuery=${year}` : '';
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/files/all?page=${page}&pageSize=${dynamicPageSize}&type=${fileType}&${yearQuery}`
       );
@@ -30,7 +30,7 @@ export const useFiles = (fileType: string) => {
       setFileStats(result.fileStats || { years: [], counts: {}, total: 0 });
     } catch (error) {
       console.error("Fetch error:", error);
-      message.error("Ma'lumotni yuklashda xatolik");
+      message.error("Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.");
     } finally {
       setLoading(false);
     }

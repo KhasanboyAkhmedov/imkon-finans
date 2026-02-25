@@ -1,47 +1,28 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./heroCarousel.css";
-import { people, shield } from "../../assets";
+import { shield } from "../../assets";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
+import { useLanguage } from "../../hooks/useLanguage";
+import { message } from "antd";
+import { useNavigate } from "react-router-dom";
 
-interface SlideData {
-  id: number;
+interface LocalizedContent {
   title: string;
-  subtitle: string;
+  description: string;
   features: string[];
-  buttonText: string;
-  image: string;
+  _id: string;
 }
 
-const SLIDES: SlideData[] = [
-  {
-    id: 1,
-    title: "QULAY VA ISHONCHLI INVESTITSIYALAR",
-    subtitle: "в фирменных сервисных центрах",
-    features: [
-      "Сервисные центры в Москве, Санкт-Петербурге и Краснодаре",
-      "Гарантия 14 дней на ремонт",
-    ],
-    buttonText: "Batafsil",
-    image: people,
-  },
-  {
-    id: 2,
-    title: "QULAY VA ISHONCHLI INVESTITSIYALAR2",
-    subtitle: "в фирменных сервисных центрах sdafjals;dfkja",
-    features: [
-      "Сервисные центры в Москве, Санкт-Петербурге и Краснодаре",
-      "Гарантия 14 дней на ремонт",
-    ],
-    buttonText: "Batafsil",
-    image:  people, 
-  },
-];
+interface BannerAPIResponse {
+  _id: string;
+  uzb: LocalizedContent;
+  rus: LocalizedContent;
+  eng: LocalizedContent;
+  imageUrl: string;
+  createdAt: string;
+}
 
-const NavButton = ({ 
-  onClick, 
-  disabled, 
-  children 
-}: { 
+const NavButton = ({ onClick, disabled, children }: { 
   onClick: () => void; 
   disabled: boolean; 
   children: React.ReactNode 
@@ -56,32 +37,82 @@ const NavButton = ({
 );
 
 const HeroCarousel: React.FC = () => {
+  const [slides, setSlides] = useState<BannerAPIResponse[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const {lang} = useLanguage();
 
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev === SLIDES.length - 1 ? 0 : prev + 1));
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/banners/all`);
+        const result = await response.json();
+        setSlides(result.data);
+      } catch (error) {
+        console.error("Error fetching banners:", error);
+        message.error("Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring")
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBanners();
   }, []);
 
+  const nextSlide = useCallback(() => {
+    if (slides.length === 0) return;
+    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  }, [slides.length]);
+
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? SLIDES.length - 1 : prev - 1));
+    if (slides.length === 0) return;
+    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   useEffect(() => {
+    if (slides.length <= 1) return;
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, [nextSlide]);
+  }, [nextSlide, slides.length]);
 
-  const slide = SLIDES[currentIndex];
+  if (loading) {
+    return (
+      <section className="hero-container skeleton-active">
+        <div className="hero-content">
+          <header className="hero-text">
+            <div className="skeleton-title" />
+            <div className="skeleton-subtitle" />
+            <div className="features-list">
+              {[1, 2].map((i) => (
+                <div key={i} className="feature-item">
+                  <img className="icon-shield" src={shield} alt="shield"/>
+                  <div className="skeleton-banner-line" />
+                </div>
+              ))}
+            </div>
+            <div className="skeleton-btn" />
+          </header>
+          <div className="hero-image-wrapper">
+             <div className="skeleton-img" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+  if (slides.length === 0) return null;
+
+  const activeSlide = slides[currentIndex];
+  const content = activeSlide[lang];
 
   return (
     <section className="hero-container">
-      <div className="hero-content" key={slide.id}>
+      <div className="hero-content" key={activeSlide._id}>
         <header className="hero-text slide-animation">
-          <h1>{slide.title}</h1>
-          <p className="subtitle">{slide.subtitle}</p>
+          <h1>{content.title}</h1>
+          <p className="subtitle">{content.description}</p>
           
           <div className="features-list">
-            {slide.features.map((item, idx) => (
+            {content.features.map((item, idx) => (
               <div key={idx} className="feature-item">
                 <img className="icon-shield" src={shield} alt="shield"/>
                 <p>{item}</p>
@@ -89,26 +120,28 @@ const HeroCarousel: React.FC = () => {
             ))}
           </div>
 
-          <button className="cta-button">
-            {slide.buttonText} <HiOutlineArrowRight className="cta-icon" />
+          <button onClick={() => navigate(`/banners/${activeSlide._id}`)} className="cta-button">
+            {lang === "uzb" ? "Batafsil" : lang === "rus" ? "Подробнее" : "Read More"} 
+            <HiOutlineArrowRight className="cta-icon" />
           </button>
         </header>
 
         <div className="hero-image-wrapper">
-          <img src={slide.image} alt="Team" className="hero-image" />
+          <img 
+            src={activeSlide.imageUrl} 
+            alt={content.title} 
+            className="hero-image"
+            loading="lazy"
+            decoding="async" 
+          />
         </div>
         
         <div className="carousel-controls">
-          <NavButton 
-            onClick={prevSlide} 
-            disabled={currentIndex === 0}
-          >
+          <NavButton onClick={prevSlide} disabled={currentIndex === 0}>
             <HiOutlineArrowLeft size={16} />
           </NavButton>
 
-          <NavButton 
-            onClick={nextSlide} 
-            disabled={currentIndex === SLIDES.length - 1}          >
+          <NavButton onClick={nextSlide} disabled={currentIndex === slides.length - 1}>
             <HiOutlineArrowRight size={16} />
           </NavButton>
         </div>

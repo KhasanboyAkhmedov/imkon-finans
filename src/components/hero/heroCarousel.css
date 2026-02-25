@@ -41,6 +41,7 @@
   flex-direction: column;
   gap: 15px;
   margin: 30px 0;
+  flex-grow: 1;
 }
 
 .feature-item {
@@ -153,6 +154,70 @@
   color: #E4E6E8;
 }
 
+.skeleton-active .skeleton-title,
+.skeleton-active .skeleton-subtitle,
+.skeleton-active .skeleton-banner-line,
+.skeleton-active .skeleton-icon,
+.skeleton-active .skeleton-btn,
+.skeleton-active .skeleton-img {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-title {
+  width: 80%;
+  height: 40px;
+  margin-bottom: 12px;
+}
+
+.skeleton-subtitle {
+  width: 60%;
+  height: 20px;
+  margin-bottom: 30px;
+}
+
+.skeleton-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 32px;
+  flex-shrink: 0;
+}
+
+.skeleton-banner-line {
+  width: 50%;
+  height: 16px;
+}
+
+.skeleton-btn {
+  width: 140px;
+  height: 45px;
+  border-radius: 50px !important;
+  margin-top: auto;
+}
+.skeleton-img {
+  width: 280px;
+  height: 150px;
+}
+
+.skeleton-active .features-list {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 @media (min-width: 540px) {
   .hero-text h1 {
     font-size: calc((24px * var(--scale-factor)) + var(--user-font-modifier));;
@@ -217,7 +282,12 @@
     display: block;
     margin-bottom: -5px;
   }
-  
+  .skeleton-img {
+    width: 320px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+
   .carousel-controls {
     bottom: 40px;
     top: auto;
@@ -285,6 +355,11 @@
   .subtitle {
     font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
     opacity: 0.9;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .feature-item {
@@ -304,6 +379,11 @@
     width: 40px;
     height: 40px;
   }
+  .skeleton-img {
+    width: 400px;
+    height: 250px;
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 1340px) {
@@ -311,3 +391,4 @@
     max-width: 1300px;
   }
 }
+
