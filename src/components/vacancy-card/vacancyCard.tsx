@@ -3,6 +3,7 @@ import './vacancyCard.css';
 import type { Vacancy } from '../../pages/vacancies/vacancies.data';
 import { BiBriefcase, BiMapPin } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../../hooks/useLanguage';
 
 interface Props {
   data: Vacancy;
@@ -10,7 +11,9 @@ interface Props {
 
 const VacancyCard: React.FC<Props> = ({ data }) => {
     const navigate = useNavigate();
-
+    const { lang } = useLanguage();
+    const content = data[lang as keyof Pick<Vacancy, 'uzb' | 'rus' | 'eng'>] || data.uzb;
+    
     const handleNavigation = () => {
         navigate(`/vacancies/${data._id}`);
     };
@@ -21,13 +24,13 @@ const VacancyCard: React.FC<Props> = ({ data }) => {
                     <BiBriefcase className="main-icon" />
                 </div>
                 <div className="title-row">
-                    <h3 className="vacancy-title">{data.title}</h3>
-                    <span className="vacancy-badge">{data.hours}</span>
+                    <h3 className="vacancy-title">{content.title}</h3>
+                    <span className="vacancy-badge">{content.hours}</span>
                 </div>
             </div>
             <div className="location-row">
                 <BiMapPin className="pin-icon" />
-                <span className="location-text">{data.location}</span>
+                <span className="location-text">{content.location}</span>
             </div>
         
             <button className="vacancy-button" onClick={handleNavigation}>

@@ -26,8 +26,8 @@
 }
 
 .vacancy-icon-wrapper {
-  width: 48px;
-  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   background: #F7F7F7;
   border-radius: 12px;
   display: flex;
@@ -40,6 +40,7 @@
     color: var(--text-muted);
     transition: color 0.3s ease;
     font-size: 20px;
+    flex-shrink: 0;
 }
 
 .title-row {
@@ -53,6 +54,11 @@
     font-weight: 700; 
     margin: 0; 
     color: var(--text-main);
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limits text to 1 line */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .vacancy-badge {

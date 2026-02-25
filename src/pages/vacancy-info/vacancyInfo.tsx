@@ -5,14 +5,16 @@ import { type Vacancy } from '../vacancies/vacancies.data';
 import { type FC, useEffect, useState } from 'react';
 import { BiCheckDouble } from 'react-icons/bi';
 import VacancyInfoSkeleton from './vacanvyInfoSkeleton';
-import { Empty } from 'antd';
+import { Empty, message } from 'antd';
 import { FaAngleLeft } from 'react-icons/fa6';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const VacancyInfo: FC = () => {
   const { id } = useParams<{ id: string }>();
   const [data, setData] = useState<Vacancy | null>(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   useEffect(() => {
     const fetchVacancy = async () => {
@@ -22,8 +24,8 @@ const VacancyInfo: FC = () => {
         const result = await response.json();
         
         setData(result);
-      } catch (error) {
-        console.error("Failed to fetch vacancy details:", error);
+      } catch {
+        message.error("Ma'lumotni yuklashda xatolik yuz berdi");
       } finally {
         setLoading(false);
       }
@@ -59,15 +61,17 @@ const VacancyInfo: FC = () => {
       </section>
     );
   }
+  
+  const content = data[lang as keyof Pick<Vacancy, 'uzb' | 'rus' | 'eng'>] || data.uzb;
 
   return (
     <section className="vacancy-info-section">
       <div className="container">
         <div className="info-header">
-          <h1 className="info-title">{data.title}</h1>
+          <h1 className="info-title">{content.title}</h1>
           <div className="info-badge-wrapper">
             <span className="info-badge-dot">●</span>
-            <span className="info-badge-text">{data.hours}</span>
+            <span className="info-badge-text">{content.hours}</span>
           </div>
         </div>
 
@@ -75,13 +79,13 @@ const VacancyInfo: FC = () => {
           <div className="info-content">
             <div className="content-block">
               <h3 className="block-title">Ish tavsifi</h3>
-              <p className="description-text">{data.description}</p>
+              <p className="description-text">{content.description}</p>
             </div>
 
             <div className="content-block">
               <h3 className="block-title">Talablar</h3>
               <ul className="requirements-list">
-                {data.requirements?.map((req, index) => (
+                {content.requirements?.map((req, index) => (
                   <li key={index} className="req-item">
                     <BiCheckDouble className="req-icon" />
                     <span>{req}</span>
@@ -93,7 +97,7 @@ const VacancyInfo: FC = () => {
 
           <aside className="info-sidebar">
             <div className="benefits-grid">
-              {data.benefits?.map((benefit, index) => (
+              {content.benefits?.map((benefit, index) => (
                 <div key={index} className="benefit-card">
                   <HiOutlineBadgeCheck className="benefit-icon-box" />
                   <span className="benefit-text">{benefit}</span>
