@@ -1,0 +1,57 @@
+{
+  "credit_application": {
+    "loan_section": {
+      "title": "Apply for a Loan",
+      "description": "Main activity — providing microloans to individuals",
+      "tabs": {
+        "application": "Application",
+        "calculator": "Loan Calculator"
+      }
+    },
+    "application_form": {
+      "labels": {
+        "name": "Full Name *",
+        "phone": "Phone Number",
+        "amount": "I need",
+        "term": "For term",
+        "month": "months",
+        "currency": "sum"
+      },
+      "placeholders": {
+        "name": "John Doe",
+        "credit_type": "Select credit type"
+      },
+      "validation": {
+        "name_required": "Please enter your name",
+        "name_short": "Name is too short"
+      },
+      "credit_types": {
+        "mortgage": "Mortgage Loan",
+        "auto": "Auto Loan",
+        "micro": "Microloan"
+      },
+      "agreement": "I agree to the terms of the site, have read, understood and consent to the privacy policy and cookie rules. I have been informed that Imkon Finans may request/provide information about my credit history from/to the credit bureau.",
+      "submit": "Submit Application",
+      "messages": {
+        "success": "Your application has been submitted successfully!",
+        "error": "An error occurred. Please try again.",
+        "server_error": "A server connection error occurred."
+      }
+    },
+    "calculator": {
+      "title": "Loan Calculator",
+      "sum": "Loan amount",
+      "term": "Loan term",
+      "rate": "Annual interest rate",
+      "type": "Calculation type",
+      "monthly_pay": "Monthly payment",
+      "total_pay": "Total value",
+      "apply_btn": "SUBMIT APPLICATION",
+      "month_unit": "months",
+      "calc_types": {
+        "annuity": "Annuity",
+        "differential": "Differential"
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "credit_application": {
+    "loan_section": {
+      "title": "Kreditga ariza bering",
+      "description": "Asosiy faoliyat — jismoniy shaxslar uchun mikrozaymlarni berish",
+      "tabs": {
+        "application": "Ariza",
+        "calculator": "Kredit kalkulyatori"
+      }
+    },
+    "application_form": {
+      "labels": {
+        "name": "F.I.O. *",
+        "phone": "Telefon raqami",
+        "amount": "Manga kerak",
+        "term": "Muddatga",
+        "month": "oy",
+        "currency": "so'm"
+      },
+      "placeholders": {
+        "name": "Ivanov Aleksey Petrovich",
+        "credit_type": "Kredit turini tanlang"
+      },
+      "validation": {
+        "name_required": "Iltimos, ismingizni kiriting",
+        "name_short": "Ism juda qisqa"
+      },
+      "credit_types": {
+        "mortgage": "Ipoteka krediti",
+        "auto": "Avtokredit",
+        "micro": "Mikroqarz"
+      },
+      "agreement": "Men sayt shartlariga roziman, maxfiylik siyosati va cookie-fayllardan foydalanish qoidalarini o'qib chiqqanman, tushunganman va rozilik bildiraman. Menga Imkon Finans kompaniyasi mening kredit tarixim haqidagi ma'lumotlarni kredit byurosidan so'rashi/yetkazishi mumkinligi haqida xabar berildi.",
+      "submit": "Arizani yuborish",
+      "messages": {
+        "success": "Arizangiz muvaffaqiyatli yuborildi!",
+        "error": "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
+        "server_error": "Server bilan bog'lanishda xatolik yuz berdi."
+      }
+    },
+    "calculator": {
+      "title": "Kredit Kalkulyatori",
+      "sum": "Kredit summasi",
+      "term": "Kredit muddati",
+      "rate": "Yillik foiz stavkasi",
+      "type": "Hisoblash turi",
+      "monthly_pay": "Oylik to‘lov",
+      "total_pay": "To‘liq qiymati",
+      "apply_btn": "ARIZA QOLDIRISH",
+      "month_unit": "oy",
+      "calc_types": {
+        "annuity": "Annuitet",
+        "differential": "Differensial"
+      }
+    }
+  }
+}

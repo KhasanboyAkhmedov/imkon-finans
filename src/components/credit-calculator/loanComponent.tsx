@@ -3,22 +3,25 @@ import { Tabs } from 'antd';
 import ApplicationForm from './application-form';
 import CreditCalculator from './credit-calculator';
 import './loanComponent.css';
+import { useTranslation } from 'react-i18next';
 
 
 const LoanComponent: React.FC = () => {
+    const { t } = useTranslation('main', { keyPrefix: 'credit_application.loan_section' });
+
     const [activeTab, setActiveTab] = useState('application');
     const items = [
-        { key: 'application', label: 'Ariza', children: <ApplicationForm /> },
-        { key: 'credit-calculator', label: 'Kredit kalkulyatori', children: <CreditCalculator onSwitch={() => setActiveTab('application')} /> },
+        { key: 'application', label: t('tabs.application'), children: <ApplicationForm /> },
+        { key: 'credit-calculator', label: t('tabs.calculator'), children: <CreditCalculator onSwitch={() => setActiveTab('application')} /> },
     ];
 
   return (
     <section className='loan container'>
         <div className="loan-wrapper ">
             <div className="loan-header">
-                <h2 className='credit-title'>Kreditga ariza bering</h2>
+                <h2 className='credit-title'>{t('title')}</h2>
                 <p className='credit-corporate-description'>
-                    Основное направление деятельности — выдача микрозаймов физическим лицам
+                    {t('description')}
                 </p>
             </div>
 

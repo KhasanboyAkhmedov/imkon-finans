@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Slider, Checkbox, Col, Row, Typography, Button, message } from 'antd';
+import { Form, Slider, Col, Row, Typography, Button, message } from 'antd';
 import CustomInput from './custom-input';
 import CustomSelect from './custom-select';
 import './application-form.css';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { TbMoneybag } from 'react-icons/tb';
+import { useTranslation } from 'react-i18next';
 
 const { Text } = Typography;
 
@@ -19,6 +20,8 @@ interface FormValues {
 }
 
 const ApplicationForm: React.FC = () => {
+  const { t } = useTranslation('main', { keyPrefix: 'credit_application.application_form' });
+  
   const [form] = Form.useForm();
   const values = Form.useWatch([], form);
   const [submittable, setSubmittable] = useState(false);
@@ -66,19 +69,24 @@ const ApplicationForm: React.FC = () => {
       });
 
       if (response.ok) {
-        messageApi.success("Arizangiz muvaffaqiyatli yuborildi!");
+        messageApi.success(t('messages.success'));
         form.resetFields();
+
       } else {
-        messageApi.error("Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.");
+        messageApi.error(t('messages.error'));
       }
     } catch {
-      messageApi.error("Server bilan bog'lanishda xatolik yuz berdi.");
+      messageApi.error(t('messages.server_error'));
     } finally {
       setLoading(false);
     }
   };
 
-  const creditOptions = [{ label: 'Ipoteka krediti', value: 'mortgage' }, { label: 'Avtokredit', value: 'auto' }, { label: 'Mikroqarz', value: 'micro' }];
+  const creditOptions = [
+    { label: t('credit_types.mortgage'), value: 'mortgage' },
+    { label: t('credit_types.auto'), value: 'auto' }, 
+    { label: t('credit_types.micro'), value: 'micro' }
+  ];
   const mdlOptions = [{ label: 'MDL', value: 'mdl' }];
 
   return (
@@ -90,20 +98,20 @@ const ApplicationForm: React.FC = () => {
             <Row gutter={[16, 16]}>
               <Col xs={24} sm={12}>
                 <CustomInput
-                  label="F.I.O. *"
+                  label={t('labels.name')}
                   name="name"
                   form={form}
-                  placeholder="Ivanov Aleksey Petrovich"
+                  placeholder={t('placeholders.name')}
                   required
                   rules={[
-                      { required: true, message: 'Iltimos, ismingizni kiriting' },
-                      { min: 4, message: 'Ism juda qisqa' }
+                      { required: true, message: t('validation.name_required') },
+                      { min: 4, message: t('validation.name_short') }
                   ]}
                 />
               </Col>
               <Col xs={24} sm={12}>
                 <CustomInput
-                  label="Telefon raqami"
+                  label={t('labels.phone')}
                   name="phone"
                   form={form}
                   initialValue="+998 "
@@ -115,7 +123,7 @@ const ApplicationForm: React.FC = () => {
                 <CustomSelect
                   name="credit_type"
                   form={form}
-                  placeholder="Kredit turini tanlang"
+                  placeholder={t('placeholders.credit_type')}
                   options={creditOptions}
                   required
                 />
@@ -139,8 +147,8 @@ const ApplicationForm: React.FC = () => {
                       <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
                           <TbMoneybag className='slider-icon' />
                           <div>
-                              <Text type="secondary" className='slider-text'>Manga kerak</Text>
-                              <div><b>{(values?.amount || 150000000).toLocaleString()} So'm</b></div>
+                              <Text type="secondary" className='slider-text'>{t('labels.amount')}</Text>
+                              <div><b>{(values?.amount || 150000000).toLocaleString()} {t('labels.currency')}</b></div>
                           </div>
                       </div>
                       <Form.Item name="amount" initialValue={150000000} noStyle>
@@ -153,18 +161,18 @@ const ApplicationForm: React.FC = () => {
                       <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
                       <FaCalendarAlt className='slider-icon' />
                       <div>
-                          <Text type="secondary" style={{ fontSize: '12px' }}>Muddatga</Text>
-                          <div><b>{values?.months || 20} oy</b></div>
+                          <Text type="secondary" style={{ fontSize: '12px' }}>{t('labels.term')}</Text>
+                          <div><b>{values?.months || 20} {t('labels.month')}</b></div>
                       </div>
                       </div>
                       <Form.Item name="months" initialValue={20} noStyle>
-                      <Slider min={12} max={48} tooltip={{ open: false }} />
+                        <Slider min={12} max={48} tooltip={{ open: false }} />
                       </Form.Item>
                   </div>
               </div>
           </Col>
           <div className='submission'>
-              <Form.Item 
+              {/* <Form.Item 
                   name="agreement" 
                   valuePropName="checked" 
                   rules={[{ validator: (_, value) => value ? Promise.resolve() : Promise.reject() }]}
@@ -178,7 +186,7 @@ const ApplicationForm: React.FC = () => {
                           haqida xabar berildi.
                       </span>
                   </Checkbox>
-              </Form.Item>
+              </Form.Item> */}
               <Button 
                   type='primary'
                   htmlType='submit'
@@ -186,7 +194,7 @@ const ApplicationForm: React.FC = () => {
                   disabled={!submittable || loading}
                   className='submit-button'
               >
-                  Arizani yuborish <span style={{ marginLeft: '8px' }}>→</span>
+                  {t('submit')} <span style={{ marginLeft: '8px' }}>→</span>
               </Button>
           </div>
         </Row>
