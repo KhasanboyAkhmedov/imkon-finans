@@ -69,7 +69,11 @@
         },
         "branches_title": "Номера телефонов:"
     },
-    "re_purchased_shares": "Выкупленные акции",
+    "re_purchased_shares": {
+        "title": "Выкупленные акции",
+        "no_repurchased_shares": "Выкупленных акций нет",
+        "no_data_to_show": "Нет данных для отображения"
+    },
     "errors": {
         "no_data": "Информация не найдена",
         "back_home": "Вернуться назад",

@@ -69,7 +69,11 @@
         },
         "branches_title": "Phone numbers:"
     },
-    "re_purchased_shares": "Re-purchased Shares",
+    "re_purchased_shares": {
+        "title": "Re-purchased shares",
+        "no_repurchased_shares": "No re-purchased shares",
+        "no_data_to_show": "No data to show"
+    },
     "errors": {
         "no_data": "No information found",
         "back_home": "Go back",

@@ -69,7 +69,11 @@
         },
         "branches_title": "Telefon raqamlari:"
     },
-    "re_purchased_shares": "Qayta sotib olingan aksiyalar",
+    "re_purchased_shares": {
+        "title": "Qayta sotib olingan aksiyalar",
+        "no_repurchased_shares": "Qayta sotib olingan aksiyalar yo'q",
+        "no_data_to_show": "Ko'rsatish uchun ma'lumotlar yo'q"
+    },
     "errors": {
         "no_data": "Ma'lumot topilmadi",
         "back_home": "Ortga qaytish",
