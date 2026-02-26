@@ -6,6 +6,7 @@ import { formatDate } from '../../commons';
 import './generic-detail.css';
 import type { InfoCardItem } from '../info-card/info-card.types';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 interface GenericDetailProps<T> {
   resource: string;
@@ -22,7 +23,8 @@ export const GenericDetail = <T extends InfoCardItem>({
   const [item, setItem] = useState<T | null>(null);
   const { lang } = useLanguage();
   const content = item ? item[lang] : null;
-
+  const { t } = useTranslation('pages', { keyPrefix: 'errors' });
+  
   useEffect(() => {
     const fetchData = async () => {
       if (!id) return;
@@ -57,15 +59,13 @@ export const GenericDetail = <T extends InfoCardItem>({
         <div className="container">
             <div onClick={handleBack} className="go-back-button">
                 <FaAngleLeft className='back-icon'/> 
-                <p className='back-text'>Orqaga</p>
+                <p className='back-text'>{t('back')}</p>
             </div>
 
             <div className="error-message">
                 <Empty description={false} className='empty-box' />
-                <p className='error-text'>Ma'lumot topilmadi.</p>
-                <button onClick={handleBack} className="back-button">
-                    Ortga qaytish
-                </button>
+                <p className='error-text'>{t('no_data')}</p>
+                <button onClick={handleBack} className="back-button">{t('back_home')}</button>
             </div>
         </div>
       </section>
@@ -77,7 +77,7 @@ export const GenericDetail = <T extends InfoCardItem>({
         <div className="container">
             <div onClick={handleBack} className="go-back-button">
                 <FaAngleLeft className='back-icon'/> 
-                <p className='back-text'>Orqaga</p>
+                <p className='back-text'>{t('back')}</p>
             </div>
 
             {loading ? (

@@ -109,6 +109,14 @@
         "no_repurchased_shares": "Qayta sotib olingan aksiyalar yo'q",
         "no_data_to_show": "Ko'rsatish uchun ma'lumotlar yo'q"
     },
+    "events": {
+        "title": "Tadbirlar",
+        "description": "“IMKON FINANS” mikromoliya tashkiloti aksiyadorlik jamiyati o‘n yildan buyon kichik va o‘rta biznes hamda xususiy tadbirkorlikni rivojlantirishga, shuningdek, O‘zbekiston Respublikasida tobora kengayib borayotgan mikromoliya bozorining rivojlanishiga o‘z hissasini qo‘shib kelmoqda."
+    },
+    "videos": {
+        "title": "Videolar",
+        "description": "“IMKON FINANS” mikromoliya tashkiloti aksiyadorlik jamiyati o‘n yildan buyon kichik va o‘rta biznes hamda xususiy tadbirkorlikni rivojlantirishga, shuningdek, O‘zbekiston Respublikasida tobora kengayib borayotgan mikromoliya bozorining rivojlanishiga o‘z hissasini qo‘shib kelmoqda."
+    },
     "errors": {
         "no_data": "Ma'lumot topilmadi",
         "back_home": "Ortga qaytish",

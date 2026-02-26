@@ -3,12 +3,14 @@ import { InfoCard } from '../../components/info-card/info-card'
 import { useEffect, useState } from 'react';
 import type { InfoCardItem } from '../../components/info-card/info-card.types';
 import InfoCardSkeleton from '../../components/info-card/info-card-skeleton';
+import { useTranslation } from 'react-i18next';
 
 const Videos = () => {
     const [data, setData] = useState<InfoCardItem[]>([]);
     const [loading, setLoading] = useState(false);
     const [total, setTotal] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
+    const { t } = useTranslation('pages', { keyPrefix: 'videos' });
     const pageSize = 3;
   
     const fetchEvents = async (page: number) => {
@@ -19,8 +21,8 @@ const Videos = () => {
         );
         const result = await response.json();
         
-        setData(result.data);
-        setTotal(result.totalCount);
+        setData(result.data || []);
+        setTotal(result.totalCount || 0);
       } catch (error) {
         console.error("Failed to fetch events:", error);
       } finally {
@@ -34,8 +36,8 @@ const Videos = () => {
     
     return (
       <InfoCardList 
-          title="Videolar"
-          pageDescription="“IMKON FINANS” mikromoliya tashkiloti aksiyadorlik jamiyati o‘n yildan buyon kichik va o‘rta biznes hamda xususiy tadbirkorlikni rivojlantirishga, shuningdek, O‘zbekiston Respublikasida tobora kengayib borayotgan mikromoliya bozorining rivojlanishiga o‘z hissasini qo‘shib kelmoqda."
+          title={t('title')}
+          pageDescription={t('description')}
           dataSource={data}
           loading={loading}
           total={total}
