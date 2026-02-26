@@ -43,6 +43,10 @@
         "description": "Ish tavsifi",
         "requirements": "Talablar"
     },
+    "reception_days": {
+        "title": "Qabul kunlari",
+        "description": "Ish vaqti"
+    },
     "re_purchased_shares": "Qayta sotib olingan aksiyalar",
     "errors": {
         "no_data": "Ma'lumot topilmadi",

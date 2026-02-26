@@ -6,6 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import ReceiversCardSkeleton from '../../components/reception-days/receiversCardSkeleton';
 import { Empty } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 const SKELETON_COUNT = 3;
@@ -14,6 +15,9 @@ const ReceptionDays = () => {
     const [data, setData] = useState<Receiver[]>([]);
     const [loading, setLoading] = useState(true); 
     const navigate = useNavigate();
+    const { t } = useTranslation('pages', { keyPrefix: 'reception_days' });
+    const { t: tErrors } = useTranslation('pages', { keyPrefix: 'errors' });
+
 
     const skeletons = useMemo(() => Array.from({ length: SKELETON_COUNT }), []);
 
@@ -22,11 +26,14 @@ const ReceptionDays = () => {
         
         try {
             const response = await fetch(`${API_BASE_URL}/receptions/all`);
-            if (!response.ok) throw new Error('Network response was not ok');
+            if (!response.ok) {
+                setData([]);
+            }
             
             const result = await response.json();
             setData(result.data || []);
         } catch (error) {
+            setData([]);
             console.error("Failed to fetch events:", error);
         } finally {
             setLoading(false);
@@ -50,9 +57,9 @@ const ReceptionDays = () => {
             return (
                 <div className="error-message">
                     <Empty description={false} className="empty-box" />
-                    <p className="error-text">Ma'lumot topilmadi.</p>
+                    <p className="error-text">{tErrors('no_data')}</p>
                     <button onClick={handleBack} className="back-button">
-                        Ortga qaytish
+                        {tErrors('back_home')}
                     </button>
                 </div>
             );
@@ -66,13 +73,13 @@ const ReceptionDays = () => {
     return (
         <section className='reception-days-section'>
             <div className='container'>
-                <h2 className="section-title">Qabul qilish kunlari</h2>
+                <h2 className="section-title">{t('title')}</h2>
                 <div className='working-days-wrapper'>
-                    <h1 className='working-definition'>Ish tavsifi</h1>
-                    <p className='working-days'>Dushanda-Shanba</p>
+                    <h1 className='working-definition'>{t('description')}</h1>
+                    <p className='working-days'>{t('working_days')}</p>
                     <div className='working-hours'>
                         <FaRegClock className='clock-icon' />
-                        <p className='working-hour'>8:00 - 18:00</p>
+                        <p className='working-hour'>9:00 - 18:00</p>
                     </div>
                 </div>
                 <div className='receivers'> 

@@ -43,6 +43,11 @@
         "description": "Описание работы",
         "requirements": "Требование"
     },
+    "reception_days": {
+        "title": "Приемные дни",
+        "description": "Рабочее время",
+        "working_days": "Понедельник-Суббота"
+    },
     "re_purchased_shares": "Выкупленные акции",
     "errors": {
         "no_data": "Информация не найдена",

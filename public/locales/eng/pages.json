@@ -43,6 +43,11 @@
         "description": "Job description",
         "requirements": "Requirements"
     },
+    "reception_days": {
+        "title": "Reception Days",
+        "description": "Working Hours",
+        "working_days": "Monday-Saturday"
+    },
     "re_purchased_shares": "Re-purchased Shares",
     "errors": {
         "no_data": "No information found",
