@@ -3,10 +3,11 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { type NewsDetailType } from './news-detail.data';
 import './news-detail.css';
 import { FaAngleLeft } from 'react-icons/fa6';
-import { Empty } from 'antd';
+import { Empty, message } from 'antd';
 import { formatDate } from '../../commons';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { TLanguage } from '../../types/language.types';
+import { useTranslation } from 'react-i18next';
 
 const NewsDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,7 +16,8 @@ const NewsDetail: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(true);
   const [item, setItem] = useState<NewsDetailType | null>(null);
   const { lang } = useLanguage() as { lang: TLanguage };
-
+  const { t } = useTranslation('pages', { keyPrefix: 'errors' });
+  
   useEffect(() => {
     const fetchNewsDetail = async () => {
       setLoading(true);
@@ -25,6 +27,7 @@ const NewsDetail: React.FC = () => {
 
         if (!response.ok || result.message === "Not found.") {
           setItem(null);
+          message.error(t('no_data'));
         } else {
           setItem(result);
         }
@@ -47,14 +50,12 @@ const NewsDetail: React.FC = () => {
         <div className="news-content container">
           <div onClick={() => navigate(-1)} className="go-back-button">
             <FaAngleLeft className='back-icon'/> 
-            <p className='back-text'>Orqaga</p>
+            <p className='back-text'>{t('back')}</p>
           </div>
           <div className="error-message">
             <Empty description={false} className='empty-box' />
-            <p className='error-text'>Ma'lumot topilmadi.</p>
-            <button onClick={() => navigate('/news')} className="back-button">
-                Ortga qaytish
-            </button>
+            <p className='error-text'>{t('no_data')}</p>
+            <button onClick={() => navigate('/news')} className="back-button">{t('back_home')}</button>
           </div>
         </div>
       </div>
@@ -68,7 +69,7 @@ const NewsDetail: React.FC = () => {
       <div className="news-content container">
         <div onClick={() => navigate(-1)} className="go-back-button">
           <FaAngleLeft className='back-icon'/> 
-          <p className='back-text'>Orqaga</p>
+          <p className='back-text'>{t('back')}</p>
         </div>
 
         {loading ? (
