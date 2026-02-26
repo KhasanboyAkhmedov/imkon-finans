@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import i18n from '../i18n';
 
 export type Lang = 'uzb' | 'rus' | 'eng';
 
@@ -18,6 +19,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const setLang = (l: Lang) => {
         setLangState(l);
         localStorage.setItem('appLang', l);
+        i18n.changeLanguage(l);
     };
 
     return (

@@ -1,112 +1,62 @@
+import type { TFunction } from "i18next";
 import type { NavMenu } from "../../types/navbar.types";
 
-export const navMenu: NavMenu[] = [
+export const getNavMenu = (t: TFunction<"layout", "navbar">): NavMenu[] => [
     {
-        title: 'Jamiyat haqida',
+        title: t('sections.about'),
         variant: 'filled',
         items: [
-            { label: "Jamiyat tarixi", url: "/history" },
-            { label: "Kuzatuv kengashi", url: "/council" },
-            { label: "Boshqaruv organi", url: "/management" },
-            { label: "Jamiyat tashkiliy tuzilmasi", url: "/organizational-structure" },
-            { label: "Ish o'rinlari", url: "/vacancies" },
-            { label: "Qabul qilish kunlari", url: "/reception-days" },
-            { label: "Xamkorlar", url: "/partners" },
-            { label: "Aloqalar", url: "/contacts" },
+            { label: t("links.history"), url: "/history" },
+            { label: t("links.council"), url: "/council" },
+            { label: t("links.management"), url: "/management" },
+            { label: t("links.structure"), url: "/organizational-structure" },
+            { label: t("links.vacancies"), url: "/vacancies" },
+            { label: t("links.reception"), url: "/reception-days" },
+            { label: t("links.partners"), url: "/partners" },
+            { label: t("links.contacts"), url: "/contacts" },
         ]
     },
     {
-        title: 'Xizmatlar',
+        title: t('sections.services'),
         variant: 'stock',
         items: [
-            { label: "Mikromoliyaviy xizmatlar", url: "/our-services" },
-            { label: "Mikrokredit va mikroqarzlar", url: "/our-services" },
-            { label: "Agentlik xizmati", url: "/our-services" },
+            { label: t("links.micro_services"), url: "/our-services" },
+            { label: t("links.micro_credit_services"), url: "/our-services" },
+            { label: t("links.agency_services"), url: "/our-services" },
         ],
     },
     {
-        title: 'Aksiyadorlar',
-        url: '/',
+        title: t('sections.shareholders'),
         variant: 'stock',
         items: [
-            {
-                label: 'Biznes rejalar',
-                url: '/business-plans',
-            },
-            {
-                label: 'Dividendlar',
-                url: '/dividends',
-            },
-            {
-                label: 'Ustav fondi',
-                url: '/share-capital',
-            },
-            {
-                label: 'Qayta sotib olingan aksiyalar',
-                url: '/re-purchased-shares',
-            },
-            {
-                label: 'Emissiya',
-                url: '/emission',
-            },
-            {
-                label: 'Hisobotlar',
-                url: '/reports',
-            },
-            {
-                label: 'Muhim faktlar',
-                url: '/important-facts',
-            },
+            { label: t('links.business_plans'), url: '/business-plans' },
+            { label: t('links.dividends'), url: '/dividends' },
+            { label: t('links.share_capital'), url: '/share-capital' },
+            { label: t('links.repurchased'), url: '/re-purchased-shares' },
+            { label: t('links.emission'), url: '/emission' },
+            { label: t('links.reports'), url: '/reports' },
+            { label: t('links.facts'), url: '/important-facts' },
         ],
     },
     {
-        title: 'Korporativ Boshqaruv',
-        url: '/coorporate-governance',
+        title: t('sections.corporate'),
         variant: 'stock',
         items: [
-            {
-                label: 'Jamiyat nizomi',
-                url: '/corporate-charter',
-            },
-            {
-                label: 'Sertifikatlar',
-                url: '/certificates',
-            },
-            {
-                label: 'Rivojlanish strategiyasi',
-                url: '/development-strategy',
-            },
-            {
-                label: 'Affillangan shaxslar',
-                url: '/affiliated-individuals',
-            },
-            {
-                label: 'Korporativ boshqaruv kodeksi',
-                url: '/corporate-governance-code',
-            },
-            {
-                label: 'Jamiyat qoidalari',
-                url: '/corporate-regulations',
-            },
+            { label: t('links.charter'), url: '/corporate-charter' },
+            { label: t('links.certificates'), url: '/certificates' },
+            { label: t('links.strategy'), url: '/development-strategy' },
+            { label: t('links.affiliated'), url: '/affiliated-individuals' },
+            { label: t('links.code'), url: '/corporate-governance-code' },
+            { label: t('links.regulations'), url: '/corporate-regulations' },
         ],
     },
     {
-        title: 'Matbuot Markazi',
-        url: '/media-center',
+        title: t('sections.press'),
         variant: 'stock',
         items: [
-            {
-                label: 'Yangiliklar va elonlar',
-                url: '/news',
-            },
-            {
-                label: 'Tadbirlar',
-                url: '/events',
-            },
-            {
-                label: 'Videolar',
-                url: '/videos',
-            }
+            { label: t('links.news'), url: '/news' },
+            { label: t('links.events'), url: '/events' },
+            { label: t('links.videos'), url: '/videos' }
         ],
     },
-] 
+];

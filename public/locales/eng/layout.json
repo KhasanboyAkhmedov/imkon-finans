@@ -1,0 +1,58 @@
+{
+    "navbar" : {
+        "sections": {
+            "about": "About Us",
+            "services": "Services",
+            "shareholders": "Shareholders",
+            "corporate": "Corporate governance",
+            "press": "Press Center"
+        },
+        "actions" : {
+            "application": "Submit application",
+            "calculator": "Credit calculator"
+        },
+        "links": {
+            "history": "History",
+            "council": "Supervisory board",
+            "management": "Management body",
+            "structure": "Organizational structure",
+            "vacancies": "Vacancies",
+            "reception": "Reception days",
+            "partners": "Partners",
+            "contacts": "Contacts",
+            "micro_services": "Microfinance services",
+            "micro_credit_services": "Microcredits and microloans",
+            "agency_services": "Agency services",
+            "business_plans": "Business plans",
+            "dividends": "Dividends",
+            "share_capital": "Share capital",
+            "repurchased": "Re-purchased shares",
+            "emission": "Emission",
+            "reports": "Reports",
+            "facts": "Important facts",
+            "charter": "Corporate charter",
+            "certificates": "Certificates",
+            "strategy": "Development strategy",
+            "affiliated": "Affiliated individuals",
+            "code": "Corporate governance code",
+            "regulations": "Corporate regulations",
+            "news": "News and announcements",
+            "events": "Events",
+            "videos": "Videos"
+        },
+        "contact_us": "Contact us",
+        "search": {
+            "placeholder": "Search",
+            "not_found": "No results found"
+        }
+    },
+    "footer" : {
+        "useful_links": "Useful Links",
+        "contact_info": "Contact Information",
+        "address": "Address",
+        "address_text": "Republic of Uzbekistan, Andijan region, Andijan city, A. Temur street, house 44A",
+        "website_map": "Website Map",
+        "rights": "All rights reserved",
+        "disclaimer": "When using materials from the site, a link to the website www.imkon-finans.uz must be provided!"
+    }
+}

@@ -2,10 +2,14 @@ import './footer.css';
 import logoWithText from '/logo-with-text.svg';
 import { email, map, phone } from '../../assets/footer';
 import { socialLinks, usefulResources } from './footer.data';
-import { navMenu } from '../navbar/navData';
+import { useTranslation } from 'react-i18next';
+import { getNavMenu } from '../navbar/navData';
 
 const Footer = () => {
-
+    const { t: navT } = useTranslation('layout', { keyPrefix: 'navbar' });
+    const { t: footT } = useTranslation('layout', { keyPrefix: 'footer' });
+    const navMenu = getNavMenu(navT);
+    
     return (
         <footer className="footer">
             <div className='container'>
@@ -34,7 +38,7 @@ const Footer = () => {
                         ))}
                     </div>
                     <div className='contact-datas'>
-                        <h4 className='title'>Aloqa ma'lumotlari</h4>
+                        <h4 className='title'>{footT('contact_info')}</h4>
                         <a className="contact-data" href="#">
                             <img className="footer__bottom-top-first-a-img" src={email} alt="email" /> 
                             info@imkonfinans.uz
@@ -49,14 +53,14 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className='contact-datas contact-datas-with-map'>
-                        <h4 className='title'>Manzil</h4>
-                        <a className="contact-data with-map" href="#">
-                            Oʻzbekiston Respublikasi, Andijon viloyati, Andijon shahar, A. Temur ko‘chasi 44A uy.
+                        <h4 className='title'>{footT('address')}</h4>
+                        <a className="contact-data with-map" href="https://yandex.uz/maps/-/CPAv5C3L" target="_blank" rel="noopener noreferrer">
+                            {footT('address_text')}
                             <img className="" src={map} alt="map" /> 
                         </a>
                     </div>
                 </div>
-                <h2 className='footer-navigation-title'>Sahifalar ro'yxati</h2>
+                <h2 className='footer-navigation-title'>{footT('website_map')}</h2>
                 <div className="footer-navigation">
                     {navMenu.map((section) => (
                         <div className='contact-datas' key={section.title}>
@@ -73,11 +77,9 @@ const Footer = () => {
                 <hr className='footer-line-2'/>
                 <div className="footer__bottom">
                     <p className="footer__bottom-text-rights">
-                        © {new Date().getFullYear()} Imkon Finans. All rights reserved.
+                        Imkon Finans © {new Date().getFullYear()}. {footT('rights')}
                     </p>
-                    <p className="footer__bottom-text">
-                        Barcha hujjatlar — asl nusxalardan. Foydalanishda saytga havola ko'rsatilishi lozim.
-                    </p>
+                    <p className="footer__bottom-text">{footT('disclaimer')}</p>
                 </div>
             </div>
         </footer>

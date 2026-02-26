@@ -4,6 +4,7 @@ import { FiSearch } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import { allCreditsData, type Credit } from '../../pages/all-credits/all-credits.data';
 import './search-input.css';
+import { useTranslation } from 'react-i18next';
 
 const SearchInput = () => {
     const navigate = useNavigate();
@@ -11,7 +12,8 @@ const SearchInput = () => {
     const [debouncedQuery, setDebouncedQuery] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 540);
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const { t } = useTranslation('navbar');
+    
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 540);
@@ -70,7 +72,7 @@ const SearchInput = () => {
                     </div>
                 ))
             ) : (
-                <div className="no_results">Natija topilmadi...</div>
+                <div className="no_results">{t('search.not_found')}...</div>
             )}
         </>
     );
@@ -95,7 +97,7 @@ const SearchInput = () => {
                         <Input 
                             autoFocus
                             className="header_antd_input"
-                            placeholder="Qidiruv..."
+                            placeholder={t('search.placeholder')}
                             prefix={<FiSearch className="search_icon_left" />}
                             value={inputValue} 
                             onChange={(e) => setInputValue(e.target.value)}
@@ -124,7 +126,7 @@ const SearchInput = () => {
             >
                 <Input 
                     className="header_antd_input"
-                    placeholder="Qidiruv"
+                    placeholder={t('search.placeholder')}
                     prefix={<FiSearch className="search_icon_left" />}
                     value={inputValue} 
                     onChange={(e) => setInputValue(e.target.value)}

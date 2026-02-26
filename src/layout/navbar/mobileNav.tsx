@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Collapse, Drawer, Select } from 'antd';
 import { CloseOutlined } from '@ant-design/icons';
 import logoWithText from '/logo-with-text.svg';
-import { navMenu } from './navData';
+import { getNavMenu } from './navData';
 import './mobileNav.css';
 import { FaBars } from 'react-icons/fa6';
 import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import LoanModal from '../../components/credit-calculator/loan-modal';
 import SearchInput from '../../components/search-input/search-input';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 const MobileNav = () => {
     const [open, setOpen] = useState(false);
@@ -18,6 +19,8 @@ const MobileNav = () => {
     const toggleDrawer = () => setOpen(!open);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { lang, setLang } = useLanguage();
+    const { t } = useTranslation('layout', { keyPrefix: 'navbar' });
+    const menuData = getNavMenu(t);
 
     const showModal = (tabKey: string) => {
         setActiveTab(tabKey);
@@ -55,7 +58,7 @@ const MobileNav = () => {
             >
 
                 <Collapse ghost accordion expandIconPosition="end" className="mobile_nav_collapse">
-                    {navMenu.map((menuItem, index) => (
+                    {menuData.map((menuItem, index) => (
                         <Collapse.Panel 
                             header={<span className="panel_title">{menuItem.title}</span>} 
                             key={index}
@@ -88,8 +91,8 @@ const MobileNav = () => {
                     </Select>
                 </div>
                 <div className="drawer_footer_actions">
-                    <button onClick={() => showModal('application')} className="btn_apply">Ariza yuborish</button>
-                    <button onClick={() => showModal('credit-calculator')} className="btn_calc">Kredit kalkulyatori</button>
+                    <button onClick={() => showModal('application')} className="btn_apply">{t('actions.application')}</button>
+                    <button onClick={() => showModal('credit-calculator')} className="btn_calc">{t('actions.calculator')}</button>
                 </div>
                 
             </Drawer>

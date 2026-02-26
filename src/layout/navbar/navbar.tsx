@@ -1,7 +1,7 @@
 import './navbar.css';
 import logoWithText from '/logo-with-text.svg';
 import NavDropdown from './NavDropdown';
-import { navMenu } from './navData';
+import { getNavMenu } from './navData';
 import MobileNav from './mobileNav';
 import AppearanceSettings from '../../components/appearance-setting/appearance-setting';
 import { GrLanguage, GrLocation } from 'react-icons/gr';
@@ -12,12 +12,15 @@ import { useEffect, useState } from 'react';
 import LoanModal from '../../components/credit-calculator/loan-modal';
 import SearchInput from '../../components/search-input/search-input';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState('application');
     const { lang, setLang } = useLanguage();
+    const { t } = useTranslation('layout', { keyPrefix: 'navbar' });
+    const menuData = getNavMenu(t);
 
     const showModal = (tabKey: string) => {
         setActiveTab(tabKey);
@@ -49,7 +52,7 @@ const Navbar = () => {
                             <div className="site-header__top-info">
                                 <AppearanceSettings />
                                 <a 
-                                    href="https://yandex.uz/maps/..." 
+                                    href="https://yandex.uz/maps/-/CPAv5C3L" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="site-header__top-info-location-link"
@@ -72,7 +75,7 @@ const Navbar = () => {
                                     <FiPhone className="site-header-top-right-phone-icon" />
                                 </div>
                                 <div className="site-header-top-right-contact">
-                                    <p className="site-header-top-right-contact-text">Biz bilan bog‘laning</p>
+                                    <p className="site-header-top-right-contact-text">{t('contact_us')}</p>
                                     <h2 className="site-header-top-right-contact-title">+998 74 228-32-12</h2>
                                 </div>
                             </a>
@@ -81,13 +84,13 @@ const Navbar = () => {
                     <hr className='line'/>
                     <div className="site-header__bottom">
                         <ul className="site-header__bottom-list">
-                            {navMenu.map((menu, index) => (
+                            {menuData.map((menu, index) => (
                                 <NavDropdown key={index} menuItem={menu} variant={menu.variant ?? "stock"} />
                             ))}
                         </ul>
                         <div className="site-header__bottom-button-group">
-                            <button onClick={() => showModal('application')} className="site-header__bottom-button-group-apply">Ariza yuborish</button>
-                            <button onClick={() => showModal('credit-calculator')} className="site-header__bottom-button-group-creditcalc">Kredit kalkulyatori</button>
+                            <button onClick={() => showModal('application')} className="site-header__bottom-button-group-apply">{t('actions.application')}</button>
+                            <button onClick={() => showModal('credit-calculator')} className="site-header__bottom-button-group-creditcalc">{t('actions.calculator')}</button>
                         </div>
                     </div>
                 </div>

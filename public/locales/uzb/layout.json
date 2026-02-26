@@ -1,0 +1,58 @@
+{
+    "navbar": {
+        "sections": {
+            "about": "Jamiyat haqida",
+            "services": "Xizmatlar",
+            "shareholders": "Aksiyadorlar",
+            "corporate": "Korporativ Boshqaruv",
+            "press": "Matbuot Markazi"
+        },
+        "actions" : {
+            "application": "Ariza yuborish",
+            "calculator": "Kredit kalkulyatori"
+        },
+        "links": {
+            "history": "Jamiyat tarixi",
+            "council": "Kuzatuv kengashi",
+            "management": "Boshqaruv organi",
+            "structure": "Jamiyat tashkiliy tuzilmasi",
+            "vacancies": "Ish o'rinlari",
+            "reception": "Qabul qilish kunlari",
+            "partners": "Xamkorlar",
+            "contacts": "Aloqalar",
+            "micro_services": "Mikromoliyaviy xizmatlar",
+            "micro_credit_services": "Mikrokredit va mikroqarzlar",
+            "agency_services": "Agentlik xizmati",
+            "business_plans": "Biznes rejalar",
+            "dividends": "Dividendlar",
+            "share_capital": "Ustav fondi",
+            "repurchased": "Qayta sotib olingan aksiyalar",
+            "emission": "Emissiya",
+            "reports": "Hisobotlar",
+            "facts": "Muhim faktlar",
+            "charter": "Jamiyat nizomi",
+            "certificates": "Sertifikatlar",
+            "strategy": "Rivojlanish strategiyasi",
+            "affiliated": "Affillangan shaxslar",
+            "code": "Korporativ boshqaruv kodeksi",
+            "regulations": "Jamiyat qoidalari",
+            "news": "Yangiliklar va e'lonlar",
+            "events": "Tadbirlar",
+            "videos": "Videolar"
+        },
+        "contact_us": "Biz bilan bog'laning",
+        "search": {
+            "placeholder": "Qidiruv",
+            "not_found": "Hech narsa topilmadi"
+        }
+    },
+    "footer": {
+        "useful_links": "Foydali havolalar",
+        "contact_info": "Aloqa ma'lumotlari",
+        "address": "Manzil",
+        "address_text": "Oʻzbekiston Respublikasi, Andijon viloyati, Andijon shahar, A. Temur ko‘chasi 44A uy",
+        "website_map": "Sayt xaritasi",
+        "rights": "Barcha huquqlar himoyalangan",
+        "disclaimer": "Saytdagi ma’lumotlardan foydalanilganda imkon-finans.uz veb-saytiga havolani biriktirish lozim!"
+    }
+}
