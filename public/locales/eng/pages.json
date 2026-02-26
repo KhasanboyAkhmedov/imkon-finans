@@ -38,8 +38,16 @@
         "no_data": "No information found",
         "back_home": "Go back"
     },
+   "vacancies": {
+        "title": "Vacancies",
+        "description": "Job description",
+        "requirements": "Requirements"
+    },
     "re_purchased_shares": "Re-purchased Shares",
     "errors": {
+        "no_data": "No information found",
+        "back_home": "Go back",
+        "back": "Back",
         "data_load_error": "An error occurred while loading data. Please try again."
     }
 }

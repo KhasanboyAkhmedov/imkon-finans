@@ -7,6 +7,7 @@ import VacancySkeleton from '../../components/vacancy-card/vacancyCardSkeleton';
 import './vacancies.css';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const { useBreakpoint } = Grid;
 
@@ -18,6 +19,8 @@ const Vacancies = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const pageSize = screens.xl ? 8 : (screens.md ? 6 : 4);
     const navigate = useNavigate();
+    const { t } = useTranslation('pages', { keyPrefix: 'vacancies' });
+    const { t: tErrors } = useTranslation('pages', { keyPrefix: 'errors' });
 
     const fetchEvents = async (page: number) => {
         setLoading(true);
@@ -30,7 +33,7 @@ const Vacancies = () => {
             setData(result.data);
             setTotal(result.totalCount);
         } catch {
-            message.error("Ma'lumotni yuklashda xatolik yuz berdi");
+            message.error(t('data_load_error'));
         } finally {
             setLoading(false);
         }
@@ -48,15 +51,13 @@ const Vacancies = () => {
                 <div className="container">
                     <div onClick={handleBack} className="go-back-button">
                         <FaAngleLeft className='back-icon'/> 
-                        <p className='back-text'>Orqaga</p>
+                        <p className='back-text'>{tErrors('back_home')}</p>
                     </div>
 
                     <div className="error-message">
                         <Empty description={false} className='empty-box' />
-                        <p className='error-text'>Ma'lumot topilmadi.</p>
-                        <button onClick={handleBack} className="back-button">
-                            Ortga qaytish
-                        </button>
+                        <p className='error-text'>{tErrors('no_data')}</p>
+                        <button onClick={handleBack} className="back-button">{tErrors('back_home')}</button>
                     </div>
                 </div>
             </section>
@@ -74,7 +75,7 @@ const Vacancies = () => {
                 xl: 4,
                 xxl: 4,
             }}
-            title="Ish o'rinlari"
+            title={t('title')}
             dataSource={data}
             loading={loading}
             total={total}

@@ -4,12 +4,14 @@ import type { Vacancy } from '../../pages/vacancies/vacancies.data';
 import { BiBriefcase, BiMapPin } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   data: Vacancy;
 }
 
 const VacancyCard: React.FC<Props> = ({ data }) => {
+    const { t } = useTranslation('pages', { keyPrefix: 'vacancies' });
     const navigate = useNavigate();
     const { lang } = useLanguage();
     const content = data[lang as keyof Pick<Vacancy, 'uzb' | 'rus' | 'eng'>] || data.uzb;
@@ -34,7 +36,7 @@ const VacancyCard: React.FC<Props> = ({ data }) => {
             </div>
         
             <button className="vacancy-button" onClick={handleNavigation}>
-                Ish Tavsifi
+                {t('description')}
             </button>
         </div>
     );

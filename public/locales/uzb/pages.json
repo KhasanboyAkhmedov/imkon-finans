@@ -38,8 +38,16 @@
         "no_data": "Ma'lumot topilmadi",
         "back_home": "Ortga qaytish"
     },
+    "vacancies": {
+        "title": "Ish o'rinlari",
+        "description": "Ish tavsifi",
+        "requirements": "Talablar"
+    },
     "re_purchased_shares": "Qayta sotib olingan aksiyalar",
     "errors": {
+        "no_data": "Ma'lumot topilmadi",
+        "back_home": "Ortga qaytish",
+        "back": "Ortga",
         "data_load_error": "Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
     }
     
