@@ -53,5 +53,26 @@
         "differential": "Differensial"
       }
     }
+  },
+  "organization_today": {
+    "title": "MKT bugun",
+    "features": {
+      "experience": "Mikromoliya bozorida 5 yildan ortiq tajriba!",
+      "joint_stock": "MKT – O'zbekiston va Markaziy Osiyodagi mikrokredit tashkilotlari orasida yagona ochiq aksiyadorlik jamiyati",
+      "rating": "MKT O'zbekistonda mikrokredit tashkilotlari orasida yuqori reytingga ega",
+      "securities": "MKTlar orasida O'zbekistonning qimmatli qog'ozlar bozoridagi yagona ishtirokchisi",
+      "audit": "MKT'ning moliyaviy hisobotlari har yili tashqi auditdan o'tkaziladi",
+      "iso": "MKT O'z DSt ISO 9001 standartlariga javob beradi"
+    }
+  },
+  "our_products": {
+    "title": "Bizning mahsulotlarimiz",
+    "view_all": "barchasini ko'rish",
+    "error_message": "Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring"
+  },
+  "common": {
+    "buttons": {
+      "learn_more": "Batafsil ma'lumot"
+    }
   }
 }

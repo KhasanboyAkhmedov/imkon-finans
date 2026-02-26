@@ -53,5 +53,26 @@
         "differential": "Differential"
       }
     }
+  },
+  "organization_today": {
+    "title": "MCO today",
+    "features": {
+      "experience": "Over 5 years of experience in the microfinance market!",
+      "joint_stock": "MCO – the only open joint-stock company among microcredit organizations in Uzbekistan and Central Asia",
+      "rating": "MCO has a high rating among microcredit organizations in Uzbekistan",
+      "securities": "The only participant in the securities market of Uzbekistan among MCOs",
+      "audit": "MCO's financial statements are audited externally every year",
+      "iso": "MCO meets O'z DSt ISO 9001 standards"
+    }
+  },
+  "our_products": {
+    "title": "Our products",
+    "view_all": "view all",
+    "error_message": "An error occurred while loading data. Please try again"
+  },
+  "common": {
+    "buttons": {
+      "learn_more": "Learn more"
+    }
   }
 }

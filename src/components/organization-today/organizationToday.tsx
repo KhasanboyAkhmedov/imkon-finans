@@ -1,21 +1,23 @@
 import React from 'react';
 import './organizationToday.css';
 import { documentIcon, infoIcon } from '../../assets';
-import documentFile from '/docs/lecture.pdf';
+import { useTranslation } from 'react-i18next';
 
-const MKT_DATA = [
-  { id: 1, text: "Mikromoliya bozorida 5 yildan ortiq tajriba !", fileUrl: documentFile },
-  { id: 2, text: "MKT – O'zbekiston va Markaziy Osiyodagi mikrokredit tashkilotlari orasida yagona ochiq aksiyadorlik jamiyati", fileUrl: documentFile },
-  { id: 3, text: "MKT O'zbekistonda mikrokredit tashkilotlari orasida yuqori reytingga ega", fileUrl: documentFile },
-  { id: 4, text: "MKTlar orasida O'zbekistonning qimmatli qog'ozlar bozoridagi yagona ishtirokchisi", fileUrl: documentFile },
-  { id: 5, text: "MKT'ning moliyaviy hisobotlari har yili tashqi auditdan o'tkaziladi", fileUrl: documentFile },
-  { id: 6, text: "MKT O'z DSt ISO 9001 standartlariga javob beradi", fileUrl: documentFile, isInfo: true },
-];
 
 const OrganizationToday: React.FC = () => {
+  const { t } = useTranslation('main', { keyPrefix: 'organization_today' });
+  const MKT_DATA = [
+    { id: 1, text: t('features.experience'), isInfo: false },
+    { id: 2, text: t('features.joint_stock'), isInfo: false },
+    { id: 3, text: t('features.rating'), isInfo: false },
+    { id: 4, text: t('features.securities'), isInfo: false },
+    { id: 5, text: t('features.audit'), isInfo: false },
+    { id: 6, text: t('features.iso'), isInfo: true },
+  ];
+
   return (
     <section className="mkt-section">
-      <h2 className="mkt-title">MKT bugun</h2>
+      <h2 className="mkt-title">{t('title')}</h2>
       <div className="mkt-grid">
         {MKT_DATA.map((item) => (
           <div 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import type { Credit, SupportedLocale } from '../our-products/productsData';
 import { useLanguage } from '../../hooks/useLanguage';
 import { DynamicIcon } from '../../commons/dynamic-icon';
+import { useTranslation } from 'react-i18next';
 
 interface CreditCardProps {
   item: Credit;
@@ -12,6 +13,7 @@ interface CreditCardProps {
 export const CreditCard: React.FC<CreditCardProps> = ({ item }) => {
     const navigate = useNavigate();
     const {lang} = useLanguage();
+    const { t } = useTranslation('main', { keyPrefix: 'common.buttons' });
     
     return (
         <div className="product-card" onClick={() => navigate(`/credits/${item._id}`)}>
@@ -28,9 +30,7 @@ export const CreditCard: React.FC<CreditCardProps> = ({ item }) => {
 
             <p className="product-card-description">{item.description[lang]}</p>
 
-            <button className="product-card-button" >
-                Xizmatni ko'rish
-            </button>
+            <button className="product-card-button">{t('learn_more')}</button>
             <DynamicIcon 
                     lib={item.icon.lib} 
                     name={item.icon.name} 

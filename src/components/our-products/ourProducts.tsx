@@ -6,8 +6,10 @@ import './ourProducts.css';
 import { CreditCardSkeleton } from '../credit-card/credit-card-skeleton';
 import type { Credit, CreditsApiResponse } from './productsData';
 import { message } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 export const OurProducts: React.FC = () => {
+    const { t } = useTranslation('main', { keyPrefix: 'our_products' });
     const navigate = useNavigate();
     const [products, setProducts] = useState<Credit[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -21,7 +23,7 @@ export const OurProducts: React.FC = () => {
             const result: CreditsApiResponse = await response.json();
             setProducts(result.data);
         } catch {
-            message.error("Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.");
+            message.error(t('error_message'));
         } finally {
             setLoading(false);
         }
@@ -32,9 +34,9 @@ export const OurProducts: React.FC = () => {
     return (
         <section className="our-products container">
             <div className="our-products-header-wrapper">
-                <h2 className="our-products-header-title">Bizning mahsulotlarimiz</h2>
+                <h2 className="our-products-header-title">{t('title')}</h2>
                 <button className="our-products-header-button" onClick={() => navigate('/credits')}>
-                    barcha xizmatlarni ko'rish <HiOutlineArrowRight className="our-products-header-button-icon" />
+                    {t('view_all')} <HiOutlineArrowRight className="our-products-header-button-icon" />
                 </button>
             </div>
 

@@ -3,7 +3,6 @@ import "./heroCarousel.css";
 import { shield } from "../../assets";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { useLanguage } from "../../hooks/useLanguage";
-import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 
 interface LocalizedContent {
@@ -42,7 +41,7 @@ const HeroCarousel: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const {lang} = useLanguage();
-
+  
   useEffect(() => {
     const fetchBanners = async () => {
       try {
@@ -51,7 +50,6 @@ const HeroCarousel: React.FC = () => {
         setSlides(result.data);
       } catch (error) {
         console.error("Error fetching banners:", error);
-        message.error("Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring")
       } finally {
         setLoading(false);
       }
