@@ -70,9 +70,20 @@
     "view_all": "barchasini ko'rish",
     "error_message": "Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring"
   },
+  "statistics": {
+    "title": "Kredit yo'nalishlari bo'yicha <0>Statistika</0>",
+    "description": "Mijozlarga taqdim etilgan kreditlar turli sohalar bo'yicha ajratilgan bo'lib, quyida ularning tafsilotlari keltirilgan",
+    "currency" : "so'm"
+  },
+  "news_feed": {
+    "main_title": "Eng muhim e'lonlar va jamiyatdagi yangiliklardan xabardor bo'ling",
+    "list_item_1": "Jamiyat hayotidagi qiziqarli yangiliklar va eng muhim e’lonlar",
+    "list_item_2": "Uchrashuv natijalari to‘g‘risida xabarnomalar va o‘tkazilayotgan tanlovlar haqida ma’lumotlar"
+  },
   "common": {
     "buttons": {
-      "learn_more": "Batafsil ma'lumot"
+      "learn_more": "Batafsil ma'lumot",
+      "more": "Batafsil"
     }
   }
 }

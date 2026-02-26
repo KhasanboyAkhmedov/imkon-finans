@@ -1,5 +1,24 @@
 import { agroStats, businessStats, educationStats, homeStats, otherStats, peopleStats } from '../../assets/statistics';
 
+interface StatLanguageContent {
+  name: string;
+  amount: string;
+  _id: string;
+}
+
+interface StatIcon {
+  lib: string;
+  name: string;
+}
+
+export interface StatData {
+  _id: string;
+  icon: StatIcon;
+  uzb: StatLanguageContent;
+  rus: StatLanguageContent;
+  eng: StatLanguageContent;
+}
+
 interface CreditStat {
   id: number;
   amount: string;

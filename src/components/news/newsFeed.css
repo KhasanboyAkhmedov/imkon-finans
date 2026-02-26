@@ -1,5 +1,6 @@
 .news-container {
-    margin: 30px 0;
+    margin: 30px 0!important;
+    padding: 30px 0!important;
     width: 100%;
 }
 
@@ -87,6 +88,7 @@
   font-weight: 400;
   margin: 20px 0;
   flex-grow: 1;
+  max-height: calc(1.4 * 3 * 1em);
 }
 
 .news-card__button {
@@ -160,9 +162,6 @@
     .news-header {
         max-width: 50%;
     }
-    .news-container {
-        margin: 30px auto;
-    }
     .news-wrapper {
         flex-direction: row;
         align-items: center;
@@ -216,7 +215,7 @@
 
     .news-card__description {
         font-size: calc((14px * var(--scale-factor)) + var(--user-font-modifier));;
-        margin: 15px 0;
+        margin: auto 0;
     }
 
     .news-card__button {
@@ -231,9 +230,6 @@
 }
 
 @media (min-width: 1400px) {
-    .news-container {
-        margin: 30px auto;
-    }
     .news-header {
        max-width: 600px;
     }

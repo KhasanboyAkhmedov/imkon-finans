@@ -4,8 +4,10 @@ import { doubleCheks } from '../../assets';
 import type { NewsItem } from './newsData';
 import NewsCard from './newsCard';
 import NewsCardSkeleton from './newsCardSkeleton';
+import { useTranslation } from 'react-i18next';
 
 export const NewsFeed: React.FC = () => {
+    const { t } = useTranslation('main', { keyPrefix: 'news_feed' });
     const [news, setNews] = useState<NewsItem[]>([]);
     const [isLoading, setisLoading] = useState<boolean>(true);
     
@@ -31,16 +33,16 @@ export const NewsFeed: React.FC = () => {
             <div className="news-wrapper container">
                 <div className="news-header">
                     <p className="news-header__title">
-                        Eng muhim e'lonlar va jamiyatdagi yangiliklardan xabardor bo'ling.
+                        {t('main_title')}
                     </p>
                     <div className='news-header__list'>
                         <div className='news-header__list-item'>
                             <img className='news-header__list-icon' src={doubleCheks} alt="double cheks" />
-                            <p className='news-header__list-text'>Jamiyat hayotidagi qiziqarli yangiliklar va eng muhim e’lonlar</p>
+                            <p className='news-header__list-text'>{t('list_item_1')}</p>
                         </div>
                         <div className='news-header__list-item'>
                             <img className='news-header__list-icon' src={doubleCheks} alt="double cheks" />
-                            <p className='news-header__list-text'>Uchrashuv natijalari to‘g‘risida xabarnomalar va o‘tkazilayotgan tanlovlar haqida ma’lumotlar</p>
+                            <p className='news-header__list-text'>{t('list_item_2')}</p>
                         </div>
                     </div>
                 </div>

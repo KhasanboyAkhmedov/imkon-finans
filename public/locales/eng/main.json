@@ -70,9 +70,20 @@
     "view_all": "view all",
     "error_message": "An error occurred while loading data. Please try again"
   },
+  "statistics": {
+    "title": "<0>Statistics</0> by credit lines",
+    "description": "Loans provided to customers are allocated across various sectors, the details of which are given below",
+    "currency" : "sum"   
+  },
+  "news_feed": {
+    "main_title": "Stay informed about the most important announcements and community news",
+    "list_item_1": "Interesting news from the life of society and the most important announcements",
+    "list_item_2": "Notifications about meeting results and information about ongoing contests"
+  },
   "common": {
     "buttons": {
-      "learn_more": "Learn more"
+      "learn_more": "Learn more",
+      "more": "More"
     }
   }
 }
