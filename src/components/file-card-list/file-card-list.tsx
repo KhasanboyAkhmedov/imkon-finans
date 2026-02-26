@@ -2,6 +2,7 @@ import { Empty, List } from "antd";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import './file-card-list.css';
+import { useTranslation } from "react-i18next";
 
 interface BaseItem {
     _id: string;
@@ -24,7 +25,6 @@ interface FileCardListProps<T extends BaseItem> {
     onPageChange?: (page: number, pageSize: number) => void;
     renderItem: (item: T) => React.ReactNode;
     renderSkeleton?: () => React.ReactNode;
-    allLabel?: string; 
     fileStats?: FileStats;
     selectedYear?: string;
     onYearChange?: (year: string) => void;
@@ -40,13 +40,13 @@ const FileCardList = <T extends BaseItem>({
     onPageChange,
     renderItem,
     renderSkeleton,
-    allLabel = "Barchasi",
     fileStats,
     selectedYear, 
     onYearChange,
 }: FileCardListProps<T>) => {
     const navigate = useNavigate();
-    
+    const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
+
     const itemRender = (_: unknown, type: "prev" | "page" | "next" | "jump-prev" | "jump-next", originalElement: React.ReactNode) => {
         if (type === 'prev') return <HiOutlineArrowLeft className="pagi-arrow-wrapper" />;
         if (type === 'next') return <HiOutlineArrowRight className="pagi-arrow-wrapper" />;
@@ -60,9 +60,9 @@ const FileCardList = <T extends BaseItem>({
                 {!loading && (!dataSource || dataSource.length === 0) && (
                     <div className="error-message" style={{ textAlign: 'center', padding: '40px 0' }}>
                         <Empty description={false} className='empty-box' />
-                        <p className='error-text'>Ma'lumot topilmadi.</p>
+                        <p className='error-text'>{t('no_data')}</p>
                         <button onClick={() => navigate('/')} className="back-button">
-                            Ortga qaytish
+                            {t('back_home')}
                         </button>
                     </div>
                     )
@@ -73,7 +73,7 @@ const FileCardList = <T extends BaseItem>({
                             className={`filter-tab ${selectedYear === 'all' ? 'active' : ''}`}
                             onClick={() => onYearChange?.('all')}
                         >
-                            {allLabel} <span className="count-badge">{fileStats?.total || 0}</span>
+                            {t('tab_all')} <span className="count-badge">{fileStats?.total || 0}</span>
                         </div>
 
                         {fileStats?.years.map(year => (

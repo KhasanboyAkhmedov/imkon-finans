@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import FileCardList from "../../components/file-card-list/file-card-list"
 import NewsCard from "../../components/news/newsCard"
 import NewsCardSkeleton from "../../components/news/newsCardSkeleton";
-import { Grid } from "antd";
+import { Grid, message } from "antd";
 import type { NewsItem } from "../../components/news/newsData";
+import { useTranslation } from "react-i18next";
 
 const { useBreakpoint } = Grid;
 
@@ -16,7 +17,9 @@ const News = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [fileStats, setFileStats] = useState({ years: [], counts: {}, total: 0 });
   const [selectedYear, setSelectedYear] = useState<string>('all');
-
+  const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
+  const { t: tErrors } = useTranslation('pages', { keyPrefix: 'errors' });
+  
   const fetchNews = async (page: number, pageSize: number) => {
     setLoading(true);
     try {
@@ -29,9 +32,10 @@ const News = () => {
       
       setNews(result.data || []);
       setTotal(result.totalCount || 0);
-      setFileStats(result.fileStats || { years: [], counts: {}, total: 0 });
+      setFileStats(result.newsStats || { years: [], counts: {}, total: 0 });
     } catch (error) {
       console.error("Error fetching news:", error);
+      message.error(tErrors('data_load_error'));
     } finally {
       setLoading(false);
     }
@@ -52,7 +56,7 @@ const News = () => {
 
   return (
     <FileCardList
-        title={`Yangiliklar va e'lonlar`}
+        title={t('news')}
         dataSource={news}
         loading={loading}
         total={total}

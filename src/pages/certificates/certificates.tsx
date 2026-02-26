@@ -3,8 +3,10 @@ import FileCard from '../../components/file-card/file-card'
 import FileCardSkeleton from '../../components/file-card/fileCardSkeleton';
 import { FileType } from '../../types/file.types';
 import { useFiles } from '../../hooks/useFiles';
+import { useTranslation } from 'react-i18next';
 
 const Certificates = () => {
+  const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
   const { data, loading, total, currentPage, setCurrentPage, 
     fileStats, pageSize, selectedYear, setSelectedYear } = useFiles(FileType.LicensesAndCertificates);
   
@@ -15,7 +17,7 @@ const Certificates = () => {
 
   return (
     <FileCardList
-        title={`Litsenziya va sertifikatlar`}
+        title={t('certificates')}
         dataSource={data}
         loading={loading}
         total={total}

@@ -3,8 +3,10 @@ import FileCardList from '../../components/file-card-list/file-card-list'
 import { FileType } from '../../types/file.types';
 import FileCardSkeleton from '../../components/file-card/fileCardSkeleton';
 import { useFiles } from '../../hooks/useFiles';
+import { useTranslation } from 'react-i18next';
 
 const Emission = () => {
+  const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
   const { data, loading, total, currentPage, setCurrentPage, 
     fileStats, pageSize, selectedYear, setSelectedYear } = useFiles(FileType.Emission);
   
@@ -15,7 +17,7 @@ const Emission = () => {
 
   return (
     <FileCardList 
-        title='Emissiya'
+        title={t('emission')}
         dataSource={data}
         loading={loading}
         total={total}

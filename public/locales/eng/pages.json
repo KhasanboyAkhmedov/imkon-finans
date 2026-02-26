@@ -18,5 +18,28 @@
             "The Director manages the day-to-day operations of the company and acts as the sole executive body of the company.",
             "The Director is accountable to the supervisory board and the general meeting of shareholders."
         ]
+    },
+    "file_pages": {
+        "organizational_structure": "Organizational Structure",
+        "business_plans": "Business Plans",
+        "dividends": "Dividends",
+        "share_capital": "Share Capital",
+        "emission": "Emission",
+        "reports": "Reports",
+        "important_facts": "Important Facts",
+        "corporate_charter": "Corporate Charter",
+        "certificates": "Licenses and Certificates",
+        "development_strategy": "Development Strategy",
+        "affiliated_individuals": "List of Affiliated Individuals",
+        "corporate_governance_code": "Corporate Governance Code",
+        "corporate_regulations": "Corporate Regulations",
+        "news": "News and Announcements",
+        "tab_all": "All",
+        "no_data": "No information found",
+        "back_home": "Go back"
+    },
+    "re_purchased_shares": "Re-purchased Shares",
+    "errors": {
+        "data_load_error": "An error occurred while loading data. Please try again."
     }
 }

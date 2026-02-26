@@ -3,8 +3,10 @@ import FileCard from '../../components/file-card/file-card'
 import FileCardSkeleton from '../../components/file-card/fileCardSkeleton';
 import { FileType } from '../../types/file.types';
 import { useFiles } from '../../hooks/useFiles';
+import { useTranslation } from 'react-i18next';
 
 const BusinessPlans = () => {
+  const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
   const { data, loading, total, currentPage, setCurrentPage, 
     fileStats, pageSize, selectedYear, setSelectedYear } = useFiles(FileType.BusinessPlans);
   
@@ -15,7 +17,7 @@ const BusinessPlans = () => {
 
   return (
     <FileCardList
-        title={`"Imkon Finans" AJning biznes rejalari`}
+        title={t('business_plans')}
         dataSource={data}
         loading={loading}
         total={total}

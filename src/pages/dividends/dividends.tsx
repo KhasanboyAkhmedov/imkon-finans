@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import DividendTable from "../../components/dividend-table/dividend-table";
 import { message } from 'antd';
 import './dividends.css';
+import { useTranslation } from 'react-i18next';
 
 const Dividends = () => {
+  const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,7 +27,7 @@ const Dividends = () => {
   return (
     <section className='dividends-section'>
       <div className='container'>
-        <h2 className="section-title">Dividendlar haqida ma'lumot</h2>
+        <h2 className="section-title">{t('dividends')}</h2>
         <DividendTable rawData={data} loading={loading} />
       </div>
     </section>

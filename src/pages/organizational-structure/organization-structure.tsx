@@ -3,8 +3,10 @@ import FileCard from '../../components/file-card/file-card'
 import FileCardSkeleton from '../../components/file-card/fileCardSkeleton';
 import { FileType } from '../../types/file.types';
 import { useFiles } from '../../hooks/useFiles';
+import { useTranslation } from 'react-i18next';
 
 const OrganizationStructure = () => {
+  const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
   const { data, loading, total, currentPage, setCurrentPage, 
     fileStats, pageSize, selectedYear, setSelectedYear } = useFiles(FileType.OrganizationalStructure);
   
@@ -15,7 +17,7 @@ const OrganizationStructure = () => {
 
   return (
     <FileCardList
-        title='Jamiyat tashkiliy tuzilmasi'
+        title={t('organizational_structure')}
         dataSource={data}
         loading={loading}
         total={total}
