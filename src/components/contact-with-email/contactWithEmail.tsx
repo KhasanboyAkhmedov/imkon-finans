@@ -1,8 +1,10 @@
 import React, { useState, type ChangeEvent, type FormEvent } from 'react';
 import './contactWithEmail.css';
 import { message } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 const ContactWithEmail: React.FC = () => {
+  const { t } = useTranslation('main', { keyPrefix: 'contact' });
   const [messageApi, contextHolder] = message.useMessage();
   const [email, setEmail] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -26,19 +28,16 @@ const ContactWithEmail: React.FC = () => {
         setEmail('');
         messageApi.open({
           type: 'success',
-          content: 'Arizangiz muvaffaqiyatli yuborildi',
+          content: t('success_msg'),
         });
       } else {
         messageApi.open({
           type: 'error',
-          content: "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
+          content: t('error_msg'),
         });
       }
     } catch {
-      messageApi.open({
-        type: 'error',
-        content: "Server bilan bog'lanishda xatolik!",
-      });
+      console.error("Error sending message");
     } finally {
       setLoading(false);
     }
@@ -53,12 +52,12 @@ const ContactWithEmail: React.FC = () => {
         {contextHolder}
         <div className='form-container'>
           <div className="form-wrapper">
-            <h2 className="form-title">Biz bilan email orqali bog'laning</h2>
+            <h2 className="form-title">{t('title')}</h2>
             <form onSubmit={handleSubmit} className="contact-form">
               <input
                 type="email"
                 className="form-input"
-                placeholder="E - pochta kiriting"
+                placeholder={t('placeholder')}
                 value={email}
                 onChange={handleInputChange}
                 required
@@ -70,7 +69,7 @@ const ContactWithEmail: React.FC = () => {
                 className="form-button" 
                 disabled={loading || !email}
               >
-                {loading ? "YUBORILMOQDA..." : "YUBORISH"}
+                {loading ? t('submitting') : t('submit')}
               </button>
             </form>
           </div>

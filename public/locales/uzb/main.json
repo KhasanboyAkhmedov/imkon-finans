@@ -87,6 +87,47 @@
     "title": "Bizning hamkorlar",
     "description": "Barcha yutuqlarimiz — ishonchli hamkorlar bilan birga"
   },
+  "faq": {
+    "section_badge": "Savollar",
+    "title": "Ko'p so'raladigan savollar",
+    "description": "Bizning Fintech bank xizmatimiz pulingizni boshqarish uslubingizni inqilob qiladi.",
+    "currency_badge": "Markaziy bank kurslari",
+    "currency_title": "Valyuta kurslari",
+    "source": "Manba",
+    "source_name": "O'zbekiston Respublikasi Markaziy banki",
+    "updated_date": "Yangilangan sana",
+    "questions": [
+      {
+        "key": "1",
+        "title": "Menga kredit berish rad etildi. Qachon qaytadan murojaat qilishim mumkin?",
+        "content": "Minimal talablarga rioya qilinganiga ishonchingiz qomil bo'lgach, 30 kundan so'ng yana qayta buyurtma berishingiz mumkin bo'ladi"
+      },
+      {
+        "key": "2",
+        "title": "Kredit olish uchun minimal talablar qanday?",
+        "content": "- O‘zbekiston Respublikasi fuqaroligi \n - Doimiy rasmiy daromadga ega boʻlishi \n - Ijobiy kredit tarixi (mavjud boʻlsa) \n - Boshqa kreditlar boʻyicha qarzdorlik boʻlmasligi \n - MIBda qarzdorlik mavjud boʻlmasligi kerak "
+      },
+      {
+        "key": "3",
+        "title": "Kredit tarixini qanday topish mumkin?",
+        "content": "Kredit tarixi bo'yicha ma'lumotlarni to'plovchi Kredit byurosidan bir yilda bir marta bepul olishingiz mumkin. Byuro xizmatlari haqida www.infokredit.uz havolasi orqali KATM saytiga kirib bilib olasiz."
+      },
+      {
+        "key": "4",
+        "title": "Qaysi ish haqi miqdorini ko'rsatishim kerak?",
+        "content": "Ba'zan so'ralgan summa juda katta bo'lishi mumkin. Hatto kredit muddatini uzaytirib, to'lov miqdori minimum darajagacha tushurilgan taqdirda ham, to'lov sizning daromadingizdan ko'proq bo'lishi mumkin. Bunday holatda bank kamroq summani ma'qullaydi yoki kreditni rad etadi. Buyurtmada to'lovi sizning daromadingizdan ortiq bo'lmagan kredit summasini ko'rsating. Agar sizning qo'shimcha daromadingiz bo'lsa va uni tasdiqlay olsangiz, u albatta inobatga olinadi."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Biz bilan email orqali bog'laning",
+    "placeholder": "E - pochta kiriting",
+    "submit": "YUBORISH",
+    "submitting": "YUBORILMOQDA...",
+    "success_msg": "Arizangiz muvaffaqiyatli yuborildi",
+    "error_msg": "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
+    "server_error": "Server bilan bog'lanishda xatolik!"
+  },
   "common": {
     "buttons": {
       "learn_more": "Batafsil ma'lumot",

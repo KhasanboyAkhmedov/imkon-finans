@@ -80,6 +80,21 @@
     margin: 12px 0px;
 }
 
+.currency-source {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #8a8a8a;
+  line-height: 1.6;
+}
+
+.currency-source a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.currency-source a:hover {
+  color: #e30613; 
+}
 
 @media (min-width: 480px) {
     .section-name {
@@ -117,10 +132,11 @@
         gap: 14px;
     }
     .faq {
+        min-width: 50%;
         margin-bottom: 0;
     }
     .currency {
-        max-width: max-content;
+        min-width: max-content;
     }
 }
 
@@ -136,7 +152,7 @@
         margin-bottom: 0;
     }
     .currency {
-        max-width: 420px;
+        min-width: 420px;
     }
 }
 

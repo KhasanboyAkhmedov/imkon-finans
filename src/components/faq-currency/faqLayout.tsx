@@ -3,8 +3,10 @@ import { redDots } from '../../assets';
 import { formatDate } from '../../commons';
 import CurrencyList from './currencyList';
 import FAQAccordion from './faq-accordion';
+import { useTranslation } from 'react-i18next';
 
 const FAQLayout = () => {
+    const { t } = useTranslation('main', { keyPrefix: 'faq' });
     const formattedDate = formatDate();
     return (
       <div className="layout-wrapper">
@@ -17,33 +19,35 @@ const FAQLayout = () => {
         <div className="content-container">
           <div className='faq'>
             <div className='section-name'>
-              <span>●</span> Savollar
+              <span>●</span> {t('section_badge')}
             </div>
 
-            <h1 className='section-name__title'>
-              Ko'p so'raladigan savollar
-            </h1>
+            <h1 className='section-name__title'>{t('title')}</h1>
             
-            <p className='section-name__description'>
-              Our Fintech banking service revolutionizes the way you manage your money, 
-              offering seamless, secure, and smart solutions for all your financial needs.
-            </p>
-
             <FAQAccordion/>
           </div>
           <div className='currency'>
             <div className='section-name'>
-              <span>●</span> Marzakiy bank kurslari
+              <span>●</span> {t('currency_badge')}
             </div>
 
             <h1 className='section-name__title'>
-              Valyuta kurslari ({formattedDate})
+              {t('currency_title')} ({formattedDate})
             </h1>
             
             <CurrencyList />
             
-            <p className='section-name__description'>
-              Receive tailored insights and recommendations based on your spending habits, helping you make smarter financial decisions.
+            <p className='section-name__description currency-source'>
+              {t('source')}:{' '}
+              <a 
+                href="https://cbu.uz/uz/arkhiv-kursov-valyut/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                {t('source_name')}
+              </a>
+              <br />
+              {t('updated_date')}: {formattedDate}
             </p>
           </div>
         </div>

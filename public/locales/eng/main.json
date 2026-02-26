@@ -87,6 +87,47 @@
     "title": "Our Partners",
     "description": "All our achievements — together with reliable partners"
   },
+  "faq": {
+    "section_badge": "Questions",
+    "title": "Frequently asked questions",
+    "description": "Our Fintech banking service revolutionizes the way you manage your money, offering seamless, secure, and smart solutions for all your financial needs.",
+    "currency_badge": "Central bank rates",
+    "currency_title": "Currency rates",
+    "source": "Source",
+    "source_name": "Central Bank of the Republic of Uzbekistan",
+    "updated_date": "Updated date",
+    "questions": [
+        {
+            "key": "1",
+            "title": "My credit application was rejected. When can I reapply?",
+            "content": "You can reapply after 30 days once you are sure that the minimum requirements have been met."
+        },
+        {
+            "key": "2",
+            "title": "What are the minimum requirements for obtaining a loan?",
+            "content": "- Citizenship of the Republic of Uzbekistan \n - Possession of a permanent official income \n - Positive credit history (if available) \n - No outstanding debts on other loans \n - No outstanding debts in the Bureau of Compulsory Enforcement (MIB)"
+        },
+        {
+            "key": "3",
+            "title": "How can I find my credit history?",
+            "content": "You can obtain information from the Credit Bureau, which collects credit history data, once a year for free. You can learn more about the Bureau's services on the KATM website via the link www.infokredit.uz."
+        },
+        {
+            "key": "4",
+            "title": "What salary amount should I indicate?",
+            "content": "Sometimes the requested amount may be too large. Even if the loan term is extended and the payment is reduced to a minimum, the payment may still exceed your income. In such cases, the bank will approve a smaller amount or reject the loan. Indicate a loan amount where the monthly payment does not exceed your income. If you have additional income that you can verify, it will definitely be taken into account."
+        }
+    ]
+  },
+  "contact": {
+    "title": "Contact us via email",
+    "placeholder": "Enter E-mail",
+    "submit": "SEND",
+    "submitting": "SENDING...",
+    "success_msg": "Your application has been sent successfully",
+    "error_msg": "An error occurred. Please try again.",
+    "server_error": "Error connecting to the server!"
+  },
   "common": {
     "buttons": {
       "learn_more": "Learn more",

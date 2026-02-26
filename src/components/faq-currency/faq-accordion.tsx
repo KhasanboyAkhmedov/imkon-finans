@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse} from 'antd';
 import './faq-accordion.css';
+import { useTranslation } from 'react-i18next';
 
 const { Panel } = Collapse;
 
@@ -10,26 +11,10 @@ interface AccordionData {
   content: string;
 }
 
-const data: AccordionData[] = [
-  {
-    key: '1',
-    title: 'Personalized Financial Insights',
-    content: 'Receive tailored insights and recommendations based on your spending habits, helping you make smarter financial decisions.',
-  },
-  {
-    key: '2',
-    title: 'Bill Payment Reminders',
-    content: 'Never miss a due date again with automated alerts and scheduling for all your recurring bills.',
-  },
-  {
-    key: '3',
-    title: 'Peer-to-Peer Transfers',
-    content: 'Send and receive money instantly with friends and family using just a phone number or email address.',
-  },
-];
-
 const FAQAccordion: React.FC = () => {
+  const { t } = useTranslation('main', { keyPrefix: 'faq' });
   const [activeKey, setActiveKey] = useState<string | string[]>(['1']);
+  const questions = t('questions', { returnObjects: true }) as AccordionData[];
 
   const onChange = (key: string | string[]) => {
     setActiveKey(key);
@@ -47,7 +32,7 @@ const FAQAccordion: React.FC = () => {
           <span className={`custom-chevron ${isActive ? 'up' : 'down'}`} />
         )}
       >
-        {data.map((item) => (
+        {questions.map((item) => (
           <Panel
             header={
               <div className="custom-header">
