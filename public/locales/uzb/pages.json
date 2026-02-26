@@ -69,6 +69,41 @@
         },
         "branches_title": "Telefon raqamlari:"
     },
+    "services": {
+    "title": "Xizmatlar",
+    "what_we_do": [
+        "Mikrokredit tashkiloti asosan mikromoliyaviy xizmatlar ko‘rsatadi.",
+        "Shuningdek, mikrokreditlar taqdim etadi.",
+        "Bundan tashqari, mikroqarz va mikrolizing xizmatlarini ham ko‘rsatadi.",
+        "Agentlik xizmatlari yo‘nalishida ham faoliyat yuritadi."
+        ],
+        "tabs": {
+            "microfinance": {
+                "title": "Mikromoliyaviy xizmatlar",
+                "items": [
+                    "Mikrokredit, mikroqarz va mikrolizing, shuningdek agentlik xizmatlari",
+                    "Qarz majburiyatlarini sotib olish va sotish",
+                    "Jamiyat mikrokredit, mikroqarz, mikrolizing berish va boshqa mikromoliyaviy xizmatlar ko‘rsatish bilan bog‘liq maslahat va axborot xizmatlarini taqdim etadi",
+                    "Qonun hujjatlariga muvofiq boshqa turdagi mikromoliyaviy xizmatlar, jumladan iste’mol kreditlarini ko‘rsatadi"
+                ]
+            },
+            "microcredits": {
+                "title": "Mikrokredit va mikroqarzlar",
+                "footerAlert": "Kredit faqat aniq ish joyi va daromadga ega bo‘lgan shaxslarga beriladi",
+                "q1": { "q": "Kredit kimlarga beriladi?", "a": "Yuridik va jismoniy shaxslarga" },
+                "q2": { "q": "Kredit miqdori?", "a": "Kredit miqdori mijozning to‘lov qobiliyatiga qarab belgilanadi." },
+                "q3": { "q": "Kredit muddati?", "a": "12 oydan 36 oygacha." },
+                "q4": { "q": "Kreditni qaytarish usullari?", "a": "Kreditni qaytarish har oyda teng miqdorda (annuitet) yoki differensial usulda amalga oshiriladi." },
+                "q5": { "q": "Kredit ta’minoti turlari?", "a": "Garov, kafillik yoki sug‘urta polisi." },
+                "q6": { "q": "Qanday hujjatlar talab qilinadi?", "a": "Pasport, daromadlar to‘g‘risida ma’lumotnoma va ta’minot hujjatlari." },
+                "q7": { "q": "Boshlang‘ich to‘lov qancha?", "a": "Boshlang‘ich to‘lov talab etilmaydi." }
+            },
+            "agency-service": {
+                "title": "Agentlik xizmati",
+                "content": "O‘zbekiston Respublikasi Prezidentining 2019-yil 23-iyuldagi PQ–4400-sonli “Mikromoliyaviy xizmatlar ommabopligini oshirish chora-tadbirlari to‘g‘risida”gi qarori imzolandi. Ushbu qarorga asosan, 2019-yil 1-avgustdan boshlab mikrokredit tashkilotlari, banklar, sug‘urta kompaniyalari va boshqa moliyaviy tashkilotlarning agenti sifatida faoliyat yuritish mumkin"
+            }
+        }
+    },
     "re_purchased_shares": {
         "title": "Qayta sotib olingan aksiyalar",
         "no_repurchased_shares": "Qayta sotib olingan aksiyalar yo'q",

@@ -1,11 +1,3 @@
-export const WhatWeDo = [
-    "Mikrokredit tashkiloti asosan mikromoliyaviy xizmatlar ko‘rsatadi.",
-    "Shuningdek, mikrokreditlar taqdim etadi.",
-    "Bundan tashqari, mikroqarz va mikrolizing xizmatlarini ham ko‘rsatadi.",
-    "Agentlik xizmatlari yo‘nalishida ham faoliyat yuritadi."
-]
-
-// 1. Fix: Use a const object instead of 'enum' to satisfy 'erasableSyntaxOnly'
 export const ServiceContentType = {
   List: 'list',
   Accordion: 'accordion',

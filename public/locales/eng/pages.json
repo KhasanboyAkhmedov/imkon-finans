@@ -69,6 +69,40 @@
         },
         "branches_title": "Phone numbers:"
     },
+    "services": {
+        "title": "Our Services",
+        "what_we_do": [
+            "The microcredit organization primarily provides microfinance services.",
+            "It also provides microcredits.",
+            "In addition, it offers microloan and microleasing services.",
+            "The organization also operates in the field of agency services."
+        ],
+        "tabs": {
+            "microfinance": {
+                "title": "Microfinance Services",
+                "items": [
+                    "Microcredits, microloans, microleasing, and agency services",
+                    "Purchase and sale of debt obligations",
+                    "Consulting and information services related to microfinancing",
+                    "Consumer loans and other financial services in accordance with legislation"
+                ]
+            },
+            "microcredits": {
+                "title": "Microcredits and Microloans",
+                "footerAlert": "Loans are only granted to individuals with a verified place of work and stable income",
+                "q1": { "q": "Who can apply?", "a": "Legal entities and individuals" },
+                "q2": { "q": "Credit amount?", "a": "The loan amount is determined based on the client's solvency." },
+                "q3": { "q": "Loan term?", "a": "From 12 to 36 months." },
+                "q4": { "q": "Repayment methods?", "a": "Repayment is made monthly in equal installments (annuity) or by the differential method." },
+                "q5": { "q": "Types of collateral?", "a": "Collateral, guarantee, or insurance policy." },
+                "q6": { "q": "Required documents?", "a": "Passport, proof of income, and collateral documents." },
+                "q7": { "q": "Initial payment?", "a": "No down payment is required." }
+            },
+            "agency-service": {
+                "title": "Agency Services",
+                "content": "On July 23, 2019, the Resolution of the President of the Republic of Uzbekistan No. PQ–4400 “On Measures to Increase the Accessibility of Microfinancial Services” was signed. In accordance with this resolution, starting from August 1, 2019, it is permitted to operate as an agent of microcredit organizations, banks, insurance companies, and other financial institutions"            }
+        }
+    },
     "re_purchased_shares": {
         "title": "Re-purchased shares",
         "no_repurchased_shares": "No re-purchased shares",

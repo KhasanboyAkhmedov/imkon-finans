@@ -1,8 +1,8 @@
 .our-services-container {
-    margin: 20px auto;
+    margin: 20px auto !important;
     background: #fff;
     min-height: 250px;
-    padding-bottom: 30px;
+    padding-bottom: 30px !important;
     border-radius: 12px;
 }
 

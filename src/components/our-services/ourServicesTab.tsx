@@ -8,13 +8,13 @@ import {
 } from '../../pages/our-services/our-services.data';
 
 import type {
-  ServiceTab,
   ServiceList,
   ServiceAccordion,
   ServiceText,
 } from '../../pages/our-services/our-services.data';
 import './ourServicesTab.css';
 import { BiCheckDouble } from 'react-icons/bi';
+import { useTranslation } from 'react-i18next';
 
 const { Panel } = Collapse;
 
@@ -77,24 +77,28 @@ const TextRenderer: React.FC<{ data: ServiceText }> = ({ data }) => (
 
 
 const OurServicesTab: React.FC = () => {
+  const { t } = useTranslation('pages', { keyPrefix: 'services.tabs' });
   const [activeTabId, setActiveTabId] = useState<string>(servicesData[0].id);
 
   const activeService =
     servicesData.find((s) => s.id === activeTabId) || servicesData[0];
-
-  const renderContent = (service: ServiceTab) => {
-    switch (service.type) {
-      case ServiceContentType.List:
-        return <ListRenderer data={service as ServiceList} />;
-      case ServiceContentType.Accordion:
-        return <AccordionRenderer data={service as ServiceAccordion} />;
-      case ServiceContentType.Text:
-        return <TextRenderer data={service as ServiceText} />;
-      default:
-        return null;
-    }
-  };
   
+  const localizedData = t(activeTabId, { returnObjects: true }) as any;
+
+  const finalData = activeService.type === ServiceContentType.Accordion 
+    ? {
+        ...localizedData,
+        items: Object.keys(localizedData)
+          .filter(key => key.startsWith('q'))
+          .map(key => ({
+            id: key,
+            question: localizedData[key].q,
+            answer: localizedData[key].a
+          }))
+      }
+    : localizedData;
+
+
   return (
     <div className="services-container">
       <div className="services-tabs">
@@ -106,13 +110,15 @@ const OurServicesTab: React.FC = () => {
             }`}
             onClick={() => setActiveTabId(service.id)}
           >
-            {service.title}
+            {t(`${service.id}.title`)}
           </button>
         ))}
       </div>
-
+        
       <div className="services-content-card">
-        {renderContent(activeService)}
+        {activeService.type === ServiceContentType.List && <ListRenderer data={finalData} />}
+        {activeService.type === ServiceContentType.Accordion && <AccordionRenderer data={finalData} />}
+        {activeService.type === ServiceContentType.Text && <TextRenderer data={finalData} />}
       </div>
     </div>
   );
