@@ -3,11 +3,13 @@ import { InfoCard } from '../../components/info-card/info-card';
 import './history.css';
 import type { InfoCardItem } from '../../components/info-card/info-card.types';
 import InfoCardSkeleton from '../../components/info-card/info-card-skeleton';
+import { useTranslation } from 'react-i18next';
 
 const History = () => {
     const [data, setData] = useState<InfoCardItem[]>([]);
     const [loading, setLoading] = useState(false);
-  
+    const { t } = useTranslation('pages', { keyPrefix: 'history' });
+
     const apiUrl = import.meta.env.VITE_API_URL;
     const fetchEvents = async () => {
       setLoading(true);
@@ -32,8 +34,8 @@ const History = () => {
   return (
     <section className="history-section">
       <div className="container">
-        <h2 className="section-title">Jamiyat tarixi</h2>
-        <p className='page-description'>2020-yil sentabr oyida «IMKON FINANS mikrokredit tashkiloti» MChJ Kengashi qaroriga muvofiq «IMKON FINANS mikrokredit tashkiloti» aksiyadorlik jamiyatiga aylantirilgan.</p>
+        <h2 className="section-title">{t('title')}</h2>
+        <p className='page-description'>{t('description')}</p>
 
         <div className="history-items-container">
           {loading ? (

@@ -1,0 +1,22 @@
+{
+    "history": {
+        "title": "Jamiyat tarixi",
+        "description": "2020-yil sentabr oyida «IMKON FINANS mikrokredit tashkiloti» MChJ Kengashi qaroriga muvofiq «IMKON FINANS mikrokredit tashkiloti» aksiyadorlik jamiyatiga aylantirilgan"
+    },
+    "supervisory_board": {
+        "title": "Kuzatuv kengashi",
+        "info_management": [
+            "«IMKON FINANS mikrokredit tashkiloti» aksiyadorlik jamiyati faoliyatiga umumiy rahbarlikni amalga oshiradi.",
+            "Jamiyatning boshqaruv organi hisoblanadi.",
+            "Jamiyatni boshqarish masalalari bo‘yicha aksiyadorlarning umumiy yig‘ilishiga hisobdordir."
+        ]
+    },
+    "management_body": {
+        "title": "Boshqaruv organi",
+        "info_management": [
+            "Jamiyatning Boshqaruv organi — direktori maqomi, vakolat doirasi va faoliyatini tashkil etish tartibini, direktori ishini, uni saylash (tayinlash), shuningdek uning huquq va majburiyatlarini belgilaydi.",
+            "DDirektor jamiyatning kundalik faoliyatiga rahbarlik qiladi va jamiyatning yakkaboshchilik asosida boshqaradigan boshqaruv organi hisoblanadi.",
+            "Direktor jamiyat kuzatuv kengashi va aksiyadorlarning umumiy yig‘ilishiga hisobdordir."
+        ]
+    }
+}

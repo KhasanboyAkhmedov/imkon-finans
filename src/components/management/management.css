@@ -7,7 +7,7 @@
     color: #FF3E41;
     font-size: calc((22px * var(--scale-factor)) + var(--user-font-modifier));;
     font-weight: 700;
-    padding: 30px 20px;
+    padding: 30px 20px!important;
     margin-bottom: 0;
 }
 

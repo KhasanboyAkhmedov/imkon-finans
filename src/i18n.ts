@@ -8,7 +8,7 @@ i18n
   .init({
     lng: localStorage.getItem('appLang') || 'uzb',
     fallbackLng: 'eng',
-    ns: ['layout'],
+    ns: ['layout', 'main', 'pages'],
     defaultNS: 'layout',
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',

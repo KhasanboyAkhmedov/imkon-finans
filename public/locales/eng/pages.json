@@ -1,0 +1,22 @@
+{
+    "history": {
+        "title": "Company history",
+        "description": "In September 2020, pursuant to the decision of the Board of the LLC “IMKON FINANS Microcredit Organization,” the company was transformed into a Joint-Stock Company “IMKON FINANS Microcredit Organization.”"
+    },
+    "supervisory_board": {
+        "title": "Supervisory Board",
+        "info_management": [
+            "Exercises general management of the activities of the Joint-Stock Company 'IMKON FINANS Microcredit Organization'.",
+            "Acts as the governing body of the Company.",
+            "Accountable to the general meeting of shareholders on matters regarding the management of the Company."
+        ]
+    },
+    "management_body": {
+        "title": "Management Body",
+        "info_management": [
+            "Defines the status of the Company's Management Body — the director's status, scope of authority, procedure for organizing activities, director's work, election (appointment), as well as rights and obligations.",
+            "The Director manages the day-to-day operations of the company and acts as the sole executive body of the company.",
+            "The Director is accountable to the supervisory board and the general meeting of shareholders."
+        ]
+    }
+}
