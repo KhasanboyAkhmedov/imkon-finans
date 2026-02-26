@@ -3,6 +3,7 @@ import { Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import './dividend-table.css';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 interface LanguageContent {
   year: string;
@@ -35,6 +36,7 @@ interface DividendData {
 
 const DividendTable: React.FC<DividendTableProps> = ({ rawData, loading }) => {
   const { lang } = useLanguage();
+  const { t } = useTranslation('pages', { keyPrefix: 'dividends_table' });
 
   const dataSource = useMemo(() => {
     return rawData.map((item) => {
@@ -53,32 +55,32 @@ const DividendTable: React.FC<DividendTableProps> = ({ rawData, loading }) => {
 
   const columns: ColumnsType<DividendData> = [
     {
-      title: 'Yil',
+      title: t('year'),
       dataIndex: 'year',
       key: 'year',
       className: 'col-year',
       width: '20%',
     },
     {
-      title: 'Oddiy aksiyalar uchun',
+      title: t('ordinary'),
       dataIndex: 'ordinary',
       key: 'ordinary',
       width: '20%',
     },
     {
-      title: 'Imtiyozli aksiyalar uchun',
+      title: t('privileged'),
       dataIndex: 'privileged',
       key: 'privileged',
       width: '20%',
     },
     {
-      title: "Jami dividend to'lovi summasi (mln. so'm hisobida)",
+      title: t('total_sum'),
       dataIndex: 'totalSum',
       key: 'totalSum',
       width: '20%',
     },
     {
-      title: "To'lanmagan dividendlar (mln. so'm hisobida)",
+      title: t('unpaid'),
       dataIndex: 'unpaid',
       key: 'unpaid',
       width: '20%',

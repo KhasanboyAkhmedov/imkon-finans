@@ -22,7 +22,7 @@
     "file_pages": {
         "organizational_structure": "Tashkiliy tuzilma",
         "bussiness_plans": "Biznes-rejalar",
-        "dividends": "Dividendlari",
+        "dividends": "Dividendlar",
         "share_capital": "Ustav fondi",
         "emission": "Emissiya",
         "reports": "Hisobotlar",
@@ -37,6 +37,13 @@
         "tab_all": "Barchasi",
         "no_data": "Ma'lumot topilmadi",
         "back_home": "Ortga qaytish"
+    },
+    "dividends_table": {
+      "year": "Yil",
+      "ordinary": "Oddiy aksiyalar uchun",
+      "privileged": "Imtiyozli aksiyalar uchun",
+      "total_sum": "Jami dividend to'lovi summasi (mln. so'm)",
+      "unpaid": "To'lanmagan dividendlar (mln. so'm)"
     },
     "vacancies": {
         "title": "Ish o'rinlari",

@@ -38,6 +38,13 @@
         "no_data": "No information found",
         "back_home": "Go back"
     },
+    "dividends_table": {
+      "year": "Year",
+      "ordinary": "For ordinary shares",
+      "privileged": "For preferred shares",
+      "total_sum": "Total dividend amount (mln. UZS)",
+      "unpaid": "Unpaid dividends (mln. UZS)"
+    },
    "vacancies": {
         "title": "Vacancies",
         "description": "Job description",

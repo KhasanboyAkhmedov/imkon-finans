@@ -54,7 +54,7 @@ const Footer = () => {
                     </div>
                     <div className='contact-datas contact-datas-with-map'>
                         <h4 className='title'>{footT('address')}</h4>
-                        <a className="contact-data with-map" href="https://yandex.uz/maps/-/CPAv5C3L" target="_blank" rel="noopener noreferrer">
+                        <a className="contact-data with-map">
                             {footT('address_text')}
                             <img className="" src={map} alt="map" /> 
                         </a>
