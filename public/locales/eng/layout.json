@@ -1,11 +1,11 @@
 {
     "navbar" : {
         "sections": {
-            "about": "About Us",
+            "about": "About us",
             "services": "Services",
             "shareholders": "Shareholders",
             "corporate": "Corporate governance",
-            "press": "Press Center"
+            "press": "Press center"
         },
         "actions" : {
             "application": "Submit application",
@@ -47,12 +47,20 @@
         }
     },
     "footer" : {
-        "useful_links": "Useful Links",
-        "contact_info": "Contact Information",
+        "useful_links": "Useful links",
+        "contact_info": "Contact information",
         "address": "Address",
         "address_text": "Republic of Uzbekistan, Andijan region, Andijan city, A. Temur street, house 44A",
-        "website_map": "Website Map",
+        "website_map": "Website map",
         "rights": "All rights reserved",
         "disclaimer": "When using materials from the site, a link to the website www.imkon-finans.uz must be provided!"
+    },
+    "appearance_settings": {
+        "title": "Site appearance",
+        "normal_version": "Normal version",
+        "grayscale_version": "Grayscale version",
+        "font_size": "Font size",
+        "reset": "Reset settings",
+        "tooltip": "Accessibility"
     }
 }

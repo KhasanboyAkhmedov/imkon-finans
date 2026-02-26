@@ -12,7 +12,7 @@ const SearchInput = () => {
     const [debouncedQuery, setDebouncedQuery] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 540);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const { t } = useTranslation('navbar');
+    const { t } = useTranslation('layout', { keyPrefix: 'navbar' });
     
     useEffect(() => {
         const handleResize = () => {

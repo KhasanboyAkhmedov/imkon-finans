@@ -3,8 +3,10 @@ import { Popover, Radio, Slider, Button, Tooltip } from 'antd';
 import { ReloadOutlined, CloseOutlined } from '@ant-design/icons';
 import {  IoGlassesOutline } from 'react-icons/io5';
 import './appearance-setting.css';
+import { useTranslation } from 'react-i18next';
 
 const AppearanceSettings = () => {
+  const { t } = useTranslation('layout', { keyPrefix: 'appearance_settings' });
   const [isGrayscale, setIsGrayscale] = useState(() => localStorage.getItem('site-grayscale') === 'true');
   const [fontModifier, setFontModifier] = useState(() => Number(localStorage.getItem('site-font-modifier')) || 0);
   const [visible, setVisible] = useState(false);
@@ -27,23 +29,23 @@ const AppearanceSettings = () => {
   const content = (
     <div className="settings-container">
       <div className="settings-header">
-        <span>Sayt ko‘rinishi</span>
+        <span>{t('title')}</span>
         <CloseOutlined className="close-icon" onClick={() => setVisible(false)} />
       </div>
       
       <div className="settings-section">
         <Radio.Group onChange={(e) => setIsGrayscale(e.target.value)} value={isGrayscale}>
           <div className="radio-item">
-            <Radio value={false}>Oddiy versiya</Radio>
+            <Radio value={false}>{t('normal_version')}</Radio>
           </div>
           <div className="radio-item">
-            <Radio value={true}>Oq-qora versiya</Radio>
+            <Radio value={true}>{t('grayscale_version')}</Radio>
           </div>
         </Radio.Group>
       </div>
 
       <div className="settings-section">
-        <p className="section-label">Shrift hajmi</p>
+        <p className="section-label">{t('font_size')}</p>
         <div className="slider-wrapper">
           <span className="a-small">A</span>
           <Slider 
@@ -57,7 +59,7 @@ const AppearanceSettings = () => {
       </div>
 
       <Button className="reset-btn" icon={<ReloadOutlined />} onClick={resetSettings} block>
-        Sozlamalarni tiklash
+        {t('reset')}
       </Button>
     </div>
   );
@@ -72,8 +74,8 @@ const AppearanceSettings = () => {
         arrow={false} 
         overlayClassName="accessibility-popover"
     >
-        <Tooltip title="Maxsus imkoniyatlar" placement="bottom">
-        <IoGlassesOutline className='glass-icon' />
+        <Tooltip title={t('tooltip')} placement="bottom">
+          <IoGlassesOutline className='glass-icon' />
         </Tooltip>
     </Popover>
   );

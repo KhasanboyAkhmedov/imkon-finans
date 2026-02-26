@@ -54,5 +54,13 @@
         "website_map": "Sayt xaritasi",
         "rights": "Barcha huquqlar himoyalangan",
         "disclaimer": "Saytdagi ma’lumotlardan foydalanilganda imkon-finans.uz veb-saytiga havolani biriktirish lozim!"
+    },
+    "appearance_settings": {
+        "title": "Sayt ko‘rinishi",
+        "normal_version": "Oddiy versiya",
+        "grayscale_version": "Oq-qora versiya",
+        "font_size": "Shrift hajmi",
+        "reset": "Sozlamalarni tiklash",
+        "tooltip": "Maxsus imkoniyatlar"
     }
 }
