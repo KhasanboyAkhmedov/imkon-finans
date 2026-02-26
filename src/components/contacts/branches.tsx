@@ -3,10 +3,14 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import './branches.css';
 import { branches } from './branches.data';
 import { Map, Placemark, YMaps, ZoomControl } from '@pbe/react-yandex-maps';
+import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from 'react-i18next';
 
 const Branches = () => {
+    const { t } = useTranslation('pages', { keyPrefix: 'contacts' });
     const [selectedBranchId, setSelectedBranchId] = useState('1');
     const mapRef = useRef<ymaps.Map | undefined>(undefined);
+    const {lang} = useLanguage();
 
     const activeBranch = branches.find(b => b.id === selectedBranchId) || branches[0];
 
@@ -45,7 +49,7 @@ const Branches = () => {
         </div>
 
         <div className="branches-wrapper">
-            <h3 className="branches-title">Telefon raqamlari:</h3>
+            <h3 className="branches-title">{t('branches_title')}</h3>
             <div className="branches-grid">
             {branches.map((branch) => (
                 <div 
@@ -53,7 +57,7 @@ const Branches = () => {
                 className={`branch-card ${selectedBranchId === branch.id ? 'active' : ''}`}
                 onClick={() => setSelectedBranchId(branch.id)}
                 >
-                <h4 className="branch-name">{branch.name}</h4>
+                <h4 className="branch-name">{branch.name[lang as keyof typeof branch.name]}</h4>
                 <div className="branch-phones">
                     {branch.phones.map((phone) => (
                     <div key={phone} className="phone-item">

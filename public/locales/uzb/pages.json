@@ -45,7 +45,29 @@
     },
     "reception_days": {
         "title": "Qabul kunlari",
-        "description": "Ish vaqti"
+        "description": "Ish vaqti",
+        "working_days": "Dushanba-Shanba"
+    },
+    "contacts": {
+        "main_title": "Aloqalar",
+        "card_title": "Aloqa ma'lumotlari",
+        "address": "O’zbekiston Respublikasi, Andijon viloyati, Andijon shahri, Amir Temur ko’chasi, 44A-uy",
+        "form": {
+            "label_name": "F.I.Sh. *",
+            "placeholder_name": "Familiya, ism, sharif",
+            "label_email": "E-mail",
+            "placeholder_email": "E-mail manzilingiz",
+            "label_phone": "Telefon *",
+            "placeholder_phone": "Telefon raqamingiz",
+            "label_message": "Xabar",
+            "placeholder_message": "Xabaringiz...",
+            "submit": "YUBORISH",
+            "submitting": "YUBORILMOQDA...",
+            "success": "Arizangiz muvaffaqiyatli yuborildi",
+            "error": "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
+            "server_error": "Server bilan bog'lanishda xatolik!"
+        },
+        "branches_title": "Telefon raqamlari:"
     },
     "re_purchased_shares": "Qayta sotib olingan aksiyalar",
     "errors": {

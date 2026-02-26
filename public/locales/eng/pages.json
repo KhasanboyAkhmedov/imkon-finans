@@ -48,6 +48,27 @@
         "description": "Working Hours",
         "working_days": "Monday-Saturday"
     },
+    "contacts": {
+        "main_title": "Contacts",
+        "card_title": "Contact Information",
+        "address": "44A Amir Temur Street, Andijan City, Andijan Region, Republic of Uzbekistan",
+        "form": {
+            "label_name": "Full Name *",
+            "placeholder_name": "First, last, and middle name",
+            "label_email": "E-mail",
+            "placeholder_email": "Your e-mail address",
+            "label_phone": "Phone *",
+            "placeholder_phone": "Your phone number",
+            "label_message": "Message",
+            "placeholder_message": "Your message...",
+            "submit": "SEND",
+            "submitting": "SENDING...",
+            "success": "Your application has been sent successfully",
+            "error": "An error occurred. Please try again.",
+            "server_error": "Error connecting to the server!"
+        },
+        "branches_title": "Phone numbers:"
+    },
     "re_purchased_shares": "Re-purchased Shares",
     "errors": {
         "no_data": "No information found",

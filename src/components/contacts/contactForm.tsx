@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import './contactForm.css';
 import { message } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 const ContactForm = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -11,6 +12,7 @@ const ContactForm = () => {
     phone: '',
     message: ''
   });
+  const { t } = useTranslation('pages', { keyPrefix: 'contacts' });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -39,21 +41,12 @@ const ContactForm = () => {
 
       if (response.ok) {
         setFormData({ fullName: '', email: '', phone: '', message: '' });
-        messageApi.open({
-          type: 'success',
-          content: 'Arizangiz muvaffaqiyatli yuborildi',
-        });
+        messageApi.success(t('success'));
       } else {
-        messageApi.open({
-          type: 'error',
-          content: "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
-        });
+        messageApi.error(t('server_error'));
       }
     } catch {
-      messageApi.open({
-        type: 'error',
-        content: "Server bilan bog'lanishda xatolik!",
-      });
+      messageApi.error(t('server_error'));
     } finally {
       setLoading(false);
     }
@@ -65,45 +58,45 @@ const ContactForm = () => {
       <div className="contacts-form-container">
         <form className="contacts-form" onSubmit={handleSubmit}>
           <div className="input-group">
-            <label>F.I.Sh. *</label>
+            <label>{t('form.label_name')}</label>
             <input
               type="text"
               name="fullName"
               required
-              placeholder="Familiya, ism, sharif"
+              placeholder={t('form.placeholder_name')}
               value={formData.fullName}
               onChange={handleChange}
             />
           </div>
 
           <div className="input-group">
-            <label>E-mail</label>
+            <label>{t('form.label_email')}</label>
             <input
               type="email"
               name="email"
-              placeholder="E-mail manzilingiz"
+              placeholder={t('form.placeholder_email')}
               value={formData.email}
               onChange={handleChange}
             />
           </div>
 
           <div className="input-group">
-            <label>Telefon *</label>
+            <label>{t('form.label_phone')}</label>
             <input
               type="tel"
               name="phone"
               required
-              placeholder="Telefon raqamingiz"
+              placeholder={t('form.placeholder_phone')}
               value={formData.phone}
               onChange={handleChange}
             />
           </div>
 
           <div className="input-group">
-            <label>Xabar</label>
+            <label>{t('form.label_message')}</label>
             <textarea
               name="message"
-              placeholder="Xabaringiz..."
+              placeholder={t('form.placeholder_message')}
               value={formData.message}
               onChange={handleChange}
             ></textarea>
@@ -114,7 +107,7 @@ const ContactForm = () => {
             className={`submit-btn ${isFormValid && !loading ? 'active' : ''}`}
             disabled={!isFormValid || loading}
           >
-            {loading ? "YUBORILMOQDA..." : "YUBORISH"}
+            {loading ? t('form.submitting') : t('form.submit')}
           </button>
         </form>
       </div>

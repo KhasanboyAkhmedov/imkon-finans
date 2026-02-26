@@ -48,6 +48,27 @@
         "description": "Рабочее время",
         "working_days": "Понедельник-Суббота"
     },
+    "contacts": {
+        "main_title": "Контакты",
+        "card_title": "Контактная информация",
+        "address": "Республика Узбекистан, Андижанская область, город Андижан, улица Амира Темура, дом 44А",
+        "form": {
+            "label_name": "Ф.И.О. *",
+            "placeholder_name": "Фамилия, имя, отчество",
+            "label_email": "E-mail",
+            "placeholder_email": "Ваш E-mail",
+            "label_phone": "Телефон *",
+            "placeholder_phone": "Ваш номер телефона",
+            "label_message": "Сообщение",
+            "placeholder_message": "Ваше сообщение...",
+            "submit": "ОТПРАВИТЬ",
+            "submitting": "ОТПРАВКА...",
+            "success": "Ваша заявка успешно отправлена",
+            "error": "Произошла ошибка. Пожалуйста, попробуйте еще раз.",
+            "server_error": "Ошибка связи с сервером!"
+        },
+        "branches_title": "Номера телефонов:"
+    },
     "re_purchased_shares": "Выкупленные акции",
     "errors": {
         "no_data": "Информация не найдена",
