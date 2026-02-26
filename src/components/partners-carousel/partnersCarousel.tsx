@@ -3,6 +3,7 @@ import { Carousel } from 'antd';
 import type { CarouselRef } from 'antd/es/carousel';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import './partnersCarousel.css';
+import { useTranslation } from 'react-i18next';
 
 interface PartnerItem {
     _id: string;
@@ -11,6 +12,7 @@ interface PartnerItem {
 }
 
 const PartnersCarousel = () => {
+    const { t } = useTranslation('main', { keyPrefix: 'partners_carousel' });
     const slider = useRef<CarouselRef>(null);
     const [activeBtn, setActiveBtn] = useState<'prev' | 'next' | null>('next');
     
@@ -57,9 +59,7 @@ const PartnersCarousel = () => {
     return (
         <div className='partners-carousel-container container'>
             <div className='partners-carousel-header'>
-                <h2 className='partners-carousel-title'>
-                    Bizga ishonch bildirgan hamkorlar!
-                </h2>
+                <h2 className='partners-carousel-title'>{t('title')}</h2>
                 <div className='partners-carousel-navigation'>
                     <button 
                         onClick={() => slider.current?.prev()}

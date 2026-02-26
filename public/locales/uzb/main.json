@@ -80,6 +80,13 @@
     "list_item_1": "Jamiyat hayotidagi qiziqarli yangiliklar va eng muhim e’lonlar",
     "list_item_2": "Uchrashuv natijalari to‘g‘risida xabarnomalar va o‘tkazilayotgan tanlovlar haqida ma’lumotlar"
   },
+  "partners_carousel": {
+    "title": "Bizga ishonch bildirgan hamkorlar!"
+  },
+  "partners": {
+    "title": "Bizning hamkorlar",
+    "description": "Barcha yutuqlarimiz — ishonchli hamkorlar bilan birga"
+  },
   "common": {
     "buttons": {
       "learn_more": "Batafsil ma'lumot",

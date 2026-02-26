@@ -80,6 +80,13 @@
     "list_item_1": "Interesting news from the life of society and the most important announcements",
     "list_item_2": "Notifications about meeting results and information about ongoing contests"
   },
+  "partners_carousel": {
+    "title": "Partners who trust us!"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "description": "All our achievements — together with reliable partners"
+  },
   "common": {
     "buttons": {
       "learn_more": "Learn more",

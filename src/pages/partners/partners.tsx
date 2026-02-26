@@ -2,6 +2,7 @@ import { Grid, List } from "antd";
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from "react-icons/hi";
 import { useEffect, useState, useMemo } from "react";
 import './partners.css';
+import { useTranslation } from "react-i18next";
 
 const { useBreakpoint } = Grid;
 
@@ -11,6 +12,7 @@ interface PartnerItem {
 }
 
 const Partners = () => {
+    const { t } = useTranslation('main', { keyPrefix: 'partners' });
     const screens = useBreakpoint();
     const dynamicPageSize = (screens.md || screens.xl) ? 8 : 4;
     
@@ -62,8 +64,8 @@ const Partners = () => {
     return (
         <section className='partners-section'>
             <div className='container'>
-                <h2 className="partners-section-title">Bizning hamkorlar</h2>
-                <p className="section-description">Barcha yutuqlarimiz — ishonchli hamkorlar bilan birga</p>
+                <h2 className="partners-section-title">{t('title')}</h2>
+                <p className="section-description">{t('description')}</p>
                 
                 <List
                     grid={{
