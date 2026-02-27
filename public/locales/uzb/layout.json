@@ -43,6 +43,7 @@
         "contact_us": "Biz bilan bog'laning",
         "search": {
             "placeholder": "Qidiruv",
+            "loading": "Qidirilmoqda...",
             "not_found": "Hech narsa topilmadi"
         }
     },

@@ -43,6 +43,7 @@
         "contact_us": "Contact us",
         "search": {
             "placeholder": "Search",
+            "loading": "Loading...",
             "not_found": "No results found"
         }
     },

@@ -43,6 +43,7 @@
         "contact_us": "Связаться с нами",
         "search": {
             "placeholder": "Поиск",
+            "loading": "Поиск...",
             "not_found": "Ничего не найдено"
         }
     },
