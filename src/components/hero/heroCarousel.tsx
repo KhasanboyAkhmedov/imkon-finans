@@ -47,7 +47,7 @@ const HeroCarousel: React.FC = () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_API_URL}/banners/all`);
         const result = await response.json();
-        setSlides(result.data);
+        setSlides(result.data || []);
       } catch (error) {
         console.error("Error fetching banners:", error);
       } finally {

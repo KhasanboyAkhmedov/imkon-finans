@@ -123,6 +123,9 @@
         "title": "Videos",
         "description": "The Joint-Stock Company Microfinance Organization 'IMKON FINANS' has been contributing to the development of small and medium-sized businesses, private entrepreneurship, and the steadily growing microfinance market in the Republic of Uzbekistan for over ten years."
     },
+    "all_credits": {
+        "title": "All credits"
+    },
     "banner_detail": {
         "description_label": "Description"
     },

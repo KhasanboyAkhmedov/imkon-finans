@@ -1,10 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { List, Grid, message } from 'antd';
+import { List, Grid, message, Empty } from 'antd';
 import { CreditCard } from '../../components/credit-card/creditCard';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import './all-credits.css';
 import { CreditCardSkeleton } from '../../components/credit-card/credit-card-skeleton';
 import type { Credit } from '../../components/our-products/productsData';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { FaAngleLeft } from 'react-icons/fa6';
 
 const { useBreakpoint } = Grid;
 
@@ -15,7 +18,11 @@ const AllCredits = () => {
     const [loading, setLoading] = useState(false);
     const [total, setTotal] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
+    const navigate = useNavigate();
+    const { t } = useTranslation('pages', { keyPrefix: 'all_credits' });
+    const { t: tErrors } = useTranslation('pages', { keyPrefix: 'errors' });
 
+    
     const fetchFiles = useCallback(async (page: number,) => {
         setLoading(true);
         try {
@@ -30,7 +37,7 @@ const AllCredits = () => {
             setData(result.data || []);
             setTotal(result.totalCount || 0);
         } catch {
-            message.error("Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.");
+            message.error(tErrors("data_load_error"));
         } finally {
             setLoading(false);
         }
@@ -50,10 +57,30 @@ const AllCredits = () => {
         return originalElement;
     };
 
+    const handleBack = () => navigate('/');
+    if (!loading && data.length === 0) {
+        return (
+        <section className='detail-container'>
+            <div className="container">
+                <div onClick={handleBack} className="go-back-button">
+                    <FaAngleLeft className='back-icon'/> 
+                    <p className='back-text'>{tErrors('back')}</p>
+                </div>
+
+                <div className="error-message">
+                    <Empty description={false} className='empty-box' />
+                    <p className='error-text'>{tErrors('no_data')}</p>
+                    <button onClick={handleBack} className="back-button">{tErrors('back_home')}</button>
+                </div>
+            </div>
+        </section>
+        );
+    }
+
     return (
         <section className="all-credits-section">
             <div className='container'>
-                <h2 className="section-title">Barcha kreditlar</h2>
+                <h2 className="section-title">{t('title')}</h2>
                 
                 <List
                     key='all-credits'
