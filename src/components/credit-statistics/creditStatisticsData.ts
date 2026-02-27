@@ -7,7 +7,7 @@ interface StatLanguageContent {
 }
 
 interface StatIcon {
-  lib: string;
+  lib: "fa" | "fa6" | "bi" | "bs" | "md";
   name: string;
 }
 

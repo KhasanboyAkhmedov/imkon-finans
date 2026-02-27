@@ -1,5 +1,6 @@
 import * as FaIcons from 'react-icons/fa';
 import * as BsIcons from 'react-icons/bs';
+import type { IconType } from '../../commons/dynamic-icon';
 
 export type SupportedLocale = 'uzb' | 'rus' | 'eng';
 
@@ -35,7 +36,7 @@ export interface Credit {
   _id: string;
   title: LocalizedString;
   description: LocalizedString;
-  icon: CreditIcon;
+  icon: IconType;
   details: CreditDetail[];
   createdAt: string;
   updatedAt: string;

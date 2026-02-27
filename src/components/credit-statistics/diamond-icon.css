@@ -1,0 +1,66 @@
+.diamond-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond-shape {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border: 0.5px solid rgba(255, 62, 65, 0.08);
+  transform: rotate(45deg);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diamond-shape::after {
+  content: "";
+  position: absolute;
+  top: 1.2px;
+  left: 1.2px;
+  right: 1.2px;
+  bottom: 1.2px;
+  background-color: rgba(255, 62, 65, 0.06);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 62, 65, 0.2);
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.dot.top    { top: -2px; left: -2px;}
+.dot.right  { top: -2px; right: -2px; }
+.dot.bottom { bottom: -2px; right: -2px; }
+.dot.left   { bottom: -2px; left: -2px; }
+
+.diamond-icon {
+  width: 24px;
+  height: 24px;
+  color: #FF3E41;
+}
+
+.diamond-icon-wrapper {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+    .diamond-shape {
+        width: 60px;
+        height: 60px;
+    }
+}

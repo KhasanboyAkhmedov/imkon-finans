@@ -5,6 +5,21 @@ import * as Bs from 'react-icons/bs';
 import * as Md from 'react-icons/md';
 import type { IconBaseProps } from 'react-icons';
 
+type IconLibraryMap = {
+  fa: typeof Fa;
+  fa6: typeof Fa6;
+  bi: typeof Bi;
+  bs: typeof Bs;
+  md: typeof Md;
+};
+
+export type IconType = {
+  [K in keyof IconLibraryMap]: {
+    lib: K;
+    name: keyof IconLibraryMap[K];
+  };
+}[keyof IconLibraryMap];
+
 const IconLibraries: Record<string, Record<string, React.ComponentType<IconBaseProps>>> = { 
   fa: Fa as Record<string, React.ComponentType<IconBaseProps>>,
   fa6: Fa6 as Record<string, React.ComponentType<IconBaseProps>>,
