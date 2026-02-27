@@ -6,6 +6,7 @@ import { message, Empty } from 'antd';
 import { FaAngleLeft } from 'react-icons/fa6';
 import BannerDetailSkeleton from './banner-detail-skeleton';
 import './banner-detail.css';
+import { useTranslation } from 'react-i18next';
 
 interface LocalizedContent {
   title: string;
@@ -26,7 +27,10 @@ const BannerDetail: FC = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const { lang } = useLanguage();
+  const { t } = useTranslation('pages', { keyPrefix: 'errors' });
+  const { t: tBannerDetail } = useTranslation('pages', { keyPrefix: 'banner_detail' });
 
+  
   useEffect(() => {
     const fetchBanner = async () => {
       setLoading(true);
@@ -39,7 +43,7 @@ const BannerDetail: FC = () => {
             setData(result);
         }
       } catch {
-        message.error("Ma'lumotni yuklashda xatolik yuz berdi");
+          message.error(t('data_load_error'));
       } finally {
         setLoading(false);
       }
@@ -58,14 +62,12 @@ const BannerDetail: FC = () => {
         <div className="container">
           <div onClick={handleBack} className="go-back-button">
             <FaAngleLeft className='back-icon'/> 
-            <p className='back-text'>Orqaga</p>
+            <p className='back-text'>{t('back')}</p>
           </div>
           <div className="error-message">
                 <Empty description={false} className='empty-box' />
-                <p className='error-text'>Ma'lumot topilmadi.</p>
-                <button onClick={handleBack} className="back-button">
-                    Ortga qaytish
-                </button>
+                <p className='error-text'>{t('not_found')}</p>
+                <button onClick={handleBack} className="back-button">{t('back_home')}</button>
             </div>
         </div>
       </section>
@@ -79,7 +81,7 @@ const BannerDetail: FC = () => {
       <div className="container">
         <div onClick={handleBack} className="go-back-button">
             <FaAngleLeft className='back-icon'/> 
-            <p className='back-text'>Orqaga</p>
+            <p className='back-text'>{t('back')}</p>
         </div>
 
         <div className="info-header">
@@ -89,18 +91,13 @@ const BannerDetail: FC = () => {
         <div className="info-layout">
           <div className="info-content">
             <div className="content-block">
-              <h3 className="block-title">
-                {lang === 'uzb' ? 'Tavsif' : lang === 'rus' ? 'Описание' : 'Description'}
-              </h3>
+              <h3 className="block-title">{tBannerDetail('description_label')}</h3>
               <p className="description-text">{content.description}</p>
             </div>
           </div>
 
           <aside className="info-sidebar">
             <div className="benefits-grid">
-              <h3 className="block-title" style={{ fontSize: '20px' }}>
-                {lang === 'uzb' ? 'Afzalliklar' : lang === 'rus' ? 'Преимущества' : 'Features'}
-              </h3>
               {content.features?.map((feature, index) => (
                 <div key={index} className="benefit-card">
                   <HiOutlineBadgeCheck className="benefit-icon-box" />

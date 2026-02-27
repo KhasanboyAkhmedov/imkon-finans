@@ -124,6 +124,9 @@
         "title": "Videolar",
         "description": "“IMKON FINANS” mikromoliya tashkiloti aksiyadorlik jamiyati o‘n yildan buyon kichik va o‘rta biznes hamda xususiy tadbirkorlikni rivojlantirishga, shuningdek, O‘zbekiston Respublikasida tobora kengayib borayotgan mikromoliya bozorining rivojlanishiga o‘z hissasini qo‘shib kelmoqda."
     },
+    "banner_detail": {
+        "description_label": "Tavsif"
+    },
     "errors": {
         "no_data": "Ma'lumot topilmadi",
         "back_home": "Ortga qaytish",
