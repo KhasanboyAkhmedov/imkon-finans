@@ -100,7 +100,7 @@
         {
             "key": "1",
             "title": "My credit application was rejected. When can I reapply?",
-            "content": "You can reapply after 30 days once you are sure that the minimum requirements have been met."
+            "content": "You can reapply after 30 days once you are sure that the minimum requirements have been met"
         },
         {
             "key": "2",
@@ -110,12 +110,12 @@
         {
             "key": "3",
             "title": "How can I find my credit history?",
-            "content": "You can obtain information from the Credit Bureau, which collects credit history data, once a year for free. You can learn more about the Bureau's services on the KATM website via the link www.infokredit.uz."
+            "content": "You can obtain information from the Credit Bureau, which collects credit history data, once a year for free. You can learn more about the Bureau's services on the KATM website via the link www.infokredit.uz"
         },
         {
             "key": "4",
             "title": "What salary amount should I indicate?",
-            "content": "Sometimes the requested amount may be too large. Even if the loan term is extended and the payment is reduced to a minimum, the payment may still exceed your income. In such cases, the bank will approve a smaller amount or reject the loan. Indicate a loan amount where the monthly payment does not exceed your income. If you have additional income that you can verify, it will definitely be taken into account."
+            "content": "Sometimes the requested amount may be too large. Even if the loan term is extended and the payment is reduced to a minimum, the payment may still exceed your income. In such cases, the bank will approve a smaller amount or reject the loan. Indicate a loan amount where the monthly payment does not exceed your income. If you have additional income that you can verify, it will definitely be taken into account"
         }
     ]
   },

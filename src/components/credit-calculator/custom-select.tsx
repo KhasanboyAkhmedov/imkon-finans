@@ -15,6 +15,8 @@ interface CustomSelectProps {
   placeholder?: string;
   options: OptionType[];
   required?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
@@ -23,6 +25,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   placeholder,
   options,
   required = false,
+  loading = false,
+  disabled = false,
 }) => {
   return (
     <div className="unique-select-scope">
@@ -37,6 +41,8 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                 placeholder={placeholder}
                 variant="borderless"
                 options={options}
+                loading={loading}
+                disabled={disabled || loading}
                 popupMatchSelectWidth={true}
                 popupClassName="unique-select-dropdown-scope"
                 suffixIcon={<DownOutlined className="custom-select-icon" />}

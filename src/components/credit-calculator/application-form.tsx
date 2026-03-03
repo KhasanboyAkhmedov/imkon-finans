@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Form, Slider, Col, Row, Typography, Button, message } from 'antd';
 import CustomInput from './custom-input';
 import CustomSelect from './custom-select';
@@ -19,33 +19,46 @@ interface FormValues {
   agreement: boolean;
 }
 
+interface CreditTypeResponse {
+  uzb: string[];
+  eng: string[];
+  rus: string[];
+}
+
 const ApplicationForm: React.FC = () => {
-  const { t } = useTranslation('main', { keyPrefix: 'credit_application.application_form' });
+  const { t, i18n } = useTranslation('main', { keyPrefix: 'credit_application.application_form' });
   
   const [form] = Form.useForm();
   const values = Form.useWatch([], form);
   const [submittable, setSubmittable] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isFetching, setIsFetching] = useState(false);
+  const [rawCreditData, setRawCreditData] = useState<CreditTypeResponse | null>(null);
   const [messageApi, contextHolder] = message.useMessage();
-  
+
   useEffect(() => {
     form.validateFields({ validateOnly: true })
       .then(() => setSubmittable(true))
       .catch(() => setSubmittable(false));
   }, [values, form]);
 
-  const formatPhone = (val: string) => {
-    let v = val.replace(/\D/g, '');
-    if (!v.startsWith('998')) v = '998' + v;
-    v = v.substring(0, 12);
-    let f = '+';
-    if (v.length > 0) f += v.substring(0, 3);
-    if (v.length > 3) f += ' ' + v.substring(3, 5);
-    if (v.length > 5) f += '-' + v.substring(5, 8);
-    if (v.length > 8) f += '-' + v.substring(8, 10);
-    if (v.length > 10) f += '-' + v.substring(10, 12);
-    return f;
-  };
+  useEffect(() => {
+    const fetchCreditTypes = async () => {
+      setIsFetching(true);
+      try {
+        const response = await fetch('https://imkon-finans-backend.vercel.app/api/credits/types');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data: CreditTypeResponse = await response.json();
+        setRawCreditData(data);
+      } catch (error) {
+        console.error("Credit types fetch error:", error);
+        setRawCreditData(null);
+      } finally {
+        setIsFetching(false);
+      }
+    };
+    fetchCreditTypes();
+  }, []);
 
   const onFinish = async (formValues: FormValues) => {
     setLoading(true);
@@ -56,7 +69,6 @@ const ApplicationForm: React.FC = () => {
       creditType: creditOptions.find(opt => opt.value === formValues.credit_type)?.label || formValues.credit_type,
       term: formValues.months,
       amount: String(formValues.amount),
-      label: mdlOptions.find(opt => opt.value === formValues.mdl)?.label || formValues.mdl
     };
 
     try {
@@ -75,19 +87,56 @@ const ApplicationForm: React.FC = () => {
       } else {
         messageApi.error(t('messages.error'));
       }
-    } catch {
+    } catch (error){
+      console.log('erer', error);
+      
       messageApi.error(t('messages.server_error'));
     } finally {
       setLoading(false);
     }
   };
 
-  const creditOptions = [
+  const defaultCreditOptions = useMemo(() => [
     { label: t('credit_types.mortgage'), value: 'mortgage' },
     { label: t('credit_types.auto'), value: 'auto' }, 
     { label: t('credit_types.micro'), value: 'micro' }
-  ];
-  const mdlOptions = [{ label: 'MDL', value: 'mdl' }];
+  ], [t]);
+
+  const creditOptions = useMemo(() => {
+    if (!rawCreditData) return defaultCreditOptions;
+
+    const langMap: Record<string, keyof CreditTypeResponse> = {
+      uzb: 'uzb',
+      eng: 'eng',
+      rus: 'rus'
+    };
+
+    const currentLang = langMap[i18n.language] || 'eng';
+    const fetchedTypes = rawCreditData[currentLang];
+
+    if (fetchedTypes && fetchedTypes.length > 0) {
+      return fetchedTypes.map((item, index) => ({
+        label: item,
+        value: rawCreditData.eng[index] || item 
+      }));
+    }
+
+    console.log(fetchedTypes);
+    return defaultCreditOptions;
+  }, [i18n.language, rawCreditData, defaultCreditOptions]);
+
+  const formatPhone = (val: string) => {
+    let v = val.replace(/\D/g, '');
+    if (!v.startsWith('998')) v = '998' + v;
+    v = v.substring(0, 12);
+    let f = '+';
+    if (v.length > 0) f += v.substring(0, 3);
+    if (v.length > 3) f += ' ' + v.substring(3, 5);
+    if (v.length > 5) f += '-' + v.substring(5, 8);
+    if (v.length > 8) f += '-' + v.substring(8, 10);
+    if (v.length > 10) f += '-' + v.substring(10, 12);
+    return f;
+  };
 
   return (
     <>
@@ -125,15 +174,8 @@ const ApplicationForm: React.FC = () => {
                   form={form}
                   placeholder={t('placeholders.credit_type')}
                   options={creditOptions}
-                  required
-                />
-              </Col>
-              <Col xs={24} sm={12}>
-                <CustomSelect
-                  name="mdl"
-                  form={form}
-                  placeholder="MDL"
-                  options={mdlOptions}
+                  loading={isFetching}
+                  disabled={isFetching}
                   required
                 />
               </Col>
