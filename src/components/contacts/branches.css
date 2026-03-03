@@ -27,6 +27,8 @@
 }
 
 .branch-card {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   padding: 16px;
   border-radius: 12px;
@@ -37,7 +39,7 @@
 
 .branch-card.active {
   border-color: var(--primary-red);
-  box-shadow: 0 0 15px rgba(255, 62, 65, 0.2); /* Red box shadow per image_62e647 */
+  box-shadow: 0 0 15px rgba(255, 62, 65, 0.2);
 }
 
 .branch-name {
@@ -65,6 +67,58 @@
     border: 0;
     width: 100%;
     height: 100%;
+}
+
+.branch-info-footer {
+  display: flex;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #eee; 
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+}
+
+.info-icon {
+  color: var(--primary-red);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.info-text {
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap; 
+}
+
+.branch-card.active .branch-info-footer {
+  border-top-color: rgba(255, 62, 65, 0.1);
+}
+
+.branch-card.active .info-text {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.branch-card.skeleton {
+    cursor: default;
+    background: #fdfdfd;
+    border-color: #f0f0f0;
+}
+
+.branch-card.skeleton .ant-skeleton {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-container .ant-skeleton-element, 
+.map-container .ant-skeleton-image {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 @media (min-width: 992px) {

@@ -1,5 +1,5 @@
 export interface Branch {
-  id: string;
+  _id: string;
   name: {
     uzb: string;
     rus: string;
@@ -7,84 +7,97 @@ export interface Branch {
   };
   phones: string[];
   mapEmbedUrl: string;
-  coordinates: number[]; 
+  workingDays?: {
+    uzb: string;
+    rus: string;
+    eng: string;
+  },
+  workingHours?: string;
 }
 
 export const branches: Branch[] = [
   { 
-    id: '1', 
+    _id: '1', 
     name: { uzb: 'Bosh ofis', rus: 'Головной офис', eng: 'Head Office' }, 
     phones: ['+998 74 228-32-12', '+998 78 298-12-35'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256],
+    workingDays: {
+        uzb: "du-sh", 
+        rus: 'пн-сб', 
+        eng: 'mon-sat' 
+    },
+    workingHours: "9.00-18.00",
+    mapEmbedUrl: "https://yandex.uz/maps/10329/andijan/?ll=72.360667%2C40.768785&mode=search&sll=72.354389%2C40.765167&text=40.765167%2C72.354389&utm_source=share&z=14",
   },
   { 
-    id: '2', 
+    _id: '2', 
     name: { 
       uzb: 'Asaka filiali', 
       rus: 'Асакинский филиал', 
       eng: 'Asaka Branch' 
     },
     phones: ['+998 55 203-35-12'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256], 
+    workingDays: {
+        uzb: "du-sh", 
+        rus: 'пн-сб', 
+        eng: 'mon-sat' 
+    },
+    workingHours: "9.00-18.00",
+    mapEmbedUrl: "https://yandex.uz/maps/189659/asaka/?ll=72.236604%2C40.649656&mode=search&sll=72.244944%2C40.645889&text=40.645889%2C72.244944&utm_source=share&z=14",
   },
   { 
-    id: '3', 
+    _id: '3', 
     name: { uzb: 'Jalaquduq filiali', rus: 'Джалахудукский филиал', eng: 'Jalaquduq Branch' }, 
     phones: ['+998 74 755-22-30'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256],
+    workingDays: {
+        uzb: "du-sh", 
+        rus: 'пн-сб', 
+        eng: 'mon-sat' 
+    },
+    workingHours: "9.00-18.00",
+    mapEmbedUrl: "https://yandex.uz/maps/189939/jalakuduk/?ll=72.636916%2C40.725702&mode=search&sll=72.637472%2C40.723333&text=40.723333%2C72.637472&utm_source=share&z=14",
   },
   { 
-    id: '4', 
+    _id: '4', 
     name: { 
       uzb: "Bo'ston (Buloqboshi) filiali", 
       rus: 'Бустонский (Булокбоши) филиал', 
       eng: 'Boston (Buloqboshi) Branch' 
     },
     phones: ['+998 55 203-12-35'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256],
+    workingDays: {
+        uzb: "du-sh", 
+        rus: 'пн-сб', 
+        eng: 'mon-sat' 
+    },
+    workingHours: "9.00-18.00",
+    mapEmbedUrl: "https://yandex.uz/maps/?ll=72.500435%2C40.629154&mode=search&sll=72.500250%2C40.629250&text=40.629250%2C72.500250&utm_source=share&z=17",
   },
   { 
-    id: '5',
+    _id: '5',
     name: { 
       uzb: "Farg'ona filiali", 
       rus: 'Ферганский филиал', 
       eng: 'Fergana Branch' 
     },
     phones: ['+998 55 810-40-20'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256],
-  },
-  { 
-    id: '6', 
-    name: { 
-      uzb: "Furqat filiali", 
-      rus: 'Фуркатский филиал', 
-      eng: 'Furqat Branch' 
+    workingDays: {
+        uzb: "du-sh", 
+        rus: 'пн-сб', 
+        eng: 'mon-sat' 
     },
-    phones: ['+998 55 203-32-12'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256],
+    workingHours: "9.00-18.00",
+    mapEmbedUrl: "https://yandex.uz/maps/10336/fergana/?ll=71.802376%2C40.386343&mode=search&sll=71.802056%2C40.386139&text=40.386139%2C71.802056&utm_source=share&z=15",
   },
   { 
-    id: '7', 
+    _id: '6', 
     name: { uzb: "Paxtaobod filiali", rus: "Пахтаабадский филиал", eng: "Pakhtaobod Branch" },
     phones: ['+998 55 202-35-12'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [40.765394, 72.354256],
-  },
-  { 
-    id: '8', 
-    name: { 
-      uzb: "Jahon bozor filiali", 
-      rus: 'Филиал Жахон бозор', 
-      eng: 'Jahon Bozor Branch' 
+    workingDays: {
+        uzb: "du-sh", 
+        rus: 'пн-сб', 
+        eng: 'mon-sat' 
     },
-    phones: ['+998 55 201-67-61'],
-    mapEmbedUrl: "https://yandex.com/map-widget/v1/?z=16&ol=biz&oid=196915386086",
-    coordinates: [41.311151, 69.279737],
-  },
+    workingHours: "9.00-18.00",
+    mapEmbedUrl: "https://yandex.uz/maps/?ll=72.526951%2C40.929971&mode=search&sll=72.494806%2C40.930833&text=40.930833%2C72.494806&utm_source=share&z=11",
+  }
 ];
