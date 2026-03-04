@@ -85,12 +85,10 @@ const ApplicationForm: React.FC = () => {
         form.resetFields();
 
       } else {
-        messageApi.error(t('messages.error'));
+        console.error(t('messages.error'));
       }
-    } catch (error){
-      console.log('erer', error);
-      
-      messageApi.error(t('messages.server_error'));
+    } catch {
+      console.error(t('messages.server_error'));
     } finally {
       setLoading(false);
     }

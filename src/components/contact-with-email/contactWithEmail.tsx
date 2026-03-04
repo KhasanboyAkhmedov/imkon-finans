@@ -26,15 +26,9 @@ const ContactWithEmail: React.FC = () => {
 
       if (response.ok) {
         setEmail('');
-        messageApi.open({
-          type: 'success',
-          content: t('success_msg'),
-        });
+        messageApi.success(t('success_msg'));
       } else {
-        messageApi.open({
-          type: 'error',
-          content: t('error_msg'),
-        });
+        console.error(t('error_msg'))
       }
     } catch {
       console.error("Error sending message");

@@ -43,10 +43,10 @@ const ContactForm = () => {
         setFormData({ fullName: '', email: '', phone: '', message: '' });
         messageApi.success(t('success'));
       } else {
-        messageApi.error(t('server_error'));
+        console.error(t('server_error'));
       }
     } catch {
-      messageApi.error(t('server_error'));
+      console.error(t('server_error'));
     } finally {
       setLoading(false);
     }

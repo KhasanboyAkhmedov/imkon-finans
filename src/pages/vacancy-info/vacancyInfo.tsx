@@ -5,7 +5,7 @@ import { type Vacancy } from '../vacancies/vacancies.data';
 import { type FC, useEffect, useState } from 'react';
 import { BiCheckDouble } from 'react-icons/bi';
 import VacancyInfoSkeleton from './vacanvyInfoSkeleton';
-import { Empty, message } from 'antd';
+import { Empty } from 'antd';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useTranslation } from 'react-i18next';
@@ -39,7 +39,7 @@ const VacancyInfo: FC = () => {
         }
       } catch {
         setData(null);
-        message.error(tErrors('data_load_error'));
+        console.error(tErrors('data_load_error'));
       } finally {
         setLoading(false);
       }

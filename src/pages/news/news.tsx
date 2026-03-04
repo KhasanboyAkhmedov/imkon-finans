@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import FileCardList from "../../components/file-card-list/file-card-list"
 import NewsCard from "../../components/news/newsCard"
 import NewsCardSkeleton from "../../components/news/newsCardSkeleton";
-import { Grid, message } from "antd";
+import { Grid } from "antd";
 import type { NewsItem } from "../../components/news/newsData";
 import { useTranslation } from "react-i18next";
 
@@ -18,7 +18,6 @@ const News = () => {
   const [fileStats, setFileStats] = useState({ years: [], counts: {}, total: 0 });
   const [selectedYear, setSelectedYear] = useState<string>('all');
   const { t } = useTranslation('pages', { keyPrefix: 'file_pages' });
-  const { t: tErrors } = useTranslation('pages', { keyPrefix: 'errors' });
   
   const fetchNews = async (page: number, pageSize: number) => {
     setLoading(true);
@@ -34,8 +33,7 @@ const News = () => {
       setTotal(result.totalCount || 0);
       setFileStats(result.newsStats || { years: [], counts: {}, total: 0 });
     } catch (error) {
-      console.error("Error fetching news:", error);
-      message.error(tErrors('data_load_error'));
+      console.log("Error fetching news:", error);
     } finally {
       setLoading(false);
     }

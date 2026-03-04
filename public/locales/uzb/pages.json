@@ -6,17 +6,16 @@
     "supervisory_board": {
         "title": "Kuzatuv kengashi",
         "info_management": [
-            "«IMKON FINANS mikrokredit tashkiloti» aksiyadorlik jamiyati faoliyatiga umumiy rahbarlikni amalga oshiradi.",
-            "Jamiyatning boshqaruv organi hisoblanadi.",
-            "Jamiyatni boshqarish masalalari bo‘yicha aksiyadorlarning umumiy yig‘ilishiga hisobdordir."
+            "Jamiyat umumiy faoliyatiga rahbarlik qiladi",
+            "Jamiyat faoliyatining ustuvor yo‘nalishlarini belgilaydi"
         ]
     },
     "management_body": {
         "title": "Boshqaruv organi",
         "info_management": [
-            "Jamiyatning Boshqaruv organi — direktori maqomi, vakolat doirasi va faoliyatini tashkil etish tartibini, direktori ishini, uni saylash (tayinlash), shuningdek uning huquq va majburiyatlarini belgilaydi.",
-            "DDirektor jamiyatning kundalik faoliyatiga rahbarlik qiladi va jamiyatning yakkaboshchilik asosida boshqaradigan boshqaruv organi hisoblanadi.",
-            "Direktor jamiyat kuzatuv kengashi va aksiyadorlarning umumiy yig‘ilishiga hisobdordir."
+            "Jamiyatning kundalik faoliyatiga rahbarlik qiladi",
+            "Jamiyatning biznes-rejalari va rivojlanish dasturlarini bajarilishini ta’minlaydi",
+            "Jamiyat tomonidan qonunchilik hujjatlariga, korporativ hujjatlarga va ichki tartib-qoidalarga rioya qilinishini nazorat qiladi"
         ]
     },
     "file_pages": {

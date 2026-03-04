@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { ManagementMember } from '../components/management/management';
-import { message } from 'antd';
 
 export const useTeam = (type: string) => {
     const [members, setMembers] = useState<ManagementMember[]>([]);
@@ -20,7 +19,7 @@ export const useTeam = (type: string) => {
             const result = await response.json();
             setMembers(result.data || []);
         } catch {
-            message.error("Ma'lumotni yuklashda xatolik yuz berdi");
+            console.log("Ma'lumotni yuklashda xatolik yuz berdi");
         } finally {
             setLoading(false);
         }

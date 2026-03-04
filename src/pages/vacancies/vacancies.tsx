@@ -1,4 +1,4 @@
-import { Empty, Grid, message } from 'antd';
+import { Empty, Grid } from 'antd';
 import VacancyCard from '../../components/vacancy-card/vacancyCard';
 import { useEffect, useState } from 'react';
 import InfoCardList from '../../components/info-card/info-card-list';
@@ -33,7 +33,7 @@ const Vacancies = () => {
             setData(result.data);
             setTotal(result.totalCount);
         } catch {
-            message.error(t('data_load_error'));
+            console.error(t('data_load_error'));
         } finally {
             setLoading(false);
         }

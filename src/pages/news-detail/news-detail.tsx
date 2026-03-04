@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { type NewsDetailType } from './news-detail.data';
 import './news-detail.css';
 import { FaAngleLeft } from 'react-icons/fa6';
-import { Empty, message } from 'antd';
+import { Empty } from 'antd';
 import { formatDate } from '../../commons';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { TLanguage } from '../../types/language.types';
@@ -27,7 +27,7 @@ const NewsDetail: React.FC = () => {
 
         if (!response.ok || result.message === "Not found.") {
           setItem(null);
-          message.error(t('no_data'));
+          console.log(t('no_data'));
         } else {
           setItem(result);
         }

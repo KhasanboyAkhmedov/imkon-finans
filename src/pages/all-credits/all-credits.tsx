@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { List, Grid, message, Empty } from 'antd';
+import { List, Grid, Empty } from 'antd';
 import { CreditCard } from '../../components/credit-card/creditCard';
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi';
 import './all-credits.css';
@@ -37,7 +37,7 @@ const AllCredits = () => {
             setData(result.data || []);
             setTotal(result.totalCount || 0);
         } catch {
-            message.error(tErrors("data_load_error"));
+            console.log(tErrors("data_load_error"));
         } finally {
             setLoading(false);
         }

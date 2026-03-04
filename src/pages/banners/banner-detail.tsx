@@ -2,7 +2,7 @@ import { useEffect, useState, type FC } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { HiOutlineBadgeCheck } from 'react-icons/hi';
 import { useLanguage } from '../../hooks/useLanguage';
-import { message, Empty } from 'antd';
+import { Empty } from 'antd';
 import { FaAngleLeft } from 'react-icons/fa6';
 import BannerDetailSkeleton from './banner-detail-skeleton';
 import './banner-detail.css';
@@ -43,7 +43,7 @@ const BannerDetail: FC = () => {
             setData(result);
         }
       } catch {
-          message.error(t('data_load_error'));
+          console.log(t('data_load_error'));
       } finally {
         setLoading(false);
       }

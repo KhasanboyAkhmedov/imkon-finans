@@ -5,7 +5,6 @@ import { CreditCard } from '../credit-card/creditCard';
 import './ourProducts.css';
 import { CreditCardSkeleton } from '../credit-card/credit-card-skeleton';
 import type { Credit, CreditsApiResponse } from './productsData';
-import { message } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 export const OurProducts: React.FC = () => {
@@ -23,7 +22,7 @@ export const OurProducts: React.FC = () => {
             const result: CreditsApiResponse = await response.json();
             setProducts(result.data);
         } catch {
-            message.error(t('error_message'));
+            console.log(t('error_message'));
         } finally {
             setLoading(false);
         }

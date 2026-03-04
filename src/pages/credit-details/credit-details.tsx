@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { HiOutlineArrowRight } from 'react-icons/hi';
-import { Empty, message } from 'antd';
+import { Empty } from 'antd';
 import { useLanguage } from '../../hooks/useLanguage';
 import { DynamicIcon } from '../../commons/dynamic-icon';
 import LoanModal from '../../components/credit-calculator/loan-modal';
@@ -36,7 +36,7 @@ const CreditDetail: React.FC = () => {
           setActiveTabId(result.details[0]._id);
         }
       } catch {
-        message.error("Ma'lumotni yuklashda xatolik yuz berdi");
+        console.log("Ma'lumotni yuklashda xatolik yuz berdi");
       } finally {
         setLoading(false);
       }

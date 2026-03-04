@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Grid, message } from 'antd';
-import { useTranslation } from 'react-i18next';
+import { Grid } from 'antd';
 
 const { useBreakpoint } = Grid;
 
@@ -13,7 +12,6 @@ export const useFiles = (fileType: string) => {
   const [fileStats, setFileStats] = useState({ years: [], counts: {}, total: 0 });
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedYear, setSelectedYear] = useState<string>('all');
-  const { t } = useTranslation('pages', { keyPrefix: 'errors' });
 
   const fetchFiles = useCallback(async (page: number, year: string) => {
     setLoading(true);
@@ -31,8 +29,7 @@ export const useFiles = (fileType: string) => {
       setTotal(result.totalCount || 0);
       setFileStats(result.fileStats || { years: [], counts: {}, total: 0 });
     } catch (error) {
-      console.error("Fetch error:", error);
-      message.error(t('data_load_error'));
+      console.log("Fetch error:", error);
     } finally {
       setLoading(false);
     }

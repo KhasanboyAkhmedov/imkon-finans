@@ -6,17 +6,16 @@
     "supervisory_board": {
         "title": "Supervisory Board",
         "info_management": [
-            "Exercises general management of the activities of the Joint-Stock Company 'IMKON FINANS Microcredit Organization'.",
-            "Acts as the governing body of the Company.",
-            "Accountable to the general meeting of shareholders on matters regarding the management of the Company."
+            "Exercises general management of the Company's activities",
+            "Determines the priority areas of the Company's activities"
         ]
     },
     "management_body": {
         "title": "Management Body",
         "info_management": [
-            "Defines the status of the Company's Management Body — the director's status, scope of authority, procedure for organizing activities, director's work, election (appointment), as well as rights and obligations.",
-            "The Director manages the day-to-day operations of the company and acts as the sole executive body of the company.",
-            "The Director is accountable to the supervisory board and the general meeting of shareholders."
+            "Manages the day-to-day activities of the Company",
+            "Ensures the implementation of the Company's business plans and development programs",
+            "Monitors the Company's compliance with laws, corporate regulations, and internal policies"
         ]
     },
     "file_pages": {
