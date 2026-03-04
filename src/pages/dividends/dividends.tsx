@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import DividendTable from "../../components/dividend-table/dividend-table";
-import { message } from 'antd';
 import './dividends.css';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +15,7 @@ const Dividends = () => {
         const result = await response.json();
         setData(result.data || []);
       } catch {
-        message.error("Ma'lumotlarni yuklashda xatolik sahifani yangilang!");
+        console.error("Ma'lumotlarni yuklashda xatolik sahifani yangilang!");
       } finally {
         setLoading(false);
       }
