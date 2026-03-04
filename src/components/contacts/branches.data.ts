@@ -13,6 +13,7 @@ export interface Branch {
     eng: string;
   },
   workingHours?: string;
+  coordinates?: [string, string];
 }
 
 export const branches: Branch[] = [

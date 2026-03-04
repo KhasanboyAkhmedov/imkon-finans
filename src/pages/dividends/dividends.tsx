@@ -12,7 +12,7 @@ const Dividends = () => {
   useEffect(() => {
     const fetchDividends = async () => {
       try {
-        const response = await fetch('https://imkon-finans-backend.vercel.app/api/dividends/all');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}api/dividends/all`);
         const result = await response.json();
         setData(result.data || []);
       } catch {
