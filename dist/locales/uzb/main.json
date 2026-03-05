@@ -1,0 +1,137 @@
+{
+  "credit_application": {
+    "loan_section": {
+      "title": "Kreditga ariza bering",
+      "description": "Asosiy faoliyat — jismoniy shaxslar uchun mikrozaymlarni berish",
+      "tabs": {
+        "application": "Ariza",
+        "calculator": "Kredit kalkulyatori"
+      }
+    },
+    "application_form": {
+      "labels": {
+        "name": "F.I.O. *",
+        "phone": "Telefon raqami",
+        "amount": "Manga kerak",
+        "term": "Muddatga",
+        "month": "oy",
+        "currency": "so'm"
+      },
+      "placeholders": {
+        "name": "Ivanov Aleksey Petrovich",
+        "credit_type": "Kredit turini tanlang"
+      },
+      "validation": {
+        "name_required": "Iltimos, ismingizni kiriting",
+        "name_short": "Ism juda qisqa"
+      },
+      "credit_types": {
+        "mortgage": "Ipoteka krediti",
+        "auto": "Avtokredit",
+        "micro": "Mikroqarz"
+      },
+      "agreement": "Men sayt shartlariga roziman, maxfiylik siyosati va cookie-fayllardan foydalanish qoidalarini o'qib chiqqanman, tushunganman va rozilik bildiraman. Menga Imkon Finans kompaniyasi mening kredit tarixim haqidagi ma'lumotlarni kredit byurosidan so'rashi/yetkazishi mumkinligi haqida xabar berildi.",
+      "submit": "Arizani yuborish",
+      "messages": {
+        "success": "Arizangiz muvaffaqiyatli yuborildi!",
+        "error": "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
+        "server_error": "Server bilan bog'lanishda xatolik yuz berdi."
+      }
+    },
+    "calculator": {
+      "title": "Kredit Kalkulyatori",
+      "sum": "Kredit summasi",
+      "term": "Kredit muddati",
+      "rate": "Yillik foiz stavkasi",
+      "type": "Hisoblash turi",
+      "monthly_pay": "Oylik to‘lov",
+      "total_pay": "To‘liq qiymati",
+      "apply_btn": "ARIZA QOLDIRISH",
+      "month_unit": "oy",
+      "calc_types": {
+        "annuity": "Annuitet",
+        "differential": "Differensial"
+      }
+    }
+  },
+  "organization_today": {
+    "title": "MKT bugun",
+    "features": {
+      "experience": "Mikromoliya bozorida 5 yildan ortiq tajriba!",
+      "joint_stock": "MKT – O'zbekiston va Markaziy Osiyodagi mikrokredit tashkilotlari orasida yagona ochiq aksiyadorlik jamiyati",
+      "rating": "MKT O'zbekistonda mikrokredit tashkilotlari orasida yuqori reytingga ega",
+      "securities": "MKTlar orasida O'zbekistonning qimmatli qog'ozlar bozoridagi yagona ishtirokchisi",
+      "audit": "MKT'ning moliyaviy hisobotlari har yili tashqi auditdan o'tkaziladi",
+      "iso": "MKT O'z DSt ISO 9001 standartlariga javob beradi"
+    }
+  },
+  "our_products": {
+    "title": "Bizning mahsulotlarimiz",
+    "view_all": "barchasini ko'rish",
+    "error_message": "Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring"
+  },
+  "statistics": {
+    "title": "Kredit yo'nalishlari bo'yicha <0>Statistika</0>",
+    "description": "Mijozlarga taqdim etilgan kreditlar turli sohalar bo'yicha ajratilgan bo'lib, quyida ularning tafsilotlari keltirilgan",
+    "currency" : "so'm"
+  },
+  "news_feed": {
+    "main_title": "Eng muhim e'lonlar va jamiyatdagi yangiliklardan xabardor bo'ling",
+    "list_item_1": "Jamiyat hayotidagi qiziqarli yangiliklar va eng muhim e’lonlar",
+    "list_item_2": "Uchrashuv natijalari to‘g‘risida xabarnomalar va o‘tkazilayotgan tanlovlar haqida ma’lumotlar"
+  },
+  "partners_carousel": {
+    "title": "Bizga ishonch bildirgan hamkorlar!"
+  },
+  "partners": {
+    "title": "Bizning hamkorlar",
+    "description": "Barcha yutuqlarimiz — ishonchli hamkorlar bilan birga"
+  },
+  "faq": {
+    "section_badge": "Savollar",
+    "title": "Ko'p so'raladigan savollar",
+    "description": "Bizning Fintech bank xizmatimiz pulingizni boshqarish uslubingizni inqilob qiladi.",
+    "currency_badge": "Markaziy bank kurslari",
+    "currency_title": "Valyuta kurslari",
+    "source": "Manba",
+    "source_name": "O'zbekiston Respublikasi Markaziy banki",
+    "updated_date": "Yangilangan sana",
+    "questions": [
+      {
+        "key": "1",
+        "title": "Menga kredit berish rad etildi. Qachon qaytadan murojaat qilishim mumkin?",
+        "content": "Minimal talablarga rioya qilinganiga ishonchingiz komil bo'lgach, 30 kundan so'ng yana qayta buyurtma berishingiz mumkin bo'ladi"
+      },
+      {
+        "key": "2",
+        "title": "Kredit olish uchun minimal talablar qanday?",
+        "content": "- O‘zbekiston Respublikasi fuqaroligi \n - Doimiy rasmiy daromadga ega boʻlishi \n - Ijobiy kredit tarixi (mavjud boʻlsa) \n - Boshqa kreditlar boʻyicha qarzdorlik boʻlmasligi \n - MIBda qarzdorlik mavjud boʻlmasligi kerak "
+      },
+      {
+        "key": "3",
+        "title": "Kredit tarixini qanday topish mumkin?",
+        "content": "Kredit tarixi bo'yicha ma'lumotlarni to'plovchi Kredit byurosidan bir yilda bir marta bepul olishingiz mumkin. Byuro xizmatlari haqida www.infokredit.uz havolasi orqali KATM saytiga kirib bilib olasiz."
+      },
+      {
+        "key": "4",
+        "title": "Qaysi ish haqi miqdorini ko'rsatishim kerak?",
+        "content": "Ba'zan so'ralgan summa juda katta bo'lishi mumkin. Hatto kredit muddatini uzaytirib, to'lov miqdori minimum darajagacha tushurilgan taqdirda ham, to'lov sizning daromadingizdan ko'proq bo'lishi mumkin. Bunday holatda bank kamroq summani ma'qullaydi yoki kreditni rad etadi. Buyurtmada to'lovi sizning daromadingizdan ortiq bo'lmagan kredit summasini ko'rsating. Agar sizning qo'shimcha daromadingiz bo'lsa va uni tasdiqlay olsangiz, u albatta inobatga olinadi."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Biz bilan email orqali bog'laning",
+    "placeholder": "E - pochta kiriting",
+    "submit": "YUBORISH",
+    "submitting": "YUBORILMOQDA...",
+    "success_msg": "Arizangiz muvaffaqiyatli yuborildi",
+    "error_msg": "Xatolik yuz berdi. Iltimos qaytadan urinib ko'ring.",
+    "server_error": "Server bilan bog'lanishda xatolik!"
+  },
+  "common": {
+    "buttons": {
+      "learn_more": "Batafsil ma'lumot",
+      "more": "Batafsil"
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "credit_application": {
+    "loan_section": {
+      "title": "Apply for a Loan",
+      "description": "Main activity — providing microloans to individuals",
+      "tabs": {
+        "application": "Application",
+        "calculator": "Loan Calculator"
+      }
+    },
+    "application_form": {
+      "labels": {
+        "name": "Full Name *",
+        "phone": "Phone Number",
+        "amount": "I need",
+        "term": "For term",
+        "month": "months",
+        "currency": "sum"
+      },
+      "placeholders": {
+        "name": "John Doe",
+        "credit_type": "Select credit type"
+      },
+      "validation": {
+        "name_required": "Please enter your name",
+        "name_short": "Name is too short"
+      },
+      "credit_types": {
+        "mortgage": "Mortgage Loan",
+        "auto": "Auto Loan",
+        "micro": "Microloan"
+      },
+      "agreement": "I agree to the terms of the site, have read, understood and consent to the privacy policy and cookie rules. I have been informed that Imkon Finans may request/provide information about my credit history from/to the credit bureau.",
+      "submit": "Submit Application",
+      "messages": {
+        "success": "Your application has been submitted successfully!",
+        "error": "An error occurred. Please try again.",
+        "server_error": "A server connection error occurred."
+      }
+    },
+    "calculator": {
+      "title": "Loan Calculator",
+      "sum": "Loan amount",
+      "term": "Loan term",
+      "rate": "Annual interest rate",
+      "type": "Calculation type",
+      "monthly_pay": "Monthly payment",
+      "total_pay": "Total value",
+      "apply_btn": "SUBMIT APPLICATION",
+      "month_unit": "months",
+      "calc_types": {
+        "annuity": "Annuity",
+        "differential": "Differential"
+      }
+    }
+  },
+  "organization_today": {
+    "title": "MCO today",
+    "features": {
+      "experience": "Over 5 years of experience in the microfinance market!",
+      "joint_stock": "MCO – the only open joint-stock company among microcredit organizations in Uzbekistan and Central Asia",
+      "rating": "MCO has a high rating among microcredit organizations in Uzbekistan",
+      "securities": "The only participant in the securities market of Uzbekistan among MCOs",
+      "audit": "MCO's financial statements are audited externally every year",
+      "iso": "MCO meets O'z DSt ISO 9001 standards"
+    }
+  },
+  "our_products": {
+    "title": "Our products",
+    "view_all": "view all",
+    "error_message": "An error occurred while loading data. Please try again"
+  },
+  "statistics": {
+    "title": "<0>Statistics</0> by credit lines",
+    "description": "Loans provided to customers are allocated across various sectors, the details of which are given below",
+    "currency" : "sum"   
+  },
+  "news_feed": {
+    "main_title": "Stay informed about the most important announcements and community news",
+    "list_item_1": "Interesting news from the life of society and the most important announcements",
+    "list_item_2": "Notifications about meeting results and information about ongoing contests"
+  },
+  "partners_carousel": {
+    "title": "Partners who trust us!"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "description": "All our achievements — together with reliable partners"
+  },
+  "faq": {
+    "section_badge": "Questions",
+    "title": "Frequently asked questions",
+    "description": "Our Fintech banking service revolutionizes the way you manage your money, offering seamless, secure, and smart solutions for all your financial needs.",
+    "currency_badge": "Central bank rates",
+    "currency_title": "Currency rates",
+    "source": "Source",
+    "source_name": "Central Bank of the Republic of Uzbekistan",
+    "updated_date": "Updated date",
+    "questions": [
+        {
+            "key": "1",
+            "title": "My credit application was rejected. When can I reapply?",
+            "content": "You can reapply after 30 days once you are sure that the minimum requirements have been met"
+        },
+        {
+            "key": "2",
+            "title": "What are the minimum requirements for obtaining a loan?",
+            "content": "- Citizenship of the Republic of Uzbekistan \n - Possession of a permanent official income \n - Positive credit history (if available) \n - No outstanding debts on other loans \n - No outstanding debts in the Bureau of Compulsory Enforcement (MIB)"
+        },
+        {
+            "key": "3",
+            "title": "How can I find my credit history?",
+            "content": "You can obtain information from the Credit Bureau, which collects credit history data, once a year for free. You can learn more about the Bureau's services on the KATM website via the link www.infokredit.uz"
+        },
+        {
+            "key": "4",
+            "title": "What salary amount should I indicate?",
+            "content": "Sometimes the requested amount may be too large. Even if the loan term is extended and the payment is reduced to a minimum, the payment may still exceed your income. In such cases, the bank will approve a smaller amount or reject the loan. Indicate a loan amount where the monthly payment does not exceed your income. If you have additional income that you can verify, it will definitely be taken into account"
+        }
+    ]
+  },
+  "contact": {
+    "title": "Contact us via email",
+    "placeholder": "Enter E-mail",
+    "submit": "SEND",
+    "submitting": "SENDING...",
+    "success_msg": "Your application has been sent successfully",
+    "error_msg": "An error occurred. Please try again.",
+    "server_error": "Error connecting to the server!"
+  },
+  "common": {
+    "buttons": {
+      "learn_more": "Learn more",
+      "more": "More"
+    }
+  }
+}

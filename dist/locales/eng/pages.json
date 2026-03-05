@@ -1,0 +1,137 @@
+{
+    "history": {
+        "title": "Company history",
+        "description": "In September 2020, pursuant to the decision of the Board of the LLC “IMKON FINANS Microcredit Organization,” the company was transformed into a Joint-Stock Company “IMKON FINANS Microcredit Organization.”"
+    },
+    "supervisory_board": {
+        "title": "Supervisory Board",
+        "info_management": [
+            "Exercises general management of the Company's activities",
+            "Determines the priority areas of the Company's activities"
+        ]
+    },
+    "management_body": {
+        "title": "Management Body",
+        "info_management": [
+            "Manages the day-to-day activities of the Company",
+            "Ensures the implementation of the Company's business plans and development programs",
+            "Monitors the Company's compliance with laws, corporate regulations, and internal policies"
+        ]
+    },
+    "file_pages": {
+        "organizational_structure": "Organizational Structure",
+        "business_plans": "Business Plans",
+        "dividends": "Dividends",
+        "share_capital": "Share Capital",
+        "emission": "Emission",
+        "reports": "Reports",
+        "important_facts": "Important Facts",
+        "corporate_charter": "Corporate Charter",
+        "certificates": "Licenses and Certificates",
+        "development_strategy": "Development Strategy",
+        "affiliated_individuals": "List of Affiliated Individuals",
+        "corporate_governance_code": "Corporate Governance Code",
+        "corporate_regulations": "Corporate Regulations",
+        "news": "News and Announcements",
+        "tab_all": "All",
+        "no_data": "No information found",
+        "back_home": "Go back"
+    },
+    "dividends_table": {
+      "year": "Year",
+      "ordinary": "For ordinary shares",
+      "privileged": "For preferred shares",
+      "total_sum": "Total dividend amount (mln. UZS)",
+      "unpaid": "Unpaid dividends (mln. UZS)"
+    },
+   "vacancies": {
+        "title": "Vacancies",
+        "description": "Job description",
+        "requirements": "Requirements"
+    },
+    "reception_days": {
+        "title": "Reception Days",
+        "description": "Working Hours",
+        "working_days": "Monday-Saturday"
+    },
+    "contacts": {
+        "main_title": "Contacts",
+        "card_title": "Contact Information",
+        "address": "44A Amir Temur Street, Andijan City, Andijan Region, Republic of Uzbekistan",
+        "form": {
+            "label_name": "Full Name *",
+            "placeholder_name": "First, last, and middle name",
+            "label_email": "E-mail",
+            "placeholder_email": "Your e-mail address",
+            "label_phone": "Phone *",
+            "placeholder_phone": "Your phone number",
+            "label_message": "Message",
+            "placeholder_message": "Your message...",
+            "submit": "SEND",
+            "submitting": "SENDING...",
+            "success": "Your application has been sent successfully",
+            "error": "An error occurred. Please try again.",
+            "server_error": "Error connecting to the server!"
+        },
+        "branches_title": "Phone numbers:"
+    },
+    "services": {
+        "title": "Our Services",
+        "what_we_do": [
+            "The microcredit organization primarily provides microfinance services.",
+            "It also provides microcredits.",
+            "In addition, it offers microloan and microleasing services.",
+            "The organization also operates in the field of agency services."
+        ],
+        "tabs": {
+            "microfinance": {
+                "title": "Microfinance Services",
+                "items": [
+                    "Microcredits, microloans, microleasing, and agency services",
+                    "Purchase and sale of debt obligations",
+                    "Consulting and information services related to microfinancing",
+                    "Consumer loans and other financial services in accordance with legislation"
+                ]
+            },
+            "microcredits": {
+                "title": "Microcredits and Microloans",
+                "footerAlert": "Loans are only granted to individuals with a verified place of work and stable income",
+                "q1": { "q": "Who can apply?", "a": "Legal entities and individuals" },
+                "q2": { "q": "Credit amount?", "a": "The loan amount is determined based on the client's solvency." },
+                "q3": { "q": "Loan term?", "a": "From 12 to 36 months." },
+                "q4": { "q": "Repayment methods?", "a": "Repayment is made monthly in equal installments (annuity) or by the differential method." },
+                "q5": { "q": "Types of collateral?", "a": "Collateral, guarantee, or insurance policy." },
+                "q6": { "q": "Required documents?", "a": "Passport, proof of income, and collateral documents." },
+                "q7": { "q": "Initial payment?", "a": "No down payment is required." }
+            },
+            "agency-service": {
+                "title": "Agency Services",
+                "content": "On July 23, 2019, the Resolution of the President of the Republic of Uzbekistan No. PQ–4400 “On Measures to Increase the Accessibility of Microfinancial Services” was signed. In accordance with this resolution, starting from August 1, 2019, it is permitted to operate as an agent of microcredit organizations, banks, insurance companies, and other financial institutions"            }
+        }
+    },
+    "re_purchased_shares": {
+        "title": "Re-purchased shares",
+        "no_repurchased_shares": "No re-purchased shares",
+        "no_data_to_show": "No data to show"
+    },
+    "events": {
+        "title": "Events",
+        "description": "The Joint-Stock Company Microfinance Organization 'IMKON FINANS' has been contributing to the development of small and medium-sized businesses, private entrepreneurship, and the steadily growing microfinance market in the Republic of Uzbekistan for over ten years."
+    },
+    "videos": {
+        "title": "Videos",
+        "description": "The Joint-Stock Company Microfinance Organization 'IMKON FINANS' has been contributing to the development of small and medium-sized businesses, private entrepreneurship, and the steadily growing microfinance market in the Republic of Uzbekistan for over ten years."
+    },
+    "all_credits": {
+        "title": "All credits"
+    },
+    "banner_detail": {
+        "description_label": "Description"
+    },
+    "errors": {
+        "no_data": "No information found",
+        "back_home": "Go back",
+        "back": "Back",
+        "data_load_error": "An error occurred while loading data. Please try again."
+    }
+}
