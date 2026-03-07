@@ -133,5 +133,10 @@
         "back_home": "Go back",
         "back": "Back",
         "data_load_error": "An error occurred while loading data. Please try again."
+    },
+    "not_found": {
+        "page_not_found": "Oops, This page does not exist",
+        "subtitle": "If you noticed an error or problem, please let us know",
+        "back_home": "Go back to the homepage"
     }
 }

@@ -134,6 +134,10 @@
         "back_home": "Ortga qaytish",
         "back": "Ortga",
         "data_load_error": "Ma'lumotni yuklashda xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
-    }
-    
+    },
+    "not_found": {
+        "page_not_found": "Ups! Bunday sahifa mavjud emas",
+        "subtitle": "Xatolik yoki kamchilik sezgan bo'lsangiz bizga habar bering",
+        "back_home": "Bosh sahifaga qaytish"
+    }    
 }
