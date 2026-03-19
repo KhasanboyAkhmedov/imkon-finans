@@ -78,10 +78,10 @@
     "services": {
     "title": "Xizmatlar",
     "what_we_do": [
-        "Mikrokredit tashkiloti asosan mikromoliyaviy xizmatlar ko‘rsatadi.",
-        "Shuningdek, mikrokreditlar taqdim etadi.",
-        "Bundan tashqari, mikroqarz va mikrolizing xizmatlarini ham ko‘rsatadi.",
-        "Agentlik xizmatlari yo‘nalishida ham faoliyat yuritadi."
+        "Mikrokredit tashkiloti asosan mikromoliyaviy xizmatlar ko‘rsatadi",
+        "Shuningdek, mikrokreditlar taqdim etadi",
+        "Bundan tashqari, mikroqarz va mikrolizing xizmatlarini ham ko‘rsatadi",
+        "Agentlik xizmatlari yo‘nalishida ham faoliyat yuritadi"
         ],
         "tabs": {
             "microfinance": {
@@ -97,12 +97,12 @@
                 "title": "Mikrokredit va mikroqarzlar",
                 "footerAlert": "Kredit faqat aniq ish joyi va daromadga ega bo‘lgan shaxslarga beriladi",
                 "q1": { "q": "Kredit kimlarga beriladi?", "a": "Yuridik va jismoniy shaxslarga" },
-                "q2": { "q": "Kredit miqdori?", "a": "Kredit miqdori mijozning to‘lov qobiliyatiga qarab belgilanadi." },
-                "q3": { "q": "Kredit muddati?", "a": "12 oydan 36 oygacha." },
-                "q4": { "q": "Kreditni qaytarish usullari?", "a": "Kreditni qaytarish har oyda teng miqdorda (annuitet) yoki differensial usulda amalga oshiriladi." },
-                "q5": { "q": "Kredit ta’minoti turlari?", "a": "Garov, kafillik yoki sug‘urta polisi." },
-                "q6": { "q": "Qanday hujjatlar talab qilinadi?", "a": "Pasport, daromadlar to‘g‘risida ma’lumotnoma va ta’minot hujjatlari." },
-                "q7": { "q": "Boshlang‘ich to‘lov qancha?", "a": "Boshlang‘ich to‘lov talab etilmaydi." }
+                "q2": { "q": "Kredit miqdori?", "a": "Kredit miqdori mijozning to‘lov qobiliyatiga qarab belgilanadi" },
+                "q3": { "q": "Kredit muddati?", "a": "12 oydan 48 oygacha" },
+                "q4": { "q": "Kreditni qaytarish usullari?", "a": "Kreditni qaytarish har oyda teng miqdorda (annuitet) yoki differensial usulda amalga oshiriladi" },
+                "q5": { "q": "Kredit ta’minoti turlari?", "a": "Garov, kafillik yoki sug‘urta polisi" },
+                "q6": { "q": "Qanday hujjatlar talab qilinadi?", "a": "Pasport, daromadlar to‘g‘risida ma’lumotnoma va ta’minot hujjatlari" },
+                "q7": { "q": "Boshlang‘ich to‘lov qancha?", "a": "Boshlang‘ich to‘lov talab etilmaydi" }
             },
             "agency-service": {
                 "title": "Agentlik xizmati",

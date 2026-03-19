@@ -78,10 +78,10 @@
     "services": {
         "title": "Our Services",
         "what_we_do": [
-            "The microcredit organization primarily provides microfinance services.",
-            "It also provides microcredits.",
-            "In addition, it offers microloan and microleasing services.",
-            "The organization also operates in the field of agency services."
+            "The microcredit organization primarily provides microfinance services",
+            "It also provides microcredits",
+            "In addition, it offers microloan and microleasing services",
+            "The organization also operates in the field of agency services"
         ],
         "tabs": {
             "microfinance": {
@@ -97,12 +97,12 @@
                 "title": "Microcredits and Microloans",
                 "footerAlert": "Loans are only granted to individuals with a verified place of work and stable income",
                 "q1": { "q": "Who can apply?", "a": "Legal entities and individuals" },
-                "q2": { "q": "Credit amount?", "a": "The loan amount is determined based on the client's solvency." },
-                "q3": { "q": "Loan term?", "a": "From 12 to 36 months." },
-                "q4": { "q": "Repayment methods?", "a": "Repayment is made monthly in equal installments (annuity) or by the differential method." },
-                "q5": { "q": "Types of collateral?", "a": "Collateral, guarantee, or insurance policy." },
-                "q6": { "q": "Required documents?", "a": "Passport, proof of income, and collateral documents." },
-                "q7": { "q": "Initial payment?", "a": "No down payment is required." }
+                "q2": { "q": "Credit amount?", "a": "The loan amount is determined based on the client's solvency" },
+                "q3": { "q": "Loan term?", "a": "From 12 to 48 months" },
+                "q4": { "q": "Repayment methods?", "a": "Repayment is made monthly in equal installments (annuity) or by the differential method" },
+                "q5": { "q": "Types of collateral?", "a": "Collateral, guarantee, or insurance policy" },
+                "q6": { "q": "Required documents?", "a": "Passport, proof of income, and collateral documents" },
+                "q7": { "q": "Initial payment?", "a": "No down payment is required" }
             },
             "agency-service": {
                 "title": "Agency Services",

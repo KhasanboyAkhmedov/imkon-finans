@@ -90,7 +90,7 @@
   "faq": {
     "section_badge": "Savollar",
     "title": "Ko'p so'raladigan savollar",
-    "description": "Bizning Fintech bank xizmatimiz pulingizni boshqarish uslubingizni inqilob qiladi.",
+    "description": "Bizning Fintech bank xizmatimiz pulingizni boshqarish uslubingizni inqilob qiladi",
     "currency_badge": "Markaziy bank kurslari",
     "currency_title": "Valyuta kurslari",
     "source": "Manba",
@@ -110,12 +110,12 @@
       {
         "key": "3",
         "title": "Kredit tarixini qanday topish mumkin?",
-        "content": "Kredit tarixi bo'yicha ma'lumotlarni to'plovchi Kredit byurosidan bir yilda bir marta bepul olishingiz mumkin. Byuro xizmatlari haqida www.infokredit.uz havolasi orqali KATM saytiga kirib bilib olasiz."
+        "content": "Kredit tarixi bo'yicha ma'lumotlarni to'plovchi Kredit byurosidan bir yilda bir marta bepul olishingiz mumkin. Byuro xizmatlari haqida www.infokredit.uz havolasi orqali KATM saytiga kirib bilib olasiz"
       },
       {
         "key": "4",
         "title": "Qaysi ish haqi miqdorini ko'rsatishim kerak?",
-        "content": "Ba'zan so'ralgan summa juda katta bo'lishi mumkin. Hatto kredit muddatini uzaytirib, to'lov miqdori minimum darajagacha tushurilgan taqdirda ham, to'lov sizning daromadingizdan ko'proq bo'lishi mumkin. Bunday holatda bank kamroq summani ma'qullaydi yoki kreditni rad etadi. Buyurtmada to'lovi sizning daromadingizdan ortiq bo'lmagan kredit summasini ko'rsating. Agar sizning qo'shimcha daromadingiz bo'lsa va uni tasdiqlay olsangiz, u albatta inobatga olinadi."
+        "content": "Ba'zan so'ralgan summa juda katta bo'lishi mumkin. Hatto kredit muddatini uzaytirib, to'lov miqdori minimum darajagacha tushurilgan taqdirda ham, to'lov sizning daromadingizdan ko'proq bo'lishi mumkin. Bunday holatda bank kamroq summani ma'qullaydi yoki kreditni rad etadi. Buyurtmada to'lovi sizning daromadingizdan ortiq bo'lmagan kredit summasini ko'rsating. Agar sizning qo'shimcha daromadingiz bo'lsa va uni tasdiqlay olsangiz, u albatta inobatga olinadi"
       }
     ]
   },

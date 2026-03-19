@@ -41,15 +41,11 @@ const Footer = () => {
                         <h4 className='title'>{footT('contact_info')}</h4>
                         <a className="contact-data" href="#">
                             <img className="footer__bottom-top-first-a-img" src={email} alt="email" /> 
-                            info@imkonfinans.uz
+                            info@imkon-finans.uz
                         </a>
-                        <a className="contact-data" href="#">
+                        <a className="contact-data" href="tel:+998782981235">
                             <img className="footer__bottom-top-first-a-img" src={phone} alt="phone" /> 
                             +998 78 298 12 35 
-                        </a>
-                        <a className="contact-data" href="#">
-                            <img className="footer__bottom-top-first-a-img" src={phone} alt="phone" /> 
-                            +998 74 228 32 12
                         </a>
                     </div>
                     <div className='contact-datas contact-datas-with-map'>

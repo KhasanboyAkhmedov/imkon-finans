@@ -14,14 +14,13 @@ const ContactCard = () => {
                 <div className="contact-item">
                     <FaPhoneVolume className='contact-icon' />
                     <div className="item-text">
-                        <p>+998 74 228-32-12</p>
-                        <p>+99878 298-12-35</p>
+                        <p>+998 78 298-12-35</p>
                     </div>
                 </div>
                 <div className="contact-item">
                     <FaEnvelope className='contact-icon'/>
                     <div className="item-text">
-                        <p>info@imkonfinans.uz</p>
+                        <p>info@imkon-finans.uz</p>
                     </div>
                 </div>
                 <div className="contact-item">

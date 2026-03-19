@@ -1,4 +1,4 @@
-import { FaFacebookF, FaLinkedinIn, FaTelegram } from 'react-icons/fa';
+import { FaFacebookF } from 'react-icons/fa';
 import { PiInstagramLogoFill } from 'react-icons/pi';
 import './social-links.css';
 import type { JSX } from 'react';
@@ -11,10 +11,8 @@ export interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { id: 1, url: 'https://www.facebook.com/', icon: <FaFacebookF />, alt: 'facebook' },
-  { id: 2, url: 'https://www.linkedin.com/', icon: <FaLinkedinIn />, alt: 'linkedin' },
-  { id: 3, url: 'https://www.instagram.com/', icon: <PiInstagramLogoFill />, alt: 'instagram' },
-  { id: 4, url: 'https://t.me/', icon: <FaTelegram />, alt: 'telegram' },
+  { id: 1, url: 'https://www.facebook.com/imkonfinans.uz', icon: <FaFacebookF />, alt: 'facebook' },
+  { id: 2, url: 'https://www.instagram.com/imkonfinans.uz', icon: <PiInstagramLogoFill />, alt: 'instagram' },
 ];
 
 const SocialLinks: React.FC = () => {

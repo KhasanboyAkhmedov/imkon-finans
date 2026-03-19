@@ -1,4 +1,4 @@
-import { facebook, instagram, linkedin, twitter } from "../../assets/footer";
+import { facebook, instagram } from "../../assets/footer";
 
 export interface FooterLink {
   id?: number;
@@ -7,10 +7,8 @@ export interface FooterLink {
 }
 
 export const socialLinks = [
-  {id: 1, url: 'https://www.facebook.com/', icon: facebook, alt: 'facebook' },
-  {id: 2, url: 'https://www.linkedin.com/', icon: linkedin, alt: 'linkedin' },
-  {id: 3, url: 'https://www.instagram.com/', icon: instagram, alt: 'instagram' },
-  {id: 4, url: 'https://x.com/', icon: twitter, alt: 'twitter' },
+  {id: 1, url: 'https://www.facebook.com/imkonfinans.uz', icon: facebook, alt: 'facebook' },
+  {id: 2, url: 'https://www.instagram.com/imkonfinans.uz', icon: instagram, alt: 'instagram' },
 ];
 
 export const usefulResources: FooterLink[] = [

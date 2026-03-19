@@ -70,13 +70,13 @@ const Navbar = () => {
                                     </Select>
                                 </div>
                             </div>
-                            <a href='tel:+998742283212' className="site-header-top-right">
+                            <a href='tel:+998782981235' className="site-header-top-right">
                                 <div className="site-header-top-right-call">
                                     <FiPhone className="site-header-top-right-phone-icon" />
                                 </div>
                                 <div className="site-header-top-right-contact">
                                     <p className="site-header-top-right-contact-text">{t('contact_us')}</p>
-                                    <h2 className="site-header-top-right-contact-title">+998 74 228-32-12</h2>
+                                    <h2 className="site-header-top-right-contact-title">+998 78 298-12-35</h2>
                                 </div>
                             </a>
                         </div>

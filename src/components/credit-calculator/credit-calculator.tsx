@@ -62,7 +62,7 @@ export default function CreditCalculator({ onSwitch }: {onSwitch: () => void;}) 
               </div>
               <Slider
                 min={4000000}
-                max={100000000}
+                max={300000000}
                 step={500000}
                 value={summa}
                 onChange={(val) => setSumma(val)}
