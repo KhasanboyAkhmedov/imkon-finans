@@ -46,7 +46,7 @@ const ApplicationForm: React.FC = () => {
     const fetchCreditTypes = async () => {
       setIsFetching(true);
       try {
-        const response = await fetch('https://imkon-finans-backend.vercel.app/api/credits/types');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/credits/types`)
         if (!response.ok) throw new Error('Failed to fetch');
         const data: CreditTypeResponse = await response.json();
         setRawCreditData(data);
