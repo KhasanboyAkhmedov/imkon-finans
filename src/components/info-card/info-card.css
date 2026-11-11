@@ -136,12 +136,13 @@
 
   .info-media-container {
     width: 45%;
-    max-height: 400px;
+    /* 400px tall at 16/9 == 711px wide; capping width keeps the ratio intact */
+    max-width: 711px;
   }
 
   .media-skeleton {
     min-width: 45%;
-    max-height: 400px;
+    max-width: 711px;
   }
 
   .media-float-left {

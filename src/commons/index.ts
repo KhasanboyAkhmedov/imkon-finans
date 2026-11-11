@@ -1,4 +1,11 @@
 export const formatDate = (dateInput: Date | string = new Date()): string => {
+  // A bare YYYY-MM-DD is parsed as UTC midnight, which can land on the previous
+  // day once rendered in a negative-offset timezone. Read those parts directly.
+  if (typeof dateInput === 'string') {
+    const plain = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateInput.trim());
+    if (plain) return `${plain[3]}.${plain[2]}.${plain[1]}`;
+  }
+
   const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput;
 
   if (isNaN(date.getTime())) return 'Invalid Date';

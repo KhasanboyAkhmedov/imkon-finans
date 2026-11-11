@@ -12,8 +12,9 @@ export const InfoCard: React.FC<InfoCardProps> = ({ item, index, navigateUrl, sh
   const isEven = index % 2 === 0;
   const hasMedia = !!(item.imageUrl || item.videoUrl);
   
-  const formattedDate = item.createdAt && showDate
-    ? formatDate(item.createdAt) 
+  const displayDate = item.date || item.createdAt;
+  const formattedDate = displayDate && showDate
+    ? formatDate(displayDate) 
     : null;
 
   const renderMedia = () => {

@@ -13,4 +13,5 @@ export interface NewsDetailType {
   eng: NewsDetailLanguageContent;
   imageUrl?: string;
   createdAt?: string;
+  date?: string;
 }

@@ -83,7 +83,7 @@ const NewsDetail: React.FC = () => {
           </div>
         ) : (
           <article className="detail-article">
-              <div className="date-badge">{formatDate(item?.createdAt)}</div>
+              <div className="date-badge">{formatDate(item?.date || item?.createdAt)}</div>
               <h1 className="detail-main-title">{content?.title}</h1>
               
               <div className="detail-content-flow clearfix">

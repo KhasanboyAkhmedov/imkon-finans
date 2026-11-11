@@ -2,18 +2,14 @@ import { FaFacebookF } from 'react-icons/fa';
 import { PiInstagramLogoFill } from 'react-icons/pi';
 import './social-links.css';
 import type { JSX } from 'react';
+import { socialAccounts, type SocialKey } from '../../config/social';
 
-export interface SocialLink {
-  id: number;
-  url: string;
-  icon: JSX.Element;
-  alt: string;
-}
+const icons: Record<SocialKey, JSX.Element> = {
+  facebook: <FaFacebookF />,
+  instagram: <PiInstagramLogoFill />,
+};
 
-const socialLinks: SocialLink[] = [
-  { id: 1, url: 'https://www.facebook.com/imkonfinans.uz', icon: <FaFacebookF />, alt: 'facebook' },
-  { id: 2, url: 'https://www.instagram.com/imkonfinans.uz', icon: <PiInstagramLogoFill />, alt: 'instagram' },
-];
+const socialLinks = socialAccounts;
 
 const SocialLinks: React.FC = () => {
   return (
@@ -27,7 +23,7 @@ const SocialLinks: React.FC = () => {
             href={social.url}
             aria-label={social.alt}
           >
-            {social.icon}
+            {icons[social.key]}
           </a>
         </div>
       ))}

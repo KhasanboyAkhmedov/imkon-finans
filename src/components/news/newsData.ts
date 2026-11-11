@@ -12,5 +12,6 @@ export interface NewsItem {
   description: string;
   imageUrl?: string;
   createdAt: string;
+  date?: string;
   updatedAt?: string;
 }

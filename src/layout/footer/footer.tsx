@@ -47,6 +47,10 @@ const Footer = () => {
                             <img className="footer__bottom-top-first-a-img" src={phone} alt="phone" /> 
                             +998 78 298 12 35 
                         </a>
+                        <a className="contact-data" href="tel:+998555023212">
+                            <img className="footer__bottom-top-first-a-img" src={phone} alt="phone" /> 
+                            +998 55 502 32 12 
+                        </a>
                     </div>
                     <div className='contact-datas contact-datas-with-map'>
                         <h4 className='title'>{footT('address')}</h4>

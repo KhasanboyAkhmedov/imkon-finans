@@ -12,6 +12,7 @@ export interface InfoCardItem {
   link?: string;
   isFloating?: boolean;
   createdAt?: string;
+  date?: string;
   updatedAt?: string;
 }
 

@@ -15,7 +15,7 @@ const NewsCard: React.FC<{ item: NewsItem }> = ({ item }) => {
   
   return (
     <article className="news-card">
-      <div className="news-card__date">{formatDate(item?.createdAt)}</div>
+      <div className="news-card__date">{formatDate(item?.date || item?.createdAt)}</div>
       <p className="news-card__description">{content?.description}</p>
       <button className="news-card__button" onClick={() => navigate(`/news/${item._id}`)}>
         <span className="news-card__button-text">{t('more')}</span>

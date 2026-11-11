@@ -1,4 +1,7 @@
 import { facebook, instagram } from "../../assets/footer";
+import { socialAccounts, type SocialKey } from "../../config/social";
+
+const socialIcons: Record<SocialKey, string> = { facebook, instagram };
 
 export interface FooterLink {
   id?: number;
@@ -6,10 +9,10 @@ export interface FooterLink {
   url: string;
 }
 
-export const socialLinks = [
-  {id: 1, url: 'https://www.facebook.com/imkonfinans.uz', icon: facebook, alt: 'facebook' },
-  {id: 2, url: 'https://www.instagram.com/imkonfinans.uz', icon: instagram, alt: 'instagram' },
-];
+export const socialLinks = socialAccounts.map(account => ({
+  ...account,
+  icon: socialIcons[account.key],
+}));
 
 export const usefulResources: FooterLink[] = [
   { id: 1, label: 'www.openinfo.uz', url: 'https://www.openinfo.uz' },

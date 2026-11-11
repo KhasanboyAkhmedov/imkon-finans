@@ -21,6 +21,9 @@ interface BannerAPIResponse {
   createdAt: string;
 }
 
+// How long each banner stays on screen before advancing.
+const SLIDE_INTERVAL_MS = 7000;
+
 const NavButton = ({ onClick, disabled, children }: { 
   onClick: () => void; 
   disabled: boolean; 
@@ -69,7 +72,7 @@ const HeroCarousel: React.FC = () => {
 
   useEffect(() => {
     if (slides.length <= 1) return;
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, SLIDE_INTERVAL_MS);
     return () => clearInterval(timer);
   }, [nextSlide, slides.length]);
 
