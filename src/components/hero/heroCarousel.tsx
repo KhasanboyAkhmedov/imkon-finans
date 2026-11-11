@@ -18,6 +18,8 @@ interface BannerAPIResponse {
   rus: LocalizedContent;
   eng: LocalizedContent;
   imageUrl: string;
+  isExternal?: boolean;
+  externalUrl?: string;
   createdAt: string;
 }
 
@@ -104,6 +106,15 @@ const HeroCarousel: React.FC = () => {
 
   const activeSlide = slides[currentIndex];
   const content = activeSlide[lang];
+  const externalUrl = activeSlide.isExternal ? activeSlide.externalUrl?.trim() : "";
+
+  const handleCtaClick = () => {
+    if (externalUrl) {
+      window.open(externalUrl, "_blank", "noopener,noreferrer");
+    } else {
+      navigate(`/banners/${activeSlide._id}`);
+    }
+  };
 
   return (
     <section className="hero-container">
@@ -121,7 +132,7 @@ const HeroCarousel: React.FC = () => {
             ))}
           </div>
 
-          <button onClick={() => navigate(`/banners/${activeSlide._id}`)} className="cta-button">
+          <button onClick={handleCtaClick} className="cta-button">
             {lang === "uzb" ? "Batafsil" : lang === "rus" ? "Подробнее" : "Read More"} 
             <HiOutlineArrowRight className="cta-icon" />
           </button>

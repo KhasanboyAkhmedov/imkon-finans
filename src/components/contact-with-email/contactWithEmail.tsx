@@ -16,7 +16,7 @@ const ContactWithEmail: React.FC = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/message`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
